@@ -1,14 +1,9 @@
 
+working portfolio website
 
-This versoin is working wonderfully!	
+determine domian name
 
-add sound
+update log and separate layers for animation
 
-add some public data via API
 
-add text input fields for several rotating messages
-
-add Spotify support for playing and pulling album names to help piper read. 
-
-Is ther a better name?? 
 
