@@ -1,0 +1,14 @@
+
+
+This versoin is working wonderfully!	
+
+add sound
+
+add some public data via API
+
+add text input fields for several rotating messages
+
+add Spotify support for playing and pulling album names to help piper read. 
+
+Is ther a better name?? 
+
