@@ -22,83 +22,33 @@
 
 
 
+<section id="nav">
+  <div class="nav_wrapper">
+    <ul class="nav">
+      <li><a href="#landing">Home</a></li>
+      <li><a href="#feature_1">Project 1</a></li>
+      <li><a href="#feature_2">Project 2</a></li>
+      <li><a href="#about_me">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="content"> <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
+
+
 <section id="landing">
-main landing area
+<div class="landing_wrapper">
+
+
+  <div class="logo_wrapper">
+    <img id="logo_hero" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
+  </div>
+</div>
 </section>
 
 <section id="feature_1">
   
-<!-- On the panel display, wrapps all elements -->
-<div id="display_board_X" class="display_board_container board"> </div> 
-<div id="pos_1_" class="element_wrapper " style="display:none">
-<div class="element" >
-  <div class="top_back_shadow"></div>
-  <!--   box shadow INSide does nothign here, as the .card is in front of it -->
-  <h1>
-    <div class="top shadows_R3">7</div>
-    <div class="shadow"></div>
-    <div class="hub">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="bottom">7</div>
-  </h1>
-
-  <div class="flap ">
-    <div class="front item shadows_R3">
-       <div class="hub"> 
-        <div></div>
-        <div></div>
-      </div>
-      <h1>7</h1>
-    </div>
-    <div class="back">
-      <div class="back_shine"></div>
-      <div class="hub">
-        <div></div>
-        <div></div>
-      </div>
-      <h1>
-      <!--  doesn't actually need a starting character -->
-      </h1>
-    </div>    
-  </div><!-- end .flap -->
-
-</div><!-- END .element flip char item -->
-</div><!-- END .element_wrapper -->
-
-
-<div id="controls_wrapper" class="buttons">
-  <button class="button flip">Flip</button>
-
-  
-  <label>Change The Message</label> 
-  <div id="message_speed_wrapper" class="button_with_controls">
- 
-        <div id="military_slider_container" class="message_speed_container">
-          <span class="slower">slower</span>
-          <label class="switch">
-      <!-- <input type="checkbox" id="military_time_switch"> -->
-            <input type="range" min="10" max="3000" value="500" class="slider rtl" id="message_speed_slider">
-            <span class="slip round"> </span>
-          </label><span class="faster ">faster</span>
-        </div><!-- military slider -->
-      </div><!-- button_with_controls -->
-  
-  
-  <label>Complete The Flip</label> 
-  <div id="flip_speed_wrapper" class="button_with_controls">
-
-        <div id="military_slider_container" class="flip_speed_container"><span class="slower">slower</span>
-          <label class="switch">
-      <!-- <input type="checkbox" id="military_time_switch"> -->
-            <input type="range" min="20" max="300" value="60" class="slider rtl" id="flip_speed_slider">
-            <span class="slip round"> </span>
-          </label><span class="faster">faster</span>
-        </div><!-- military slider -->
-      </div><!-- button_with_controls -->
-
-</div><!-- control wrapper -->
 </section>
 
 
@@ -121,9 +71,7 @@ main landing area
 
 
 <section id="feature_2" class="about">
-  <p align="center">
-    <img src="images/read-me-images/splitFlap-turning-a.png">
-  </p>
+
 </section>
 
 
@@ -185,7 +133,7 @@ main landing area
 </section>
 
 
-
+</section><!-- content_wrapper -->
 
 
 </body>
