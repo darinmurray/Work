@@ -35,7 +35,78 @@
  body {background-color: gray;}
  
  
- 
+ #landing {
+   background: gray;
+   height: 100vh;
+ }
+ #feature_1 {
+  background: dimgray;
+  height: 100vh;
+ }
+ #about_1 {
+  background: darkGray;
+  height: 100vh;
+ }
+ #feature_2 {
+background: navy;
+height: 100vh;
+ }
+ #about_2 {
+background: lightBlue;
+height: 100vh;
+ }
+ #about_me {
+background: pink; 
+height: 100vh;
+ }
+ #contact {
+background: khaki;
+height: 100vh;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
  
