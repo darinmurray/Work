@@ -14,6 +14,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/index.js" defer></script>
@@ -25,37 +40,51 @@
 <section id="nav">
   <div class="nav_wrapper">
     <ul class="nav">
-      <li><a href="#landing">Home</a></li>
-      <li><a href="#feature_1">Project 1</a></li>
-      <li><a href="#feature_2">Project 2</a></li>
-      <li><a href="#about_me">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <a href="#landing"> <li class="home"></li></a>
+      <a href="#feature_1"> <li class="project_1"></li></a>
+      <a href="#feature_2"> <li class="project_2"></li></a>
+      <a href="#about_me"> <li class="about_me"></li></a>
+      <a href="#contact"> <li class="contact"></li></a>
+      <a href="#resume"> <li class="resume"></li></a>
     </ul>
   </div>
 </section>
 
+
+
 <section id="content"> <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
 
 
+
+
 <section id="landing">
-<div class="landing_wrapper">
-
-
-  <div class="logo_wrapper">
-    <img id="logo_hero" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
+  <div class="landing_wrapper">
+    <div class="logo_wrapper">
+      <img id="logo_hero" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
+    </div>
   </div>
-</div>
 </section>
 
+
 <section id="feature_1">
-  
+  <div class="container info">
+    <h1>About Project One</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      when an unknown printer took a galley of type and scrambled it to make a type 
+      specimen book. It has survived not only five centuries, but also the leap into 
+      electronic typesetting, remaining essentially unchanged. It was popularised in 
+      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus PageMaker including 
+      versions of Lorem Ipsum.</p>
+  </div>
 </section>
 
 
 
 <section id="about_1" class="about">
-<h1>About Project One</h1>
-<div>
+  <div class="container info">
+  <h1>About Project One</h1>
   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
     when an unknown printer took a galley of type and scrambled it to make a type 
@@ -80,16 +109,31 @@
 
 
 <section id="about_2" class="about">
-  <h1>About Project Two</h1>
-  <div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      when an unknown printer took a galley of type and scrambled it to make a type 
-      specimen book. It has survived not only five centuries, but also the leap into 
-      electronic typesetting, remaining essentially unchanged. It was popularised in 
-      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-      and more recently with desktop publishing software like Aldus PageMaker including 
-      versions of Lorem Ipsum.</p>
+  <div class="container info">
+    <h1>About Project Two</h1>
+    <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
+      but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
+    <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
+    <ul> Technical stuff:
+      <li>Webster Dictionairy API for definitionan and syllable lookup</li>
+      <li>Text to speach to say the word and read the definition </li>
+      <li>Text to speach gives paise with 'thumbs up' </li>
+      <li>Rendered purely with CSS</li>
+      <li>JS/jQuery controlled animations</li>
+    </ul>
+
+    <ul>User functionality:
+      <li>Choose category</li>
+      <li>Adjust word lenthg</li>
+      <li>Adjust flip speed</li>
+      <li>Adjust word change speed</li>
+      <li>Adjust narator voice</li>
+      <li>Adjust voice pitch</li>
+      <li>Adjust voice speed</li>
+      <li>Adjust search for any word</li>
+      <li>Adjust text case for readability</li>
+
+    </ul>
   </div>
 </section>
 
@@ -98,38 +142,70 @@
 
 
 <section id="about_me" class="about">
-  <h1>About Me</h1>
+  <!-- <h2>Darin Murray: </h2> -->
+  <div class="container info">
+  <h1 class="title ">Maker: builder: coder:</h1>
+  <p class="subtitle ">Shopify Customization</p>
+  <p class="copy ">Experiences in eCommerce from being a product designer/store owner/store coder to customizing</p>
+    <div >
+      <ol> Core Skills
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Jquery</li>
+        <li>Photoshop</li>
+        <li>Illustrator</li>
+      </ol>
+  </div>
   <div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      versions of Lorem Ipsum.</p>
-      <ol> Things go here
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Javascript</li>
-      <li>Jquery</li>
-      <li>Photoshop</li>
-      <li>Illustrator</li>
-    </ol>
+    <p class="font_400" >Experiences in eCommerce from being a product designer/store owner/store coder to customizing </p>
+      <ol> Very comfortable in: 
+        <li>Digital Illustration</li>
+        <li>Photo Retouching</li>
+        <li>Videography/Video Production</li>
+        <li>Product Design</li>
+        <li>Product Photography</li>
+        <li>eCommerce</li>
+      </ol>
+
+  </div>
   </div>
 </section>
 
 
 
 
-<section id="contact" class=" ">
-  <h1>Contact Me</h1>
-  <div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      versions of Lorem Ipsum.</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      versions of Lorem Ipsum.</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      versions of Lorem Ipsum.</p>
-  </div>
+<section id="contact" >
+  
+  <div class="container form">
+    <h1>Lets talk :-)</h1>
+    <form class="contact">
+      <label for="fname">You are...?</label>
+      <input type="text" id="fname" name="firstname" placeholder="And you are?">
+  
+      <label for="email">Your email:</label>
+      <input type="text" id="email" name="email" placeholder="Your email">
+      <label for="email_verify">Verify it...</label>
+      <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:">
+  
+      <!-- <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select> -->
+  
+      <label for="subject">And, finally...</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  </div> 
+
+
+
+
 </section>
 
 
