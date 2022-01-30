@@ -9,6 +9,26 @@ window.onload = function() {
 
 
 
+// ===============  S P E E D  ================ // 
+// ===============  (sliders)  ================ // 
+// ===============  =========  ================ //  
+document.querySelectorAll('.henhouse').forEach(item => {
+  item.getBoundingClientRect()
+console.log("<<=====Found a henhouse: ", item);
+  item.addEventListener('scroll', event => {
+    console.log("scrolling henhouse ^^^");
+    // var x = event.originalTarget.min;
+    // var y = event.originalTarget.max;
+    if ( 2+2 == 4 ) {
+      console.log("Reversed")
+      // do the work
+      }
+  posNum = getPercentOfRange(x, event.originalTarget.value, y)
+  negNum = (1.0 - posNum).toFixed(1)
+  // event.originalTarget.parentElement.previousElementSibling.style.opacity=negNum; 
+  // event.originalTarget.parentElement.nextElementSibling.style.opacity=posNum; 
+  })
+})
 
 
 
@@ -24,7 +44,6 @@ window.onload = function() {
 
 
 
-  
   // ===============  U T I L I T Y  ================ // 
   // ===============   (functionS)   ================ // 
   // ===============   ==========    ================ //  
