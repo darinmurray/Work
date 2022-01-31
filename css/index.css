@@ -20,10 +20,8 @@
      --black-3: #e0e0e0;
      --black-2: #ebebeb;
      --black-1: #f5f5f5; /* whitesmoke */
-/*  logo light blue hex #627C91 , rgba(98, 128, 145, 1.0);  hsl(206, 32, 56 /1.0);*/
-/*  logo dark red hex #79000 , rgba(121, 0, 0, 1.0);  hsla(0, 100, 47, 1.0);*/
-/*  logo med gray hex #555657 , rgba(85, 86, 87, 1.0);  hsla(208, 1, 34, 1.0);*/
-     --nav-height: 54px;
+
+     --nav-height: 44px;
      --nav-background: #DCDCDC;   
      --about-1-background: lightsteelblue;   
      --about-2-background: lightsteelblue;   
@@ -32,22 +30,20 @@
 
  }
 
- html, body, * {margin:0; padding:0;  }  
- html, body {overflow-x: hidden; }  
- /* gives padding and border from inside */
- *, *::before, *::after { box-sizing: border-box; }
- 
-
-
- html {
+html, body, * {margin:0; padding:0;  }  
+html, body {overflow-x: hidden; }  
+/* gives padding and border from inside */
+*, *::before, *::after { box-sizing: border-box; }
+/* what is this magic?!?!?! */
+html {
   scroll-padding-top: 34px; /* your overlapping header/div height */
 }
-/* what is this magic?!?!?! */
 
-
-
-
- body { 
+body { 
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
   color: #343434;
   font-size: 20px;
   letter-spacing: 1px;
@@ -59,6 +55,15 @@
   width: 100%; /*  calc(100vw - (100vw - 100%));  */
   background-color: LemonChiffon;
 }
+
+
+
+
+
+
+
+
+
 
 
 .main_title { 
@@ -89,46 +94,14 @@
   font-weight: 200;
 }
 
-
-
-
-.font_100 {
-font-weight: 100;
-}
-.font_200 {
-font-weight: 100;
-}
-.font_300 {
-font-weight: 100;
-}
-.font_400 {
-
-font-weight: 400;
-}
-.font_500 {
-font-weight: 500;
-}
-.font_600 {
-  
-font-weight: 600;
-}
-.font_700 {
-font-weight: 600;
-}
-.font_800 {
-font-weight: 600;
-}
-
-
-
-
-/* .sticky {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 70px;
-  width: 300px;
-  height: 100px;
-} */
+.font_100 { font-weight: 100; }
+.font_200 { font-weight: 200; }
+.font_300 { font-weight: 300; }
+.font_400 { font-weight: 400; }
+.font_500 { font-weight: 500; }
+.font_600 { font-weight: 600; }
+.font_700 { font-weight: 700; }
+.font_800 { font-weight: 800; }
 
 
 
@@ -139,20 +112,25 @@ font-weight: 600;
 
 
 
-section#nav {
+
+
+/* =========  N A V I G A T I O N  ============ */
+/* =========  N A V I G A T I O N  ============ */
+/* =========  N A V I G A T I O N  ============ */
+.nav_floater {
   position: fixed;
-  top: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: center; 
-  background-color: rgba(200, 200, 200, 0.7);
-  background-color: var(--nav-background);
-  z-index: 9999;
+  top: 50px;
+  z-index: 9999;    
 }
 
 .nav_wrapper {
-padding: 5px 0px;
-}
+  height: 25px;
+  width: fit-content;
+  background: whitesmoke;
+  border-radius: 20px;
+  z-index: 999;
+  padding:3px 10px 0px 10px;
+} 
 
 ul.nav {
   display:flex;
@@ -160,78 +138,63 @@ ul.nav {
   align-content: center; 
   justify-content: center; 
   list-style-type: none;
+  padding-left:0px;
+  margin-top:0px;
 }
 
 ul.nav li {
-   /* font-family: 'Azeret Mono', monospace; */
-  /* font-family: 'Playfair Display', serif; */
-  /* font-family: 'Cormorant Infant', serif; */
-  font-family: 'Bitter', serif;
-font-weight: 200;
-
-  margin: 5px 10px;
-  height: 24px;
-  cursor: pointer; 
+  font-family: 'Azeret Mono', monospace;
+  color: dimgray;
+  padding-top: 0px;
+  margin: 0px 15px; 
 }
+
 ul.nav li a, ul.nav li a:visited {
-color: indianred;
-text-decoration: none;
+  color: dimgray;
+  text-decoration: none;
 }
-
 
 ul.nav li a:hover {
-  font-weight: 800;
-  color: black;
-  backgroun d-color: darkgray;
+  color: darkred;
 }
 
-ul.nav li {
+ul.nav li.contact  {
+margin-left:0px;
+}
+
+li.home a {
+  margin: 0px 0px;
+  position: relative;
+  top: -40px;
+}
+
+li.home img#logo_hero {
+  max-width: 80vw;
+  width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============  L A N D I N G   ============== */
+/* ============  L A N D I N G   ============== */
+/* ============  L A N D I N G   ============== */
+#landing {
+  background: gray;
+  background-image: url("/images/white_grunge.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* wraps ALL contend, below nav */
-section#content {
-  position: absolute;
-  width: 100%;
-}
-
-
-
-section.about, section.contact_form {
-  padding: 50px;
-}
-
-
- #landing {
-   background: gray;
-   background-image: url("/images/background_image.png");
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
- }
 
 .landing_wrapper {
   width: 100%;
@@ -242,13 +205,17 @@ section.about, section.contact_form {
   justify-content: center; 
   /* border: 2px solid green; */
   height:100vh;
+  background-image: url("/images/grunge_border.png") ;
+  background-size: 100% 100%;
+  background-position: top var(--nav-height) right 0px;
 }
 
 div.logo_wrapper {
-
+  
 }
 img#logo_hero {
-  width: 30vw;
+
+  max-width: 80vw;
 }
 
 
@@ -263,8 +230,9 @@ img#logo_hero {
 
 
 
-
-
+/* =========     F E A T U R E  1      ============ */
+/* =========     F E A T U R E  1      ============ */
+/* =========     F E A T U R E  1      ============ */
  #feature_1 {
   background: dimgray;
   background-image: url("/images/tubes_off.png");
@@ -278,6 +246,10 @@ img#logo_hero {
   background: darkGray;
 
  }
+
+/* =========     F E A T U R E  2      ============ */
+/* =========     F E A T U R E  2      ============ */
+/* =========     F E A T U R E  2      ============ */
  #feature_2 {
   background: MediumAquamarine;
   background-image: url("/images/words-satisfied.png");
@@ -291,6 +263,12 @@ img#logo_hero {
 background: lightBlue;
  
 }
+
+
+
+/* =========          M E              ============ */
+/* =========          M E              ============ */
+/* =========          M E              ============ */
  #about_me {
 background: var(--about-me-background); 
 background-image: url("/images/shutterstock_232033585.jpg");
@@ -298,15 +276,114 @@ background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
  }
- #contact {
-   display:flex;
-   justify-content: center;
-   background: var(--contact-background);
+
+section#about_me .container.info ul{  
+  color: indianred;
+  text-decoration: none;
+  }
+section#about_me .container.info {  
+  max-width: 1000px;
+  position: relative;
   }
 
+
+/* =========  STRIPES ============ */
+/* =========     &    ============ */
+/* =========  shadows ============ */
+section#about_me .container_wrapper{
+  position:relative;
+  width: 100%;
+  background-color: var(--black-8);
+  }
+  .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  }
+  
+  .top_shadow_clean {
+  height:20%;
+  max-height:200px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a821a6+0,aa1ba8+15,000000+100&1+0,0.53+3,0+15,0+100 */
+  background: linear-gradient(to bottom,  rgb(28, 31, 32) 0%,rgba(28, 32, 32, 0.53) 3%,rgba(170,27,168,0) 10%,rgba(170,27,168,0) 100%); 
+  background-size: 400% 400%;
+  animation: AnimationName 1s ease 1 forwards;
+  }
+  
+  @keyframes AnimationName {
+    0%{background-position:48% 100%}
+    /* 50%{background-position:48% 90%} */
+    100%{background-position:48% 0%}
+  }
+  
+  .right_stripes {
+    background: repeating-linear-gradient(
+    70deg,
+    var(--black-6),
+    var(--black-6) 1px,
+    #ffffff00 2px,
+    #ffffff00 40px,
+    var(--black-6) 42px
+  );
+  opacity: 0.1;
+  }
+  
+  
+  .left_stripes {
+    background: repeating-linear-gradient(
+    110deg,
+    var(--black-6),
+    var(--black-6) 1px,
+    #ffffff00 2px,
+    #ffffff00 40px,
+    var(--black-6) 42px
+  );
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========      C O N T A C T       ============ */
+/* =========      C O N T A C T       ============ */
+/* =========      C O N T A C T       ============ */
+#contact {
+  display:flex;
+  justify-content: center;
+  background: var(--contact-background);
+}
+section.contact_form {
+  padding: 50px;
+}
+
+
 .container {
+  padding: 50px;
   margin: 0px auto;
 }
+
+
 .container.form {
 padding: 50px;
 max-width: 500px;
@@ -314,30 +391,18 @@ max-width: 500px;
 
 
 
-
-
-
-
-
-
-
-
-
-
- /* ======  generic  ========  */
- /* ======  contact  ========  */
- /* ======  form  ========  */
- /* Style inputs with type="text", select elements and textareas */
- input[type=text], select, textarea {
-   font-size: 20px;
-   letter-spacing: 1px;
-   /* font-family: 'Azeret Mono', monospace; */
-   /* font-family: 'Playfair Display', serif; */
-   /* font-family: 'Cormorant Infant', serif; */
-   font-family: 'Bitter', serif;
-   font-weight: 200;
-   font-style: italic;
-
+/* =========      generic starter form       ============ */
+/* =========      generic starter form       ============ */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  font-size: 20px;
+  letter-spacing: 1px;
+  /* font-family: 'Azeret Mono', monospace; */
+  /* font-family: 'Playfair Display', serif; */
+  /* font-family: 'Cormorant Infant', serif; */
+  font-family: 'Bitter', serif;
+  font-weight: 200;
+  font-style: italic;
   width: 100%; /* Full width */
   padding: 10px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
@@ -376,32 +441,62 @@ input[type=submit]:hover {
 
 form.contact {
 padding-top:10px;
+
 } 
 
 
-/* ======    global over-write for ALL   ====== */
-/* ====== sections top padding and height ====== */
+
+
+
+
+
+
+span.caret {
+  /* color:white; */
+  /*border:1px solid white;*/
+  margin-left: 0;
+}
+span.caret:after {
+  content: ' > ';
+  /* color:white; */
+  opacity: 0;
+  animation: blink 0.5s linear infinite alternate;
+  padding-right: 5px;
+	padding-left: 12px;
+}
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+/* =========     G L O B A L      ============ */
+/* =========     G L O B A L      ============ */
+/* =========     G L O B A L      ============ */
+section#content {
+  position: absolute;
+  width: 100%;
+}
+
+/* global over-write for ALL sections top padding and height */
 section section {
   min-height: 100vh; 
   position: relative;
 }
 
-
-
-
-
-
-.henhouse {
-  /* border: 3px solid steelBlue;
-} */
-.hen {
-  /* background-color:PaleTurquoise ; */
-}
-
-
+/* containers that are mostly tex */
 .container.info {  
 max-width: 1000px;
+min-height: 100vh;
 }
+
+
+
+
+
+
 
 
 
