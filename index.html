@@ -13,7 +13,7 @@
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
 
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
@@ -41,13 +41,25 @@
 <div class="nav_floater">
   <div class="nav_wrapper">
     <ul class="nav">
-      <li class="projects"><a href="#project_1">work</a></li>
-      <li class="about_me"><a href="#about_me">About</a></li>
-      <li class="home"><a href="#landing">  <img id="logo_hero" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">  </a></li>
-      <li class="contact"><a href="#contact">Contact</a></li>
-      <li class="resume"><a href="#resume">Resume</a></li>
-    </ul>
+      <span class="nav_left">
+        <li class="projects"><span class="caret">|</span><a href="#projects">Work</a></li>
+        <li class="about_me"><span class="caret">|</span><a href="#about_me">About</a></li>
+      </span>
+      <span class="nav_center"><li class="home"><span class="caret">|</span><a href="#landing">Home</a></li></span>
+      <!-- <li class="home"><a href="#landing">  <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo">  </a></li> -->
+      <span class="nav_right">
+        <li class="contact"><span class="caret">|</span><a href="#contact">Contact</a></li>
+      <li class="resume"><span class="caret">|</span><a href="#resume">Resume</a></li>
+    </span>
+  </ul>
   </div>
+</div>
+
+
+
+<div id="floating_logo">
+  <a href="#landing"><img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"></a>
+<!-- <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"> -->
 </div>
 
 
@@ -60,7 +72,7 @@
 <section id="landing">
   <div class="landing_wrapper henhouse">
     <div class="logo_wrapper hen">
-      <img id="logo_hero" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
+      <img id="logo_hero_large" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
     </div>
   </div>
 </section>
@@ -69,8 +81,8 @@
 
 <section id="about_me" class="about henhouse">
   <div class="container_wrapper ">
-    <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div>
-    <div class="overlay top_shadow_clean"></div>
+    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
+    <div class="overlay top_shadow _clean"></div>
 
           <div class="container info hen">
           <h1 class="title ">Maker: builder: coder:</h1>
@@ -103,48 +115,74 @@
 </section>
 
 
-<section id="feature_1">
-  <div class="container info">
-    <h1>About Project One</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      when an unknown printer took a galley of type and scrambled it to make a type 
-      specimen book. It has survived not only five centuries, but also the leap into 
-      electronic typesetting, remaining essentially unchanged. It was popularised in 
-      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-      and more recently with desktop publishing software like Aldus PageMaker including 
-      versions of Lorem Ipsum.</p>
+<section id="projects" class="about henhouse">
+  <div class="container info hen">
+    <h1>Current Work</h1>
+    <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
+      but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
+    <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
+    <ul> Technical stuff:
+      <li>Webster Dictionairy API for definitionan and syllable lookup</li>
+      <li>Text to speach to say the word and read the definition </li>
+      <li>Text to speach gives paise with 'thumbs up' </li>
+      <li>Rendered purely with CSS</li>
+      <li>JS/jQuery controlled animations</li>
+    </ul>
+
+    <ul>User functionality:
+      <li>Choose category</li>
+      <li>Adjust word lenthg</li>
+      <li>Adjust flip speed</li>
+      <li>Adjust word change speed</li>
+      <li>Adjust narator voice</li>
+      <li>Adjust voice pitch</li>
+      <li>Adjust voice speed</li>
+      <li>Adjust search for any word</li>
+      <li>Adjust text case for readability</li>
+    </ul>
   </div>
 </section>
 
 
 
-<section id="about_1" class="about henhouse">
-  <div class="container info hen">
-  <h1>About Project One</h1>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-    when an unknown printer took a galley of type and scrambled it to make a type 
-</p>
 
-</div>
 
+
+<section id="contact" > 
+  <div class="container form">
+    <h1>Lets talk :-)</h1>  
+  <span class="caret"></span>Here's a blinking caret for you:
+    <form class="contact">
+      <label for="fname">You are...?</label>
+      <input type="text" id="fname" name="firstname" placeholder="And you are?">
+  
+      <label for="email">Your email:</label>
+      <input type="text" id="email" name="email" placeholder="Your email">
+      <label for="email_verify">Verify it...</label>
+      <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:">
+  
+      <label for="subject">And, finally...</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  </div> 
 </section>
 
 
 
-<section id="feature_2" class="about">
-
-</section>
 
 
 
 
+<section id="resume" class="about henhouse">
 
+  <div class="container_wrapper ">
+    <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div>
 
-<section id="about_2" class="about henhouse">
   <div class="container info hen">
-    <h1>About Project Two</h1>
+    <h1>Resume - PDF form</h1>
     <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
       but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
     <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
@@ -169,52 +207,8 @@
 
     </ul>
   </div>
+  </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-<section id="contact" >
-  
-  <div class="container form">
-    <h1>Lets talk :-)</h1>
-    
-  <span class="caret"></span>Here's a blinking caret for you:
-    <form class="contact">
-      <label for="fname">You are...?</label>
-      <input type="text" id="fname" name="firstname" placeholder="And you are?">
-  
-      <label for="email">Your email:</label>
-      <input type="text" id="email" name="email" placeholder="Your email">
-      <label for="email_verify">Verify it...</label>
-      <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:">
-  
-      <!-- <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select> -->
-  
-      <label for="subject">And, finally...</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-  
-      <input type="submit" value="Submit">
-  
-    </form>
-  </div> 
-
-
-
-
-</section>
-
 
 </section><!-- content_wrapper -->
 

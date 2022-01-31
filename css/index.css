@@ -1,5 +1,4 @@
-:root { font-size:16px; 
-  --timing: 0.2s;
+:root { 
      --black-20: #000000;
      --black-19: #1a1a1a;
      --black-18: #1d1d1d;
@@ -20,13 +19,32 @@
      --black-3: #e0e0e0;
      --black-2: #ebebeb;
      --black-1: #f5f5f5; /* whitesmoke */
+     --black-0: #ffffff; /* whitesmoke */
+    
+    --shadow-color: 120deg 1% 46%;  /* #bebfbe tint for landing */
+    --shadow-color: 210deg 30% 60%;  /* #eff7ff tint for about me */
+    --shadow-color: 120deg 2% 60%;  /* #f4f5f4 tint for projects */
+    --shadow-color: 60deg 28% 61%;  /* #fffff0 tint for contact */
+    --shadow-color: 0deg 0% 0%; /* no underlying shadow tint */
 
-     --nav-height: 44px;
-     --nav-background: #DCDCDC;   
-     --about-1-background: lightsteelblue;   
-     --about-2-background: lightsteelblue;   
-     --about-me-background: #dde6e9;  /*  firebrick darkRed */
-     --contact-background: #a3abb9;  /*  firebrick darkRed */
+    --shadow-elevation-low:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.04),
+      0.4px 0.8px 1.1px -1px hsl(var(--shadow-color) / 0.05),
+      0.8px 1.6px 2.2px -1.9px hsl(var(--shadow-color) / 0.06);
+    --shadow-elevation-medium:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.05),
+      0.8px 1.5px 2.1px -0.6px hsl(var(--shadow-color) / 0.05),
+      1.7px 3.4px 4.6px -1.3px hsl(var(--shadow-color) / 0.06),
+      3.9px 7.9px 10.6px -1.9px hsl(var(--shadow-color) / 0.07);
+    --shadow-elevation-high:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.04),
+      1.1px 2.2px 3px -0.3px hsl(var(--shadow-color) / 0.05),
+      1.9px 3.8px 5.1px -0.6px hsl(var(--shadow-color) / 0.05),
+      2.9px 5.8px 7.8px -0.8px hsl(var(--shadow-color) / 0.05),
+      4.4px 8.9px 12px -1.1px hsl(var(--shadow-color) / 0.06),
+      6.7px 13.3px 18px -1.4px hsl(var(--shadow-color) / 0.06),
+      9.9px 19.7px 26.6px -1.7px hsl(var(--shadow-color) / 0.06),
+      14.3px 28.5px 38.5px -1.9px hsl(var(--shadow-color) / 0.07);
 
  }
 
@@ -35,25 +53,21 @@ html, body {overflow-x: hidden; }
 /* gives padding and border from inside */
 *, *::before, *::after { box-sizing: border-box; }
 /* what is this magic?!?!?! */
-html {
-  scroll-padding-top: 34px; /* your overlapping header/div height */
-}
+/* your overlapping header/div height */
+/* html { scroll-padding-top: 100px; } */
 
 body { 
+  color: #343434;
   display:flex;
   flex-direction: column;
   align-items: center;
-  
-  color: #343434;
-  font-size: 20px;
-  letter-spacing: 1px;
   /* font-family: 'Azeret Mono', monospace; */
   /* font-family: 'Playfair Display', serif; */
   /* font-family: 'Cormorant Infant', serif; */
   font-family: 'Bitter', serif;
   font-weight: 200;
   width: 100%; /*  calc(100vw - (100vw - 100%));  */
-  background-color: LemonChiffon;
+
 }
 
 
@@ -108,9 +122,12 @@ body {
 
 
 
-
-
-
+.subtle-box {
+  box-shadow: var(--shadow-elevation-low);
+}
+.in-your-face-box {
+  box-shadow: var(--shadow-elevation-high);
+}
 
 
 
@@ -120,59 +137,97 @@ body {
 .nav_floater {
   position: fixed;
   top: 50px;
-  z-index: 9999;    
+  z-index: 9999;  
 }
 
 .nav_wrapper {
-  height: 25px;
-  width: fit-content;
-  background: whitesmoke;
-  border-radius: 20px;
+  background-color: var(--black-18); /*  whitesmoke  */
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   z-index: 999;
-  padding:3px 10px 0px 10px;
+  border: 1px solid var(--black-3);
+  border-top: 4px solid var(--black-3);
+  box-shadow: var(--shadow-elevation-high);
 } 
 
 ul.nav {
   display:flex;
-  flex-direction: row;
-  align-content: center; 
-  justify-content: center; 
   list-style-type: none;
-  padding-left:0px;
+  padding:5px 20px;
   margin-top:0px;
 }
 
 ul.nav li {
+  font-size: 12px;
+  letter-spacing: 1px;
   font-family: 'Azeret Mono', monospace;
-  color: dimgray;
-  padding-top: 0px;
-  margin: 0px 15px; 
+  font-weight: 100;
+  padding-right: 13px; /*  li spacing */
+  display:inline;
 }
 
 ul.nav li a, ul.nav li a:visited {
-  color: dimgray;
+  color: rgb(50, 200, 50);
   text-decoration: none;
 }
 
+ul.nav li:hover > .caret{
+  animation: blink 0.5s linear infinite alternate;
+  color: rgba(0, 255, 0, 1.0);
+}
 ul.nav li a:hover {
-  color: darkred;
+  color: rgb(0, 255, 0);
+  font-weight: 200;
 }
 
-ul.nav li.contact  {
-margin-left:0px;
+ul.nav span.nav_left, ul.nav span.nav_center, ul.nav span.nav_right{
+line-height: 18px;
 }
 
-li.home a {
-  margin: 0px 0px;
-  position: relative;
-  top: -40px;
+
+span.caret {
+  color:white; 
+  margin-left: 0;
+  opacity: 0;
 }
 
-li.home img#logo_hero {
-  max-width: 80vw;
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+#floating_logo {
+  position: fixed;
+  top: 16px;
+  width:100px;
+  z-index: 9999;  
+}
+#floating_logo img#logo_hero {
   width: 100px;
+  animation: spin 10s linear infinite;
+  /*Set our animation play state to paused initially */
+  animation-play-state: paused; 
 }
 
+
+
+
+img#logo_hero_large {
+  animation: spin 10s linear infinite;
+  /*Set our animation play state to paused initially */
+  animation-play-state: paused; 
+}
+img#logo_hero_large:hover {
+  animation: spin 10s linear infinite;
+  /*Set our animation play state to paused initially */
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  100% {transform: rotate(1turn); }
+}
 
 
 
@@ -203,19 +258,10 @@ li.home img#logo_hero {
   align-items: center; 
   align-content: center; 
   justify-content: center; 
-  /* border: 2px solid green; */
   height:100vh;
   background-image: url("/images/grunge_border.png") ;
   background-size: 100% 100%;
-  background-position: top var(--nav-height) right 0px;
-}
-
-div.logo_wrapper {
-  
-}
-img#logo_hero {
-
-  max-width: 80vw;
+  /* background-position: top var(--nav-height) right 0px; */
 }
 
 
@@ -230,39 +276,31 @@ img#logo_hero {
 
 
 
-/* =========     F E A T U R E  1      ============ */
-/* =========     F E A T U R E  1      ============ */
-/* =========     F E A T U R E  1      ============ */
- #feature_1 {
-  background: dimgray;
-  background-image: url("/images/tubes_off.png");
+
+/* =========     P R O J E C T S      ============ */
+/* =========     P R O J E C T S      ============ */
+/* =========     P R O J E C T S      ============ */
+ #projects {
+  background: whitesmoke;
+  background-image: none;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border:3px green
 
  }
- #about_1 {
-  background: darkGray;
 
- }
-
-/* =========     F E A T U R E  2      ============ */
-/* =========     F E A T U R E  2      ============ */
-/* =========     F E A T U R E  2      ============ */
- #feature_2 {
-  background: MediumAquamarine;
-  background-image: url("/images/words-satisfied.png");
+/* =========     R E S U M E      ============ */
+/* =========     R E S U M E      ============ */
+/* =========     R E S U M E      ============ */
+ #resume {
+  background: GhostWhite;
+  /* background-image: url("/images/words-satisfied.png");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  border:3px navy;
-
+  background-repeat: no-repeat; */
  }
- #about_2 {
-background: lightBlue;
- 
-}
+
 
 
 
@@ -270,11 +308,12 @@ background: lightBlue;
 /* =========          M E              ============ */
 /* =========          M E              ============ */
  #about_me {
-background: var(--about-me-background); 
-background-image: url("/images/shutterstock_232033585.jpg");
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
+  /* background: AliceBlue;  */
+  /* background-image: url("/images/gillouche.png"); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
  }
 
 section#about_me .container.info ul{  
@@ -293,7 +332,7 @@ section#about_me .container.info {
 section#about_me .container_wrapper{
   position:relative;
   width: 100%;
-  background-color: var(--black-8);
+/* overlay image here... */
   }
   .overlay {
   position: absolute;
@@ -319,11 +358,11 @@ section#about_me .container_wrapper{
   .right_stripes {
     background: repeating-linear-gradient(
     70deg,
-    var(--black-6),
-    var(--black-6) 1px,
+    var(--black-4),
+    var(--black-4) 1px,
     #ffffff00 2px,
     #ffffff00 40px,
-    var(--black-6) 42px
+    var(--black-4) 42px
   );
   opacity: 0.1;
   }
@@ -332,11 +371,11 @@ section#about_me .container_wrapper{
   .left_stripes {
     background: repeating-linear-gradient(
     110deg,
-    var(--black-6),
-    var(--black-6) 1px,
+    var(--black-4),
+    var(--black-4) 1px,
     #ffffff00 2px,
     #ffffff00 40px,
-    var(--black-6) 42px
+    var(--black-4) 42px
   );
   
   }
@@ -371,7 +410,7 @@ section#about_me .container_wrapper{
 #contact {
   display:flex;
   justify-content: center;
-  background: var(--contact-background);
+  background: ivory;
 }
 section.contact_form {
   padding: 50px;
@@ -415,7 +454,7 @@ input[type=text], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #991225;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -424,11 +463,16 @@ input[type=submit] {
   display:block;
   width: 50%;
   margin: 0px auto;
+
+  -webkit-box-shadow:0px 0px 47px 4px rgba(45,255,196,0.9);
+  -moz-box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
+  box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
+
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #4e0f14;
 }
 
 /* Add a background color and some padding around the form */
@@ -451,23 +495,11 @@ padding-top:10px;
 
 
 
-span.caret {
-  /* color:white; */
-  /*border:1px solid white;*/
-  margin-left: 0;
-}
-span.caret:after {
-  content: ' > ';
-  /* color:white; */
-  opacity: 0;
-  animation: blink 0.5s linear infinite alternate;
-  padding-right: 5px;
-	padding-left: 12px;
-}
-@keyframes blink {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+
+
+
+
+
 
 
 
