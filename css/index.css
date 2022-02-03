@@ -20,6 +20,12 @@
      --black-2: #ebebeb;
      --black-1: #f5f5f5; /* whitesmoke */
      --black-0: #ffffff; /* whitesmoke */
+
+    --nav-backround: var(--black-1);  /*  #8c9aa0  */
+    --nav-text: var(--black-10);  /*  #8c9aa0  */
+    --nav-text-hover: red;  /*  #8c9aa0  */
+
+    --cursor_show: "crosshair"; // default  none
     
     --shadow-color: 120deg 1% 46%;  /* #bebfbe tint for landing */
     --shadow-color: 210deg 30% 60%;  /* #eff7ff tint for about me */
@@ -68,10 +74,118 @@ body {
   font-weight: 200;
   width: 100%; /*  calc(100vw - (100vw - 100%));  */
 
+  cursor: var(--cursor_show);
 }
 
 
 
+
+
+
+
+
+ /* =========     C U R S O R      ============ */
+ /* =========     C U R S O R      ============ */
+ /* =========     C U R S O R      ============ */
+/* The cursor is wrapped in a containter as the js makes it visible as soon as it moves
+inner .cursor is visible on hover via js */
+ .cursor_container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 50ms;
+  transition-timing-function: ease-out;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+ }
+ .cursor{
+  position: absolute;
+  font-family: 'Bitter', serif;
+  font-weight: 100;
+  font-size: 60px;
+  line-height: 30px; /* this centers it  */
+  z-index: 99999;
+  transform: rotate(90deg);
+}
+.cursor::before{
+  position: relative;
+  content: "{";
+  right:10px;
+  color: red; 
+}
+.cursor::after{
+  position: relative;
+  content: "}";
+  left:10px;
+  color: red; 
+}
+
+.cursor_main {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 8px solid; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-color: #44ffee; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  /* border: 8px solid rgba(50, 50, 50, 1.0); switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-radius: 50%;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 99999;
+}
+
+
+
+
+
+
+
+
+
+.curs or_main::after {
+  position: absolute; 
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 8px solid; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-color: #44ffee; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  opacity: 0.5;
+  anima tion: cursorAnim2 .5s infinite alternate;
+}
+
+
+
+@keyframes cursorAnim2 {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(.8);
+  }
+}
+
+
+
+
+.cursor_caret{
+  position: absolute;
+  font-family: 'Bitter', serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 30px; /* this centers it  */
+  color: lime;
+  z-index: 99999;
+}
+
+img {
+  cursor: var(--cursor_show);
+}
 
 
 
@@ -134,55 +248,187 @@ body {
 /* =========  N A V I G A T I O N  ============ */
 /* =========  N A V I G A T I O N  ============ */
 /* =========  N A V I G A T I O N  ============ */
-.nav_floater {
+#nav_floater {
   position: fixed;
   top: 50px;
   z-index: 9999;  
+  cursor: var(--cursor_show);
+  
 }
 
-.nav_wrapper {
-  background-color: var(--black-18); /*  whitesmoke  */
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+
+#nav_wrapper {
+  background-color: var(--nav-backround) ; /*  #8c9aa0  */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-radius: 5px;
   z-index: 999;
-  border: 1px solid var(--black-3);
-  border-top: 4px solid var(--black-3);
-  box-shadow: var(--shadow-elevation-high);
+  /* border: 1px solid var(--black-3); */
+  /* border-top: 4px solid var(--black-3); */
+  /* box-shadow: var(--shadow-elevation-high); */
 } 
 
-ul.nav {
+ul#nav {
   display:flex;
   list-style-type: none;
   padding:5px 20px;
   margin-top:0px;
 }
 
-ul.nav li {
+ul#nav li {
   font-size: 12px;
-  letter-spacing: 1px;
-  font-family: 'Azeret Mono', monospace;
-  font-weight: 100;
+  letter-spacing: 3px;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
   padding-right: 13px; /*  li spacing */
   display:inline;
 }
 
-ul.nav li a, ul.nav li a:visited {
-  color: rgb(50, 200, 50);
+ul#nav li a, ul#nav li a:visited {
+  color: var(--nav-text);
   text-decoration: none;
 }
 
-ul.nav li:hover > .caret{
-  animation: blink 0.5s linear infinite alternate;
-  color: rgba(0, 255, 0, 1.0);
-}
-ul.nav li a:hover {
-  color: rgb(0, 255, 0);
-  font-weight: 200;
+ul#nav li a:hover {
+  color: var(--nav-text-hover);
+  cursor: var(--cursor_show);
 }
 
-ul.nav span.nav_left, ul.nav span.nav_center, ul.nav span.nav_right{
+ul#nav span#nav_left, ul#nav span#nav_center, ul#nav span#nav_right{
 line-height: 18px;
 }
+
+#nav_center {
+  text-align: center;
+}
+#nav_center li.home{
+  padding-right:0px
+}
+
+
+
+
+
+
+/* for the submenu */
+span#nav_left {
+  display:flex;
+}
+/* The width here is a hack, make it work without it  */
+span#nav_left li.work{
+  position: relative;
+  width: 50px; 
+  overflow: visible;
+}
+
+li.tubes, li.words, li.logos, li.products {
+
+}
+
+ul#nav li  ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  align-content: center; 
+  justify-content: center; 
+  z-index: 99999;
+margin-top:0px;
+back ground-color: lime;
+white-space: nowrap; /* no wrapping */
+left: 50%; /* horizontal center */
+transform: translateX(-50%); /* horizontal center */
+
+}
+
+ul#nav li  ul li::before {
+  cont ent: "-";
+}
+
+ul#nav li  ul li {
+  padding-left: 10px;
+  margin: 0px 0 5px 5px;
+  border-radius: 3px;
+  background-color: var(--nav-backround) ; /*  #8c9aa0  */
+
+}
+ul#nav li  ul li:first-child {
+  margin-top:14px
+}
+
+
+
+/* for rotation */
+ul#nav li  ul li:nth-child(1)  {
+  position: relative;
+  background: #ccc;
+  transform-origin: 0px 0px;
+  transform: rotate(5deg);
+  a nimation: rotate 1s linear 1 forwards;
+}
+
+ul#nav li  ul li:nth-child(2)  {
+  position: relative;
+  background: #ccc;
+  transform-origin: 0px -5px;
+  transform: rotate(10deg);
+  a nimation: rotate 1s linear 1 forwards;
+}
+ul#nav li  ul li:nth-child(3)  {
+  position: relative;
+  background: #ccc;
+  transform-origin: 0px -25px;
+  transform: rotate(15deg);
+  a nimation: rotate 1s linear 1 forwards;
+}
+ul#nav li  ul li:nth-child(4)  {
+  position: relative;
+  background: #ccc;
+  transform-origin: 0px -40px;
+  transform: rotate(20deg);
+  a nimation: rotate 1s linear 1 forwards;
+}
+
+
+
+
+
+
+
+
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 span.caret {
@@ -214,21 +460,25 @@ span.caret {
 
 
 
+
+
+
+
+
+
+/* 
 img#logo_hero_large {
   animation: spin 10s linear infinite;
-  /*Set our animation play state to paused initially */
   animation-play-state: paused; 
 }
 img#logo_hero_large:hover {
   animation: spin 10s linear infinite;
-  /*Set our animation play state to paused initially */
   animation-play-state: running;
 }
-
 @keyframes spin {
   100% {transform: rotate(1turn); }
 }
-
+ */
 
 
 
@@ -244,11 +494,11 @@ img#logo_hero_large:hover {
 /* ============  L A N D I N G   ============== */
 /* ============  L A N D I N G   ============== */
 #landing {
-  background: gray;
-  background-image: url("/images/white_grunge.jpg");
+  background: whitesmoke;
+  /* background-image: url("/images/white_grunge.jpg");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .landing_wrapper {
@@ -259,12 +509,17 @@ img#logo_hero_large:hover {
   align-content: center; 
   justify-content: center; 
   height:100vh;
-  background-image: url("/images/grunge_border.png") ;
-  background-size: 100% 100%;
+  /* background-image: url("/images/grunge_border.png") ; */
+  /* background-size: 100% 100%; */
   /* background-position: top var(--nav-height) right 0px; */
 }
 
-
+div#intro.role {
+  align-self: flex-end;
+  margin-bottom: 70px;
+  text-align: center;
+  opacity: 1;
+}
 
 
 
@@ -290,6 +545,44 @@ img#logo_hero_large:hover {
 
  }
 
+
+
+#words, #logos, #products {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  align-content: center; 
+  justify-content: center; 
+  min-height:100vh;
+}
+
+#words {
+background-color: lemonchiffon;
+}
+#logos {
+background: lightcyan;
+}
+
+#products{ 
+background-color: honeydew;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========     R E S U M E      ============ */
 /* =========     R E S U M E      ============ */
 /* =========     R E S U M E      ============ */
@@ -307,24 +600,25 @@ img#logo_hero_large:hover {
 /* =========          M E              ============ */
 /* =========          M E              ============ */
 /* =========          M E              ============ */
- #about_me {
-  /* background: AliceBlue;  */
+#about_me {
+  background: var(--black-14); 
+  color: var(--black-4);
   /* background-image: url("/images/gillouche.png"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
- }
-
-section#about_me .container.info ul{  
-  color: indianred;
+  
+  }
+  
+  section#about_me .container.info ul{  
+  color: var(--black-4);
   text-decoration: none;
   }
-section#about_me .container.info {  
+  section#about_me .container.info {  
   max-width: 1000px;
   position: relative;
   }
-
+  
 
 /* =========  STRIPES ============ */
 /* =========     &    ============ */
@@ -407,24 +701,24 @@ section#about_me .container_wrapper{
 /* =========      C O N T A C T       ============ */
 /* =========      C O N T A C T       ============ */
 /* =========      C O N T A C T       ============ */
-#contact {
-  display:flex;
-  justify-content: center;
-  background: ivory;
+section#contact * {
+  cursor: var(--cursor_show);
 }
-section.contact_form {
-  padding: 50px;
+section#contact {
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+display:flex;
+justify-content: center;
+/* cursor: none; */
 }
-
 
 .container {
-  padding: 50px;
-  margin: 0px auto;
+padding: 80px 50px;
+margin: 0px auto;
 }
 
-
 .container.form {
-padding: 50px;
+/* padding: 50px; */
 max-width: 500px;
 }
 
@@ -434,59 +728,120 @@ max-width: 500px;
 /* =========      generic starter form       ============ */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-  font-size: 20px;
-  letter-spacing: 1px;
-  /* font-family: 'Azeret Mono', monospace; */
-  /* font-family: 'Playfair Display', serif; */
-  /* font-family: 'Cormorant Infant', serif; */
-  font-family: 'Bitter', serif;
-  font-weight: 200;
-  font-style: italic;
-  width: 100%; /* Full width */
-  padding: 10px; /* Some padding */ 
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 30px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+font-family: 'Courier Prime', monospace;
+font-weight: 400;
+width: 100%; /* Full width */
+border: 1px solid transparent; /* Gray border */
+border-radius: 0px; /* Rounded borders */
+box-sizing: border-box; /* Make sure that padding and width stays in place */
+margin-top: 6px; /* Add a top margin */
+margin-bottom: 30px; /* Bottom margin */
+resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+/* cursor: none; */
 }
+
+textarea {
+height: 150px;
+  }
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #991225;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display:block;
-  width: 50%;
-  margin: 0px auto;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+display:block;
+width: 50%;
+/* margin: 0px auto; */
 
-  -webkit-box-shadow:0px 0px 47px 4px rgba(45,255,196,0.9);
-  -moz-box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
-  box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
+/* -webkit-box-shadow:0px 0px 47px 4px rgba(45,255,196,0.9);
+-moz-box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
+box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9); */
 
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-  background-color: #4e0f14;
+background-color: #4e0f14;
 }
 
-/* Add a background color and some padding around the form */
-.contact label {
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-family: 'Cormorant Infant', serif;
-  font-weight: 400;
-} 
+.container.form label{
+  font-size: 12px;
+}
 
 form.contact {
 padding-top:10px;
+}
 
-} 
+.container.form label{
+  color: gray;
+  /* cursor: none; */
+}
+
+
+/* =========      form COLORS ONLY       ============ */
+ 
+#contact {
+background: var(--black-18);
+}
+.container.form {
+  color: gray;
+}
+.container.form h1{
+  color: whiteSmoke;
+}
+.container.form label{
+  color: gray;
+  cursor: var(--cursor_show);
+}
+.container.form label::before{
+  content: "{"
+}
+.container.form label::after{
+  content: "}"
+}
+
+/* =========      generic starter form       ============ */
+/* =========      generic starter form       ============ */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+/* border: 1px solid lightblue;  */
+border: 0px solid transparent; 
+background: var(--black-18);
+color: lime;
+}
+
+input[type=text]:hover, select:hover, textarea:hover {
+  border: 0px solid transparent; /* Gray border */
+  background: var(--black-11);
+
+  }
+
+
+  input[type=text]:focus, select:focus, textarea:focus {
+    border: 1px solid transparent; 
+    background: var(--black-11);
+    }
+  /* input[type=text]:active, select:active, textarea:active {
+    border: 1px solid transparent; 
+    background: var(--black-10);
+    } */
+
+
+
+
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+background-color: white;
+color: var(--black-18);
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+background-color: limeGreen;
+color: white;
+}
 
 
 
