@@ -10,6 +10,7 @@
   
   <!-- Styles -->
   <link href="css/index.css" rel="stylesheet">
+  <link href="css/tubes.css" rel="stylesheet">
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,28 +29,40 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  
+
   <script src="js/index.js" defer></script>
 </head>
 <body>
 
 
-
 <!-- navigation -->
-<div class="nav_floater">
-  <div class="nav_wrapper">
-    <ul class="nav">
-      <span class="nav_left">
-        <li class="projects"><span class="caret">|</span><a href="#projects">Work</a></li>
-        <li class="about_me"><span class="caret">|</span><a href="#about_me">About</a></li>
+<div id="nav_floater" class="nav_floater">
+  <div id="nav_wrapper" class="nav_wrapper">
+    <ul id="nav" class="nav">
+      <span id="nav_left" class="nav_left">
+        
+        <li class="work">  <a href="#work">Work</a>
+          <ul>
+            <li class="tubes"><a href="#tubes">Tubes</a></li>
+            <li class="words"><a href="#words">Words</a></li>
+            <li class="logos"><a href="#logos">Logos</a></li>
+            <li class="products"><a href="#products">Products</a></li>
+          </ul>  
+      </li>
+
+
+        <li class="about_me"><a href="#about_me">About</a></li>
       </span>
-      <span class="nav_center"><li class="home"><span class="caret">|</span><a href="#landing">Home</a></li></span>
+      <span id="nav_center"><li class="home"><a href="#landing">Home</a></li></span>
       <!-- <li class="home"><a href="#landing">  <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo">  </a></li> -->
-      <span class="nav_right">
-        <li class="contact"><span class="caret">|</span><a href="#contact">Contact</a></li>
-      <li class="resume"><span class="caret">|</span><a href="#resume">Resume</a></li>
+      <span id="nav_right" class="nav_right">
+        <li class="contact"><a href="#contact">Contact</a></li>
+      <li class="resume"><a href="#resume">Resume</a></li>
     </span>
   </ul>
   </div>
@@ -57,32 +70,259 @@
 
 
 
+
+
+
+
+
+
+<!-- turn off for now... -->
 <div id="floating_logo">
-  <a href="#landing"><img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"></a>
+  <a href="#landing"> <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"></a>
 <!-- <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"> -->
 </div>
 
 
 
-<section id="content"> <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
+
+<section id="content" class="scrollContent" > <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
 
 
 
 
 <section id="landing">
   <div class="landing_wrapper henhouse">
-    <div class="logo_wrapper hen">
-      <img id="logo_hero_large" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
-    </div>
+    <!-- <div id="floating_logo_test" class="loo_wrapper he n">
+      <img id="logo_hero_ large" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
+    </div> -->
+
+<div id="intro" class="role">
+<h1>Front End Designer/Dev With a Penchant for UX/UI</h1>
+<p>Obsessed with pixel perfect rendering and a smooth engaging user experience</p>
+</div>
+
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="tubes">
+  <div class="tubes_wrapper henhouse">
+
+
+
+    
+
+
+  
+    <audio>
+      <audio preload="auto" id="sound-1" src="audio/Glass_Clink_6.m4a"> </audio>
+      <audio preload="auto" id="sound-2" src="audio/Glass_Clink_7.m4a"> </audio>
+      <audio preload="auto" id="sound-3" src="audio/Glass_Clink_8.m4a"> </audio>
+      <audio preload="auto" id="sound-4" src="audio/Glass_Clink_9.m4a"> </audio>
+      <audio preload="auto" id="sound-5" src="audio/Glass_Clink_10.m4a"> </audio>
+     </audio>
+     
+     
+     
+     
+       <div class="tube_container_background">
+         <!--   <div class="filler">Use me for background effects?</div> -->
+         <div class="smoke_source vapor">
+           <!--  .vapor to activate -->
+           <span style="--i:9;"></span>
+           <span style="--i:5;"></span>
+           <span style="--i:15;"></span>
+           <span style="--i:4;"></span>
+           <span style="--i:16;"></span>
+           <span style="--i:13;"></span>
+           <span style="--i:2;"></span>
+           <span style="--i:6;"></span>
+           <span style="--i:18;"></span>
+           <span style="--i:10;"></span>
+           <span style="--i:17;"></span>
+           <span style="--i:1;"></span>
+           <span style="--i:19;"></span>
+           <span style="--i:11;"></span>
+           <span style="--i:20;"></span>
+           <span style="--i:3;"></span>
+           <span style="--i:14;"></span>
+           <span style="--i:8;"></span>
+           <span style="--i:12;"></span>
+           <span style="--i:7;"></span>
+         </div><!-- end Vapor -->
+         <div class="nixie_container ">
+           <div id="tube_1" class="nixie_tube ">
+             <div class="glass">
+     
+               <!--  HONEYCOMB SVG ELEMENT  style="display:none" -->
+               <svg class="honeycomb">
+                 <pattern id="pattern-hex" x="0" y="0" width="12.2" height="19" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
+                   <g id="hexagon">
+                     <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3
+           c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1
+           L168-127.1z" />
+                     <path d="M112-222.5c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2l-53.4,30.5
+           c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5
+           C111-222.4,111.5-222.5,112-222.5L112-222.5z" />
+                     <path d="M168-317.8c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-191
+           c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5
+           C167-317.7,167.5-317.8,168-317.8L168-317.8z" />
+                   </g>
+                 </pattern>
+                 <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex)" />
+               </svg>
+     
+               <div class="nipple"></div>
+               <div class="nixie_glass"></div>
+               <div class="nixie_glass_left"></div>
+               <div class="nixie_glass_left_front"></div>
+               <div class="nixie_glass_right_front"></div>
+               <!-- <div class="nixie_gla ss_right"></div> <!-- no real effect -->
+               <div class="top_reflection "></div>
+               <!--           <div class="honeycomb_1"></div>             -->
+               <div class="digits ">
+                 <div class="digit no_11">!</div>
+                 <div class="digit no_10">:</div>
+                 <div class="digit no_9 ">9</div>
+                 <div class="digit no_8 ">8</div>
+                 <div class="digit no_7 ">7</div>
+                 <div class="digit no_6 ">6</div>
+                 <div class="digit no_5 ">5</div>
+                 <div class="digit no_4 ">4</div>
+                 <div class="digit no_3 ">3</div>
+                 <div class="digit no_2 ">2</div>
+                 <div class="digit no_1 ">1</div>
+                 <div class="digit no_0 ">0</div>
+               </div>
+               <div class="prongs">
+                 <div></div>
+                 <div></div>
+               </div>
+             </div> <!-- end of glass  -->
+             <div class="base">
+               <!-- gradiant w LOW side reflection (for left-most)-->
+               <div class="base_gradiant"></div> <!-- gradiant w high side reflection-->
+               <div class="base_top ">
+                 <div class="base_top_depth"></div> <!-- rounded side shading -->
+               </div>
+               <div class="base_glow "></div> <!-- reflection of lit tube -->
+             </div>
+           </div><!-- end Nixie Tube -->
+         </div><!-- end Nixie container -->
+     
+       </div><!-- end tube_container_background -->
+     
+       <div class="cabinet">
+         <div id="info" class="info  ">.</div>
+         <button id="power" class="single material-icons" data-content="power_settings_new">
+           <!-- data-content for pseudo element -->
+           <span class="material-icons">power_settings_new</span>
+         </button>
+         <div class="buttons">
+           <div id="cycle_button_wrapper" class="button_with_controls">
+             <button id="cycle" class="group_1" data-content="Cycle">Cycle</button>
+             <div id="cycle_slider_container">
+               <input type="range" min="50" max="1000" value="100" class="slider" id="cycle_speed">
+             </div><!-- cycle_slider_container -->
+           </div><!-- cycle_button_container -->
+     
+           <div id="clock_button_wrapper" class="button_with_controls">
+             <button id="clock" class="group_1" data-content="Clock">Clock</button>
+             <div id="military_slider_container"><span class="h12"> 12 </span>
+               <label class="switch">
+                 <input type="checkbox" id="military_time_switch">
+                 <span class="slip round"> </span>
+               </label><span class="h24 opacity_5"> 24 </span>
+             </div><!-- military slider -->
+           </div><!-- button_with_controls -->
+     
+           <button id="mayhem" class="group_1" data-content="Mayhem">Mayhem</button>
+         </div>
+       </div> <!-- end Cabinet -->
+     
+       <!-- Blue Screen Of Death -->
+       <div id="bsog">
+         <div class="warning skitter">Windows</div>
+         <ul class="skitter">An error has occured. </ul>
+         <li class="skitter">Press any key to terminate the application</li>
+         <li class="skitter">Press CTRL+ALT+DEL agian to restart your computer. You will lose any unsaved data in all applications</li>
+         <p class="skitter">Error: OE : 016F : BFF9B3D4</p>
+         <p class="skitter">Continue? Y ? N <span class="blinker">__</span></p>
+       </div>
+
+
+
+
+
+
+
+
+
+  </div><!-- end of tubes_wrapper -->
+</section><!-- end of tubes section -->
+
+
+
+
+
+
+
+
+
+
+<section id="words">
+  <div class="words_wrapper henhouse">
+Words go here
+  </div>
+</section>
+
+<section id="logos">
+  <div class="logos_wrapper henhouse">
+Assorted logos and design
+  </div>
+</section>
+
+<section id="products">
+  <div class="products_wrapper henhouse">
+Product design showcase
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <section id="about_me" class="about henhouse">
   <div class="container_wrapper ">
     <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
-    <div class="overlay top_shadow _clean"></div>
+    <!-- <div class="overlay top_shadow _clean"></div> -->
+
 
           <div class="container info hen">
           <h1 class="title ">Maker: builder: coder:</h1>
@@ -90,15 +330,18 @@
           <p class="copy ">Experiences in eCommerce from being a product designer/store owner/store coder to customizing</p>
             <div >
               <ul> Core Skills
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-                <li>Jquery</li>
-                <li>Photoshop</li>
-                <li>Illustrator</li>
+                <li><ion-icon name="logo-html5"></ion-icon>HTML</li>
+                <li><ion-icon name="logo-css3"></ion-icon> CSS</li>
+                <li><ion-icon name="logo-javascript"></ion-icon>Javascript</li>
+                <li><ion-icon name="logo-codepen"></ion-icon>Jquery  </li>
+                <li> <ion-icon name="logo-instagram"></ion-icon>Photoshop </li>
+                <li><ion-icon name="logo-github"></ion-icon>Illustrator</li>
+
               </ul>
           </div>
-          <div>
+          <div class="container info hen" >
+            <h1 class="title ">Maker: builder: coder:</h1>
+            <p class="subtitle ">Shopify Customization</p>
             <p class="font_400" >Experiences in eCommerce from being a product designer/store owner/store coder to customizing </p>
               <ul> Very comfortable in: 
                 <li>Digital Illustration</li>
@@ -111,11 +354,13 @@
 
           </div>
           </div>
-  </div>
-</section>
+        </div>
+      </section>
+      
+      
+      
+      <section id="projects" class="about henhouse">
 
-
-<section id="projects" class="about henhouse">
   <div class="container info hen">
     <h1>Current Work</h1>
     <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
@@ -162,9 +407,9 @@
       <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:">
   
       <label for="subject">And, finally...</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
   
-      <input type="submit" value="Submit">
+      <input id="submit" type="submit" value="Submit">
   
     </form>
   </div> 
@@ -208,13 +453,38 @@
     </ul>
   </div>
   </div>
+
 </section>
+
+
+
+
+
+
 
 </section><!-- content_wrapper -->
 
 
+<div class="cursor_container">
+<div class="cursor"></div>
+<div class="cursor_main"></div>
+<div class="cursor_caret">|</div>
+</div>
 
 
+<!-- too many dependancies... look into alternatives -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script> 
+
+
+<script src="js/tubes.js"></script>
 
 
 </body>
+
+</html>
