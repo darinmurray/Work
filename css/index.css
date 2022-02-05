@@ -25,32 +25,7 @@
     --nav-text: var(--black-10);  /*  #8c9aa0  */
     --nav-text-hover: red;  /*  #8c9aa0  */
 
-    --cursor_show: "crosshair"; // default  none
-    
-    --shadow-color: 120deg 1% 46%;  /* #bebfbe tint for landing */
-    --shadow-color: 210deg 30% 60%;  /* #eff7ff tint for about me */
-    --shadow-color: 120deg 2% 60%;  /* #f4f5f4 tint for projects */
-    --shadow-color: 60deg 28% 61%;  /* #fffff0 tint for contact */
-    --shadow-color: 0deg 0% 0%; /* no underlying shadow tint */
-
-    --shadow-elevation-low:
-      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.04),
-      0.4px 0.8px 1.1px -1px hsl(var(--shadow-color) / 0.05),
-      0.8px 1.6px 2.2px -1.9px hsl(var(--shadow-color) / 0.06);
-    --shadow-elevation-medium:
-      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.05),
-      0.8px 1.5px 2.1px -0.6px hsl(var(--shadow-color) / 0.05),
-      1.7px 3.4px 4.6px -1.3px hsl(var(--shadow-color) / 0.06),
-      3.9px 7.9px 10.6px -1.9px hsl(var(--shadow-color) / 0.07);
-    --shadow-elevation-high:
-      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.04),
-      1.1px 2.2px 3px -0.3px hsl(var(--shadow-color) / 0.05),
-      1.9px 3.8px 5.1px -0.6px hsl(var(--shadow-color) / 0.05),
-      2.9px 5.8px 7.8px -0.8px hsl(var(--shadow-color) / 0.05),
-      4.4px 8.9px 12px -1.1px hsl(var(--shadow-color) / 0.06),
-      6.7px 13.3px 18px -1.4px hsl(var(--shadow-color) / 0.06),
-      9.9px 19.7px 26.6px -1.7px hsl(var(--shadow-color) / 0.06),
-      14.3px 28.5px 38.5px -1.9px hsl(var(--shadow-color) / 0.07);
+    --cursor_show: none;  /* default  none */
 
  }
 
@@ -72,7 +47,7 @@ body {
   /* font-family: 'Cormorant Infant', serif; */
   font-family: 'Bitter', serif;
   font-weight: 200;
-  width: 100%; /*  calc(100vw - (100vw - 100%));  */
+  width: 100vw; /*  calc(100vw - (100vw - 100%));  */
 
   cursor: var(--cursor_show);
 }
@@ -102,25 +77,26 @@ inner .cursor is visible on hover via js */
   height: 80px;
   pointer-events: none;
  }
- .cursor{
+ .cursor_braces{
   position: absolute;
   font-family: 'Bitter', serif;
   font-weight: 100;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 30px; /* this centers it  */
   z-index: 99999;
   transform: rotate(90deg);
+
 }
-.cursor::before{
+.cursor_braces::before{
   position: relative;
   content: "{";
-  right:10px;
+  right:5px;
   color: red; 
 }
-.cursor::after{
+.cursor_braces::after{
   position: relative;
   content: "}";
-  left:10px;
+  left:5px;
   color: red; 
 }
 
@@ -138,14 +114,9 @@ inner .cursor is visible on hover via js */
 }
 
 
-
-
-
-
-
-
-
-.curs or_main::after {
+/* pretty cool effect, but a little too much for my taste. 
+Perhaps contextually useful */
+. cursor_main::after {
   position: absolute; 
   content: "";
   width: 48px;
@@ -153,12 +124,11 @@ inner .cursor is visible on hover via js */
   border: 8px solid; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
   border-color: #44ffee; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
   border-radius: 50%;
-  top: -10px;
-  left: -10px;
+  top: -8px;
+  left: -8px;
   opacity: 0.5;
-  anima tion: cursorAnim2 .5s infinite alternate;
+  animation: cursorAnim2 1s infinite alternate;
 }
-
 
 
 @keyframes cursorAnim2 {
@@ -245,45 +215,43 @@ img {
 
 
 
+
+
+
+
 /* =========  N A V I G A T I O N  ============ */
 /* =========  N A V I G A T I O N  ============ */
 /* =========  N A V I G A T I O N  ============ */
 #nav_floater {
   position: fixed;
   top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9999;  
   cursor: var(--cursor_show);
   
+  /* border: 1px dotted green; */
 }
-
-
 #nav_wrapper {
   background-color: var(--nav-backround) ; /*  #8c9aa0  */
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  /* background-color: orange ;  #8c9aa0 behind the li's */
   border-radius: 5px;
   z-index: 999;
-  /* border: 1px solid var(--black-3); */
-  /* border-top: 4px solid var(--black-3); */
-  /* box-shadow: var(--shadow-elevation-high); */
+  padding: 0px 10px;
 } 
-
 ul#nav {
   display:flex;
   list-style-type: none;
-  padding:5px 20px;
-  margin-top:0px;
 }
-
-ul#nav li {
+ul#nav li  {  /*  li not:first-child   not(ul) */
   font-size: 12px;
   letter-spacing: 3px;
   font-family: 'Bitter', serif;
-  font-weight: 400;
-  padding-right: 13px; /*  li spacing */
-  display:inline;
+  /* font-weight: 400; */
+  /* d isplay:inline; */
+  /* background-color: gainsboro; */
+  /* border: none; */
+  padding: 4px 10px;   /* actual visual size of LI */
 }
 
 ul#nav li a, ul#nav li a:visited {
@@ -291,41 +259,46 @@ ul#nav li a, ul#nav li a:visited {
   text-decoration: none;
 }
 
-ul#nav li a:hover {
+
+ul#nav li:hover a:not(.sub_nav a) {
   color: var(--nav-text-hover);
   cursor: var(--cursor_show);
 }
 
-ul#nav span#nav_left, ul#nav span#nav_center, ul#nav span#nav_right{
-line-height: 18px;
+ul#nav li .sub_nav li:hover a{
+  color: var(--nav-text-hover);
+  cursor: var(--cursor_show);
 }
+
+
+
+
+
+
+
+
+/* ul#nav span#nav_left, ul#nav span#nav_center, ul#nav span#nav_right{
+
+} */
 
 #nav_center {
   text-align: center;
 }
-#nav_center li.home{
-  padding-right:0px
-}
 
-
-
-
-
-
-/* for the submenu */
-span#nav_left {
+span#nav_left, span#nav_right {
   display:flex;
 }
 /* The width here is a hack, make it work without it  */
 span#nav_left li.work{
   position: relative;
-  width: 50px; 
+  /* width: 50px;  */
   overflow: visible;
 }
 
 li.tubes, li.words, li.logos, li.products {
 
 }
+
 
 ul#nav li  ul {
   position: absolute;
@@ -335,73 +308,71 @@ ul#nav li  ul {
   align-content: center; 
   justify-content: center; 
   z-index: 99999;
-margin-top:0px;
-back ground-color: lime;
-white-space: nowrap; /* no wrapping */
-left: 50%; /* horizontal center */
-transform: translateX(-50%); /* horizontal center */
-
+  /* background-color: lime; */
+  white-space: nowrap; /* no wrapping */
+  left: -4px
+  /* left: 50%; 
+  transform: translateX(-50%);  */
 }
 
 ul#nav li  ul li::before {
-  cont ent: "-";
+  content: "-";
 }
 
+/* margin holds the gap between items, AND mouse trigger area
+Increasing margins and shrinking distance so they overlap
+and make a gap-free zone for cursor functions */
 ul#nav li  ul li {
-  padding-left: 10px;
-  margin: 0px 0 5px 5px;
+  margin: 0px 0px 10px 5px; /*  0px 0px 10px 5px  */
   border-radius: 3px;
   background-color: var(--nav-backround) ; /*  #8c9aa0  */
+  list-style-type: none;
+  position: relative;
+  background: whitesmoke;
 
 }
+
 ul#nav li  ul li:first-child {
   margin-top:14px
 }
 
 
-
 /* for rotation */
 ul#nav li  ul li:nth-child(1)  {
-  position: relative;
-  background: #ccc;
   transform-origin: 0px 0px;
-  transform: rotate(5deg);
-  a nimation: rotate 1s linear 1 forwards;
+  animation: rotate 0.2s ease-in 1 forwards ;
 }
 
 ul#nav li  ul li:nth-child(2)  {
-  position: relative;
-  background: #ccc;
-  transform-origin: 0px -5px;
-  transform: rotate(10deg);
-  a nimation: rotate 1s linear 1 forwards;
+  transform-origin: 0px -10px;
+  animation: rotate2 0.2s ease-in 1 forwards ;
 }
 ul#nav li  ul li:nth-child(3)  {
-  position: relative;
-  background: #ccc;
   transform-origin: 0px -25px;
-  transform: rotate(15deg);
-  a nimation: rotate 1s linear 1 forwards;
+  animation: rotate3 0.2s ease-in 1 forwards ;
 }
 ul#nav li  ul li:nth-child(4)  {
-  position: relative;
-  background: #ccc;
   transform-origin: 0px -40px;
-  transform: rotate(20deg);
-  a nimation: rotate 1s linear 1 forwards;
+  animation: rotate4 0.2s ease-in 1 forwards ;
 }
-
-
-
-
-
-
-
 
 
 @keyframes rotate {
   0% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes rotate2 {
+  0% { transform: rotate(0deg); }
   100% { transform: rotate(10deg); }
+}
+@keyframes rotate3 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
+}
+@keyframes rotate4 {
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(30deg); }
 }
 
 
@@ -411,10 +382,17 @@ ul#nav li  ul li:nth-child(4)  {
 
 
 
-
-
-
-
+.hero_wrapper {
+border: 1px solid #000;
+height: 300px;
+width: 300px;
+}
+.hero img {
+  height: 300px;
+width: 300px;
+border: 1px solid green;
+z-index: 99999;
+}
 
 
 
@@ -444,46 +422,89 @@ span.caret {
 
 
 
+
+/* ============    D O W N     ============== */
+/* ============        +       ============== */
+/* ============   A R R O W    ============== */
+
+#scroll_down_arrow_wrapper {
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  align-content: center; 
+  justify-content: center; 
+
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vh;
+  z-index: 10000; 
+
+}
+.scroll_down_arrow {
+  background-color: red;
+  }
+
+
+
+
+
+
+/* ============   cross    ============== */
+/* ============      +     ============== */
+/* ============   marks    ============== */
+
+#centerlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+  z-index: 10000; 
+  pointer-events: none;
+}
+.horizontal_center {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;  
+  height: 1px;
+  width: 100vw;
+  background-color: red;
+  }
+  .vertical_center {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000; 
+    width: 1px;
+    height: 100vw;
+    background-color: red;
+  }
+
+
+
+
+/* ============   H E R O    ============== */
+/* ============  I M A G E   ============== */
+/* ============  ---------   ============== */
+
+/* for the initial working variation */
 #floating_logo {
   position: fixed;
   top: 16px;
+  left: 50% ;
+  transform: translateX(-50%);
   width:100px;
   z-index: 9999;  
 }
 #floating_logo img#logo_hero {
   width: 100px;
   animation: spin 10s linear infinite;
-  /*Set our animation play state to paused initially */
   animation-play-state: paused; 
 }
-
-
-
-
-
-
-
-
-
-
-/* 
-img#logo_hero_large {
-  animation: spin 10s linear infinite;
-  animation-play-state: paused; 
-}
-img#logo_hero_large:hover {
-  animation: spin 10s linear infinite;
-  animation-play-state: running;
-}
-@keyframes spin {
-  100% {transform: rotate(1turn); }
-}
- */
-
-
-
-
-
 
 
 
@@ -535,27 +556,22 @@ div#intro.role {
 /* =========     P R O J E C T S      ============ */
 /* =========     P R O J E C T S      ============ */
 /* =========     P R O J E C T S      ============ */
- #projects {
-  background: whitesmoke;
-  background-image: none;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border:3px green
+#work, #words, #logos, #products {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center; 
+ align-content: center; 
+ justify-content: center; 
+ min-height:100vh;
+ padding-left: min(75px);
+ padding-right: min(75px);
 
- }
-
-
-
-#words, #logos, #products {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  align-content: center; 
-  justify-content: center; 
-  min-height:100vh;
 }
+  /* justify-content: center; */
+ #work {
+  background: LavenderBlush;  /*  ghostwhite   LavenderBlush  */
+ }
 
 #words {
 background-color: lemonchiffon;
@@ -707,8 +723,8 @@ section#contact * {
 section#contact {
   font-family: 'Courier Prime', monospace;
   font-size: 14px;
-display:flex;
-justify-content: center;
+  display:flex;
+  justify-content: center;
 /* cursor: none; */
 }
 
@@ -752,12 +768,6 @@ border-radius: 4px;
 cursor: pointer;
 display:block;
 width: 50%;
-/* margin: 0px auto; */
-
-/* -webkit-box-shadow:0px 0px 47px 4px rgba(45,255,196,0.9);
--moz-box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9);
-box-shadow: 0px 0px 47px 4px rgba(45,255,196,0.9); */
-
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
@@ -862,14 +872,15 @@ color: white;
 /* =========     G L O B A L      ============ */
 /* =========     G L O B A L      ============ */
 /* =========     G L O B A L      ============ */
-section#content {
-  position: absolute;
+section#content { 
+  p osition: absolute;
   width: 100%;
 }
 
 /* global over-write for ALL sections top padding and height */
 section section {
-  min-height: 100vh; 
+  /* min-height: 100vh;  */
+  height: 100vh; 
   position: relative;
 }
 

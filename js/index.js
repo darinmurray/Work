@@ -1,80 +1,174 @@
 
-// Fired when document is ready, wrapps everything  
 window.onload = function() { 
  
-  // start by scrolling to home if reloaded
-  smoothScroll('landing')
-    
+
+// for layout purposes only
+$("#centerlines").hide()
+
+
+// ===============   M A I N   ================ // 
+// ===============    N A V    ================ // 
+// ===============   (ofset)  ================ // 
+// can this be done with CSS calc?
+let nav_width = $("#nav_floater").outerWidth();
+let screen_width = $("body").outerWidth();
+let floating_logo_width = $("#floating_logo").outerWidth();
+let nav_left_width = $("#nav_left").outerWidth();
+let nav_right_width = $("#nav_right").outerWidth();
+let nav_offest = Math.floor(Math.abs(nav_left_width - nav_right_width) )  ;  // "-10" is visual adjustment
+
+$("#nav_wrapper").css('margin-left', (nav_offest)+"px");
+$("#nav_center").css('width', floating_logo_width+"px");
+
+// make this happen AFTER logo is covering it
+$("#nav_center li a ").css('color', "black");
+
+// ===============   M A I N   ================ // 
+// ===============    N A V    ================ // 
+// ===============   (toggle)  ================ //  
+  // var isVisible = document.getElementById("yourID").style.display == "block";
+  // var isHidden = document.getElementById("yourID").style.display == "none"; 
+hiddenElements = $(':hidden');
+visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
+
+let logo_hero = document.getElementById('logo_hero');
+// let navigations = document.getElementsByClassName("nav_wrapper");
+let toggledElement = document.getElementsByClassName("nav_wrapper") //$('.nav_wrapper')
+
+
+// ===============    S U B    ================ // 
+// ===============    N A V    ================ // 
+// ===============   (toggle)  ================ //  
+let work_menu = $(".sub_nav"); //, li.work ul
+$(work_menu).hide();
+// SHOW the sub-menu when hovering this li
+$("li.work").hover(function(e){
+    console.log(`%c=> showing the sub-menu `, "color:gray");
+    $(work_menu).fadeIn();
+}, function(){
+    console.log(`%c=> hiding the sub-menu `, "color:gray");
+    $(work_menu).fadeOut();
+    // why does this need to be here? t should be in the .each.hover function below...
+    $(".cursor_braces").css( "transform", "rotate(90deg)" );
+});
 
 
 
 
-
-  const cursor = document.querySelector('.cursor_container');
-  const y_offset = 40 // 35  half thw width
-  const x_offset = 40 // 15  half the height
-  document.addEventListener('mousemove', (e)=> {
-      cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
-  })
-
-// resolve this so it creates a collection of parent/child elements to observe
-// https://stackoverflow.com/questions/5338716/get-multiple-elements-by-id
-
-// https://stackoverflow.com/questions/68091762/how-can-i-add-a-class-to-an-element-from-an-array-on-hover
-
-// let test = document.getElementById("nav_wrapper");
-// // let test = document.querySelector('li');
-// // This handler will be executed every time the cursor 
-// // is moved over a different list item
-// test.addEventListener("mouseover", function( event ) {
-//   cursor.setAttribute("style", "top: "+(event.pageY-y_offset)+"px; left: "+(event.pageX-x_offset)+"px")
-//   // highlight the mouseover target
-//   cursor.style.opacity = "1.0";
-// console.log("OVER it", event.target);
-//   // reset the color after a short delay
-//   setTimeout(function() {
-//     event.target.style.color = "lime";
-//     // cursor.style.opacity = "0.1";
-//   }, 300);
-// }, false);
-
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+const cursor = document.querySelector('.cursor_container');
+const y_offset = 40 // 35  half thw width
+const x_offset = 40 // 15  half the height
+document.addEventListener('mousemove', (e)=> {
+    cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
+})
+// hide initially
+$(".cursor_braces, .cursor_caret").hide();
 //$(cursor).hide()
 
+// change the ROTATION on the cursor in the SUB-MENU
+// This could be over ONLY "#sub_nav li", NOT "#nav li" as there are no angles in #nav
+// $(".sub_nav li").each(function(big_e){
+$(work_menu).children('li').each(function(big_e){
+  $(this).hover(function(calc_angle){
+    let current_target = calc_angle.currentTarget
+    var target_width = calc_angle.currentTarget.offsetWidth
+    // get the angle
+    new_angle = getRotation(current_target)
+    //set angle if existing
+    $(".cursor_braces").css( "transform", "rotate("+(90+new_angle)+"deg)"    );
+    $(".cursor_braces").css( "font-size", target_width+"px" );  
+  })
+});
+  
+    function getRotation(element) {
+    // calcualtes the current rotation of a provided element (HTML object) and returns the angle (angle or 0)
+    // from :  https://css-tricks.com/get-value-of-css-rotation-through-javascript/  
+    // var el = this // document.getElementById( el_id );
+    var st = window.getComputedStyle(element, null);
+    var tr = st.getPropertyValue("-webkit-transform") ||
+             st.getPropertyValue("-moz-transform") ||
+             st.getPropertyValue("-ms-transform") ||
+             st.getPropertyValue("-o-transform") ||
+             st.getPropertyValue("transform") ||
+             "fail...";
+    // matrix(0.866025, 0.5, -0.5, 0.866025, 0px, 0px)
+    // console.log('Matrix: ' + tr);  
+    if ( tr != 'none' ) {
+        // rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
+        var values = tr.split('(')[1];
+            values = values.split(')')[0];
+            values = values.split(',');
+        var a = values[0];
+        var b = values[1];
+        var c = values[2];
+        var d = values[3];
+        var scale = Math.sqrt(a*a + b*b);
+        // arc sin, convert from radians to degrees, round
+        // DO NOT USE: see update below
+        var sin = b/scale;
+        // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        // works!
+        console.log(`%c=> angle: `, "color:red",  + angle + 'deg');
+        return angle //= null ?? 0;
+      }
+      return 0
+    }
+  
+  
 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
-$(".cursor, .cursor_caret").hide();
 
-$("#nav_wrapper").children().each(function(){
-  $(this).hover(function(el){
-    // console.log(`%c=> el: `, "color:cyan", el);
-    $(".cursor").show();
+  
+
+// Main NAV CURSOR choice
+// do this for #nav li each FIRST CHILD only, NOT sub-menus or extra items
+$(".work, .about_me, .home, .contact, .resume").each(function(big_e){
+  $(this).hover(function(little_e){
+    console.log(`%c=> hovering a main LI in the main NAV `, "color:orange");
+    $(".cursor_braces").show();
     $(".cursor_main").hide();
     $(".cursor_caret").hide();
   }, function(){
-    $(".cursor").hide();
-    $(".cursor_main").show();
-    $(".cursor_caret").hide();  // it looks kind of nice with this on...
+    console.log(`%c=> main nav li not being hovered anymore, el' gone oh: `, "color:orange");
+      $(".cursor_braces").hide();
+      $(".cursor_main").show();
+      $(".cursor_caret").hide();  // it looks kind of nice with this on...
   });
 });
 
-// section#contact  form.contact container.form
+// SUB NAV CURSOR choice
+// same as above, but eliminats problem: cursor reverts when going from sub-nav back to nav
+$(work_menu).hover(function(little_e){
+  console.log(`%c=> (hovering) SUB_menu: `, "color:green");
+  $(".cursor_braces").show();
+  $(".cursor_main").hide();
+  $(".cursor_caret").hide();
+}, function(current_tag){
+  console.log(`%c=> NOT on sub_menu `, "color:green");
+    $(".cursor_braces").hide();
+    $(".cursor_main").show();
+    $(".cursor_caret").hide();  // it looks kind of nice with this on...
+});
+ 
+// CONTACT CURSOR choice  form.contact container.form
 $("section#contact").each(function(){
   // using.each so it includes all input types
   $(this).hover(function(el){
-    $(".cursor").hide();
+    $(".cursor_braces").hide();
     $(".cursor_main").hide();
     $(".cursor_caret").show();
   }, function(){
-    $(".cursor").hide();
+    $(".cursor_braces").hide();
     $(".cursor_main").show();
     $(".cursor_caret").hide();
     // make this fade out
   });
 });
 
-
+// ABOUT_ME CURSOR choice
 $("#about_me").hover(function(e){
 // transform slowly??
   $(".cursor_main").css("border-color" , "#ffffff");
@@ -82,13 +176,13 @@ $("#about_me").hover(function(e){
   $(".cursor_main").css("border-color" , "#44ffee");
 });
 
-
+// SUBMIT BUTTON CURSOR choice
 $("#submit").hover(function(e){
-  $(".cursor").show();
+  $(".cursor_braces").show();
   $(".cursor_main").hide();
   $(".cursor_caret").hide();
 }, function(){
-  $(".cursor").hide();
+  $(".cursor_braces").hide();
   $(".cursor_main").hide();
   $(".cursor_caret").show();
 });
@@ -98,22 +192,6 @@ $("#submit").hover(function(e){
 
 
 
-// ==========   S N A P  S C R O L L   ================ // 
-// // // uncoment block below for snap scrolling
-gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray(".panel").forEach((panel, i) => {
-    ScrollTrigger.create({
-        trigger: panel,
-        start: "top 80px",
-        pin:true,
-        scrub:1,
-        snap: 1, //,
-        pinSpacing: true // test with False
-        })
-  
-  });
-
-
 
 
 
@@ -121,6 +199,7 @@ gsap.registerPlugin(ScrollTrigger);
 // ==========   S H R I N K I N G  L O G O    ================ // 
 // ==========   S H R I N K I N G  L O G O    ================ // 
 
+// this is the working FROM version
 // gsap.fromTo("#floating_logo", { y: "0px", scale: 0}, {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 // gsap.from("#floating_logo", {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 let scale_calc = 3
@@ -142,9 +221,7 @@ gsap.from("#floating_logo",  {
   scale: scale_calc
 } );
 
-
 // gsap.to("#intro", {duration: 1 , delay: 1, y: "0vh", ease: "power1.in", opacity: 0.2} )
-
 
 gsap.to("#intro",  {
   scrollTrigger: {
@@ -174,72 +251,9 @@ gsap.to("#intro",  {
 
 
 
-  // var header = document.getElementById('floating_logo_test');
-  // var logoStartingPosition = header.getBoundingClientRect().top;
-  
-  // function fadeOutOnScroll(element) {
-  //   if (!element) { return; }
-  //   var viewPort = window.innerHeight; // 0	// safari
-  //   var scrollTop = document.documentElement.scrollTop; // 0	// safari
-  //   var logoTop = element.getBoundingClientRect().top;
-    
-  //   //if (scrollTop <= viewPort) { console.log("true") } else { console.log("FALSE") }
-  //   //console.log("scrollTop ", scrollTop, "viewPort ", viewPort)
-  //   if ( (scrollTop >= 0) && (scrollTop <= (viewPort/2)) ) {  //distanceToTop		
-  
-  //     percentage = getPercentOfRange(0, logoTop, (logoStartingPosition) ) //(min, current, max)
-  //     var scaleNow = Math.max(percentage, 0.2)
-  //       $( element ).css({    
-  //         transform: "scale("+scaleNow+")" ,   
-  //         position: "flex",
-  //         top: 0
-  //       });
-  //     // console.log(" D I S P L A Y  S T A T E  scrollTop is; "+ scrollTop+ " 1st viewport is; "+ viewPort)
-  //   // element.innerHTML = ( scrollTop - logoTop )	
-  //     console.log("ONE scale; "+ scaleNow )   
-  //   } 
-    
-  //   // if ( scrollTop >= viewPort ) {  
-  //   // 	console.log("End transition at; "+  "transition END")   
-  //   // 	// scaleNow = 0.5 
-  //   // }
-    
-  
-  //   if ( logoTop <= 16 ) { 
-  //     // make logo stay, present nav?	
-  //     //let logoWidth = element.offsetWidth;
-  //     // var logo_left_offset = (window.innerWidth/2)-(element.offsetWidth/2)
-  //     //let logo_left_offset = element.offsetWidth/2 //window.innerWidth/2
-      
-  //       $( element ).css({  
-  //         transform: "scale("+scaleNow+")",
-  //         position: "fixed",
-  //         top: 16 //,
-  //         // left: logo_left_offset //250 //logo_left_offset
-  //       });
-  //   //console.log("TWO ", logo_left_offset)
-  //  console.log(" scrollTop is; "+ scrollTop)
-  //   }
 
 
-  // }
 
-  
-  
-  // function scrollHandler() {
-  //   fadeOutOnScroll(header);
-  // }
-  
-  // window.addEventListener('scroll', scrollHandler);
-  
-  
-  // // ====== get % of # between min & max of a given range ========= //
-  // // E.G. from 35 to 356, what percentage (of the range) is 121? 
-  // function getPercentOfRange(min, current, max) {  
-  //   // change *1 to *100 for whole numbers
-  //   // currently returning opacity 0.1 - 1.0
-  //   return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
-  // } 
 
 
 
@@ -253,246 +267,155 @@ gsap.to("#intro",  {
 
 
 
+// start by scrolling to home if reloaded
+//smoothScroll('landing')
 
 
 
+// this WAS KIND OF WORKING WELL!! but then just sucked to use... 
+// keeps snapping to the wrong panel too fast
+// gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ===============   M A I N   ================ // 
-// ===============    N A V    ================ // 
-// ===============   (ofset)  ================ // 
-// can this be done with CSS calc?
-let nav_width = $("#nav_floater").outerWidth();
-let screen_width = $("body").outerWidth();
-let floating_logo_width = $("#floating_logo").outerWidth();
-let nav_left_width = $("#nav_left").outerWidth();
-let nav_right_width = $("#nav_right").outerWidth();
-let nav_offest = Math.floor(Math.abs(nav_left_width - nav_right_width) )  ;  // "-10" is visual adjustment
-
-
-$("#nav_wrapper").css('margin-left', (nav_offest)+"px");
-$("#nav_center").css('width', floating_logo_width+"px");
-
-// make this happen AFTER logo is covering it
-$("#nav_center li a ").css('color', "black");
-
-
-
-
-
-    console.log(`%c=> screen_width: `, "color:cyan", screen_width);
-    console.log(`%c=> nav_width: `, "color:cyan", nav_width);
-    console.log(`%c=> floating_logo_width: `, "color:cyan", floating_logo_width);
-    console.log(`%c=> nav_left_width: `, "color:cyan", nav_left_width);
-    console.log(`%c=> nav_right_width: `, "color:cyan", nav_right_width);
-    console.log(`%c=> nav_offest: `, "color:cyan", nav_offest);
-    
-
-
-
-// ===============   M A I N   ================ // 
-// ===============    N A V    ================ // 
-// ===============   (toggle)  ================ //  
-  // var isVisible = document.getElementById("yourID").style.display == "block";
-  // var isHidden = document.getElementById("yourID").style.display == "none"; 
-hiddenElements = $(':hidden');
-visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
-
-let logo_hero = document.getElementById('logo_hero');
-// let navigations = document.getElementsByClassName("nav_wrapper");
-let toggledElement = document.getElementsByClassName("nav_wrapper") //$('.nav_wrapper')
-
-//   turn this back on when   done with LOGO TESTING <<+++++++++=============
-//   turn this back on when   done with LOGO TESTING <<+++++++++=============
-//   turn this back on when   done with LOGO TESTING <<+++++++++=============
- // // // $(".nav_wrapper").fadeOut(2000); //.hide('slow')
-
-// logo_hero.onmouseenter  = function(){
-//   // this.classList.add('hovered');
-//   if(!$('.nav_wrapper').is(':visible')) { 
-//     $(".nav_wrapper").slideDown('fast')
-//   } 
-//     logo_hero.onmouseleave = function(){
-//       let isHovered = $(".nav_wrapper:hover").length != 0 
-//       let showing = $('.nav_wrapper').is(':visible')
-//       if (  isHovered && showing ) {
-//         // nav is showing and entered from the logo image
-//         // if/else ONLY here to trigger somehing on nav showing but not over logo
-//       } else {
-//           //  the delay does not work as well here
-//           $(".nav_wrapper").slideUp('fast')
-//       }
-//     }
-//     toggledElement[0].onmouseleave = function(){
-//       let isHovered = $("#logo_hero:hover").length != 0 
-//       if (  isHovered  ) {
-//         // mouse moved from nav to logo
-//       } else {
-//         // mouse exited nav and logo
-//         setTimeout(function(){
-//           $(".nav_wrapper").slideUp('fast')
-//         }.bind(this),2000)
-//       }
-//     }
-
+// function goToSection(i, anim) {
+//   gsap.to(window, {
+//     scrollTo: {y: i*innerHeight, autoKill: false},
+//     duration: 1
+//   }); 
+//   if(anim) {
+//     anim.restart();
+//   }
 // }
 
-
-
-// ===============    S U B    ================ // 
-// ===============    N A V    ================ // 
-// ===============   (toggle)  ================ //  
-let work_menu = $("li.work");
-
-$("li.work, li.work ul").hover(function(e){
-  // transform slowly??
-  $("li.work ul").show();
-}, function(){
-  console.log("moved out...");
-    $("li.work ul").hide();
-  });
-
+// gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
+//   ScrollTrigger.create({
+//     trigger: panel,
+//     onEnter: () => goToSection(i)
+//   });
+  
+//   ScrollTrigger.create({
+//     trigger: panel,
+//      start: "bottom center",
+//     // onEnterBack: () => goToSection( i ),
+//   });
+// });
 
 
 
 
 
+// https://codepen.io/GreenSock/pen/bGexQpq
+// https://greensock.com/st-demos/
+// https://greensock.com/scrolltrigger/?ref=30488
+// https://codepen.io/collection/DkvGzg?cursor=ZD0xJm89MSZwPTEmdj0z
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ==========   S N A P  S C R O L L   ================ // 
+// // // uncoment block below for snap scrolling
+// gsap.registerPlugin(ScrollTrigger);
+//   gsap.utils.toArray(".panel").forEach((panel, i) => {
+//     ScrollTrigger.create({
+//         trigger: panel,
+//         start: "top 80px",
+//         pin:true,
+//         scrub:1,
+//         snap: 1, //,
+//         pinSpacing: true // test with False
+//         })
+  
+//   });
 
 
 
 // ======================================================== //
 // =============  S M O O T H  S C R O L L  =============== //
 // =============       ( triggers )         =============== // 
-$(document).on("click", "li" , function(e) {
-  console.log(`%c=> Click li e=: `, "color:cyan", e.target.hash);
-  let location = e.target.hash.substring(1)
-  smoothScroll(location)
-  e.preventDefault()
-});
+// $(document).on("click", "li" , function(e) {
+//   console.log(`%c=> Click li e=: `, "color:cyan", e.target.hash);
+//   let location = e.target.hash.substring(1)
+//   smoothScroll(location)
+//   e.preventDefault()
+// });
 
 
-$(document).on("click", "#logo_hero" , function(e) {
-  smoothScroll('landing')
-  e.preventDefault()
-});
+// $(document).on("click", "#logo_hero" , function(e) {
+//   smoothScroll('landing')
+//   e.preventDefault()
+// });
 
 
 
 // ======================================================== //
 // =============  S M O O T H  S C R O L L  =============== //
 // ============== (slowly / with effects) ================= // 
-function currentYPosition() {
-  // Firefox, Chrome, Opera, Safari
-  if (self.pageYOffset) return self.pageYOffset;
-  // Internet Explorer 6 - standards mode
-  if (document.documentElement && document.documentElement.scrollTop)
-      return document.documentElement.scrollTop;
-  // Internet Explorer 6, 7 and 8
-  if (document.body.scrollTop) return document.body.scrollTop;
-  return 0;
-}
+// function currentYPosition() {
+//   // Firefox, Chrome, Opera, Safari
+//   if (self.pageYOffset) return self.pageYOffset;
+//   // Internet Explorer 6 - standards mode
+//   if (document.documentElement && document.documentElement.scrollTop)
+//       return document.documentElement.scrollTop;
+//   // Internet Explorer 6, 7 and 8
+//   if (document.body.scrollTop) return document.body.scrollTop;
+//   return 0;
+// }
 
-function elmYPosition(eID) {
-  var elm = document.getElementById(eID);
-  var y = elm.offsetTop;
-  var node = elm;
-  while (node.offsetParent && node.offsetParent != document.body) {
-      node = node.offsetParent;
-      y += node.offsetTop;
-  } return y;
-}
-function smoothScroll(eID) {
-  var offset = 66
-  var startY = currentYPosition();
-  var stopY = elmYPosition(eID)-offset;
-  var distance = stopY > startY ? stopY - startY : startY - stopY;
-  if (distance < 100) {
-      scrollTo(0, stopY); return;
-  }
-  var speed = Math.round(distance / 100);
-  if (speed >= 20) speed = 20;
-  var step = Math.round(distance / 25);
-  var leapY = stopY > startY ? startY + step : startY - step;
-  var timer = 0;
-  if (stopY > startY) {
-      for ( var i=startY; i<stopY; i+=step ) {
-          setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-          leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-      } return;
-  }
-  for ( var i=startY; i>stopY; i-=step ) {
-      setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-      leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-  }
-  return false;
-}
+// function elmYPosition(eID) {
+//   var elm = document.getElementById(eID);
+//   var y = elm.offsetTop;
+//   var node = elm;
+//   while (node.offsetParent && node.offsetParent != document.body) {
+//       node = node.offsetParent;
+//       y += node.offsetTop;
+//   } return y;
+// }
+// function smoothScroll(eID) {
+//   var offset = 0 //66
+//   var startY = currentYPosition();
+//   var stopY = elmYPosition(eID)-offset;
+//   var distance = stopY > startY ? stopY - startY : startY - stopY;
+//   if (distance < 100) {
+//       scrollTo(0, stopY); return;
+//   }
+//   var speed = Math.round(distance / 100);
+//   if (speed >= 20) speed = 20;
+//   var step = Math.round(distance / 25);
+//   var leapY = stopY > startY ? startY + step : startY - step;
+//   var timer = 0;
+//   if (stopY > startY) {
+//       for ( var i=startY; i<stopY; i+=step ) {
+//           setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+//           leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+//       } return;
+//   }
+//   for ( var i=startY; i>stopY; i-=step ) {
+//       setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+//       leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+//   }
+//   return false;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -519,30 +442,91 @@ function smoothScroll(eID) {
     return Math.round((min - 0.5) + Math.random() * (max - min + 1));
   }
  
- 
+   
+  // ====== get % of # between min & max of a given range ========= //
+  // E.G. from 35 to 356, what percentage (of the range) is 121? 
+  function getPercentOfRange(min, current, max) {  
+    // change *1 to *100 for whole numbers
+    // currently returning opacity 0.1 - 1.0
+    return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
+  } 
 
 
 
-//  //  // ===============  S P E E D  ================ // 
-//  //  // ===============  (sliders)  ================ // 
-//  //  // ===============  =========  ================ //  
-//  //  document.querySelectorAll('.henhouse').forEach(item => {
-//  //    item.getBoundingClientRect()
-//  //  console.log("<<=====Found a henhouse: ", item);
-//  //    item.addEventListener('scroll', event => {
-//  //      console.log("scrolling henhouse ^^^");
-//  //      // var x = event.originalTarget.min;
-//  //      // var y = event.originalTarget.max;
-//  //      if ( 2+2 == 4 ) {
-//  //        console.log("Reversed")
-//  //        // do the work
-//  //        }
-//  //    posNum = getPercentOfRange(x, event.originalTarget.value, y)
-//  //    negNum = (1.0 - posNum).toFixed(1)
-//  //    event.originalTarget.parentElement.previousElementSibling.style.opacity=negNum; 
-//  //    event.originalTarget.parentElement.nextElementSibling.style.opacity=posNum; 
-//  //    })
-//  //  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   $("#nav li, li.work ul").each(function(big_e){
+//     // function over each li, 
+//     $(this).hover(function(little_e){
+//       let current_tag = this.tagName  
+  
+//       console.log(`%c=> current_tag: `, "color:cyan", current_tag);
+  
+//       $(".cursor_braces").show();
+//       $(".cursor_main").hide();
+//       $(".cursor_caret").hide();
+//       return current_tag
+//     }, function(current_tag){
+//       console.log(`%c=> current_tag.relatedTarget.tagName: `, "color:cyan", current_tag.relatedTarget.tagName);
+//       // if you exit and land on the parent UL...
+//       if (current_tag.relatedTarget.tagName === "UL") {
+//         console.log("Aborting mission.... moving on as if nothign happened")
+        
+// // here is where it should be an if statement instead of a function/function. 
+// // IN this case it needs to repeat itself
+// // ergo, this needs to recombine with the function above?!?!?!
+//       return 
+//     } else if (current_tag.relatedTarget.tagName === "LI") {
+//         $(".cursor_braces").hide();
+//         $(".cursor_main").show();
+//         $(".cursor_caret").hide();  // it looks kind of nice with this on...
+//       } else if (current_tag.relatedTarget.tagName === "DIV") {
+//         $(".cursor_braces").hide();
+//         $(".cursor_main").show();
+//         $(".cursor_caret").hide();  // it looks kind of nice with this on...
+//       }
+
+//     });
+//   });
+
+
+
+
+
+
+
+
 
 
 

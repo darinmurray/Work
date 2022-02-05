@@ -40,40 +40,41 @@
 <body>
 
 
+
+
+
+
+
+<section id="content" class=" "> <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
+
+<header>
 <!-- navigation -->
 <div id="nav_floater" class="nav_floater">
-  <div id="nav_wrapper" class="nav_wrapper">
+  <div id="nav_wrapper" class="nav_wrapper">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">
         
         <li class="work">  <a href="#work">Work</a>
-          <ul>
-            <li class="tubes"><a href="#tubes">Tubes</a></li>
-            <li class="words"><a href="#words">Words</a></li>
-            <li class="logos"><a href="#logos">Logos</a></li>
-            <li class="products"><a href="#products">Products</a></li>
+          <ul class="sub_nav">
+            <li id="tubes_li" class="tubes"><a href="#tubes">Tubes</a></li>
+            <li id="words_li" class="words"><a href="#words">Words</a></li>
+            <li id="logos_li" class="logos"><a href="#logos">Logos</a></li>
+            <li id="products_li" class="products "><a href="#products">Products</a></li>
           </ul>  
       </li>
 
 
-        <li class="about_me"><a href="#about_me">About</a></li>
+        <li id="about_me_li" class="about_me"><a href="#about_me">About</a></li>
       </span>
       <span id="nav_center"><li class="home"><a href="#landing">Home</a></li></span>
       <!-- <li class="home"><a href="#landing">  <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo">  </a></li> -->
       <span id="nav_right" class="nav_right">
-        <li class="contact"><a href="#contact">Contact</a></li>
-      <li class="resume"><a href="#resume">Resume</a></li>
+      <li id="contact_li" class="contact"><a href="#contact">Contact</a></li>
+      <li id="resume_li" class="resume"><a href="#resume">Resume</a></li>
     </span>
   </ul>
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 <!-- turn off for now... -->
@@ -82,15 +83,14 @@
 <!-- <img id="logo_hero" class="nav_logo " src="images/DTM_logo.png" alt="Darin Murray Logo"> -->
 </div>
 
+</header>
 
 
 
-<section id="content" class="scrollContent" > <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
 
 
 
-
-<section id="landing">
+<section id="landing" class="scroll_panel">
   <div class="landing_wrapper henhouse">
     <!-- <div id="floating_logo_test" class="loo_wrapper he n">
       <img id="logo_hero_ large" class=" " src="images/DTM_logo.png" alt="Darin Murray Logo">
@@ -109,17 +109,49 @@
 
 
 
+<!-- 
+<section id="work">
+  <div class="work_wrapper henhouse">
+
+  </div>
+</section> -->
+
+<section id="work" class="scroll_panel">
+  <div class="work_wrapper henhouse">
+    <h1>Yes, I do things</h1>
+    <p>Page about work, in general... necessary?</p>
+
+      <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
+      <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
+      <ul> Technical stuff:
+        <li>Webster Dictionairy API for definitionan and syllable lookup</li>
+        <li>Text to speach to say the word and read the definition </li>
+        <li>Text to speach gives paise with 'thumbs up' </li>
+        <li>Rendered purely with CSS</li>
+        <li>JS/jQuery controlled animations</li>
+      </ul>
+  
+      <ul>User functionality:
+        <li>Choose category</li>
+        <li>Adjust word lenthg</li>
+        <li>Adjust flip speed</li>
+        <li>Adjust word change speed</li>
+        <li>Adjust narator voice</li>
+        <li>Adjust voice pitch</li>
+        <li>Adjust voice speed</li>
+        <li>Adjust search for any word</li>
+        <li>Adjust text case for readability</li>
+      </ul>
+
+  </div>
+</section>
 
 
 
 
 
 
-
-
-
-
-<section id="tubes">
+<section id="tubes" class="scroll_panel">
   <div class="tubes_wrapper henhouse">
 
 
@@ -284,21 +316,44 @@
 
 
 
-<section id="words">
+<section id="words" class="scroll_panel">
   <div class="words_wrapper henhouse">
-Words go here
+<h1>words character flip site goes here</h1>
+<p>words app goes here</p>
   </div>
 </section>
 
-<section id="logos">
+
+
+
+<section id="logos" class="scroll_panel">
   <div class="logos_wrapper henhouse">
-Assorted logos and design
-  </div>
+    <h1>Logos and design work?</h1>
+    <p>These Where is my hero wrapper?e needed here...</p>
+
+<div class="hero_wrapper">
+<div class="hero"><img src="images/illustrations/WhataPlate.tif" alt=""></div>
+<div class="hero"><img src="images/illustrations/ESPNlogos.tif" alt=""></div>
+<div class="hero"><img src="images/illustrations/Speodmeter.tif" alt=""></div>
+<div class="hero"><img src="images/illustrations/ParkingSpot.tif" alt=""></div>
+
+</div>
+
+
+
 </section>
 
-<section id="products">
+
+
+
+
+
+<section id="products" class="scroll_panel">
   <div class="products_wrapper henhouse">
-Product design showcase
+    <h1>Product Design & Production</h1>
+    <p>I have designed and {mass} produced each of these items and many more.  </p>
+    <p>Solid understanding of designing for cost, producing and fulfilling in an ecommerce envirenment.  dsafdsafdfsadfsadfsafdfsafdasdfsadfsadfsadfa</p>
+
   </div>
 </section>
 
@@ -318,16 +373,16 @@ Product design showcase
 
 
 
-<section id="about_me" class="about henhouse">
+<section id="about_me" class="scroll_panel" >
   <div class="container_wrapper ">
     <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
     <!-- <div class="overlay top_shadow _clean"></div> -->
 
 
           <div class="container info hen">
-          <h1 class="title ">Maker: builder: coder:</h1>
-          <p class="subtitle ">Shopify Customization</p>
-          <p class="copy ">Experiences in eCommerce from being a product designer/store owner/store coder to customizing</p>
+          <h1 class="title ">Front End Design/Build + </h1>
+          <p class="subtitle ">Digital Illustraton and Coding Experience</p>
+          <p class="copy ">Years of freelance as a commercial illustrator  </p>
             <div >
               <ul> Core Skills
                 <li><ion-icon name="logo-html5"></ion-icon>HTML</li>
@@ -359,41 +414,14 @@ Product design showcase
       
       
       
-      <section id="projects" class="about henhouse">
-
-  <div class="container info hen">
-    <h1>Current Work</h1>
-    <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
-      but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
-    <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
-    <ul> Technical stuff:
-      <li>Webster Dictionairy API for definitionan and syllable lookup</li>
-      <li>Text to speach to say the word and read the definition </li>
-      <li>Text to speach gives paise with 'thumbs up' </li>
-      <li>Rendered purely with CSS</li>
-      <li>JS/jQuery controlled animations</li>
-    </ul>
-
-    <ul>User functionality:
-      <li>Choose category</li>
-      <li>Adjust word lenthg</li>
-      <li>Adjust flip speed</li>
-      <li>Adjust word change speed</li>
-      <li>Adjust narator voice</li>
-      <li>Adjust voice pitch</li>
-      <li>Adjust voice speed</li>
-      <li>Adjust search for any word</li>
-      <li>Adjust text case for readability</li>
-    </ul>
-  </div>
-</section>
 
 
 
 
 
 
-<section id="contact" > 
+
+<section id="contact" class="scroll_panel"> 
   <div class="container form">
     <h1>Lets talk :-)</h1>  
   <span class="caret"></span>Here's a blinking caret for you:
@@ -421,7 +449,7 @@ Product design showcase
 
 
 
-<section id="resume" class="about henhouse">
+<section id="resume" class="scroll_panel">
 
   <div class="container_wrapper ">
     <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div>
@@ -461,14 +489,28 @@ Product design showcase
 
 
 
+<div id="scroll_down_arrow_wrapper">
+  <div class="scroll_down_arrow "><span class="material-icons-outlined">
+    swipe_down_alt
+    </span></div>
+</div>
+
 
 </section><!-- content_wrapper -->
 
 
 <div class="cursor_container">
 <div class="cursor"></div>
+<div class="cursor_braces"></div>
 <div class="cursor_main"></div>
 <div class="cursor_caret">|</div>
+</div>
+
+
+
+<div id="centerlines">
+  <div class="horizontal_center"></div>
+  <div class="vertical_center"></div>
 </div>
 
 
@@ -480,6 +522,8 @@ Product design showcase
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script> 
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+
 
 
 <script src="js/tubes.js"></script>
