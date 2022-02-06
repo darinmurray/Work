@@ -257,11 +257,48 @@ gsap.to("#intro",  {
 
 
 
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+document.querySelectorAll(".anchor").forEach(anchor => {
+	anchor.addEventListener("click", function(e) {
+		e.preventDefault();
+		let targetElem = document.querySelector(e.target.getAttribute("href")),
+			y = targetElem;
+		// if (targetElem && panelsContainer.isSameNode(targetElem.parentElement)) {
+		// 	let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start,
+		// 		totalMovement = (panels.length - 1) * targetElem.offsetWidth;
+		// 	y = Math.round(tween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
+		// }
+		gsap.to(window, {
+			scrollTo: {
+				y: y,
+				autoKill: false
+			},
+			duration: 1
+		});
+	});
+});
 
 
 
+// https://codepen.io/GreenSock/pen/bGexQpq
+// https://greensock.com/st-demos/
+// https://greensock.com/scrolltrigger/?ref=30488
+// https://codepen.io/collection/DkvGzg?cursor=ZD0xJm89MSZwPTEmdj0z
 
+// ==========   S N A P  S C R O L L   ================ // 
+// // // uncoment block below for snap scrolling
+// gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
+  ScrollTrigger.create({
+      trigger: panel,
+      start: "top 62px",
+      pin:true,
+      scrub:1,
+      snap: 1, //,
+      pinSpacing: true // test with False
+      })
 
+});
 
 
 
@@ -303,29 +340,11 @@ gsap.to("#intro",  {
 
 
 
-// https://codepen.io/GreenSock/pen/bGexQpq
-// https://greensock.com/st-demos/
-// https://greensock.com/scrolltrigger/?ref=30488
-// https://codepen.io/collection/DkvGzg?cursor=ZD0xJm89MSZwPTEmdj0z
 
 
 
 
 
-// ==========   S N A P  S C R O L L   ================ // 
-// // // uncoment block below for snap scrolling
-// gsap.registerPlugin(ScrollTrigger);
-//   gsap.utils.toArray(".panel").forEach((panel, i) => {
-//     ScrollTrigger.create({
-//         trigger: panel,
-//         start: "top 80px",
-//         pin:true,
-//         scrub:1,
-//         snap: 1, //,
-//         pinSpacing: true // test with False
-//         })
-  
-//   });
 
 
 

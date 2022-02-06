@@ -48,11 +48,12 @@ body {
   font-family: 'Bitter', serif;
   font-weight: 200;
   width: 100vw; /*  calc(100vw - (100vw - 100%));  */
-
   cursor: var(--cursor_show);
 }
 
-
+ /* either body or .pin-spacer should match the background
+  color of whatever section is on top, or above 50vh */
+/* .pin-spacer { background-color: cyan} */
 
 
 
@@ -177,6 +178,8 @@ img {
   /* font-family: 'Inter', sans-serif; */
   font-size: 40px;
   font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .subtitle {
   font-family: 'Space Grotesk', sans-serif;
@@ -187,10 +190,28 @@ img {
   font-weight: 400;
 }
 .copy {
-  font-family: 'Bitter', serif;
-  font-size: 24px;
-  font-weight: 200;
+
 }
+.centered {
+  text-align: center;
+}
+
+p {
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+  font-weight: 200;
+  float:none;
+  /* background: pink; */
+  margin-bottom: 15px;
+}
+
+
+.width_40 { width: 40vw; }
+.width_50 { width: 50vw; }
+.width_60 { width: 60vw; }
+.width_70 { width: 70vw; }
+.width_80 { width: 80vw; }
+
 
 .font_100 { font-weight: 100; }
 .font_200 { font-weight: 200; }
@@ -202,7 +223,11 @@ img {
 .font_800 { font-weight: 800; }
 
 
-
+.copyright {
+  font-size: 50%;
+  vertical-align: top;
+  opacity: 0.5;
+}
 
 
 
@@ -382,16 +407,18 @@ ul#nav li  ul li:nth-child(4)  {
 
 
 
-.hero_wrapper {
-border: 1px solid #000;
-height: 300px;
-width: 300px;
-}
+/* .hero_wrapper {
+ border: 2px solid #000;
+ border-radius: 10px;
+ overflow: hidden;
+ padding: 0px;
+ margin:0px;
+ background-color: #red;
+} */
 .hero img {
-  height: 300px;
-width: 300px;
-border: 1px solid green;
-z-index: 99999;
+  padding: 0px;
+  margin:0px;
+  width: 60vw;
 }
 
 
@@ -573,15 +600,20 @@ div#intro.role {
   background: LavenderBlush;  /*  ghostwhite   LavenderBlush  */
  }
 
+
+ #illustration {
+ background-color: white;
+ }
+
 #words {
 background-color: lemonchiffon;
 }
 #logos {
-background: lightcyan;
+background: whitesmoke;
 }
 
 #products{ 
-background-color: honeydew;
+background-color: white;  /* honeydew; */
 }
 
 
@@ -729,7 +761,7 @@ section#contact {
 }
 
 .container {
-padding: 80px 50px;
+padding: 120px 50px;
 margin: 0px auto;
 }
 
@@ -872,25 +904,33 @@ color: white;
 /* =========     G L O B A L      ============ */
 /* =========     G L O B A L      ============ */
 /* =========     G L O B A L      ============ */
-section#content { 
-  p osition: absolute;
+
+/* wraps ALL content inside the body */
+div#page_wrapper { 
   width: 100%;
 }
 
 /* global over-write for ALL sections top padding and height */
 section section {
-  /* min-height: 100vh;  */
-  height: 100vh; 
-  position: relative;
+  m in-height: 100vh;  /* this messes up the current itteration of scroll snap = FIX */
+  /* height: 100vh;  */
+  p osition: relative;
 }
 
-/* containers that are mostly tex */
-.container.info {  
-max-width: 1000px;
-min-height: 100vh;
+/* containers that are mostly text */
+.container.mostly_words {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  /* min-height: 100vh; */
 }
 
-
+.scroll_panel {
+  width: 100%;
+  /* min-height: calc(100vh - 62px); */
+  min-height: 100vh;
+}
 
 
 
