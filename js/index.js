@@ -291,7 +291,9 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
   ScrollTrigger.create({
       trigger: panel,
-      start: "top 62px",
+      // THis messest up flex align centering :-(
+      // start: "top 62px",
+      start: "top top",
       pin:true,
       scrub:1,
       snap: 1, //,
@@ -335,6 +337,118 @@ gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
 //     // onEnterBack: () => goToSection( i ),
 //   });
 // });
+
+
+
+
+
+
+
+
+
+// ======================================================== //
+// =============     C A R O U S E L      =============== //
+// ============== (slowly / with effects) ================= // 
+// (function() {
+
+  // var $carousels = $('.js-carousel');
+  
+  // $carousels.each(function(index, container) {
+  //   var tl = new TimelineMax({paused: true});
+  //       $item = $('.carousel__item', container),
+  //       itemCount = $item.length,
+  //       currentSlide = 0,
+  //       buttons = {
+  //          prev: $('.js-carousel-prev', container),
+  //          next: $('.js-carousel-next', container),
+  //       };
+    
+  
+  //   for(var i = 0; i < itemCount; i++) {
+      
+  //     TweenLite.set($('.carousel__item').eq(i), {left: - (i * 100) + '%'});
+              
+  //     if(i != 0) {
+  //       tl.addPause('pause' + i);
+  //     }
+  //     if(i != itemCount -1) {
+  //       tl.to($item[i], 0.2, {xPercent: -100, ease: Linear.easeInOut}, "tween" + i)
+  //         .from($item[i + 1], 0.2, {xPercent: 100, ease: Linear.easeInOut}, "tween" + i);      
+  //     }
+  //   }
+    
+  //  buttons.prev.on('click', function() {
+  //     tl.reverse();
+  //   });
+    
+  //   buttons.next.on('click', function() {
+  //     tl.play();
+  //   });
+    
+      
+  // });
+    
+  // })();
+
+
+
+
+// ===========  C A R O U S E L  =========== //
+// ===========      simple       =========== //
+// ===========  fading carousel  =========== //
+const slide_buttons = $(".js-carousel-button ")
+// collect all carousels
+var carousels = $('.carousel_container');
+// uniquefy each carousel 
+carousels.each(function(index, container) {
+  // uniquefy each carousel
+  container.id = $(container).attr('data-name') + "_carousel"
+            // collect the slidese per each carousel
+            // this is repeated in the switchSlides function below, dry it?
+            let mySlides = $(container).find(".carousel__item ")
+            console.log(`%c=> mySlides: `, "color:pink", mySlides);
+  // uniquefy each slide
+  $(mySlides).each(function(index) { 
+    this.id = "slide_"+ index
+  });  
+
+});
+
+function switchSlides(selected_carousel){
+  // collect the slidese per each carousel
+  let theseSlides = $(selected_carousel).find(".carousel__item ")
+  let current_slide = $(selected_carousel).find(".showing")[0] 
+  let next_slide = current_slide.nextElementSibling ?? theseSlides[0]
+  let prev_slide = current_slide.previousElementSibling ?? theseSlides[theseSlides.length-1]
+  return [current_slide, prev_slide, next_slide];
+}
+
+// ==========  C A R O U S E L   B U T T O N S  ================
+// jQuery because it's simpler and shorter
+$(document).on("click", slide_buttons , function(e) { 
+  // let this_button = e.target.parentElement.id
+  let this_butons_direction = e.target.parentElement.dataset.direction
+  let this_butons_carousel = e.target.parentElement.parentElement.parentElement  
+  const [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
+  
+    if ( this_butons_direction == 'previous' ) {
+      console.log(`%c<== Show Previous Slide: `, "color:LightCyan");
+      $(current_slide).removeClass("showing"); 
+      $(prev_slide).addClass("showing"); 
+    } else {
+      console.log(`%cShow Next Slide ==> `, "color:LightCyan");
+      $(current_slide).removeClass("showing"); 
+      $(next_slide).addClass("showing"); 
+    }
+
+});
+
+
+
+
+
+
+
 
 
 

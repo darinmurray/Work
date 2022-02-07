@@ -25,7 +25,7 @@
     --nav-text: var(--black-10);  /*  #8c9aa0  */
     --nav-text-hover: red;  /*  #8c9aa0  */
 
-    --cursor_show: none;  /* default  none */
+    --cursor_show: default;  /* default  none */
 
  }
 
@@ -580,50 +580,69 @@ div#intro.role {
 
 
 
+/* =========     W O R K, W O R D S, E T C.       ============ */
 /* =========     P R O J E C T S      ============ */
 /* =========     P R O J E C T S      ============ */
-/* =========     P R O J E C T S      ============ */
-#work, #words, #logos, #products {
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center; 
- align-content: center; 
- justify-content: center; 
- min-height:100vh;
- padding-left: min(75px);
- padding-right: min(75px);
 
-}
-  /* justify-content: center; */
  #work {
-  background: LavenderBlush;  /*  ghostwhite   LavenderBlush  */
+  background: #fff0f5;  /*  ghostwhite   LavenderBlush  */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0ffff+0,ffffff+20,ffffff+77,e0ffff+100 */
+background: rgb(224,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(224,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(224,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', endColorstr='#e0ffff',GradientType=0 ); /* IE6-9 */
+
  }
 
 
- #illustration {
- background-color: white;
- }
-
-#words {
-background-color: lemonchiffon;
+section#words {
+background-color: pink;
 }
-#logos {
-background: whitesmoke;
+
+
+section:not(#tubes, #words) {
+display: flex;
+flex-direction: column;
+/* align-items: flex-start;  */
+align-items: center; 
+align-content: center; 
+/* justify-content works EXCEPT FOR THE FACT THAT
+I HAVE A CUSTOM OFFEST FROM THE TOP, IN THE JAVASCRIPT
+SCROLL FUNCTION... AAAAAAGH!! */
+justify-content: center; 
+ /* minus TOP OFFEST!!!! */
+
+padding-top: 135px;
+padding-bottom: 135px;
+}
+
+
+
+section#illustration {
+background: hsl(0, 0%, 96%);
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f5f5+0,ffffff+20,ffffff+77,f5f5f5+100 */
+background: rgb(245,245,245); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(245,245,245,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(245,245,245,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+
+}
+section#logos {
+background: lemonchiffon;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fffacd+0,ffffff+20,ffffff+77,fffacd+100 */
+background: rgb(255,250,205); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,250,205,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(255,250,205,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,250,205,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(255,250,205,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,250,205,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(255,250,205,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffacd', endColorstr='#fffacd',GradientType=0 ); /* IE6-9 */
+
 }
 
 #products{ 
 background-color: white;  /* honeydew; */
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -655,10 +674,18 @@ background-color: white;  /* honeydew; */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1c1c1c+0,2a2a2a+20,2a2a2a+77,1c1c1c+100 */
+background: rgb(28,28,28); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(28,28,28,1) 0%, rgba(42,42,42,1) 20%, rgba(42,42,42,1) 77%, rgba(28,28,28,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(28,28,28,1) 0%,rgba(42,42,42,1) 20%,rgba(42,42,42,1) 77%,rgba(28,28,28,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(28,28,28,1) 0%,rgba(42,42,42,1) 20%,rgba(42,42,42,1) 77%,rgba(28,28,28,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1c1c', endColorstr='#1c1c1c',GradientType=0 ); /* IE6-9 */
+
   
   }
   
-  section#about_me .container.info ul{  
+  /* section#about_me .container.info ul{  
   color: var(--black-4);
   text-decoration: none;
   }
@@ -666,16 +693,16 @@ background-color: white;  /* honeydew; */
   max-width: 1000px;
   position: relative;
   }
-  
+   */
 
 /* =========  STRIPES ============ */
 /* =========     &    ============ */
 /* =========  shadows ============ */
-section#about_me .container_wrapper{
+/* section#about_me .container_wrapper{
   position:relative;
   width: 100%;
-/* overlay image here... */
-  }
+  } */
+
   .overlay {
   position: absolute;
   width: 100%;
@@ -760,9 +787,16 @@ section#contact {
 /* cursor: none; */
 }
 
-.container {
-padding: 120px 50px;
-margin: 0px auto;
+.container { /* just rename this to 'margin-center' already!! */
+/* padding: 120px 50px; this only realy applies to contact and about_me, fix */
+/* margin: 0px auto; */
+/* padding-left: min(75px);
+padding-right: min(75px); */
+
+/* border: 3px solid red; */
+/* padding-bottom: 135px; */
+
+margin-bottom: 150px;
 }
 
 .container.form {
@@ -898,6 +932,91 @@ color: white;
 
 
 
+/*  working, but only slides, no fades. */
+
+/* =========     C A R O  S E L      ============ */
+/* =========     C A R O  S E L      ============ */
+/* =========     C A R O  S E L      ============ */
+
+/* main wrapper of the  */
+/* carousel AND buttons */
+.carousel_container { }
+/* Inner carousel??  Why is the wrapper needed? */
+.carousel {
+  display:flex;
+  align-content: center;
+  align-items: center;
+  font-size: 0;
+}
+
+/* carousel */
+.carousel__slider {
+  position: relative;
+  display:flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 60vw; /* 70vw  should be a calk to include width of the left/right arrows */
+  height: calc(70vw * 0.5);  /*  making it a 2 to one proportion  */
+  white-space: nowrap;
+}
+
+.carousel__item {
+  display:flex;
+  /* align-content: center; This distorts the contents */
+  align-items: center;
+  position: absolute; 
+  opacity: 0.0;
+}
+
+
+.carousel__item img {
+width: 50vw;
+}
+
+.showing {
+  opacity: 1;
+  transition: 1s;
+}
+
+
+.js-carousel-button {
+  /* b ackground-color: lightGray;
+  b order-radius: 20px; */
+  color: rgba(0, 0, 0, 1.0);
+  display:block;
+  width: 44px;
+  height: 80px;
+  z-index: 9999;
+  opacity: 0.1;
+}
+
+
+
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-72 { font-size: 72px; }
+.material-icons.md-84 { font-size: 84px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -912,28 +1031,43 @@ div#page_wrapper {
 
 /* global over-write for ALL sections top padding and height */
 section section {
-  m in-height: 100vh;  /* this messes up the current itteration of scroll snap = FIX */
+  /* this messes up the current itteration of scroll snap = FIX */
+  /* m in-height: 100vh;   */
   /* height: 100vh;  */
-  p osition: relative;
+  /* p osition: relative; */
 }
 
 /* containers that are mostly text */
-.container.mostly_words {  
+.column_centered {  
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 80vw; 
   max-width: 1000px;
+  margin: 0 auto;
+  /* padding-top:150px; */
+  /* padding-bottom:150px; */
+  /* margin: 150px auto 150px auto; */
+ /* padding-left: min(75px);
+ padding-right: min(75px); */
   /* min-height: 100vh; */
 }
 
 .scroll_panel {
+  /* display: flex;
+  align-items: center; */
+
   width: 100%;
   /* min-height: calc(100vh - 62px); */
   min-height: 100vh;
+  /* padding-top: 150px; */
 }
 
 
-
+/* section {
+  padding-top: 150px;
+} */
 
 
 
