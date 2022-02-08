@@ -3,7 +3,8 @@ window.onload = function() {
  
 
 // for layout purposes only
-$("#centerlines").hide()
+// hiddeen by default in the css
+// $("#centerlines").show()
 
 
 // ===============   M A I N   ================ // 
@@ -68,6 +69,23 @@ document.addEventListener('mousemove', (e)=> {
 $(".cursor_braces, .cursor_caret").hide();
 //$(cursor).hide()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // change the ROTATION on the cursor in the SUB-MENU
 // This could be over ONLY "#sub_nav li", NOT "#nav li" as there are no angles in #nav
 // $(".sub_nav li").each(function(big_e){
@@ -112,7 +130,7 @@ $(work_menu).children('li').each(function(big_e){
         // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
         var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
         // works!
-        console.log(`%c=> angle: `, "color:red",  + angle + 'deg');
+        console.log(`%c=> cursor angle: `, "color:red",  + angle + 'deg');
         return angle //= null ?? 0;
       }
       return 0
@@ -132,7 +150,7 @@ $(".work, .about_me, .home, .contact, .resume").each(function(big_e){
     $(".cursor_main").hide();
     $(".cursor_caret").hide();
   }, function(){
-    console.log(`%c=> main nav li not being hovered anymore, el' gone oh: `, "color:orange");
+    console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
       $(".cursor_braces").hide();
       $(".cursor_main").show();
       $(".cursor_caret").hide();  // it looks kind of nice with this on...
@@ -223,28 +241,27 @@ gsap.from("#floating_logo",  {
 
 // gsap.to("#intro", {duration: 1 , delay: 1, y: "0vh", ease: "power1.in", opacity: 0.2} )
 
-gsap.to("#intro",  {
-  scrollTrigger: {
-    trigger: "#landing", // content
-    start: "20% bottom-200", // play with this for timing ! ! ! ! ! ! !! 
-    toggleActions: "restart pause reverse pause",
-    // markers:true,
-    scrub: true //, //1, 2, 3 numbers are slower
-    // end: "bottom top"  // ,  // +=200px
-    // pin: "#floating_logo_large"  // true
-  }, 
-  // duration: 1 , // no effect when scrubbed above
-  // delay: 2, 
-  //y: "40vh", 
-  // ease: "power5.in", 
-  opacity: 0
-} );
+// gsap.to("#intro",  {
+//   scrollTrigger: {
+//     trigger: "#landing", // content
+//     start: "20% bottom-200", // play with this for timing ! ! ! ! ! ! !! 
+//     toggleActions: "restart pause reverse pause",
+//     // markers:true,
+//     scrub: true //, //1, 2, 3 numbers are slower
+//     // end: "bottom top"  // ,  // +=200px
+//     // pin: "#floating_logo_large"  // true
+//   }, 
+//   // duration: 1 , // no effect when scrubbed above
+//   // delay: 2, 
+//   //y: "40vh", 
+//   // ease: "power5.in", 
+//   opacity: 0
+// } );
 
 
-
-
-
-
+// var tl = gsap.timeline( { defaults:{ duration: 1.0, ease: Back.easeOut.config(2), opacity: 0 }})
+var tl = gsap.timeline( { defaults:{ duration: 0.5, opacity: 0 }})
+tl.from(".intro_text", {delay:1, scale: .2, transformOrigin: 'bottom', stagger: .2 }  ) //, "=.2"
 
 
 
@@ -263,6 +280,8 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 		e.preventDefault();
 		let targetElem = document.querySelector(e.target.getAttribute("href")),
 			y = targetElem;
+      console.log(`%c=> y: `, "color:cyan", y);
+
 		// if (targetElem && panelsContainer.isSameNode(targetElem.parentElement)) {
 		// 	let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start,
 		// 		totalMovement = (panels.length - 1) * targetElem.offsetWidth;
@@ -285,22 +304,66 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 // https://greensock.com/scrolltrigger/?ref=30488
 // https://codepen.io/collection/DkvGzg?cursor=ZD0xJm89MSZwPTEmdj0z
 
+// // // // serious problem... this snap scroll works GREAT, escept for the fact that it completely fucks up the main menu nav...
+// // // // serious problem... this snap scroll works GREAT, escept for the fact that it completely fucks up the main menu nav...
+// // // // serious problem... this snap scroll works GREAT, escept for the fact that it completely fucks up the main menu nav...
+
 // ==========   S N A P  S C R O L L   ================ // 
 // // // uncoment block below for snap scrolling
-// gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
-  ScrollTrigger.create({
-      trigger: panel,
-      // THis messest up flex align centering :-(
-      // start: "top 62px",
-      start: "top top",
-      pin:true,
-      scrub:1,
-      snap: 1, //,
-      pinSpacing: true // test with False
-      })
+//  gsap.registerPlugin(ScrollTrigger);
+// gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
+//   ScrollTrigger.create({
+//       trigger: panel,
+//       start: "top top",
+//       pin:true,
+//       scrub:1,
+//       snap: 1, //,
+//       pinSpacing: false // test with False
+//       })
+// });
 
+
+// Perhaps a good simple pure js alternative??
+// https://stackoverflow.com/questions/46756664/on-scroll-scroll-100vh-down-up-works-once
+
+
+
+// $(document).on('wheel', function(e) {
+//   let deltathing = e.originalEvent.deltaY
+//   console.log(`%c=> deltathing: `, "color:green", deltathing);
+//   // e.preventDefault();
+//   $('html, body').stop(true).animate({
+//     scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
+//   });
+// });
+
+$("#scroll_up_arrow ").on('click', function(e) {
+// I should just have this go to nex/previous anchor...
+  $('html, body').stop(true).animate({
+    // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
+    scrollTop: '-=' + $(window).height() + 'px'
+  });
 });
+
+
+$("#scroll_down_arrow ").on('click', function(e) {
+// I should just have this go to nex/previous anchor...
+  $('html, body').stop(true).animate({
+    // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
+    scrollTop: '+=' + $(window).height() + 'px'
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -396,7 +459,7 @@ gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
 // ===========  C A R O U S E L  =========== //
 // ===========      simple       =========== //
 // ===========  fading carousel  =========== //
-const slide_buttons = $(".js-carousel-button ")
+// const slide_buttons = $(".js-carousel-button ")
 // collect all carousels
 var carousels = $('.carousel_container');
 // uniquefy each carousel 
@@ -406,7 +469,6 @@ carousels.each(function(index, container) {
             // collect the slidese per each carousel
             // this is repeated in the switchSlides function below, dry it?
             let mySlides = $(container).find(".carousel__item ")
-            console.log(`%c=> mySlides: `, "color:pink", mySlides);
   // uniquefy each slide
   $(mySlides).each(function(index) { 
     this.id = "slide_"+ index
@@ -425,11 +487,11 @@ function switchSlides(selected_carousel){
 
 // ==========  C A R O U S E L   B U T T O N S  ================
 // jQuery because it's simpler and shorter
-$(document).on("click", slide_buttons , function(e) { 
+$(document).on("click", ".js-carousel-button " , function(e) { 
   // let this_button = e.target.parentElement.id
   let this_butons_direction = e.target.parentElement.dataset.direction
   let this_butons_carousel = e.target.parentElement.parentElement.parentElement  
-  const [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
+  let [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
   
     if ( this_butons_direction == 'previous' ) {
       console.log(`%c<== Show Previous Slide: `, "color:LightCyan");
@@ -440,7 +502,9 @@ $(document).on("click", slide_buttons , function(e) {
       $(current_slide).removeClass("showing"); 
       $(next_slide).addClass("showing"); 
     }
-
+    // current_slide = null
+    // prev_slide = null
+    // next_slide = null
 });
 
 

@@ -42,17 +42,18 @@
 <header>
 <!-- navigation -->
 
-<!-- find a way to do this without having to add "class="anchor"" to every a tag...  -->
-<div id="nav_floater" class="nav_floater">
-  <div id="nav_wrapper" class="nav_wrapper">  
+<!-- find a way to do this without having to add "class="anchor"" to every a tag...  subtle-box -->
+<div id="nav_floater" class="nav_floater  ">
+  <div id="nav_wrapper" class="nav_wrapper in-your-face-box">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">       
         <li class="work">  <a href="#work" class="anchor">Work</a>
-          <ul class="sub_nav">
-            <li id="tubes_li" class="tubes"><a href="#tubes" class="anchor">Tubes</a></li>
-            <li id="words_li" class="words"><a href="#words" class="anchor">Words</a></li>
-            <li id="logos_li" class="logos"><a href="#logos" class="anchor">Logos</a></li>
-            <li id="products_li" class="products "><a href="#products" class="anchor">Products</a></li>
+          <ul class="sub_nav ">
+            <li id="tubes_li" class="tubes in-your-face-shadow"><a href="#tubes" class="anchor">Tubes</a></li>
+            <li id="words_li" class="words medium-shadow"><a href="words/index.html" class="an chor">Words</a></li>
+            <li id="illustration_li" class="illustration medium-shadow"><a href="#illustration" class="anchor">illustration</a></li>
+            <li id="logos_li" class="logos subtle-shadow"><a href="#logos" class="anchor">Logos</a></li>
+            <li id="products_li" class="products subtle-shadow"><a href="#products" class="anchor">Products</a></li>
           </ul>  
         </li>
         <li id="about_me_li" class="about_me" ><a href="#about_me" class="anchor">About</a></li>
@@ -80,11 +81,15 @@
 
 
 
+
+
+
+
 <section id="landing" class="scroll_panel">
-  <div class="landing_wrapper column_centered">  
+  <div class="landing_wrapperX column_centeredX">  
     <div id="intro" class="role">
-      <h1>Front End Designer/Dev With a Penchant for UX/UI</h1>
-        <p>Obsessed with pixel perfect rendering and a smooth engaging user experience</p>
+      <h1 class="intro_text">Front End Designer/Dev With a Penchant for UX/UI</h1>
+        <p class="intro_text">Obsessed with pixel perfect rendering and a smooth, engaging user experience</p>
     </div>
   </div>
 </section>
@@ -92,37 +97,70 @@
 
 
 
-<section id="work" class="scroll_panel">
-  <div class="work_wrapper container column_centered ">
-    <h1>Yes, I do things</h1>
-    <p>Page about work, in general... necessary?</p>
 
-      <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
-      <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
-      <ul> Technical stuff:
-        <li>Webster Dictionairy API for definitionan and syllable lookup</li>
-        <li>Text to speach to say the word and read the definition </li>
-        <li>Text to speach gives paise with 'thumbs up' </li>
-        <li>Rendered purely with CSS</li>
-        <li>JS/jQuery controlled animations</li>
-      </ul>
-  
-      <ul>User functionality:
-        <li>Choose category</li>
-        <li>Adjust word lenthg</li>
-        <li>Adjust flip speed</li>
-        <li>Adjust word change speed</li>
-        <li>Adjust narator voice</li>
-        <li>Adjust voice pitch</li>
-        <li>Adjust voice speed</li>
-        <li>Adjust search for any word</li>
-        <li>Adjust text case for readability</li>
-      </ul>
+<section id="about_me" class="scroll_panel" >
+  <div class="about_me_wrapper container column_centered">
+    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
+    <!-- <div class="overlay top_shadow _clean"></div> -->
+
+
+          <div class="centered width_60">
+          <h1 class="title ">Front End Design/Build + </h1>
+            <!-- <div class="subtitle"> Core Skills </div> -->
+
+             
+<div class="skills"> 
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JAVASCRIPT</span>
+<span class="skill">LIQUID</span>
+</div>
+              <!-- <ul class="row_of_icons"> 
+                <li><ion-icon name="logo-html5"></ion-icon> </li>
+                <li><ion-icon name="logo-css3"></ion-icon> </li>
+                <li><ion-icon name="logo-javascript"></ion-icon> </li>
+              </ul> -->
+          </div>
+
+          <!-- <p class="copy"> Core Skills</p> -->
+
+         
+
+          <div class=" centered  width_60" >
+            <h1 class="title ">Very comfortable in: </h1>
+            <!-- <p class="font_400 width_60 center" >Experiences in eCommerce from being a product designer/store owner/store coder to customizing several stores</p> -->
+              <ul class="comfort_list"> 
+                <li>Digital Illustration</li>
+                <li>Photo Retouching</li>
+                <li>Videography/Video Production</li>
+                <li>Audio Editing/Sound Production</li>
+                <li>Product Design</li>
+                <li>Product Photography</li>
+                <li>eCommerce (all phases)</li>
+              </ul>
+
+          </div>
+          <!-- </div> -->
   </div>
+  <ul class="row_of_icons_small"> 
+    <li><ion-icon name="logo-codepen"></ion-icon> </li>
+    <li> <ion-icon name="logo-instagram"></ion-icon> </li>
+    <li><ion-icon name="logo-github"></ion-icon> </li>
+  </ul>
+
+
+  <!-- <ul class="row_of_icons"> 
+    <li><ion-icon name="logo-html5"></ion-icon> </li>
+    <li><ion-icon name="logo-css3"></ion-icon> </li>
+    <li><ion-icon name="logo-javascript"></ion-icon> </li>
+    <li><ion-icon name="logo-codepen"></ion-icon> </li>
+    <li> <ion-icon name="logo-instagram"></ion-icon> </li>
+    <li><ion-icon name="logo-github"></ion-icon> </li>
+  </ul> -->
+
+
 </section>
-
-
-
+      
 
 
 <section id="tubes" class="scroll_panel">
@@ -279,8 +317,8 @@
 
 <section id="words" class="scroll_panel">
   <div class="words_wrapper ">
-<h1>words character flip site goes here</h1>
-<p>words app goes here</p>
+
+<img src="images/words-satisfied.png" alt="words app placeholder">
   </div>
 </section>
 
@@ -292,41 +330,34 @@
     <h1>Digital Illustration</h1>
     <p class="copy width_40 centered">Extensive Experience in Adobe<span class="copyright">©</span> Illustrator & Photosop </p>
 
-    <div class="hero_wrapper">
-    <div class="hero"><img src="images/illustrations/WhataPlate.jpg" alt="illustated license plate"></div>
-    <!-- <div class="hero"><img src="images/illustrations/Ice-Tin.jpg" alt="illustated license plate"></div> -->
 </div>
-</div>
-
-
-
-
 
 
 <div class="carousel_container" data-name="illustration">
   <div class="carousel | js-carousel">
-     <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous"><span class="material-icons md-84">
-      arrow_back_ios
-      </span></div>   
-      <div class="carousel__slider">
-        <span class="carousel__item ">
-          <img src="images/logos/DTM-About-Work-Logo-Black-Crow.png" alt="illustated license plate">
+    <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
+      <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+      </div>   
+       <div class="carousel__slider">
+        <span class="carousel__item  showing ">
+          <img src="images/illustrations/WhataPlate.jpg" alt="illustated license plate">
         </span>
         <span class="carousel__item">
-          <img src="images/logos/DTM-About-Work-Logo-Lumberjack.png" alt="illustated license plate">
-        </span>
-        <span class="carousel__item showing ">
-          <img src="images/logos/DTM-About-Work-Logo-Rugged-Dandy.png" alt="illustated license plate">
+          <img src="images/illustrations/Ice-Tin.jpg" alt="Icehouse Logo on Metal">
         </span>
         <span class="carousel__item">
-          <img src="images/logos/DTM-About-Work-Logo-Portenzo.png" alt="illustated license plate">
+          <img src="images/illustrations/ESPNlogos.jpg" alt="Embroidered ESPN logo">
+        </span>
+        <span class="carousel__item">
+          <img src="images/illustrations/ParkingSpot.jpg" alt="Parking Spot Bus Illustration">
+        </span>
+        <span class="carousel__item">
+          <img src="images/illustrations/Speodmeter.jpg" alt="Coors Light Speedometer Logo">
         </span>
       </div>
-    <div id="js-carousel-next" class="js-carousel-button" data-direction="next"><span class="material-icons md-84">
-      arrow_forward_ios
-      </span>
-      
-      </div>
+    <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
+      <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+    </div>
   </div>  
 </div>
 
@@ -359,52 +390,36 @@
 
     <div class="carousel_container" data-name="logos">
       <div class="carousel | js-carousel">
-         <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous"><span class="material-icons md-84">
-          arrow_back_ios
-          </span></div>   
+      <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
+      <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+      </div>   
           <div class="carousel__slider">
+
             <span class="carousel__item ">
-              <!-- <p>where the FUCK is my shit??</p>
-              <span>This is bat shit god damned crazy!!!</span>
-              <div>mother fucking ONE ON ENE</div> -->
-              <img src="images/logos/DTM-About-Work-Logo-Black-Crow.png" alt="illustated license plate">
+              <img src="images/logos/DTM-About-Work-Logo-Black-Crow.png" alt="Black Crow Logo">
+            </span>
+            
+            <span class="carousel__item">
+              <img src="images/logos/DTM-About-Work-Logo-Lumberjack.png" alt="Lumberjack Leather Logo">
+            </span>
+
+            <span class="carousel__item showing  showing ">
+              <img src="images/logos/DTM-About-Work-Logo-Rugged-Dandy.png" alt="Rugged Dandy Logo">
             </span>
             <span class="carousel__item">
-              <!-- <h1>FUCK YOU 22222222</h1>
-              <p>where the FUCK is my shit??</p>
-              <span>This is bat shit god damned crazy!!!</span>
-              <div>mother fucking div mother fucker</div> -->
-              <img src="images/logos/DTM-About-Work-Logo-Lumberjack.png" alt="illustated license plate">
-              <!-- <span>words here</span> -->
-            </span>
-            <!-- <div class="carousel__item"> -->
-              <!-- <p>where the FUCK is my shit??</p>
-              <span>This is bat shit god damned crazy!!!</span>
-              <div>mother fucking div mother fucker</div> -->
-            <!-- </div> -->
-            <span class="carousel__item showing ">
-              <!-- <h1>Number fucking 4 4 4 4 4 4 4 4</h1>
-              <p>where the FUCK is my shit??</p>
-              <span>This is bat shit god damned crazy!!!</span>
-              <div>mother fucking div mother fucker</div> -->
-              <img src="images/logos/DTM-About-Work-Logo-Rugged-Dandy.png" alt="illustated license plate">
-              <!-- <span>words here</span> -->
-            </span>
-            <span class="carousel__item">
-              <!-- <h1>5 simple 5 fuckin 5 items 5!</h1>
-              <p>where the FUCK is my shit??</p>
-              <span>This is bat shit god damned crazy!!!</span>
-              <div>mother fucking div mother fucker</div> -->
-              <img src="images/logos/DTM-About-Work-Logo-Portenzo.png" alt="illustated license plate">
-              <!-- <span>words here</span> -->
+              <img src="images/logos/DTM-About-Work-Logo-Portenzo.png" alt="Portenzo Logo">
             </span>
 
           </div>
-        <div id="js-carousel-next" class="js-carousel-button" data-direction="next"><span class="material-icons md-84">
-          arrow_forward_ios
-          </span>
+      <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
+        <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+        <!-- <span class="material-icons l_r_arrows">arrow_right</span> -->
+      </div>
           
-          </div>
+
+          
+
+
       </div>  
     </div>
 
@@ -421,55 +436,55 @@
 <section id="products" class="scroll_panel">
   <div class="products_wrapper container column_centered">
     <h1>Product Design & Production</h1>
-    <p class="copy width_60">I have designed and {mass} produced each of these items and many more.  </p>
-    <p class="copy width_60">Solid understanding of designing for cost, producing and fulfilling in an ecommerce envirenment.</p>
-    <p class="copy width_60">I produced all product photography including lighting, styling, color, retouching and optomizing for web</p>
+    <p class="copy width_60 centered">I have designed and {mass} produced each of these items and many more.  </p>
+    <p class="copy width_60 centered">Solid understanding of designing for cost, producing and fulfilling in an ecommerce envirenment.</p>
+    <p class="copy width_60 centered">I produced all product photography including lighting, styling, color, retouching and optomizing for web.</p>
     <div class="hero_wrapper">
-      <div class="hero"><img src="images/products/DTM_bag_front.jpg" alt="illustated license plate"></div>
-    <!-- <div class="hero"><img src="images/illustrations/Ice-Tin.jpg" alt="illustated license plate"></div> -->
+      <!-- <div class="hero"><img src="images/products/DTM_bag_front.jpg" alt="illustated license plate"></div>
+    </div> -->
+
+
+    <div class="carousel_container" data-name="illustration">
+      <div class="carousel | js-carousel">
+        <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
+          <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+          </div>   
+           <div class="carousel__slider">
+            <span class="carousel__item  showing ">
+              <img src="images/products/DTM_bag_front.jpg" alt="Bank Bag Hero">
+            </span>
+            <span class="carousel__item ">
+              <img src="images/products/vintage_leather_bank_bag_front.jpg" alt="Bank Bag Hero">
+            </span>
+            <span class="carousel__item">
+              <img src="images/products/vintage_leather_bank_bag_inside.jpg" alt="Bank Bag Inside">
+            </span>
+            <span class="carousel__item showing ">
+              <img src="images/products/vintage_leather_bank_bag_with_goodies.jpg" alt="Bank Bag Loaded">
+            </span>
+            <span class="carousel__item">
+              <img src="images/products/pennant_full_hero.jpg" alt="Whisky Pennant Rolled Up">
+            </span>
+            <span class="carousel__item">
+              <img src="images/products/pennant_whiskey_1.jpg" alt="Whiskey Pennant">
+            </span>
+          </div>
+        <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
+          <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+        </div>
+      </div>  
     </div>
+
+
+
+
   </div>
 </section>
 
 
 
 
-<section id="about_me" class="scroll_panel" >
-  <div class="about_me_wrapper container column_centered">
-    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
-    <!-- <div class="overlay top_shadow _clean"></div> -->
 
-
-          <div class=" centered width_40">
-          <h1 class="title ">Front End Design/Build + </h1>
-            <div >
-              <ul> Core Skills
-                <li><ion-icon name="logo-html5"></ion-icon>HTML</li>
-                <li><ion-icon name="logo-css3"></ion-icon> CSS</li>
-                <li><ion-icon name="logo-javascript"></ion-icon>Javascript</li>
-                <li><ion-icon name="logo-codepen"></ion-icon>Jquery  </li>
-                <li> <ion-icon name="logo-instagram"></ion-icon>Photoshop </li>
-                <li><ion-icon name="logo-github"></ion-icon>Illustrator</li>
-
-              </ul>
-          </div>
-          <div class=" centered  width_40" >
-            <h1 class="title ">Shopify Customization (+$1mil)</h1>
-            <p class="font_400 width_60 center" >Experiences in eCommerce from being a product designer/store owner/store coder to customizing several stores</p>
-              <ul> Very comfortable in: 
-                <li>Digital Illustration</li>
-                <li>Photo Retouching</li>
-                <li>Videography/Video Production</li>
-                <li>Product Design</li>
-                <li>Product Photography</li>
-                <li>eCommerce</li>
-              </ul>
-
-          </div>
-          </div>
-        </div>
-      </section>
-      
       
       
 
@@ -548,6 +563,41 @@
 
 
 
+<section id="work" class="scroll_panel">
+  <div class="work_wrapper container column_centered ">
+
+
+
+
+
+    <h1>Yes, I do things</h1>
+    <p>Page about work, in general... necessary?</p>
+
+      <p>Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
+      <p>Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
+      <ul> Technical stuff:
+        <li>Webster Dictionairy API for definitionan and syllable lookup</li>
+        <li>Text to speach to say the word and read the definition </li>
+        <li>Text to speach gives paise with 'thumbs up' </li>
+        <li>Rendered purely with CSS</li>
+        <li>JS/jQuery controlled animations</li>
+      </ul>
+  
+      <ul>User functionality:
+        <li>Choose category</li>
+        <li>Adjust word lenthg</li>
+        <li>Adjust flip speed</li>
+        <li>Adjust word change speed</li>
+        <li>Adjust narator voice</li>
+        <li>Adjust voice pitch</li>
+        <li>Adjust voice speed</li>
+        <li>Adjust search for any word</li>
+        <li>Adjust text case for readability</li>
+      </ul>
+  </div>
+</section>
+
+ 
 
 
 
@@ -566,9 +616,16 @@
 
 
 
-<div id="scroll_down_arrow_wrapper">
-  <div class="scroll_down_arrow ">
-    <span class="material-icons-outlined"> swipe_down_alt </span>
+
+
+
+
+<div id="scroll_arrow_wrapper">
+  <div id="scroll_up_arrow"  class="scroll_arrow ">
+    <span class="material-icons up_arrow">keyboard_arrow_up</span> <!-- swipe_down_alt  -->
+  </div>
+  <div id="scroll_down_arrow"  class="scroll_arrow ">
+    <span class="material-icons down_arrow">keyboard_arrow_down</span> <!-- swipe_down_alt  -->
   </div>
 </div>
 
