@@ -5,6 +5,7 @@ window.onload = function() {
 // for layout purposes only
 // hiddeen by default in the css
 // $("#centerlines").show()
+ $(".carousel_panel").hide()
 
 
 // ===============   M A I N   ================ // 
@@ -35,6 +36,42 @@ visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 let logo_hero = document.getElementById('logo_hero');
 // let navigations = document.getElementsByClassName("nav_wrapper");
 let toggledElement = document.getElementsByClassName("nav_wrapper") //$('.nav_wrapper')
+
+
+
+// // SUBMIT BUTTON CURSOR choice
+// $(".show_this_carousel").click(function(e){
+//   e.preventDefault
+//   $("section#illustration").show();
+//   $("section#logos").hide();
+//   $("section#products").hide();
+// }, function(){
+//   // $("section#illustration").show();
+//   // $("section#logos").hide();
+//   // $("section#products").hide();
+// });
+
+
+// ==========  test slideshow buttons  ================
+// jQuery because it's simpler and shorter
+const carousel_panels = $(".carousel_panel")
+$(document).on("click", ".show_carousel" , function(e) {   
+  e.preventDefault()
+  show_this = e.currentTarget.attributes.href.value
+  console.log(`%c=> this fucking target: `, "color:cyan", e.currentTarget.attributes.href.value );
+ 
+  $(".carousel_panel").hide();
+  $(show_this).show();
+});
+
+
+$(document).on("click", ".close_carousel" , function(e) {   
+  $(".carousel_panel").hide();
+});
+
+
+
+
 
 
 // ===============    S U B    ================ // 
@@ -337,22 +374,26 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 //   });
 // });
 
-$("#scroll_up_arrow ").on('click', function(e) {
-// I should just have this go to nex/previous anchor...
-  $('html, body').stop(true).animate({
-    // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
-    scrollTop: '-=' + $(window).height() + 'px'
-  });
-});
 
 
-$("#scroll_down_arrow ").on('click', function(e) {
-// I should just have this go to nex/previous anchor...
-  $('html, body').stop(true).animate({
-    // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
-    scrollTop: '+=' + $(window).height() + 'px'
-  });
-});
+// WORKING, BUT NOT NEEDED??????
+
+// $("#scroll_up_arrow ").on('click', function(e) {
+// // I should just have this go to nex/previous anchor...
+//   $('html, body').stop(true).animate({
+//     // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
+//     scrollTop: '-=' + $(window).height() + 'px'
+//   });
+// });
+
+
+// $("#scroll_down_arrow ").on('click', function(e) {
+// // I should just have this go to nex/previous anchor...
+//   $('html, body').stop(true).animate({
+//     // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
+//     scrollTop: '+=' + $(window).height() + 'px'
+//   });
+// });
 
 
 

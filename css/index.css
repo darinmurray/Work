@@ -73,6 +73,7 @@ html, body {overflow-x: hidden; }
 
 body { 
   color: var(--lightening_blue_dark);
+  background-color: var(--black-0);
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +88,8 @@ body {
 
 /* for testing out click-to-scroll */
 body {
-  min-height: 1000vh; /* number of 100vh panels you are using */
+/* number of 100vh panels you are using */
+/* min-height: 1000vh;  */
   overflow: auto;
 }
 
@@ -618,6 +620,7 @@ span.caret {
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
+  background-color: white;
 }
 
 
@@ -676,6 +679,73 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', end
  }
 
 
+
+ ul.deck {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.deck *{
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: 'Bitter', serif;
+  font-weight: 200; 
+}
+
+ul.deck li.card {
+  margin: 0px 20px;
+}
+
+ul.deck li.card a, ul.deck li.card a:visited{
+  display: block;
+  text-decoration: none;
+  border-radius: 11px;
+  overflow: hidden;
+}
+ 
+ul.deck .title{
+  color: whiteSmoke;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 5px;
+  background-color:gray;
+}
+
+ul.deck li.card a:hover .title{
+  background-color: black;
+}
+
+ul.deck li.card .card_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul.deck img{
+  border: 3px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+ul.deck li.card .card_wrapper div.title{
+padding-top: 5px;
+padding-bottom: 5px;
+  margin-top: 5px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 section#words {
 background-color: pink;
 }
@@ -700,6 +770,12 @@ padding-bottom: 135px;
 
 
 section#illustration {
+position: fixed;
+top: 0;
+left: 0;
+display:none;
+/* z-index: 1000; */
+
 background: hsl(0, 0%, 96%);
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f5f5+0,ffffff+20,ffffff+77,f5f5f5+100 */
 background: rgb(245,245,245); /* Old browsers */
@@ -710,6 +786,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', end
 
 }
 section#logos {
+  position: fixed;
+top: 0;
+left: 0;
+display:none;
   background: hsl(0, 0%, 96%);
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f5f5+0,ffffff+20,ffffff+77,f5f5f5+100 */
   background: rgb(245,245,245); /* Old browsers */
@@ -721,6 +801,10 @@ section#logos {
 }
 
 #products{ 
+  position: fixed;
+top: 0;
+left: 0;
+display:none;
   background: hsl(0, 0%, 96%);
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f5f5+0,ffffff+20,ffffff+77,f5f5f5+100 */
   background: rgb(245,245,245); /* Old browsers */
@@ -1076,13 +1160,9 @@ color: white;
   display:flex;
   align-content: center;
   align-items: center;
-  /* font-size: 0; */
-  /* border: 1px solid #000; */
 }
 
 /* carousel */
-
-
 [data-name="illustration"] .carousel__slider  {
   /* Attribute has this exact value */
   /* border: 1px solid red; */
@@ -1097,7 +1177,6 @@ color: white;
   width: 60vw; /* 70vw  should be a calk to include width of the left/right arrows */
   height: calc(70vw * 0.5);  /*  making it a 2 to one proportion  */
   white-space: nowrap;
-  /* border: 1px solid red; */
 }
 
 .carousel__item {
@@ -1106,7 +1185,6 @@ color: white;
   align-items: center;
   position: absolute; 
   opacity: 0.0;
-  /* border: 1px solid green; */
 }
 
 
@@ -1118,18 +1196,6 @@ color: white;
   height: auto;
 }
 
-/* .carousel__item img {
-width: 50vw;
-} */
-
-/* img {
-  display: block;
-  max-width:230px;
-  max-height:95px;
-  width: auto;
-  height: auto;
-} */
-
 .showing {
   opacity: 1;
   transition: 1s;
@@ -1139,19 +1205,17 @@ width: 50vw;
 .js-carousel-button {
   text-align: center;
   display:block;
-  z-index: 9999;
+  z-index: 900;
   opacity: 0.1;
 }
 .js-carousel-button:hover {
   opacity: 0.4;
 }
 [data-direction="next"] {
-  /* margin-right:80px; */
   text-align: left;
   float:left
 }
 [data-direction="previous"] {
-  /* margin-left:80px; */
   text-align: right;
   float:right;
 }
