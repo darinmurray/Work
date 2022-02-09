@@ -61,12 +61,16 @@ $(document).on("click", ".show_carousel" , function(e) {
   console.log(`%c=> this fucking target: `, "color:cyan", e.currentTarget.attributes.href.value );
  
   $(".carousel_panel").hide();
+  // dim the nav bar and logo
+  $("#nav_floater, #floating_logo").css({"opacity":"0.2", "pointer-events":"none" });
   $(show_this).show();
 });
 
 
 $(document).on("click", ".close_carousel" , function(e) {   
   $(".carousel_panel").hide();
+  // bring back the nav bar and logo
+  $("#nav_floater, #floating_logo").css({"opacity":"1", "pointer-events":"auto" });
 });
 
 
