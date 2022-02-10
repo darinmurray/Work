@@ -1,99 +1,101 @@
 :root { 
-     --black-20: #000000;
-     --black-19: #1a1a1a;
-     --black-18: #1d1d1d;
-     --black-17: #202020;
-     --black-16: #232323;
-     --black-15: #252525;
-     --black-14: #2a2a2a;
-     --black-13: #2f2f2f;
-     --black-12: #343434;
-     --black-11: #464646;
-     --black-10: #4c4c4c;
-     --black-9: #515151;
-     --black-8: #575757;
-     --black-7: #5c5c5c;
-     --black-6: #727272;
-     --black-5: #9e9e9e;
-     --black-4: #cacaca;
-     --black-3: #e0e0e0;
-     --black-2: #ebebeb;
-     --black-1: #f5f5f5; /* whitesmoke */
-     --black-0: #ffffff; /* whitesmoke */
 
-     --lightening_blue: #658196; /* whitesmoke  036592 */
-     --lightening_blue_dark: #4f6e85; /* whitesmoke */
-     --logo_red: #790101; /* whitesmoke */
-     --logo_dark_red: #700000; /* whitesmoke */
-     --hilight_yellow: rgba(255, 238, 0, 0.829);
-     
-     --cursor_show: default;  /* default  none */
+  /* general */
+  --cursor_show: default;  /* default  none */
 
-    /* navigation */
-    --nav-backround: var(--black-1);  /*  #8c9aa0  */
-    --nav-text: var(--black-10);  /*  #8c9aa0  */
-    --nav-text-hover: red;  /*  #8c9aa0  */
+  /* colors */
+--black-20: #000000;
+--black-19: #1a1a1a;
+--black-18: #1d1d1d;
+--black-17: #202020;
+--black-16: #232323;
+--black-15: #252525;
+--black-14: #2a2a2a;
+--black-13: #2f2f2f;
+--black-12: #343434;
+--black-11: #464646;
+--black-10: #4c4c4c;
+--black-9: #515151;
+--black-8: #575757;
+--black-7: #5c5c5c;
+--black-6: #727272;
+--black-5: #9e9e9e;
+--black-4: #cacaca;
+--black-3: #e0e0e0;
+--black-2: #ebebeb;
+--black-1: #f5f5f5; /* whitesmoke */
+--black-0: #ffffff; /* whitesmoke */
 
+--lightening_blue: #658196; /* whitesmoke  036592 */
+--lightening_blue_dark: #4f6e85; /* whitesmoke */
+--logo_red: #790101; /* whitesmoke */
+--logo_dark_red: #700000; /* whitesmoke */
+--hilight_yellow: rgba(255, 238, 0, 0.829);
 
-    /* work */
-    --work_text_color: var(--testing);
-    --work-backround: var(--testing);  /*  #8c9aa0  */
-    --work_h1_color: var(--testing_2);
-    --deck_title_color: var(--testing_2);
-    --deck_title_backround: var(--testing);
-    
-    /* index */
-    --landing_text_color: var(--testing);
-    --landing_h1_color: var(--testing_2);
+/*  four colors to make a basic theme change */
+--testing: var(--lightening_blue_dark); /* #ff00f2 */
+--testing_2: var(--lightening_blue_dark); /* #5e2081 */
+--testing_3: var(--black-1); /* #e5f508 */
+--soft_gradiant_end: var(--lightening_blue);  /*  rgba(224,255,255,1)  */
 
-    /* about_me */
-    --about_me_text_color: var(--testing);  /*  #8c9aa0  */
-    --about_me_backround: var(--testing_3);  /*  #8c9aa0  */
-
-    /* carousell pages */
-    --illustration-backround: var(--testing);  /*  #8c9aa0  */
-    --logos-backround: var(--testing);  /*  #8c9aa0  */
-    --product-backround: var(--testing);  /*  #8c9aa0  */
-
-    /* resume */
-    --resume-backround: var(--testing_2);  /*  #8c9aa0  */
-    
             /* probs not needed */
             --text-color-dark: var(--testing);  
             --text-color-light: var(--testing_3);  
             --dark-backround: var(--testing); 
-    
---testing: #ff00f2; /* whitesmoke */
---testing_2: #5e2081; /* whitesmoke */
---testing_3: #e5f508; /* whitesmoke */
 
- /* contact form  */
---contact-backround: var(--testing);  /*  #8c9aa0  */
+
+/* navigation */
+--nav-backround: var(--black-1);  /*  #8c9aa0  */
+--nav-text: var(--black-10);  /*  #8c9aa0  */
+--nav-text-hover: red;  /*  #8c9aa0  */
+
+/* work */
+--work_text_color: var(--testing);
+--work-backround: var(--testing);  /*  #8c9aa0  */
+--work_h1_color: var(--testing_2);
+--deck_title_color: var(--testing_2);
+--deck_title_backround: var(--testing);
+--work_background_gradiant_end: var(--soft_gradiant_end);  /* original 'work' gradiant color rgba(224,255,255,1)  */
+
+/* index */
+--landing_text_color: var(--testing);
+--landing_h1_color: var(--testing_2);
+
+/* about_me */
+--about_me_text_color: var(--testing_3);  /*  #8c9aa0  */
+--about_me_backround: var(--testing);  /*  #8c9aa0  */
+
+/* carousell pages */
+--illustration-backround: var(--testing);  /*  #8c9aa0  */
+--logos-backround: var(--testing);  /*  #8c9aa0  */
+--product-backround: var(--testing);  /*  #8c9aa0  */
+
+/* resume */
+--resume-backround: var(--testing);  /*  #8c9aa0  */
+
+/* contact form  */
+/* --contact_text_color: var(--black-1);  /*  #8c9aa0  */
 --contact_background_color: var(--testing);
      
-  --form_h1_color: var(--testing_2);
+  --form_h1_color: var(--black-1);
   --form_text_color: var(--testing_2);
   --form_label_color: var(--testing_3);
     
-  --form_input_select_background_color: var(--testing);
-  --form_input_select_background_hover_color: var(--black-0); 
-  --form_input_select_background_focus_color: var(--testing_3); 
-  --form_input_select_text_color: var(--testing_2);
-  --form_input_select_text_hover_color: var(--testing_3);  
-  --form_input_select_text_focus_color: red;   /*  var(--nav-text-hover);  */
-  
-    --form_input_text_color: var(--testing);
-
-    --form_button_background_color: var(--testing_2);
-    --form_button_background_color_hover: var(--testing_3);
-    --form_button_text_color: var(--testing);
-    --form_button_text_color_hover: var(--testing_2);
-
-
+    --form_input_select_background_color: var(--testing_3);
+    --form_input_select_background_hover_color: var(--black-0); 
+    --form_input_select_background_focus_color: var(--testing_3); 
+    --form_input_select_text_color: var(--testing_2);
+    --form_input_select_text_hover_color: var(--testing);  
+    --form_input_select_text_focus_color: var(--nav-text-hover);  
     
-    
+      --form_input_text_color: var(--testing);
+      --form_button_background_color: var(--testing_2);
+      --form_button_background_color_hover: var(--testing_3);
+      --form_button_text_color: var(--testing);
+      --form_button_text_color_hover: var(--testing_2);
 
 
+/* super serious drop shadows */
     --shadow-color: 120deg 1% 46%;  /* #bebfbe tint for landing */
     --shadow-color: 210deg 30% 60%;  /* #eff7ff tint for about me */
     --shadow-color: 120deg 2% 60%;  /* #f4f5f4 tint for projects */
@@ -776,17 +778,12 @@ div#intro.role {
 background: rgb(224,255,255); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(224,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(224,255,255,1) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: linear-gradient(to bottom,  var(--work_background_gradiant_end) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,var(--work_background_gradiant_end) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', endColorstr='#e0ffff',GradientType=0 ); /* IE6-9 */
 /* opacity: 0.2; */
---work-backround: var(--testing);
+/* background: var(--work-backround); */
+
  }
-
-
-
-
-
-
 
 
 
@@ -796,7 +793,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', end
 #work h1 {
   color: var(--work_h1_color)
 }
-
 
 
  ul.deck {
@@ -997,20 +993,16 @@ background-color: var(--products_background);
 /* =========     R E S U M E      ============ */
 /* =========     R E S U M E      ============ */
  #resume {
-  background: var(--resume-backround); 
-  color: var(--text-color-dark);
-  /* background-image: url("/images/words-satisfied.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */
+  background: var(--resume_backround); 
+  color: var(--resume_text_color);
  }
 
 
 
 
-/* =========          M E              ============ */
-/* =========          M E              ============ */
-/* =========          M E              ============ */
+/* =========      A B O U T   M E      ============ */
+/* =========      A B O U T   M E      ============ */
+/* =========      A B O U T   M E      ============ */
 #about_me {
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1c1c1c+0,2a2a2a+20,2a2a2a+77,1c1c1c+100 */
 /* Old browsers */background: rgb(28,28,28); 
@@ -1092,7 +1084,7 @@ ul.comfort_list li a, a:visited{
   height: 70px;   
 }
 .cls-1 {
-  fill: var(--work_text_color);
+  fill: var(--about_me_text_color);
 }
 #jQuery_wrapper {
   
@@ -1184,6 +1176,9 @@ section#contact {
   font-size: 14px;
   display:flex;
   justify-content: center;
+}
+section#contact h1{
+  color: var(--form_h1_color);
 }
 /* Really, IS HTIS NECESSARY?? MOVE TO WHERE EVER IT'S NEEDED */
 .container {
