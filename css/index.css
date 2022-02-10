@@ -20,20 +20,78 @@
      --black-2: #ebebeb;
      --black-1: #f5f5f5; /* whitesmoke */
      --black-0: #ffffff; /* whitesmoke */
-     --testing: #036592; /* whitesmoke */
-     
-     
-     --lightening_blue: #658196; /* whitesmoke */
+
+     --lightening_blue: #658196; /* whitesmoke  036592 */
      --lightening_blue_dark: #4f6e85; /* whitesmoke */
      --logo_red: #790101; /* whitesmoke */
      --logo_dark_red: #700000; /* whitesmoke */
+     --hilight_yellow: rgba(255, 238, 0, 0.829);
+     
+     --cursor_show: default;  /* default  none */
 
-
+    /* navigation */
     --nav-backround: var(--black-1);  /*  #8c9aa0  */
     --nav-text: var(--black-10);  /*  #8c9aa0  */
     --nav-text-hover: red;  /*  #8c9aa0  */
 
-    --cursor_show: default;  /* default  none */
+
+    /* work */
+    --work_text_color: var(--testing);
+    --work-backround: var(--testing);  /*  #8c9aa0  */
+    --work_h1_color: var(--testing_2);
+    --deck_title_color: var(--testing_2);
+    --deck_title_backround: var(--testing);
+    
+    /* index */
+    --landing_text_color: var(--testing);
+    --landing_h1_color: var(--testing_2);
+
+    /* about_me */
+    --about_me_text_color: var(--testing);  /*  #8c9aa0  */
+    --about_me_backround: var(--testing_3);  /*  #8c9aa0  */
+
+    /* carousell pages */
+    --illustration-backround: var(--testing);  /*  #8c9aa0  */
+    --logos-backround: var(--testing);  /*  #8c9aa0  */
+    --product-backround: var(--testing);  /*  #8c9aa0  */
+
+    /* resume */
+    --resume-backround: var(--testing_2);  /*  #8c9aa0  */
+    
+            /* probs not needed */
+            --text-color-dark: var(--testing);  
+            --text-color-light: var(--testing_3);  
+            --dark-backround: var(--testing); 
+    
+--testing: #ff00f2; /* whitesmoke */
+--testing_2: #5e2081; /* whitesmoke */
+--testing_3: #e5f508; /* whitesmoke */
+
+ /* contact form  */
+--contact-backround: var(--testing);  /*  #8c9aa0  */
+--contact_background_color: var(--testing);
+     
+  --form_h1_color: var(--testing_2);
+  --form_text_color: var(--testing_2);
+  --form_label_color: var(--testing_3);
+    
+  --form_input_select_background_color: var(--testing);
+  --form_input_select_background_hover_color: var(--black-0); 
+  --form_input_select_background_focus_color: var(--testing_3); 
+  --form_input_select_text_color: var(--testing_2);
+  --form_input_select_text_hover_color: var(--testing_3);  
+  --form_input_select_text_focus_color: red;   /*  var(--nav-text-hover);  */
+  
+    --form_input_text_color: var(--testing);
+
+    --form_button_background_color: var(--testing_2);
+    --form_button_background_color_hover: var(--testing_3);
+    --form_button_text_color: var(--testing);
+    --form_button_text_color_hover: var(--testing_2);
+
+
+    
+    
 
 
     --shadow-color: 120deg 1% 46%;  /* #bebfbe tint for landing */
@@ -174,7 +232,7 @@ inner .cursor is visible on hover via js */
 
 /* pretty cool effect, but a little too much for my taste. 
 Perhaps contextually useful */
-. cursor_main::after {
+.c ursor_main::after {
   position: absolute; 
   content: "";
   width: 48px;
@@ -185,20 +243,26 @@ Perhaps contextually useful */
   top: -8px;
   left: -8px;
   opacity: 0.5;
-  animation: cursorAnim2 1s infinite alternate;
+  animation: pulsate 1s infinite alternate;
 }
 
 
-@keyframes cursorAnim2 {
-  from {
+
+
+
+@keyframes clickBurst {
+  0% { transform: scale(1); }
+  50% { transform: scale(3); }
+  100% {
       transform: scale(1);
-  }
-  to {
-      transform: scale(.8);
+      opacity: 0;
   }
 }
 
-
+.expand {
+  animation: clickBurst .5s forwards;
+  border: 1px solid red;
+}
 
 
 .cursor_caret{
@@ -214,6 +278,46 @@ Perhaps contextually useful */
 img {
   cursor: var(--cursor_show);
 }
+
+.highlight {
+
+  animation: pulsate 1s infinite alternate;
+}
+
+.highlight::after {
+  position: absolute; 
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 8px solid; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-color: #44ffef9d; /* switch to rgba(255, 255, 255, 1.0); over dark backgrounds */
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+  opacity: 0.4;
+  animation: pulsate 1s infinite alternate;
+}
+
+/* play with this... opacity should be different */
+@keyframes pulsate {
+  from {
+      transform: scale(1.5);
+      transform: opacity(0.2)
+  }
+  to {
+      transform: scale(.8);
+      transform: opacity(1)
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -501,16 +605,6 @@ ul#nav li  ul li:nth-child(5)  {
 
 
 
-span.caret {
-  color:white; 
-  margin-left: 0;
-  opacity: 0;
-}
-
-@keyframes blink {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 
 
@@ -621,7 +715,7 @@ span.caret {
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
-  background-color: white;
+  background-color: (var(--black-1));
 }
 
 
@@ -640,6 +734,7 @@ span.caret {
 }
 
 div#intro.role {
+  color: var(--landing_text_color);
   text-align: center;
   /* border: 1px solid cyan; */
   /* background-color: #fff; */
@@ -684,6 +779,7 @@ background: -webkit-linear-gradient(top,  rgba(224,255,255,1) 0%,rgba(255,255,25
 background: linear-gradient(to bottom,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', endColorstr='#e0ffff',GradientType=0 ); /* IE6-9 */
 /* opacity: 0.2; */
+--work-backround: var(--testing);
  }
 
 
@@ -694,7 +790,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', end
 
 
 
-
+#work {
+  color: var(--work_text_color)
+}
+#work h1 {
+  color: var(--work_h1_color)
+}
 
 
 
@@ -729,18 +830,17 @@ ul.deck li.card a, ul.deck li.card a:visited{
 }
  
 ul.deck .title{
-  color: var(--lightening_blue);
+          color: var(--deck_title_color);
   text-decoration: none;  
   width: 100%;
   border-radius: 5px;
-  background-color:var(--black-0);
+          /* background-color: var(--deck_title_backround) ; */
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 10px;
   } 
 
 ul.deck li.card a:hover img{  /*  .title  */
-  color: var(--black-20);
   -webkit-box-shadow: 5px 5px 17px -5px rgba(0,0,0,0.6); 
   box-shadow: 5px 5px 17px -5px rgba(0,0,0,0.6);
 }
@@ -788,18 +888,6 @@ ul.deck ul{
 
 
 
-
-/* for other approaches */
-/* https://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over */
-.gray_scale {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-}
-
-.gray_scale:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-}
 
 
 
@@ -875,7 +963,7 @@ background: -moz-linear-gradient(top,  rgba(245,245,245,1) 0%, rgba(255,255,255,
 background: -webkit-linear-gradient(top,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
-background: pink;
+/* background: pink; */
 }
 section#logos {
   background: hsl(0, 0%, 96%);
@@ -885,7 +973,7 @@ section#logos {
   background: -webkit-linear-gradient(top,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
-  background-color: lemonchiffon;
+  background-color:  var(--logos_background)
 }
 
 #products{ 
@@ -896,7 +984,7 @@ section#logos {
   background: -webkit-linear-gradient(top,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(245,245,245,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(245,245,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
-background-color: honeyDew;  
+background-color: var(--products_background); 
 }
 
 
@@ -909,7 +997,8 @@ background-color: honeyDew;
 /* =========     R E S U M E      ============ */
 /* =========     R E S U M E      ============ */
  #resume {
-  background: GhostWhite;
+  background: var(--resume-backround); 
+  color: var(--text-color-dark);
   /* background-image: url("/images/words-satisfied.png");
   background-position: center;
   background-size: cover;
@@ -930,11 +1019,12 @@ background: -webkit-linear-gradient(top,  rgba(28,28,28,1) 0%,rgba(42,42,42,1) 2
 background: linear-gradient(to bottom,  rgba(28,28,28,1) 0%,rgba(42,42,42,1) 20%,rgba(42,42,42,1) 77%,rgba(28,28,28,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1c1c', endColorstr='#1c1c1c',GradientType=0 ); /* IE6-9 */
 
-background: var(--lightening_blue_dark); 
-color: var(--black-1);
+background: var(--about_me_backround); 
+color: var(--about_me_text_color);
 }
   
-ul.row_of_icons {
+
+ul.skills {
   list-style-type: none;
   /* border: 1px dotted pink; */
   display: flex;
@@ -944,21 +1034,17 @@ ul.row_of_icons {
   margin-bottom: 60px;
   margin-top: 60px;
 }
-ul.row_of_icons li{
+ul.skills li{
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
   font-size: 80px;
 }
-ul.row_of_icons li div{
+ul.skills li div{
   letter-spacing: 1px;
   font-size: 20px;
   margin-top:20px;
 }
-
-
-
-
 
 
 ul.row_of_icons_small {
@@ -971,8 +1057,28 @@ ul.row_of_icons_small {
 ul.row_of_icons_small li {
   margin: 0px 20px;
 }
+ 
+ul.comfort_list {
+  list-style-type: none;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 1px;
+  font-size: 20px;
+  line-height:40px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 60px;
+}
+ul.comfort_list li a, a:visited{
+  color: inherit;
+  text-decoration: none;
+  font-weight: 400;
+}
 
-  
+
+
+
+
+
 
 /* *************** SVG  I C O N S ***************** */
 /* *************** SVG  I C O N S ***************** */
@@ -986,7 +1092,7 @@ ul.row_of_icons_small li {
   height: 70px;   
 }
 .cls-1 {
-  fill: #f5f5f5;
+  fill: var(--work_text_color);
 }
 #jQuery_wrapper {
   
@@ -997,139 +1103,51 @@ ul.row_of_icons_small li {
 
 
 
-
-
-
-
-.skills {
-  font-family: 'Space Grotesk', sans-serif;
-  /* font-family: 'Exo 2', sans-serif; */
-  /* font-family: 'Inter', sans-serif; */
-  font-size: 20px;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 80px;
+#close_bones_SVG {
+  width: 70px;
+  height: 70px;   
+  fill: var(--black-3);
+}
+#close_bones_SVG:hover { 
+  fill: #ab1f23;
+}
+#left_bone, #right_bone {
 }
 
-.skill {
-  color: var(--lightening_blue_dark);
-  background-color: whitesmoke;
-  padding: 5px 15px;
-  margin: 0px 20px;
+#close_bones_hover_SVG {
+            
+}
+.close_bones_path {
+  fill: var(--lightening_blue);
 }
 
-ul.comfort_list {
-  list-style-type: none;
-  font-family: 'Space Grotesk', sans-serif;
-  /* font-family: 'Exo 2', sans-serif; */
-  /* font-family: 'Inter', sans-serif; */
-  letter-spacing: 1px;
-  font-size: 20px;
-  line-height:40px;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 60px;
-}
-ul.comfort_list li a, a:visited{
-  color: var(--black-1);
-  text-decoration: none;
-  font-weight: 400;
-}
-
-
-
-
-
-
-/* ``````````` S M A L L S ``````````````` */
-/* ``````````` S M A L L S ``````````````` */
-/* ``````````` S M A L L S ``````````````` */
-
-.lighter{
-  opacity: 0.5;
-  font-size: 80%;
-  }
-.asterisk {
-  font-family: 'Bitter', serif;
-  opacity: 0.3;
-  font-size: 60%;
-  vertical-align: top;
-}
-.copyright {
-  font-size: 50%;
-  vertical-align: top;
-  opacity: 0.5;
-}
-.material-icons.check {
-  vertical-align: sub;
- font-size: 16px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========  STRIPES ============ */
-/* =========     &    ============ */
-/* =========  shadows ============ */
-/* section#about_me .container_wrapper{
-  position:relative;
-  width: 100%;
-  } */
-
-  .overlay {
+.close_carousel {
+  /* font-family: 'Azeret Mono', monospace; */
+  /* font-size: 100px; */
+  /* color: var(--black-3); */
   position: absolute;
-  width: 100%;
-  height: 100%;
-  }
-  
-  .top_shadow_clean {
-  height:20%;
-  max-height:200px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a821a6+0,aa1ba8+15,000000+100&1+0,0.53+3,0+15,0+100 */
-  background: linear-gradient(to bottom,  rgb(28, 31, 32) 0%,rgba(28, 32, 32, 0.53) 3%,rgba(170,27,168,0) 10%,rgba(170,27,168,0) 100%); 
-  background-size: 400% 400%;
-  animation: AnimationName 1s ease 1 forwards;
-  }
-  
-  @keyframes AnimationName {
-    0%{background-position:48% 100%}
-    /* 50%{background-position:48% 90%} */
-    100%{background-position:48% 0%}
-  }
-  
-  .right_stripes {
-    background: repeating-linear-gradient(
-    70deg,
-    var(--black-4),
-    var(--black-4) 1px,
-    #ffffff00 2px,
-    #ffffff00 40px,
-    var(--black-4) 42px
-  );
-  opacity: 0.1;
-  }
-  
-  
-  .left_stripes {
-    background: repeating-linear-gradient(
-    110deg,
-    var(--black-4),
-    var(--black-4) 1px,
-    #ffffff00 2px,
-    #ffffff00 40px,
-    var(--black-4) 42px
-  );
-  
-  }
+  top:50px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1166,61 +1184,46 @@ section#contact {
   font-size: 14px;
   display:flex;
   justify-content: center;
-/* cursor: none; */
 }
-
-.container { /* just rename this to 'margin-center' already!! */
-/* padding: 120px 50px; this only realy applies to contact and about_me, fix */
-/* margin: 0px auto; */
-/* padding-left: min(75px);
-padding-right: min(75px); */
-
-/* border: 3px solid red; */
-/* padding-bottom: 135px; */
-
-margin-bottom: 150px;
+/* Really, IS HTIS NECESSARY?? MOVE TO WHERE EVER IT'S NEEDED */
+.container {
+  margin-bottom: 150px;
 }
-
 .container.form {
-/* padding: 50px; */
-max-width: 500px;
+  max-width: 500px;
 }
 
 
-
+/* =========      generic starter form       ============ */
+/* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-font-family: 'Courier Prime', monospace;
-font-weight: 400;
-width: 100%; /* Full width */
-border: 1px solid transparent; /* Gray border */
-border-radius: 0px; /* Rounded borders */
-box-sizing: border-box; /* Make sure that padding and width stays in place */
-margin-top: 6px; /* Add a top margin */
-margin-bottom: 30px; /* Bottom margin */
-resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-/* cursor: none; */
+  font-family: 'Courier Prime', monospace;
+  font-weight: 400;
+  width: 100%; /* Full width */
+  border: 1px solid transparent; /* Gray border */
+  border-radius: 0px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 30px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  /* cursor: none; */
 }
 
 textarea {
-height: 150px;
-  }
+  height: 150px;
+}
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-display:block;
-width: 50%;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-background-color: #4e0f14;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display:block;
+  width: 50%;
 }
 
 .container.form label{
@@ -1228,28 +1231,24 @@ background-color: #4e0f14;
 }
 
 form.contact {
-padding-top:10px;
+  padding-top:10px;
 }
 
-.container.form label{
-  color: gray;
-  /* cursor: none; */
-}
-
-
+/* =========      form COLORS ONLY       ============ */
+/* =========      form COLORS ONLY       ============ */
 /* =========      form COLORS ONLY       ============ */
  
 #contact {
-background: var(--black-18);
+  background-color: var(--contact_background_color);
 }
 .container.form {
-  color: gray;
+  color: var(--form_text_color);
 }
 .container.form h1{
-  color: whiteSmoke;
+  color: var(--form_h1_color);
 }
 .container.form label{
-  color: gray;
+  color: var(--form_label_color);
   cursor: var(--cursor_show);
 }
 .container.form label::before{
@@ -1261,44 +1260,40 @@ background: var(--black-18);
 
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
-/* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-/* border: 1px solid lightblue;  */
 border: 0px solid transparent; 
-background: var(--black-18);
-color: lime;
+background-color: var(--form_input_select_background_color);
+color: var( --form_input_select_text_color);
 }
 
 input[type=text]:hover, select:hover, textarea:hover {
   border: 0px solid transparent; /* Gray border */
-  background: var(--black-11);
-
+  background-color: var(--form_input_select_background_hover_color); 
+  color: var( --form_input_select_text_hover_color);
   }
 
 
-  input[type=text]:focus, select:focus, textarea:focus {
-    border: 1px solid transparent; 
-    background: var(--black-11);
-    }
-  /* input[type=text]:active, select:active, textarea:active {
-    border: 1px solid transparent; 
-    background: var(--black-10);
-    } */
-
-
-
+        input[type=text]:focus, select:focus, textarea:focus {
+          border: 1px solid transparent; 
+          color: var(--form_input_select_text_focus_color);
+          background: var(--form_input_select_background_focus_color);
+          }
+        /* input[type=text]:active, select:active, textarea:active {
+          border: 1px solid transparent; 
+          background: var(--black-10);
+          } */
 
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-background-color: white;
-color: var(--black-18);
+background-color: var(--form_button_background_color);
+color: var( --form_button_text_color);
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-background-color: limeGreen;
-color: white;
+background-color: var(--form_button_background_color_hover);
+color: var(--form_button_text_color_hover);
 }
 
 
@@ -1318,30 +1313,17 @@ color: white;
 
 
 
-
-
-
-
-/*  working, but only slides, no fades. */
-
 /* =========     C A R O  S E L      ============ */
 /* =========     C A R O  S E L      ============ */
 /* =========     C A R O  S E L      ============ */
 
-/* main wrapper of the  */
-/* carousel AND buttons */
-.carousel_container { }
 /* Inner carousel??  Why is the wrapper needed? */
+.carousel_container { }
+
 .carousel {
   display:flex;
   align-content: center;
   align-items: center;
-}
-
-/* carousel */
-[data-name="illustration"] .carousel__slider  {
-  /* Attribute has this exact value */
-  /* border: 1px solid red; */
 }
 
 .carousel__slider {
@@ -1363,9 +1345,7 @@ color: white;
   opacity: 0.0;
 }
 
-
 [data-name="illustration"] .carousel__slider .carousel__item img, .carousel__slider .carousel__item img {
-  d isplay: block;
   max-width: 60vw;
   max-height: calc(70vw * 0.5);
   width: auto;
@@ -1376,7 +1356,6 @@ color: white;
   opacity: 1;
   transition: 1s;
 }
-
 
 .js-carousel-button {
   text-align: center;
@@ -1406,51 +1385,44 @@ color: white;
 
 
 
-.close_carousel {
-  font-family: 'Azeret Mono', monospace;
-  font-size: 100px;
-  color: var(--black-3);
-  position: absolute;
-  top:10px;
-  left: 20px;
-  width: 100px;
-  height: 100px;
+
+
+
+/* ``````````` S M A L L S ``````````````` */
+/* ``````````` S M A L L S ``````````````` */
+/* ``````````` S M A L L S ``````````````` */
+
+.lighter{
+  opacity: 0.5;
+  font-size: 80%;
+  }
+.asterisk {
+  font-family: 'Bitter', serif;
+  opacity: 0.3;
+  font-size: 60%;
+  vertical-align: top;
+}
+.copyright {
+  font-size: 50%;
+  vertical-align: top;
+  opacity: 0.5;
+}
+.material-icons.check {
+  vertical-align: sub;
+ font-size: 16px;
 }
 
+/* for other approaches */
+/* https://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over */
+.gray_scale {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
 
-/* .close_carousel .material-icons {
-  font-size: 80px;
-  opacity: 0.5;
-} */
-
-
-
-
-
-/* .material-icons.l_r_arrows { font-size: 98px; } */
-
-/* .material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-60 { font-size: 60px; }
-.material-icons.md-72 { font-size: 72px; }
-.material-icons.md-84 { font-size: 84px; } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.gray_scale:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
 
 
 
@@ -1464,14 +1436,6 @@ div#page_wrapper {
   width: 100%;
 }
 
-/* global over-write for ALL sections top padding and height */
-section section {
-  /* this messes up the current itteration of scroll snap = FIX */
-  /* m in-height: 100vh;   */
-  /* height: 100vh;  */
-  /* p osition: relative; */
-}
-
 /* containers that are mostly text */
 .column_centered {  
   display: flex;
@@ -1479,114 +1443,93 @@ section section {
   align-items: center;
   justify-content: center;
   width: 80vw; 
-  /* max-width: 1000px; */
   margin: 0 auto;
-  /* padding-top:150px; */
-  /* padding-bottom:150px; */
-  /* margin: 150px auto 150px auto; */
- /* padding-left: min(75px);
- padding-right: min(75px); */
-  /* min-height: 100vh; */
 }
 
 .scroll_panel {
-  /* display: flex;
-  align-items: center; */
-
   width: 100%;
-  /* min-height: calc(100vh - 62px); */
   min-height: 100vh;
-  /* padding-top: 150px; */
 }
 
 
-/* section {
-  padding-top: 150px;
-} */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* nav wrapper classes oe icons as a wrapped LI's */
-/*  
-
-section#nav {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: center; 
-  background-color: rgba(200, 200, 200, 0.7);
-  background-color: var(--nav-background);
-  z-index: 9999;
+span.caret {
+  color:var(--testing); 
+  margin-left: 0;
+  opacity: 0;
 }
 
-.nav_wrapper {
-padding: 5px 0px;
-}
-
-ul.nav {
-  display:flex;
-  flex-direction: row;
-  align-content: center; 
-  justify-content: center; 
-  list-style-type: none;
-}
-
-ul.nav li {
-  margin: 0px 10px;
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-}
-
-ul.nav li:hover {
-  color: white;
-  background-color: lightgray;
-}
-
-ul.nav li {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-ul.nav li.home {
-  background-image: url("/images/outline_cottage_black_24dp.png");
-}
-
-ul.nav li.project_1 {
-  background-image: url("/images/outline_science_black_24dp.png");
-}
-ul.nav li.project_2 {
-  background-image: url("/images/outline_font_download_black_24dp.png");
-}
-ul.nav li.about_me {
-  background-image: url("/images/outline_help_outline_black_24dp.png");
-}
-ul.nav li.contact {
-  background-image: url("/images/outline_email_black_24dp.png");
-}
-ul.nav li.resume {
-  background-image: url("/images/outline_description_black_24dp.png");
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 
-*/
 
 
 
+
+
+
+
+
+/* =========  STRIPES ============ */
+/* =========     &    ============ */
+/* =========  shadows ============ */
+/* section#about_me .container_wrapper{
+  position:relative;
+  width: 100%;
+  } */
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .top_shadow_clean {
+    height:20%;
+    max-height:200px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a821a6+0,aa1ba8+15,000000+100&1+0,0.53+3,0+15,0+100 */
+    background: linear-gradient(to bottom,  rgb(28, 31, 32) 0%,rgba(28, 32, 32, 0.53) 3%,rgba(170,27,168,0) 10%,rgba(170,27,168,0) 100%); 
+    background-size: 400% 400%;
+    animation: AnimationName 1s ease 1 forwards;
+    }
+    
+    @keyframes AnimationName {
+      0%{background-position:48% 100%}
+      /* 50%{background-position:48% 90%} */
+      100%{background-position:48% 0%}
+    }
+    
+    .right_stripes {
+      background: repeating-linear-gradient(
+      70deg,
+      var(--black-4),
+      var(--black-4) 1px,
+      #ffffff00 2px,
+      #ffffff00 40px,
+      var(--black-4) 42px
+    );
+    opacity: 0.1;
+    }
+    
+    
+    .left_stripes {
+      background: repeating-linear-gradient(
+      110deg,
+      var(--black-4),
+      var(--black-4) 1px,
+      #ffffff00 2px,
+      #ffffff00 40px,
+      var(--black-4) 42px
+    );
+    
+    }
 
 
 

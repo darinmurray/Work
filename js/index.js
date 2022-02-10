@@ -1,11 +1,27 @@
 
 window.onload = function() { 
- 
 
-// for layout purposes only
-// hiddeen by default in the css
+
+
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+
+
+
+
+
+// for layout purposes only, hiddeen by default in the css
 // $("#centerlines").show()
- $(".carousel_panel").hide()
+$(".carousel_panel").hide()
+
+
+
+
+
 
 
 // ===============   M A I N   ================ // 
@@ -25,6 +41,7 @@ $("#nav_center").css('width', floating_logo_width+"px");
 // make this happen AFTER logo is covering it
 $("#nav_center li a ").css('color', "black");
 
+
 // ===============   M A I N   ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
@@ -34,42 +51,24 @@ hiddenElements = $(':hidden');
 visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 
 let logo_hero = document.getElementById('logo_hero');
-// let navigations = document.getElementsByClassName("nav_wrapper");
-let toggledElement = document.getElementsByClassName("nav_wrapper") //$('.nav_wrapper')
+// why are these here?? ---------------------------------------------
+let toggledElement = document.getElementsByClassName("nav_wrapper") 
 
 
-
-// // SUBMIT BUTTON CURSOR choice
-// $(".show_this_carousel").click(function(e){
-//   e.preventDefault
-//   $("section#illustration").show();
-//   $("section#logos").hide();
-//   $("section#products").hide();
-// }, function(){
-//   // $("section#illustration").show();
-//   // $("section#logos").hide();
-//   // $("section#products").hide();
-// });
-
-
-// ==========  test slideshow buttons  ================
-// jQuery because it's simpler and shorter
+// ==========   C A R O U S E L   ============= //
+// ==========      open/close     ============= //
+// ==========      (buttons)      ============= //
 const carousel_panels = $(".carousel_panel")
 $(document).on("click", ".show_carousel" , function(e) {   
   e.preventDefault()
-  show_this = e.currentTarget.attributes.href.value
-  console.log(`%c=> this fucking target: `, "color:cyan", e.currentTarget.attributes.href.value );
- 
+  let show_this = e.currentTarget.attributes.href.value
   $(".carousel_panel").hide();
-  // dim the nav bar and logo
   $("#nav_floater, #floating_logo").css({"opacity":"0.2", "pointer-events":"none" });
   $(show_this).show();
 });
 
-
 $(document).on("click", ".close_carousel" , function(e) {   
   $(".carousel_panel").hide();
-  // bring back the nav bar and logo
   $("#nav_floater, #floating_logo").css({"opacity":"1", "pointer-events":"auto" });
 });
 
@@ -81,9 +80,9 @@ $(document).on("click", ".close_carousel" , function(e) {
 // ===============    S U B    ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
-let work_menu = $(".sub_nav"); //, li.work ul
+let work_menu = $(".sub_nav"); 
 $(work_menu).hide();
-// SHOW the sub-menu when hovering this li
+
 $("li.work").hover(function(e){
     console.log(`%c=> showing the sub-menu `, "color:gray");
     $(work_menu).fadeIn();
@@ -91,8 +90,13 @@ $("li.work").hover(function(e){
     console.log(`%c=> hiding the sub-menu `, "color:gray");
     $(work_menu).fadeOut();
     // why does this need to be here? t should be in the .each.hover function below...
+    // at least make it address 'any' cursor which is active
     $(".cursor_braces").css( "transform", "rotate(90deg)" );
 });
+
+
+
+
 
 
 
@@ -101,14 +105,29 @@ $("li.work").hover(function(e){
 // ==========   C U R S O R S   ================ // 
 // ==========   C U R S O R S   ================ // 
 const cursor = document.querySelector('.cursor_container');
+const main_cursor = document.querySelector('.cursor_main');
+
+const cursors = document.getElementsByClassName('custom_cursor');
+// get actual computed width and devide instead of this, it's hacky 
 const y_offset = 40 // 35  half thw width
 const x_offset = 40 // 15  half the height
 document.addEventListener('mousemove', (e)=> {
     cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
 })
-// hide initially
-$(".cursor_braces, .cursor_caret").hide();
-//$(cursor).hide()
+
+$(cursors).hide()
+$(".cursor_main").show();
+
+document.addEventListener('click', () => {
+
+  main_cursor.classList.add("expand");
+  console.log(`%c=> cursor: `, "color:cyan", main_cursor);
+  console.log(`%c=> cursor: `, "color:cyan", main_cursor.classList);
+
+  setTimeout(() => {
+    main_cursor.classList.remove("expand");
+  }, 500)
+})
 
 
 
@@ -116,16 +135,43 @@ $(".cursor_braces, .cursor_caret").hide();
 
 
 
+// ==========   C U R S O R  C H A N G E S    ================ // 
+// ==========   C U R S O R  C H A N G E S    ================ // 
+// ==========   C U R S O R  C H A N G E S    ================ // 
 
+// ==== Change determined by data-cursor attribute, if asigned
+// make it observe everything? Global? If assigned, if not: ignore
+// if (typeof $('#dataTable').data('timer') !== 'undefined') ...
+// .card_wrapper, textarea, input
 
+$(".close_carousel, #nav_wrapper, form *").each(function(main_event){
+  $(this).hover(function(sub_event){
+    console.log(`%c=> this hover element is this thing here: `, "color:cyan", this);
+    
+      console.log(`%c=> HOvering`, "color:orange");
+    cursor_choice = $(this).attr("data-cursor")
+        console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
+        console.log(`%c=> cursors: `, "color:limeGreen", cursors);
+    $(cursors).hide()
+    $("."+cursor_choice).show();
+  }, function(){
+        console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
+    $("."+cursor_choice).hide()
+    $(".cursor_main").show();
+  });
+});
 
+// ==========   C U R S O R - (color for 'about me' page)    ================ //
+$("#about_me").hover(function(e){
+  // transform slowly??
+    $(".cursor_main").css("border-color" , "#ffffff");
+  }, function(){
+    $(".cursor_main").css("border-color" , "#44ffee");
+  });
 
-
-
-
-
-
-
+// ==========   C U R S O R - D Y N A M I C S    ================ // 
+// ==========   C U R S O R - D Y N A M I C S    ================ // 
+// ==========   C U R S O R - D Y N A M I C S    ================ // 
 
 // change the ROTATION on the cursor in the SUB-MENU
 // This could be over ONLY "#sub_nav li", NOT "#nav li" as there are no angles in #nav
@@ -180,71 +226,33 @@ $(work_menu).children('li').each(function(big_e){
   
 
 
-  
+    var images = $('.card_wrapper img, .close_carousel');
 
-// Main NAV CURSOR choice
-// do this for #nav li each FIRST CHILD only, NOT sub-menus or extra items
-$(".work, .about_me, .home, .contact, .resume").each(function(big_e){
-  $(this).hover(function(little_e){
-    console.log(`%c=> hovering a main LI in the main NAV `, "color:orange");
-    $(".cursor_braces").show();
-    $(".cursor_main").hide();
-    $(".cursor_caret").hide();
-  }, function(){
-    console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
-      $(".cursor_braces").hide();
-      $(".cursor_main").show();
-      $(".cursor_caret").hide();  // it looks kind of nice with this on...
-  });
-});
+    images.hover(function(elt) { 
+      if (images.index(document.activeElement) === -1) {
+        $(cursor).toggleClass('highlight');
+        console.log(`%c=> this: `, "color:cyan", this);
+      }
+    })
 
-// SUB NAV CURSOR choice
-// same as above, but eliminats problem: cursor reverts when going from sub-nav back to nav
-$(work_menu).hover(function(little_e){
-  console.log(`%c=> (hovering) SUB_menu: `, "color:green");
-  $(".cursor_braces").show();
-  $(".cursor_main").hide();
-  $(".cursor_caret").hide();
-}, function(current_tag){
-  console.log(`%c=> NOT on sub_menu `, "color:green");
-    $(".cursor_braces").hide();
-    $(".cursor_main").show();
-    $(".cursor_caret").hide();  // it looks kind of nice with this on...
-});
- 
-// CONTACT CURSOR choice  form.contact container.form
-$("section#contact").each(function(){
-  // using.each so it includes all input types
-  $(this).hover(function(el){
-    $(".cursor_braces").hide();
-    $(".cursor_main").hide();
-    $(".cursor_caret").show();
-  }, function(){
-    $(".cursor_braces").hide();
-    $(".cursor_main").show();
-    $(".cursor_caret").hide();
-    // make this fade out
-  });
-});
 
-// ABOUT_ME CURSOR choice
-$("#about_me").hover(function(e){
-// transform slowly??
-  $(".cursor_main").css("border-color" , "#ffffff");
-}, function(){
-  $(".cursor_main").css("border-color" , "#44ffee");
-});
 
-// SUBMIT BUTTON CURSOR choice
-$("#submit").hover(function(e){
-  $(".cursor_braces").show();
-  $(".cursor_main").hide();
-  $(".cursor_caret").hide();
-}, function(){
-  $(".cursor_braces").hide();
-  $(".cursor_main").hide();
-  $(".cursor_caret").show();
-});
+
+
+    // function getHoveredImage() {
+    //   var hoveredElements = $(':hover'),
+    //       // the last element is the event source
+    //       hoveredElement  = hoveredElements.last();
+    
+    //   if (hoveredElement.prop("tagName") === 'IMG') {
+    //     return hoveredElement;
+    //   }
+    // }
+
+
+
+
+
 
 
 
@@ -419,84 +427,12 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 
 
 
-// this WAS KIND OF WORKING WELL!! but then just sucked to use... 
-// keeps snapping to the wrong panel too fast
-// gsap.registerPlugin(ScrollTrigger);
-
-// function goToSection(i, anim) {
-//   gsap.to(window, {
-//     scrollTo: {y: i*innerHeight, autoKill: false},
-//     duration: 1
-//   }); 
-//   if(anim) {
-//     anim.restart();
-//   }
-// }
-
-// gsap.utils.toArray(".scroll_panel").forEach((panel, i) => {
-//   ScrollTrigger.create({
-//     trigger: panel,
-//     onEnter: () => goToSection(i)
-//   });
-  
-//   ScrollTrigger.create({
-//     trigger: panel,
-//      start: "bottom center",
-//     // onEnterBack: () => goToSection( i ),
-//   });
-// });
 
 
 
 
 
 
-
-
-
-// ======================================================== //
-// =============     C A R O U S E L      =============== //
-// ============== (slowly / with effects) ================= // 
-// (function() {
-
-  // var $carousels = $('.js-carousel');
-  
-  // $carousels.each(function(index, container) {
-  //   var tl = new TimelineMax({paused: true});
-  //       $item = $('.carousel__item', container),
-  //       itemCount = $item.length,
-  //       currentSlide = 0,
-  //       buttons = {
-  //          prev: $('.js-carousel-prev', container),
-  //          next: $('.js-carousel-next', container),
-  //       };
-    
-  
-  //   for(var i = 0; i < itemCount; i++) {
-      
-  //     TweenLite.set($('.carousel__item').eq(i), {left: - (i * 100) + '%'});
-              
-  //     if(i != 0) {
-  //       tl.addPause('pause' + i);
-  //     }
-  //     if(i != itemCount -1) {
-  //       tl.to($item[i], 0.2, {xPercent: -100, ease: Linear.easeInOut}, "tween" + i)
-  //         .from($item[i + 1], 0.2, {xPercent: 100, ease: Linear.easeInOut}, "tween" + i);      
-  //     }
-  //   }
-    
-  //  buttons.prev.on('click', function() {
-  //     tl.reverse();
-  //   });
-    
-  //   buttons.next.on('click', function() {
-  //     tl.play();
-  //   });
-    
-      
-  // });
-    
-  // })();
 
 
 
@@ -563,106 +499,6 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
-
-
-
-
-
-
-
-
-// ======================================================== //
-// =============  S M O O T H  S C R O L L  =============== //
-// =============       ( triggers )         =============== // 
-// $(document).on("click", "li" , function(e) {
-//   console.log(`%c=> Click li e=: `, "color:cyan", e.target.hash);
-//   let location = e.target.hash.substring(1)
-//   smoothScroll(location)
-//   e.preventDefault()
-// });
-
-
-// $(document).on("click", "#logo_hero" , function(e) {
-//   smoothScroll('landing')
-//   e.preventDefault()
-// });
-
-
-
-// ======================================================== //
-// =============  S M O O T H  S C R O L L  =============== //
-// ============== (slowly / with effects) ================= // 
-// function currentYPosition() {
-//   // Firefox, Chrome, Opera, Safari
-//   if (self.pageYOffset) return self.pageYOffset;
-//   // Internet Explorer 6 - standards mode
-//   if (document.documentElement && document.documentElement.scrollTop)
-//       return document.documentElement.scrollTop;
-//   // Internet Explorer 6, 7 and 8
-//   if (document.body.scrollTop) return document.body.scrollTop;
-//   return 0;
-// }
-
-// function elmYPosition(eID) {
-//   var elm = document.getElementById(eID);
-//   var y = elm.offsetTop;
-//   var node = elm;
-//   while (node.offsetParent && node.offsetParent != document.body) {
-//       node = node.offsetParent;
-//       y += node.offsetTop;
-//   } return y;
-// }
-// function smoothScroll(eID) {
-//   var offset = 0 //66
-//   var startY = currentYPosition();
-//   var stopY = elmYPosition(eID)-offset;
-//   var distance = stopY > startY ? stopY - startY : startY - stopY;
-//   if (distance < 100) {
-//       scrollTo(0, stopY); return;
-//   }
-//   var speed = Math.round(distance / 100);
-//   if (speed >= 20) speed = 20;
-//   var step = Math.round(distance / 25);
-//   var leapY = stopY > startY ? startY + step : startY - step;
-//   var timer = 0;
-//   if (stopY > startY) {
-//       for ( var i=startY; i<stopY; i+=step ) {
-//           setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-//           leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-//       } return;
-//   }
-//   for ( var i=startY; i>stopY; i-=step ) {
-//       setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-//       leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-//   }
-//   return false;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // ===============  U T I L I T Y  ================ // 
   // ===============   (functionS)   ================ // 
   // ===============   ==========    ================ //  
@@ -692,78 +528,6 @@ $(document).on("click", ".js-carousel-button " , function(e) {
     // currently returning opacity 0.1 - 1.0
     return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
   } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   $("#nav li, li.work ul").each(function(big_e){
-//     // function over each li, 
-//     $(this).hover(function(little_e){
-//       let current_tag = this.tagName  
-  
-//       console.log(`%c=> current_tag: `, "color:cyan", current_tag);
-  
-//       $(".cursor_braces").show();
-//       $(".cursor_main").hide();
-//       $(".cursor_caret").hide();
-//       return current_tag
-//     }, function(current_tag){
-//       console.log(`%c=> current_tag.relatedTarget.tagName: `, "color:cyan", current_tag.relatedTarget.tagName);
-//       // if you exit and land on the parent UL...
-//       if (current_tag.relatedTarget.tagName === "UL") {
-//         console.log("Aborting mission.... moving on as if nothign happened")
-        
-// // here is where it should be an if statement instead of a function/function. 
-// // IN this case it needs to repeat itself
-// // ergo, this needs to recombine with the function above?!?!?!
-//       return 
-//     } else if (current_tag.relatedTarget.tagName === "LI") {
-//         $(".cursor_braces").hide();
-//         $(".cursor_main").show();
-//         $(".cursor_caret").hide();  // it looks kind of nice with this on...
-//       } else if (current_tag.relatedTarget.tagName === "DIV") {
-//         $(".cursor_braces").hide();
-//         $(".cursor_main").show();
-//         $(".cursor_caret").hide();  // it looks kind of nice with this on...
-//       }
-
-//     });
-//   });
-
-
-
 
 
 

@@ -44,10 +44,10 @@
 
 <!-- find a way to do this without having to add "class="anchor"" to every a tag...  subtle-box -->
 <div id="nav_floater" class="nav_floater  ">
-  <div id="nav_wrapper" class="nav_wrapper in-your-face-box">  
+  <div id="nav_wrapper" class="nav_wrapper in-your-face-box" data-cursor="cursor_braces">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">       
-        <li class="work">  <a href="#work" class="anchor">Work</a>
+        <li class="work"> <a href="#work" class="anchor">Work</a>
           <ul class="sub_nav ">
             <li id="tubes_li" class="tubes in-your-face-shadow"><a href="tubes/index.html" target="_blank" rel="noopener noreferrer" class=" ">Tubes</a></li>
             <li id="words_li" class="words medium-shadow"><a href="words/index.html" target="_blank" rel="noopener noreferrer" class=" ">Words</a></li>
@@ -119,16 +119,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-              <ul class="row_of_icons"> 
+              <ul class="skills"> 
                 <li><ion-icon name="logo-html5"></ion-icon> <div>HTML</div> </li>
                 <li><ion-icon name="logo-css3"></ion-icon> <div>CSS</div> </li>
                 <li><ion-icon name="logo-javascript"></ion-icon> <div>Javascript</div> </li>
@@ -220,7 +211,7 @@
 
     <li class="card">
       <a href="tubes/index.html" class=" " target="_blank" rel="noopener noreferrer">
-        <div class="card_wrapper"> 
+        <div class="card_wrapper"  data-cursor="cursor_braces"> 
         <div class="image"> <img src="images/cards/nixie_tubes_card_wide.jpg" class="gray_scale" alt="Nixie Tube Image"> </div>
         <div class="title">Tubes</div>
       </div>   
@@ -259,7 +250,7 @@
 
     <li class="card">
       <a href="words/index.html" class=" " target="_blank" rel="noopener noreferrer">
-          <div class="card_wrapper">
+          <div class="card_wrapper" data-cursor="cursor_caret">
             <div class="image"> <img src="images/cards/flip_text_card_wide.jpg" class="gray_scale" alt="Words App Preveiw Image"> </div>
             <div class="title">Words</div>
           </div> 
@@ -403,9 +394,37 @@
 
 
 
+
+
+
 <section id="illustration" class="carousel_panel ">
   <div class="carousel_wrapper">
-    <div class="close_carousel">X</div>
+    <!-- <div class="close_carousel">X</div> -->
+
+
+
+
+    <div class="close_carousel"  data-cursor="cursor_main_over">
+      
+
+    <svg id="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
+      <g id="close_bones_layer" data-name="close_bones_layer">
+        <g id="close_bones">
+          <g>
+            <path id="left_bone" class=" " d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
+            <path id="right_bone" class=" " d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+
+
+    </div>
+
+
+
+
+
       <div class="carousel_container" data-name="illustration">
         <div class="carousel | js-carousel">
           <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
@@ -440,7 +459,22 @@
 
 <section id="logos" class="carousel_panel ">
   <div class="carousel_wrapper">
-    <div class="close_carousel">X</div>
+    <div class="close_carousel"  data-cursor="cursor_main_over">
+      
+
+      <svg id="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
+        <g id="close_bones_layer" data-name="close_bones_layer">
+          <g id="close_bones">
+            <g>
+              <path id="left_bone" class=" " d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
+              <path id="right_bone" class=" " d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+  
+  
+      </div>
     <div class="carousel_container" data-name="logos">
       <div class="carousel | js-carousel">
         <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
@@ -472,7 +506,27 @@
 
 <section id="products" class="carousel_panel ">
   <div class="carousel_wrapper">
-    <div class="close_carousel">X</div>
+
+
+
+    <div class="close_carousel"  data-cursor="cursor_main_over">
+      
+    <svg id="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
+      <g id="close_bones_layer" data-name="close_bones_layer">
+        <g id="close_bones">
+          <g>
+            <path id="left_bone" class=" " d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
+            <path id="right_bone" class=" " d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+
+    </div>
+
+
+
+
     <div class="carousel_container" data-name="products">
       <div class="carousel | js-carousel">
         <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
@@ -525,21 +579,29 @@
   <!-- <span class="caret"></span>Here's a blinking caret for you: -->
     <form class="contact">
       <label for="fname">You are...?</label>
-      <input type="text" id="fname" name="firstname" placeholder="And you are?">
+      <input type="text" id="fname" name="firstname" placeholder="And you are?" data-cursor="cursor_caret" >
   
       <label for="email">Your email:</label>
-      <input type="text" id="email" name="email" placeholder="Your email">
+      <input type="text" id="email" name="email" placeholder="Your email" data-cursor="cursor_caret">
       <label for="email_verify">Verify it...</label>
-      <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:">
+      <input type="text" id="email_verify" name="email_verify" placeholder="Again, please:" data-cursor="cursor_caret">
   
       <label for="subject">And, finally...</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
+      <textarea id="subject" name="subject" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
   
-      <input id="submit" type="submit" value="Submit">
+      <input id="submit" type="submit" value="Submit" >
   
     </form>
   </div> 
 </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -634,10 +696,24 @@
 
 
 <div class="cursor_container">
-  <div class="cursor"></div>
-  <div class="cursor_braces"></div>
-  <div class="cursor_main"></div>
-  <div class="cursor_caret">|</div>
+  <!-- <div class="cursor"></div> -->
+  <div class="custom_cursor cursor_braces"></div>
+  <div class="custom_cursor cursor_main"></div>
+  <div class="custom_cursor cursor_caret">|</div>
+
+  <div class="custom_cursor cursor_bones_over">
+
+  <svg id="close_bones_hover_SVG"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.28 40.27">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_4" data-name="Layer 4">
+        <g id="close_bones_hover">
+          <path class="close_bones_path" d="M49,2l.4,0a2,2,0,0,1,1.67,2.68,4.46,4.46,0,0,0,.37,2.68,2.25,2.25,0,0,1,.27,3.24s-.4.81-1.92.81a5.48,5.48,0,0,1-.85-.07,1.81,1.81,0,0,0-.86-.16,7.55,7.55,0,0,0-3.58,1.18S38.38,15.52,29.57,21c6,3.86,11.25,7.18,12.46,7.73a8.2,8.2,0,0,0,3.21.82,3.32,3.32,0,0,0,1.49-.31l1.71-.83A3.34,3.34,0,0,1,50,28a1.45,1.45,0,0,1,1,.32s2,1,.82,4a5.09,5.09,0,0,0-.41,2.48s1.06,2.74-1.09,3.18c0,0-3-.25-3.86-2.32a6.37,6.37,0,0,0-2.67-2.18l-17-10.64C25,23.88,23.28,25,21.46,26.25c0,0-9.34,5.65-10.08,6A5.66,5.66,0,0,0,9.9,34.11s-1.85,3.8-4,4.07a15.11,15.11,0,0,0-1.48-.92h0l.29.1s-1.94-.83-1.48-2.59A2.41,2.41,0,0,0,2,32.54S1.86,31,2.32,30.6c0,0-.28-1.76,2.77-1.94l2.5-.19,2.22.1a9.51,9.51,0,0,1,3.24-1.3s7.64-4.51,10.46-6.47L11.78,13.46a4.36,4.36,0,0,0-2.85-1.14,3.3,3.3,0,0,0-1.36.27A4.46,4.46,0,0,1,5.73,13,6.23,6.23,0,0,1,4,12.69c-2.14-1.6-1.21-3.31-1.21-3.31,1.56-1.67-.08-3.89-.08-3.89C1.42,2.65,4.12,2.23,4.12,2.23a4.61,4.61,0,0,1,.93-.1A2.67,2.67,0,0,1,7.65,3.8,16.75,16.75,0,0,0,9.77,7.52c.73.86,8.7,6.25,16.56,11.39,2.31-1.53,5.45-3.59,6.13-3.93l9.06-6.11s3.24-2.22,4.35-4.16c0,0,1-2.71,3.11-2.71m0-2h0c-2.66,0-4.3,2.32-4.92,3.83a15.79,15.79,0,0,1-3.67,3.39l-8.95,6c-.34.19-1.31.75-5.11,3.26C17.57,10.78,12.13,7,11.3,6.22A14.39,14.39,0,0,1,9.54,3.14a4.65,4.65,0,0,0-4.49-3,6.62,6.62,0,0,0-1.3.14,4.29,4.29,0,0,0-3,2,4.36,4.36,0,0,0,0,4l.09.21.13.18h0s.62.91.22,1.34l-.17.19L1,8.44c-.6,1.11-1,3.78,1.79,5.85l.25.19.3.1A8,8,0,0,0,5.73,15a6.48,6.48,0,0,0,2.64-.52l.06,0a1.48,1.48,0,0,1,.5-.08,2.44,2.44,0,0,1,1.56.67l.11.09.12.08,9.07,5.67c-2.76,1.74-6.31,3.86-7.42,4.52a11.1,11.1,0,0,0-3.06,1.19l-1.64-.06H7.44L5,26.67a5.09,5.09,0,0,0-3.87,1.67A3.45,3.45,0,0,0,.36,30a5.33,5.33,0,0,0-.3,2.81l.11.91.76.52a3.18,3.18,0,0,1,.33.26,4.21,4.21,0,0,0,2.53,4.65v0l-.13,0c.15.08.68.42,1.14.74l.63.44.76-.1c3-.4,5.13-4.39,5.52-5.18l.09-.19,0-.09a5.87,5.87,0,0,1,.73-.8c1.53-.86,7.91-4.71,10-5.94l0,0,0,0c1.36-.91,2.75-1.83,4.17-2.74l15.93,10,.23.14.25.07a4.33,4.33,0,0,1,1.51,1.28c1.35,2.89,5,3.27,5.44,3.31l.28,0,.28-.06a3.54,3.54,0,0,0,2.49-1.77,5.15,5.15,0,0,0,.15-3.86,3.82,3.82,0,0,1,.29-1.2v0l0,0c1.37-3.51-.33-5.67-1.57-6.42A3.47,3.47,0,0,0,50,26a5.34,5.34,0,0,0-2.49.7l-1.64.81a1.43,1.43,0,0,1-.61.1,6,6,0,0,1-2.3-.61h0l0,0c-.72-.32-3.91-2.25-9.54-5.86,7.17-4.36,12-6.86,12.08-6.88l0,0,0,0a5.72,5.72,0,0,1,2.6-.92h.06l.12.06.35.06a7,7,0,0,0,1.18.1,4,4,0,0,0,3.54-1.63A4.18,4.18,0,0,0,53,6.17a3.83,3.83,0,0,1,0-1,3.85,3.85,0,0,0-.37-3.19,4.41,4.41,0,0,0-3-1.89A5.65,5.65,0,0,0,49,0Z"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+
 </div>
 
 
