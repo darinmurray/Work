@@ -1040,6 +1040,7 @@ ul.skills li div{
 
 
 ul.row_of_icons_small {
+  width: 40vw;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -1126,6 +1127,35 @@ ul.comfort_list li a, a:visited{
 
 
 
+
+
+
+
+.svg_arrow, .svg_arrow.left{
+  height: 200px;
+  width: 60px;
+}
+.svg_arrow.left{
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+#Arrow, #Arrow.left{
+  height: 200px;
+  width: 60px;
+}
+#Arrow.left{
+  transform: rotate(180deg);
+}
+
+/* .cls-1 {
+  fill: url(#linear-gradient_2S);
+  background-color: pink;
+} */
 
 
 
@@ -1313,12 +1343,15 @@ color: var(--form_button_text_color_hover);
 /* =========     C A R O  S E L      ============ */
 
 /* Inner carousel??  Why is the wrapper needed? */
-.carousel_container { }
+.carousel_container { 
+  /* border: 1px solid lime; */
+}
 
 .carousel {
   display:flex;
   align-content: center;
   align-items: center;
+  /* border: 1px solid pink; */
 }
 
 .carousel__slider {
@@ -1327,7 +1360,7 @@ color: var(--form_button_text_color_hover);
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 60vw; /* 70vw  should be a calk to include width of the left/right arrows */
+  width: 70vw; /* 70vw  should be a calk to include width of the left/right arrows */
   height: calc(70vw * 0.5);  /*  making it a 2 to one proportion  */
   white-space: nowrap;
 }

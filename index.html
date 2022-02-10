@@ -102,22 +102,8 @@
   <div class="about_me_wrapper container column_centered">
     <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
     <!-- <div class="overlay top_shadow _clean"></div> -->
-
-
           <div class="centered width_60">
           <h1>Front End Design/Build + </h1>
-            <!-- <div class="subtitle"> Core Skills </div> -->
-
-             
-<!-- <div class="skills"> 
-<span class="skill">HTML</span>
-<span class="skill">CSS</span>
-<span class="skill">Javascript</span>
-<span class="skill">Jquery</span>
-<span class="skill">Liquid</span>
-</div> -->
-
-
 
               <ul class="skills"> 
                 <li><ion-icon name="logo-html5"></ion-icon> <div>HTML</div> </li>
@@ -133,7 +119,8 @@
                       </g>
                     </g>
                   </g>
-                </svg><div>Jquery</div> </li>
+                  </svg><div>Jquery</div> 
+                </li>
                 <li><!-- <?xml version="1.0" encoding="utf-8"?> -->
                   <!-- Generator: Adobe Illustrator 25.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                   <svg version="1.1" id="Shopify_SVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -151,9 +138,10 @@
                     <path class="cls-1" d="M78.1,123.9l31.4-7.8c0,0-13.5-91.3-13.6-91.9c-0.1-0.6-0.6-1-1.1-1c-0.5,0-9.3-0.2-9.3-0.2s-5.4-5.2-7.4-7.2V123.9z"/>
                   </g>
                   </svg>
-                   <div>Liquid</div> </li>
+                   <div>Liquid</div> 
+                </li>
               </ul>
-          </div>
+        </div>
 
 
           <div class=" centered  width_60" >
@@ -164,35 +152,26 @@
                 <li><span class="material-icons check"> done </span> Digital Illustration <span class="lighter">(web & print)</span></li>
                 <li><span class="material-icons check"> done </span> Photo Retouching <span class="lighter">(web & print)</span></li>
                 <li><span class="material-icons check"> done </span> All aspects of 
- <a href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3">e-commerce</a>
+                <a href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3">e-commerce</a>
                 </li>
                 <li><span class="material-icons check"> done </span> Video Production</li>
                 <li><span class="material-icons check"> done </span> Sound Production</li>
                 <li><span class="material-icons check"> done </span> Product Design</li>
               </ul>
           </div>
-<p class="centered" >
+          <p class="centered" >
           **fueled by coffee and a <em>slight</em>  obsession with learning new things and pushing limitations. 
           <br>:-\ socially akward...
           drools over vintage industrial sewing machines...
-</p>          <!-- </div> -->
-  </div>
+          </p>          
+
   <ul class="row_of_icons_small"> 
     <li><ion-icon name="logo-codepen"></ion-icon></li>
     <li> <ion-icon name="logo-instagram"></ion-icon></li>
     <li><ion-icon name="logo-github"></ion-icon> </li>
   </ul>
 
-
-  <!-- <ul class="row_of_icons"> 
-    <li><ion-icon name="logo-html5"></ion-icon> </li>
-    <li><ion-icon name="logo-css3"></ion-icon> </li>
-    <li><ion-icon name="logo-javascript"></ion-icon> </li>
-    <li><ion-icon name="logo-codepen"></ion-icon> </li>
-    <li> <ion-icon name="logo-instagram"></ion-icon> </li>
-    <li><ion-icon name="logo-github"></ion-icon> </li>
-  </ul> -->
-
+</div>
 </section>
       
 
@@ -396,6 +375,22 @@
 
 
 
+<!-- This is the gradient for the SVG arrows in the following 3 sections -->
+<!-- position and z-index are set to remove it from document flow -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; z-index: -100" >
+  <defs>
+    <linearGradient id="linear-gradient_5" x1="0.14" y1="15.5" x2="16.14" y2="15.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.08" stop-color="#f6f6f6"/>
+      <stop offset="0.22" stop-color="#dedede"/>
+      <stop offset="0.39" stop-color="#b8b8b8"/>
+      <stop offset="0.59" stop-color="#828282"/>
+      <stop offset="0.82" stop-color="#3e3e3e"/>
+      <stop offset="1"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 
 <section id="illustration" class="carousel_panel ">
   <div class="carousel_wrapper">
@@ -422,13 +417,15 @@
     </div>
 
 
-
-
-
       <div class="carousel_container" data-name="illustration">
         <div class="carousel | js-carousel">
           <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
-            <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+            <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
+
+            <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+              <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+            </svg>
+
           </div>   
             <div class="carousel__slider">
               <span class="carousel__item  showing ">
@@ -448,12 +445,23 @@
               </span>
             </div>
           <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
-            <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+
+
+            <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+              <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+            </svg>
+
+
+            <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
           </div>
         </div>  
       </div>
   </div>
 </section>
+
+
+
+
 
 
 
@@ -474,11 +482,17 @@
       </svg>
   
   
-      </div>
+    </div>
     <div class="carousel_container" data-name="logos">
       <div class="carousel | js-carousel">
         <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
-          <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+          <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
+          
+          <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+          </svg>
+          
+          
         </div>   
             <div class="carousel__slider">
               <span class="carousel__item ">
@@ -495,12 +509,26 @@
               </span>
             </div>
         <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
-          <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+          <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
+
+          <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+          </svg>
+
+
         </div>
       </div>  
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -530,7 +558,13 @@
     <div class="carousel_container" data-name="products">
       <div class="carousel | js-carousel">
         <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
-          <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide">
+          <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
+
+          <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+          </svg>
+
+          
         </div>   
            <div class="carousel__slider">
             <span class="carousel__item  showing ">
@@ -553,7 +587,13 @@
             </span>
           </div>
         <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
-          <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide">
+          <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
+
+          <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+          </svg>
+
+
         </div>
       </div>  
     </div>
