@@ -28,6 +28,7 @@
 
 --lightening_blue: #658196; /* whitesmoke  036592 */
 --lightening_blue_dark: #4f6e85; /* whitesmoke */
+--lightening_blue_very_dark: #374d5d; /* whitesmoke */
 --logo_red: #790101; /* whitesmoke */
 --logo_dark_red: #700000; /* whitesmoke */
 --hilight_yellow: rgba(255, 238, 0, 0.829);
@@ -65,7 +66,7 @@
 --about_me_text_color: var(--testing_3);  /*  #8c9aa0  */
 --about_me_backround: var(--testing);  /*  #8c9aa0  */
 
-/* carousell pages */
+/* carousel pages */
 --illustration-backround: var(--testing);  /*  #8c9aa0  */
 --logos-backround: var(--testing);  /*  #8c9aa0  */
 --product-backround: var(--testing);  /*  #8c9aa0  */
@@ -152,6 +153,84 @@ body {
 /* min-height: 1000vh;  */
   overflow: auto;
 }
+
+
+/* @GROUP for custom svg icon fonts */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/fonts/icomoon.eot?2kxkth');
+  src:  url('/fonts/icomoon.eot?2kxkth#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?2kxkth') format('truetype'),
+    url('/fonts/icomoon.woff?2kxkth') format('woff'),
+    url('/fonts/icomoon.svg?2kxkth#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-crossbones:before {
+  content: "\e900";
+  color: #aa1f23;
+}
+.icon-css:before {
+  content: "\e901";
+}
+.icon-html:before {
+  content: "\e902";
+}
+.icon-illustrator:before {
+  content: "\e903";
+}
+.icon-javascript:before {
+  content: "\e904";
+}
+.icon-jquery:before {
+  content: "\e905";
+}
+.icon-left_arrow_pointy:before {
+  content: "\e90f";
+}
+.icon-mysql:before {
+  content: "\e910";
+}
+.icon-photoshop:before {
+  content: "\e926";
+}
+.icon-rails:before {
+  content: "\e927";
+}
+.icon-right_arrow_pointy:before {
+  content: "\e928";
+}
+.icon-shopify:before {
+  content: "\e929";
+}
+
+/* @GROUP for custom svg icon fonts */
+
+
+
+
+
+
+
+
+
 
 
 .subtle-shadow {
@@ -680,26 +759,61 @@ ul#nav li  ul li:nth-child(5)  {
 
 
 
+/* ============    S V G    ============== */
 /* ============   H E R O    ============== */
 /* ============  I M A G E   ============== */
 /* ============  ---------   ============== */
 
 /* for the initial working variation */
 #floating_logo {
-  position: fixed;
+  /* position: fixed;
   top: 16px;
   left: 50% ;
   transform: translateX(-50%);
-  width:100px;
   z-index: 975;  
+  border: 1px solid pink; */
 }
 #floating_logo img#logo_hero {
-  width: 100px;
+  /* border: 1px solid blue;
+  opacity: .3;
+  width: 100px; */
   /* animation: spin 10s linear infinite; */
   /* animation-play-state: paused;  */
 }
 
 
+#lion_logo_svg {
+  position: fixed;
+  top: 16px;
+  left: 50% ;
+  transform: translateX(-50%);
+  z-index: 975; 
+
+  height: 100px;
+  width: 100px;
+}
+
+
+.st2{fill: #627C91;}  /* needle  #627C91 */
+.st0{fill:#637D91;}   /* lightening #637D91 */
+.st1{fill:#FFFFFF;}   /* white lettering & element hilights */
+.st3{fill:none;stroke:#FFFFFF;stroke-width:36;stroke-miterlimit:10;}
+.st4{fill: #790000;}  /* red banners #790000 */
+.st5{opacity:0.4;fill:#6D6E71;} /* shadows on red banners #6D6E71 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -707,7 +821,6 @@ ul#nav li  ul li:nth-child(5)  {
 /* ============  L A N D I N G   ============== */
 /* ============  L A N D I N G   ============== */
 /* ============  L A N D I N G   ============== */
-
 
 /* the main LANDING section */
 #landing.scroll_panel {
@@ -772,7 +885,7 @@ div#intro.role {
 /* =========     P R O J E C T S      ============ */
 
  #work {
-   position: relative;
+  position: relative;
   background: #fff0f5;  /*  ghostwhite   LavenderBlush  */
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0ffff+0,ffffff+20,ffffff+77,e0ffff+100 */
 background: rgb(224,255,255); /* Old browsers */
@@ -785,8 +898,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', end
 
  }
 
-
-
 #work {
   color: var(--work_text_color)
 }
@@ -795,73 +906,87 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', end
 }
 
 
- ul.deck {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-ul.deck p, ul.deck li{
+ul.deck {
   font-size: 12px;
   letter-spacing: 1px;
   font-family: 'Bitter', serif;
   font-weight: 200; 
   line-height: 18px;
-}
+  list-style-type: none;
 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 100px;
+
+  color: var(--testing_3);
+}
 ul.deck li.card {
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; I don't believe this is needed */
+  align-items: flex-start;
+
   margin-bottom: 80px;
   min-width: 200px;
-  max-width: 28%;
+  max-width: 30%;
+  border-radius: 5px;
+}
+.card_wrapper{
+  position: relative;
+  b order: 1px dotted #000;
+}
+li.card a, li.card a:visited{
+  text-decoration: none;
 }
 
-ul.deck li.card a, ul.deck li.card a:visited{
-  display: block;
-  text-decoration: none;
-  border-radius: 11px;
-  overflow: hidden;
+a.card_project_link {
+  position: absolute;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
 }
- 
-ul.deck .title{
-          color: var(--deck_title_color);
+
+.category_badge{
+  display: flex;
+  justify-content: center;
+  b order: 1px dotted pink;
+}
+.category_badge img {
+  filter: drop-shadow( 10px 10px 10px #00000077);
+}
+
+li.card .title{
+  font-size: 18px;
+  color: var(--testing_3);
   text-decoration: none;  
   width: 100%;
   border-radius: 5px;
-          /* background-color: var(--deck_title_backround) ; */
+  background-color: var(--black-15); /*  var(--deck_title_backround) ;  */
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 10px;
-  } 
-
-ul.deck li.card a:hover img{  /*  .title  */
-  -webkit-box-shadow: 5px 5px 17px -5px rgba(0,0,0,0.6); 
-  box-shadow: 5px 5px 17px -5px rgba(0,0,0,0.6);
-}
-ul.deck li.card a:hover .title{ 
-  /* color: var(--logo_dark_red); */
-/* background-color: var(--lightening_blue) */
-}
-
-
-ul.deck li.card .card_wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-ul.deck img{
-  /* border: 5px solid transparent; */
+  margin-top: 0px;
+} 
+.card_description  {
+  margin-top: 210px;
+  padding: 120px 20px 50px 20px; /* top right bottom left */
   border-radius: 10px;
-  overflow: hidden;
+  background-color: var(--testing);
 }
 
-/* the SUB uls */
-ul.deck ul{
-  padding-left: 30px;
-  } 
+.card_description ul:not(.skills) {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+.card_description ul:not(.skills) li:before {
+  content: "- ";
+
+}
+
+
+
 
 
 
@@ -927,7 +1052,10 @@ section#illustration, section#logos, section#products {
   position: fixed;
   top: 0;
   left: 0;
-  display:none;
+  /* start with them hidden */
+visibility: hidden;
+  /* z-index: 999; */
+/* opacity: 0; */
   }
 
   /* z-index: 1000; */
@@ -1016,27 +1144,62 @@ color: var(--about_me_text_color);
 }
   
 
+/* GENERIC ROW OF ICONS UL STYLING */
 ul.skills {
   list-style-type: none;
-  /* border: 1px dotted pink; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: 80px;
-  margin-bottom: 60px;
-  margin-top: 60px;
 }
 ul.skills li{
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  margin-top: 15px;
+}
+
+
+/* SPECIFIC TO THE ABOUT ME SECITON */
+ul.skills.about_me {
+  font-size: 80px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+ul.skills.about_me li{
   font-size: 80px;
 }
-ul.skills li div{
+
+ul.skills.about_me li div{
   letter-spacing: 1px;
   font-size: 20px;
   margin-top:20px;
 }
+
+
+
+/* SPECIFIC TO THE -PROJECT: project_stack- SECITON */
+ul.skills.project_stack {
+  justify-content: center; /* specific to project stack */
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+ul.skills.project_stack li{
+  margin:0px 4px;  /* specific to project stack */
+  text-align: center;
+  font-size: 32px;
+}
+ul.skills.project_stack li div{
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin-top:3px;
+}
+
+
+
+
+
+
+
+
 
 
 ul.row_of_icons_small {
@@ -1076,29 +1239,9 @@ ul.comfort_list li a, a:visited{
 /* *************** SVG  I C O N S ***************** */
 /* *************** SVG  I C O N S ***************** */
 /* *************** SVG  I C O N S ***************** */
-#Shopify_SVG {
-  width: 80px;
-  height: 80px;    
-}
-#jQuery_SVG {
-  width: 70px;
-  height: 70px;   
-}
-.cls-1 {
-  fill: var(--about_me_text_color);
-}
-#jQuery_wrapper {
-  
-}
-#jQuery_paths {
-
-}
-
-
-
 #close_bones_SVG {
-  width: 70px;
-  height: 70px;   
+  width: 40px;
+  height: 40px;   
   fill: var(--black-3);
 }
 #close_bones_SVG:hover { 
@@ -1115,12 +1258,9 @@ ul.comfort_list li a, a:visited{
 }
 
 .close_carousel {
-  /* font-family: 'Azeret Mono', monospace; */
-  /* font-size: 100px; */
-  /* color: var(--black-3); */
   position: absolute;
-  top:50px;
-  left: 60px;
+  top:5vh;
+  left:6vh; /* vh, so it's evenly pisitioned in the corner */
   width: 100px;
   height: 100px;
 }
@@ -1159,10 +1299,6 @@ ul.comfort_list li a, a:visited{
 
 
 
-#lion_logo_svg {
-  height: 300px;
-  width: 300px;
-}
 
 
 
@@ -1345,6 +1481,30 @@ color: var(--form_button_text_color_hover);
 /* =========     C A R O  S E L      ============ */
 /* =========     C A R O  S E L      ============ */
 
+.fade_in {
+  animation: fade_in .5s forwards;
+}
+.fade_out {
+  animation: fade_out .5s forwards;
+}
+
+
+@-moz-keyframes fade_in { 0% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; }}
+@-webkit-keyframes fade_in { 0% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; }}
+@-ms-keyframes fade_in { 0% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; }}
+@-keyframes fade_in { 0% { opacity: 0; visibility: hidden; } 100% { opacity: 1; visibility: visible; }}
+
+@-moz-keyframes fade_out { 0% { opacity: 1; visibility: visible; }  100% { opacity: 0; visibility: hidden; }} 
+@-webkit-keyframes fade_out { 0% { opacity: 1; visibility: visible; }  100% { opacity: 0; visibility: hidden; }} 
+@-ms-keyframes fade_out { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; }} 
+@-keyframes fade_out { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden;  }} 
+
+
+
+
+
+
+
 /* Inner carousel??  Why is the wrapper needed? */
 .carousel_container { 
   /* border: 1px solid lime; */
@@ -1454,6 +1614,28 @@ color: var(--form_button_text_color_hover);
   filter: none;
   -webkit-filter: grayscale(0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

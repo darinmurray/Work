@@ -16,7 +16,9 @@ window.onload = function() {
 
 // for layout purposes only, hiddeen by default in the css
 // $("#centerlines").show()
-$(".carousel_panel").hide()
+
+// this opacity is now starting at 0, no need to hide them.
+// $(".carousel_panel").hide()
 
 
 
@@ -62,14 +64,16 @@ const carousel_panels = $(".carousel_panel")
 $(document).on("click", ".show_carousel" , function(e) {   
   e.preventDefault()
   let show_this = e.currentTarget.attributes.href.value
-  $(".carousel_panel").hide();
-  $("#nav_floater, #floating_logo").css({"opacity":"0.2", "pointer-events":"none" });
-  $(show_this).show();
+  //$(".carousel_panel").hide();
+  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
+  // $(show_this).show();
+  $(show_this).removeClass("fade_out").addClass("fade_in");
 });
 
 $(document).on("click", ".close_carousel" , function(e) {   
-  $(".carousel_panel").hide();
-  $("#nav_floater, #floating_logo").css({"opacity":"1", "pointer-events":"auto" });
+  // $(".carousel_panel").hide();
+  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
+  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
 });
 
 
@@ -270,7 +274,8 @@ $(work_menu).children('li').each(function(big_e){
 // gsap.fromTo("#floating_logo", { y: "0px", scale: 0}, {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 // gsap.from("#floating_logo", {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 let scale_calc = 3
-gsap.from("#floating_logo",  {
+// gsap.from("#floating_logo",  {    lion_logo_svg
+gsap.from("#lion_logo_svg",  {
   scrollTrigger: {
     trigger: "#landing", // content
     start: "top top",
