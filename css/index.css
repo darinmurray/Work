@@ -185,8 +185,9 @@ body {
 
 .icon-crossbones:before {
   content: "\e900";
-  color: #aa1f23;
+  color: #cccccc;
 }
+
 .icon-css:before {
   content: "\e901";
 }
@@ -932,6 +933,7 @@ ul.deck li.card {
   min-width: 200px;
   max-width: 30%;
   border-radius: 5px;
+  
 }
 .card_wrapper{
   position: relative;
@@ -954,6 +956,7 @@ a.card_project_link {
   b order: 1px dotted pink;
 }
 .category_badge img {
+  -webkit-filter: drop-shadow( 10px 10px 10px #00000077);
   filter: drop-shadow( 10px 10px 10px #00000077);
 }
 
@@ -973,6 +976,15 @@ li.card .title{
   padding: 120px 20px 50px 20px; /* top right bottom left */
   border-radius: 10px;
   background-color: var(--testing);
+  -webkit-box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.4);
+box-shadow: inset 5px 5px 15px -5px rgba(0, 0, 0, 0.4);
+
+border-top: 1px solid rgba(0, 0, 0, 0.9);
+border-left: 1px solid rgba(0, 0, 0, 0.9);
+
+border-right: 1px solid rgba(255, 255, 255, 0.61);
+border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+
 }
 
 .card_description ul:not(.skills) {
@@ -1261,11 +1273,14 @@ ul.comfort_list li a, a:visited{
   position: absolute;
   top:5vh;
   left:6vh; /* vh, so it's evenly pisitioned in the corner */
-  width: 100px;
-  height: 100px;
 }
-
-
+.close_carousel .icon-crossbones {
+font-size: 42px;
+}
+.close_carousel:hover .icon-crossbones:before {
+  content: "\e900";
+  color: #aa1f23;
+}
 
 
 
