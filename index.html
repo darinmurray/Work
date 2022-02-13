@@ -24,6 +24,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+
+
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
@@ -136,9 +141,9 @@
               </ul>
           </div>
           <p class="centered" >
-          **fueled by coffee and a <em>slight</em>  obsession with learning new things and pushing limitations. 
+          **fueled by coffee and a <em>slight</em> obsession with learning new technologies. 
           <br>:-\ socially akward...
-          drools over vintage industrial sewing machines...
+          drools over vintage industrial sewing machines.
           </p>          
 
   <ul class="row_of_icons_small"> 
@@ -176,13 +181,13 @@
         <!-- <div class="title">Tubes</div> -->
 
         <ul class="skills project_stack"> 
-          <li><span class="card_icon icon-html"></span> <div>HTML</div> </li>
-          <li><span class="card_icon icon-css"></span> <div>CSS</div></li>
-          <li><span class="card_icon icon-javascript"></span><div>Js</div></li>
-          <li><span class="card_icon icon-jquery"></span><div>Jquery</div></li>
+          <li><span class="icon-html"></span> <div>HTML</div> </li>
+          <li><span class="icon-css"></span> <div>CSS</div></li>
+          <li><span class="icon-javascript"></span><div>Js</div></li>
+          <li><span class="icon-jquery"></span><div>Jquery</div></li>
         </ul>
 
-      <p>Stunning Nixie tubes with pure CSS & Javascript/Jquery. No jpg/png/tif.</p>
+      <p>Stunning Nixie tubes with pure CSS, Javascript and Jquery. No jpg/png/tif.</p>
       <ul>
         <li>Pure CSS/Js</li>
         <li>No Pixel Images</li>
@@ -193,6 +198,8 @@
         <li>Animation</li>
         <li>Sound Effects</li>
         <li>Mayhem mode</li>
+        <li>Smoke</li>
+        <li>Screen Distortion</li>
       </ul>
       </div>
       </div>   
@@ -212,10 +219,10 @@
             <!-- Title is now in the image istelf, not important for SEO, readers? -->
             <!-- <div class="title">Words</div> -->
             <ul class="skills project_stack"> 
-              <li><span class="card_icon icon-html"></span> <div>HTML</div> </li>
-              <li><span class="card_icon icon-css"></span> <div>CSS</div></li>
-              <li><span class="card_icon icon-javascript"></span><div>Js</div></li>
-              <li><span class="card_icon icon-jquery"></span><div>Jquery</div></li>
+              <li><span class="icon-html"></span> <div>HTML</div> </li>
+              <li><span class="icon-css"></span> <div>CSS</div></li>
+              <li><span class="icon-javascript"></span><div>Js</div></li>
+              <li><span class="icon-jquery"></span><div>Jquery</div></li>
             </ul>
 
 
@@ -250,18 +257,18 @@
 
     <li class="card">
       <div class="card_wrapper">
-      <a href="#shopity.html" class="card_project_link">
+      <a href="#shopify.html" class="card_project_link">
           <div class="category_badge"> <img src="images/cards/shopify_shield.png" class="g ray_scale" alt="Shopify Work Image"> </div>
         </a> 
         <div class="card_description">
           <!-- Title is now in the image istelf, not important for SEO, readers? -->
         <!-- <div class="title">Shopify</div> -->
         <ul class="skills project_stack"> 
-          <li><span class="card_icon icon-html"></span> <div>HTML</div> </li>
-          <li><span class="card_icon icon-css"></span> <div>CSS</div></li>
-          <li><span class="card_icon icon-javascript"></span><div>Js</div></li>
-          <li><span class="card_icon icon-jquery"></span><div>Jquery</div></li>
-          <li><span class="card_icon icon-shopify"></span><div>Liquid</div></li>
+          <li><span class="icon-html"></span> <div>HTML</div> </li>
+          <li><span class="icon-css"></span> <div>CSS</div></li>
+          <li><span class="icon-javascript"></span><div>Js</div></li>
+          <li><span class="icon-jquery"></span><div>Jquery</div></li>
+          <li><span class="icon-shopify"></span><div>Liquid</div></li>
         </ul>
 
         <p>I have personally owned and developed several Shopify stores grosing +$1mil anual sales. </p>
@@ -665,43 +672,156 @@
 
 
 
+<style>
+.master_container {
+/* border: 1px dotted lime; */
+}
+
+.test_wrapper {
+position: absolute;
+width: 28vw;
+/* margin-top:30px; */
+/* border: 1px solid blue; */
+}
 
 
+.test_wrapper_scroll {
+position:relative;
+right:5px;
+width: 28vw;
+top: -15px;
+/* transform: scale(90%); */
+}
+
+.test_badge {
+position:absolute;
+/* width: 18vw; */
+/* margin-left:12px;  */
+transform: scale(60%);
+/* border: 1px solid lime; */
+}
+
+
+
+tspan {
+  fill: var(--text-color);
+  /* fill:#231F20;  */
+  /* font-family:'Space Grotesk';  */
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 1px;
+  font-size:32px; 
+  font-weight:300;
+  /* text-align: center; */
+}
+#logo_scroll_2{
+  border: 1px solid pink;
+  t ransform: scale(90%);
+  /* padding-right:20px; */
+}
+
+</style>
+
+
+
+
+    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
+    <h1>Resume</h1>
+    <!-- This did NOT force 'download'.  -->
+    <a href="Darin_Murray_Resume.pdf" target="_blank" >Download my resume here.</a>
+    <!-- <p>or... click this button for $100.</p> -->
 
 <section id="resume" class="scroll_panel">
 
   <div class="container_wrapper container column_centered ">
-    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
 
 
-    <h1>Resume - PDF form</h1>
-    <p class="copy width_60">Objective 1: Create a web app that simplifies learnign to read (for my 6 year old daughter), 
-      but makes it fun and engadging without cartoons or rainbow cluttered pages.</p>
-    <p class="copy width_60">Objective 2: Use CSS and JS to make a flip-baord style display with realistic appearance and smooth animations</p>
-    <ul> Technical stuff:
-      <li>Webster Dictionairy API for definitionan and syllable lookup</li>
-      <li>Text to speach to say the word and read the definition </li>
-      <li>Text to speach gives paise with 'thumbs up' </li>
-      <li>Rendered purely with CSS</li>
-      <li>JS/jQuery controlled animations</li>
-    </ul>
 
-    <ul>User functionality:
-      <li>Choose category</li>
-      <li>Adjust word lenthg</li>
-      <li>Adjust flip speed</li>
-      <li>Adjust word change speed</li>
-      <li>Adjust narator voice</li>
-      <li>Adjust voice pitch</li>
-      <li>Adjust voice speed</li>
-      <li>Adjust search for any word</li>
-      <li>Adjust text case for readability</li>
 
-    </ul>
+
+<div class="master_container center_every_fucking_thing">
+
+    <div class="test_wrapper">
+
+        <!-- IMAGE INSIDE BADGE PATH -->
+        <svg id="image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 546.81 648">
+          <defs>
+            <style>
+              .cls-1_image {
+                fill: none;
+              }
+              .cls-2_image {
+                clip-path: url(#clip-path);
+              }
+            </style>
+            <clipPath id="clip-path" transform="translate(-679.88 -230.61)">
+              <path class="cls-1_image" d="M958.83,847.11c114.69-127.38,180.65-290.77,180.65-457.7-9.37-8.79-24.12-21.2-39.69-25.67,4.87-51.33-19-63.61-34-63.61-42.81,0-18.48-57.52-106.91-57.52h-1.32c-88.42,0-64.1,57.52-106.91,57.52-15.1,0-38.91,12.28-34.05,63.61-15.57,4.47-30.31,16.88-39.69,25.67,0,166.93,66,330.32,180.65,457.7Z"/>
+            </clipPath>
+          </defs>
+          <g class="cls-2_image">
+            <image width="500" height="610" transform="scale(1.09 1.06)" xlink:href="images/cards/product_design_card_xl.jpg"/>
+          </g>
+        </svg>
+
+    </div>
+
+
+<div class="test_badge">
+  <img src="images/cards/badge_hero_hollow.png" alt="">
+</div>
+
+
+
+    <div class="test_wrapper_scroll">
+
+
+      
+      <svg id="logo_scroll_2" viewBox="0 0 248 325" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path id="path-1" d="M35.9,233.4c10.9,8.8,168.3-40.7,180.8-30.9"></path>
+        </defs>
+      
+        <!-- <text text-anchor="middle" style="fill: var(--text-color); font-size: 3rem;"> -->
+        <text text-anchor="middle" >
+          <textPath xlink:href="#path-1" startOffset="50%">
+            <tspan>PRODUCT DESIGN</tspan>
+          </textPath>
+        </text>
+      </svg>
+
+
+        <!-- TEXT ALONG A PATH -->  
+        <!-- <svg version="1.1" id="logo_scroll" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 248 325" style="enable-background:new 0 0 248 325;" xml:space="preserve">
+          <style type="text/css"> .st3{fill:none; stroke:none} </style>
+
+          <path id="Illustration_x5F" class="st3" d="M12,225.6 C45.4,250.5,239,166,241.9,209.7"/>
+          <text id="Illustration_x5F_texter_00000121983394765284577800000005652781374186493092_">
+            <textPath  xlink:href="#Illustration_x5F" text-anchor="middle" startOffset="50%" >
+              <tspan>ABCDEFGHIJKLMNOPQRSTUV</tspan>
+            </textPath>
+          </text>
+        </svg> -->
+
+
+
+
+    </div>
+
+</div><!-- MASTER CONTAINER -->
+
+
+
+
+
+
+
+
+
 
   </div>
 
 </section>
+
 
 
 

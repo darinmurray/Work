@@ -194,6 +194,7 @@ body {
 .icon-html:before {
   content: "\e902";
 }
+
 .icon-illustrator:before {
   content: "\e903";
 }
@@ -911,8 +912,8 @@ ul.deck {
   font-size: 12px;
   letter-spacing: 1px;
   font-family: 'Bitter', serif;
-  font-weight: 200; 
-  line-height: 18px;
+  font-weight: 400; 
+  line-height: 22px;
   list-style-type: none;
 
   display: flex;
