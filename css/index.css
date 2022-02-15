@@ -463,9 +463,14 @@ img {
 
 
 
+/* #lion_logo_svg{
+  max-width: 60vw;
+  }
+  
 
-
-
+#home_button{
+max-width: 40vw;
+} */
 
 
 
@@ -853,9 +858,9 @@ ul#nav li  ul li:nth-child(5)  {
   left: 50% ;
   transform: translateX(-50%);
   z-index: 975; 
-
   height: 100px;
   width: 100px;
+  transition: all 0.5s ease;
 }
 
 
@@ -865,6 +870,61 @@ ul#nav li  ul li:nth-child(5)  {
 .st3{fill:none;stroke:#FFFFFF;stroke-width:36;stroke-miterlimit:10;}
 .st4{fill: #790000;}  /* red banners #790000 */
 .st5{opacity:0.4;fill:#6D6E71;} /* shadows on red banners #6D6E71 */
+
+.glint {
+  fill: #ffffff;  
+}
+
+.glint { 
+  width: 20px; 
+  height: 20px;  
+  transform-origin: 98px 47px ; 
+  /* animation-name: spin; */
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease_out; 
+  animation-delay: 2000ms; 
+  opacity: 0.0; 
+}
+
+@keyframes spin { 
+    0% {   transform: rotate(0deg) scale(1); opacity: 0.0; }
+    25% {  transform: rotate(60deg) scale(1); fill: white; }
+    30% {  transform: rotate(60deg) scale(2); fill: rgb(255, 255, 160); opacity: 1.0;}  /* was 3 */
+    65% {  fill: white; }
+    70% {  opacity: 1.0; }
+    100% { transform: rotate(200deg) scale(1); opacity: 0.0; }
+}  
+#text_banner_darin {
+  transform-origin: 145px 195px; /* 1st number top/bottom, second number l/r */
+  transition: all 0.5s ease;
+}
+#text_banner_murray {
+  transform-origin: 100px 80px; /* 1st number top/bottom, second number l/r */ 
+  transition: all 1.0s ease;
+}
+
+#lightening_bolt_layer, #needle_layer {
+  transform-origin: center center; /* 1st number top/bottom, second number l/r */ 
+}
+
+
+
+
+
+
+h1 {
+  transition: all 0.5s ease;
+}
+h1:hover  {
+  /* transform: rotate(10deg) scale(.8) opacity(0.2) translateY(-30px); */
+  transform: rotate(10deg) scale(1.8) translateY(-30px) ;
+  opacity: 0.2;
+}
+#products, #logos, #illustration{
+  display:none;
+}
+
 
 
 
@@ -1656,6 +1716,7 @@ input[type=submit]:hover {
 background-color: var(--form_button_background_color_hover);
 color: var(--form_button_text_color_hover);
 }
+
 
 
 

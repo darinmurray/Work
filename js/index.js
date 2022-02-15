@@ -22,6 +22,49 @@ $(cursors).hide()
 //   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
 
 
+// text_banner_darin
+let text_banner_darin = $("#lion_logo_svg") /*
+#text_banner_darin add class effect_1
+#text_banner_murray add class effect_2
+#lightening_bolt_layer add class effect_3
+#needle_layer add class effect_4
+ transition: all 0.5s ease;
+*/
+
+
+$("#text_banner_darin").css({"transform": "rotate(-30deg)", "transition": "0.1s" })
+$("#text_banner_murray").css({"transform": "rotate(-40deg)", "transition": "0.1s" })
+$("#lightening_bolt_layer, #needle_layer").css({"transform": "rotate(0deg)", "transition": "0.1s", "transform": "scale(0.7)" })
+
+
+
+setTimeout(() => {
+  $("#text_banner_darin").css({"transform": "rotate(0deg)", "transition": "1.1s" })  
+  $("#text_banner_murray").css({"transform": "rotate(0deg)", "transition": "2.1s" }) 
+  $("#lightening_bolt_layer, #needle_layer").css({ "transform": "rotate(90deg)", 
+    "transform": "scale(0.9)", 
+    "transition": "3.5s", 
+    "opacity": "0.6"
+  }) 
+  $(".glint").css({"animation-name": "spin" })
+
+}, 100);
+
+
+
+  
+
+// $(this).hover(function(sub_event){
+//   let factor = 2
+//   let this_width = $(this).width()*factor
+//   let this_height = $(this).height()*factor
+//   let avg = Math.min( this_width, this_height )
+//   $(".cursor_main").stop().animate({width: avg+"px", height: avg+"px", "border-width": "1px"})
+// }, function(){
+//   $(".cursor_main").stop().animate({width: default_cursor_size+"px", height: default_cursor_size+"px", "border-width": default_cursor_border+"px"})
+// });
+
+
 
 
 
@@ -71,7 +114,7 @@ $('.card').each(function(index) {
 // ===============   (ofset)  ================ // 
 // can this be done with CSS calc?
 let nav_width = $("#nav_floater").outerWidth();
-let screen_width = $("body").outerWidth();
+// let screen_width = $("body").outerWidth();
 let floating_logo_width = $("#floating_logo").outerWidth();
 let nav_left_width = $("#nav_left").outerWidth();
 let nav_right_width = $("#nav_right").outerWidth();
@@ -350,7 +393,23 @@ $("li svg").each(function(index, main_event ){
 // this is the working FROM version
 // gsap.fromTo("#floating_logo", { y: "0px", scale: 0}, {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 // gsap.from("#floating_logo", {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
-let scale_calc = 3
+// find the proportion of the screen. 
+// screen_width screen_height
+
+// hwich is smaller, height or width. 
+// if width, proportion to width
+// if height, proportion to height     starting size is 100 pixels
+
+// width range is 375 to 1200. 
+// 375 = 2.5 - - - 1200 = 7 
+let viewPortHeight = window.innerHeight
+let viewPortWidth = window.innerWidth
+let dictator = Math.min(viewPortWidth, viewPortHeight )
+if (dictator = viewPortHeight) { dictator *=0.6 }
+responsive_factor = dictator/150
+
+
+let scale_calc = responsive_factor//  // min 2, max 7
 // gsap.from("#floating_logo",  {    lion_logo_svg
 gsap.from("#lion_logo_svg",  {
   scrollTrigger: {
@@ -368,6 +427,7 @@ gsap.from("#lion_logo_svg",  {
   y: "40vh", 
   ease: "power5.in", 
   scale: scale_calc
+  // scale: scale_calc
 } );
 
 // gsap.to("#intro", {duration: 1 , delay: 1, y: "0vh", ease: "power1.in", opacity: 0.2} )
