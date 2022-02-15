@@ -2,6 +2,17 @@
 window.onload = function() { 
 
 
+  // ==========   C U R S O R S   ================ // 
+const cursor = document.querySelector('.cursor_container');
+const main_cursor = document.querySelector('.cursor_main');
+const cursors = document.getElementsByClassName('custom_cursor');
+// get actual computed width and devide instead of this, it's hacky 
+const y_offset = 40 // 35  half thw width
+const x_offset = 40 // 15  half the height
+// initially hide all custom cursors
+// do this in CSS before deployment
+$(cursors).hide()
+
 
 //   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
 //   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
@@ -25,6 +36,35 @@ window.onload = function() {
 
 
 
+// ======== Clone & Insert Badges ========= //
+// ========    ( work samples)    ========= //
+// ======== ===================== ========= //
+// replace image with SVG/image/text
+$('.card').each(function(index) {
+  let card_name = $(this).attr('data-name')
+  let image_name = $(this).attr('data-image')
+  // clone the repeatable element
+  var clone = $("#svg_badge_master").clone();
+  // create a new unique ID
+  var newId = clone.attr("id")+(card_name);
+  // apply the new ID to the clone
+  clone.attr("id", newId); //.removeAttr("style");
+    // INSIDE the clone, insert the appropriate image 
+    clone.find("tspan").text( card_name );
+    clone.find(".badge_category_image").attr( "xlink:href", "/images/cards/" + image_name + ".JPG" );  
+  // $("#display_board_X").append(clone) // add to the DOM
+  $(this).find(".category_badge").html( clone );
+});  
+
+
+
+
+
+
+
+
+
+
 
 // ===============   M A I N   ================ // 
 // ===============    N A V    ================ // 
@@ -39,7 +79,6 @@ let nav_offest = Math.floor(Math.abs(nav_left_width - nav_right_width) )  ;  // 
 
 $("#nav_wrapper").css('margin-left', (nav_offest)+"px");
 $("#nav_center").css('width', floating_logo_width+"px");
-
 // make this happen AFTER logo is covering it
 $("#nav_center li a ").css('color', "black");
 
@@ -55,27 +94,6 @@ visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 let logo_hero = document.getElementById('logo_hero');
 // why are these here?? ---------------------------------------------
 let toggledElement = document.getElementsByClassName("nav_wrapper") 
-
-
-// ==========   C A R O U S E L   ============= //
-// ==========      open/close     ============= //
-// ==========      (buttons)      ============= //
-const carousel_panels = $(".carousel_panel")
-$(document).on("click", ".show_carousel" , function(e) {   
-  e.preventDefault()
-  let show_this = e.currentTarget.attributes.href.value
-  //$(".carousel_panel").hide();
-  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
-  // $(show_this).show();
-  $(show_this).removeClass("fade_out").addClass("fade_in");
-});
-
-$(document).on("click", ".close_carousel" , function(e) {   
-  // $(".carousel_panel").hide();
-  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
-  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
-});
-
 
 
 
@@ -105,38 +123,53 @@ $("li.work").hover(function(e){
 
 
 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
-const cursor = document.querySelector('.cursor_container');
-const main_cursor = document.querySelector('.cursor_main');
+// ==========   C A R O U S E L   ============= //
+// ==========      open/close     ============= //
+// ==========      (buttons)      ============= //
+const carousel_panels = $(".carousel_panel")
+$(document).on("click", ".show_carousel" , function(e) {   
+  e.preventDefault()
+  let show_this = e.currentTarget.attributes.href.value
+  //$(".carousel_panel").hide();
+  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
+  // $(show_this).show();
+  $(show_this).removeClass("fade_out").addClass("fade_in");
+});
 
-const cursors = document.getElementsByClassName('custom_cursor');
-// get actual computed width and devide instead of this, it's hacky 
-const y_offset = 40 // 35  half thw width
-const x_offset = 40 // 15  half the height
+$(document).on("click", ".close_carousel" , function(e) {   
+  // $(".carousel_panel").hide();
+  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
+  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+
 document.addEventListener('mousemove', (e)=> {
     cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
 })
 
-$(cursors).hide()
 $(".cursor_main").show();
-
 document.addEventListener('click', () => {
-
   main_cursor.classList.add("expand");
   console.log(`%c=> cursor: `, "color:cyan", main_cursor);
   console.log(`%c=> cursor: `, "color:cyan", main_cursor.classList);
-
   setTimeout(() => {
     main_cursor.classList.remove("expand");
   }, 500)
 })
-
-
-
-
-
 
 
 // ==========   C U R S O R  C H A N G E S    ================ // 
@@ -146,28 +179,58 @@ document.addEventListener('click', () => {
 // ==== Change determined by data-cursor attribute, if asigned
 // make it observe everything? Global? If assigned, if not: ignore
 // if (typeof $('#dataTable').data('timer') !== 'undefined') ...
-// .card_wrapper, textarea, input
 
-$(".close_carousel, #nav_wrapper, form *").each(function(main_event){
+// took out 'a' from below list
+$(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
-    console.log(`%c=> this hover element is this thing here: `, "color:cyan", this);
-    
-      console.log(`%c=> HOvering`, "color:orange");
     cursor_choice = $(this).attr("data-cursor")
         console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
-        console.log(`%c=> cursors: `, "color:limeGreen", cursors);
+        // console.log(`%c=> cursors: `, "color:limeGreen", cursors);
     $(cursors).hide()
     $("."+cursor_choice).show();
   }, function(){
-        console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
+        // console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
     $("."+cursor_choice).hide()
     $(".cursor_main").show();
   });
 });
 
-// ==========   C U R S O R - (color for 'about me' page)    ================ //
+/* for badges! */
+    // change cursor for badges and carousel close button
+    // var images = $('.card_wrapper svg, .close_carousel');
+    // images.hover(function(elt) { 
+    //   if (images.index(document.activeElement) === -1) {
+    //     $(cursor).toggleClass('highlight');
+    //     console.log(`%c=> this: `, "color:cyan", this); 
+    //   }
+    // })
+
+
+
+
+
+
+// ==========   C U R S O R - circle   ================ // 
+// ==========   C U R S O R -  over    ================ // 
+// ==========   C U R S O R - icons    ================ // 
+
+let default_cursor_size = 48
+let default_cursor_border = 8
+
+$(".icon").each(function(main_event){
+  $(this).hover(function(sub_event){
+    let factor = 2
+    let this_width = $(this).width()*factor
+    let this_height = $(this).height()*factor
+    let avg = Math.min( this_width, this_height )
+    $(".cursor_main").stop().animate({width: avg+"px", height: avg+"px", "border-width": "1px"})
+  }, function(){
+    $(".cursor_main").stop().animate({width: default_cursor_size+"px", height: default_cursor_size+"px", "border-width": default_cursor_border+"px"})
+  });
+});
+
+// =======   C U R S O R - (color for 'about me' page) =========== //
 $("#about_me").hover(function(e){
-  // transform slowly??
     $(".cursor_main").css("border-color" , "#ffffff");
   }, function(){
     $(".cursor_main").css("border-color" , "#44ffee");
@@ -226,33 +289,47 @@ $(work_menu).children('li').each(function(big_e){
       }
       return 0
     }
-  
-  
 
-
-    var images = $('.card_wrapper img, .close_carousel');
-
-    images.hover(function(elt) { 
-      if (images.index(document.activeElement) === -1) {
-        $(cursor).toggleClass('highlight');
-        console.log(`%c=> this: `, "color:cyan", this);
+    // get the supplied elements height and width 
+    function getHeightAndWidth(element) {
+      var style = window.getComputedStyle(element, null);
+          var h = style.height;
+          var w = style.width;
+          var c = style.blockSize;
+          return {height:h, width:w}
       }
-    })
+
+      
 
 
 
 
 
-    // function getHoveredImage() {
-    //   var hoveredElements = $(':hover'),
-    //       // the last element is the event source
-    //       hoveredElement  = hoveredElements.last();
-    
-    //   if (hoveredElement.prop("tagName") === 'IMG') {
-    //     return hoveredElement;
-    //   }
-    // }
 
+
+// ==========       B A D G E  (svg)      ================
+// ==========   ( image zoom on hover )   ================
+// ==========   B A D G E  (svg)  hover   ================
+$("li svg").each(function(index, main_event ){
+  // get the LI this SVG is representing
+  let this_card = this.parentElement.offsetParent.offsetParent.parentElement
+  // assign it a unique ID as it does not have one
+  $(this_card).attr("id", "card_"+index);
+  let badge_image = this.querySelector('.badge_category_image') 
+
+      $(this).hover(function(sub_event){
+        $(badge_image).addClass("badge_zoom")
+        // dim all otehr elements on the page:
+        // $('li.card, #nav_floater, h1, #lion_logo_svg').not('#'+this_card.id+"*").addClass("dim_all")
+      }, function(){
+        $(badge_image).removeClass("badge_zoom")
+        // un-dim all elements
+        //$("body *").removeClass("dim_all")
+      });
+});
+
+
+ 
 
 
 
@@ -533,8 +610,6 @@ $(document).on("click", ".js-carousel-button " , function(e) {
     // currently returning opacity 0.1 - 1.0
     return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
   } 
-
-
 
 
 
