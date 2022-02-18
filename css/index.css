@@ -1,8 +1,7 @@
-:root { 
-
+:root {  
   /* general */
+  color-scheme: light dark; /* both supported */
   --cursor_show: default;  /* default  none */
-
   /* colors */
 --black-20: #000000;
 --black-19: #1a1a1a;
@@ -24,76 +23,80 @@
 --black-3: #e0e0e0;
 --black-2: #ebebeb;
 --black-1: #f5f5f5; /* whitesmoke */
---black-0: #ffffff; /* whitesmoke */
-
---lightening_blue: #658196; /* whitesmoke  036592 */
---lightening_blue_dark: #4f6e85; /* whitesmoke */
---lightening_blue_very_dark: #374d5d; /* whitesmoke */
---logo_red: #790101; /* whitesmoke */
---logo_dark_red: #700000; /* whitesmoke */
+--black-0: #ffffff; 
 --hilight_yellow: rgba(255, 238, 0, 0.829);
 
-/*  four colors to make a basic theme change */
---testing: var(--lightening_blue_dark); /* #ff00f2 */
---testing_2: var(--lightening_blue_dark); /* #5e2081 */
---testing_3: var(--black-1); /* #e5f508 */
+/* ========= logo colors ======== */
+--logo_hilights: var(--black-0);   /* includes TEXT */
+--needle: #627C91; /*  658196  */
+--logo_red: #790000; /*  790101 */
+--logo_banner_shadows: var(--black-20);   /* #6D6E71;  */
+--logo_banner_border: var(--black-0); /*  658196  */
+--lightening_bolt: var(--needle); /*  658196 */
+/* optional logo colors , probably not used */
+--lightening_bolt_dark: #4f6e85; /*  */
+--lightening_bolt_very_dark: #374d5d; /*  */
+--logo_dark_red: #700000; /*  */
+
+/* ====== 4 basic theme colors ===== */
+--color-1: var(--lightening_bolt_dark); /* #ff00f2 */
+--color-2: var(--lightening_blue_very_dark); 
+--color-3: var(--black-1); /* #e5f508 */
+--color-4: var(--lightening_blue_very_dark); 
+
 --soft_gradiant_end: var(--lightening_blue);  /*  rgba(224,255,255,1)  */
 
-            /* probs not needed */
-            --text-color-dark: var(--testing);  
-            --text-color-light: var(--testing_3);  
-            --dark-backround: var(--testing); 
-
-
-/* navigation */
+/* ========== navigation ========== */
 --nav-backround: var(--black-1);  /*  #8c9aa0  */
 --nav-text: var(--black-10);  /*  #8c9aa0  */
 --nav-text-hover: red;  /*  #8c9aa0  */
 
-/* work */
---work_text_color: var(--testing);
---work-backround: var(--testing);  /*  #8c9aa0  */
---work_h1_color: var(--testing_2);
---deck_title_color: var(--testing_2);
---deck_title_backround: var(--testing);
+/* ========== work ========== */
+--work_text_color: var(--color-1);
+--work_backround: var(--black-0);  /*  #8c9aa0  */
+--work_h1_color: var(--color-1);
+--deck_title_color: var(--color-1); /* not being used?? */
+--deck_title_backround: var(--color-1);
 --work_background_gradiant_end: var(--soft_gradiant_end);  /* original 'work' gradiant color rgba(224,255,255,1)  */
 
-/* index */
---landing_text_color: var(--testing);
---landing_h1_color: var(--testing_2);
+/* ========== index ========== */
+--landing_h1_color: var(--color-2);
+--landing_backround: var(--black-0);  /*  #8c9aa0  */
 
-/* about_me */
---about_me_text_color: var(--testing_3);  /*  #8c9aa0  */
---about_me_backround: var(--testing);  /*  #8c9aa0  */
+/* ========== about_me ========== */
+--about_me_text_color: var(--color-3);  /*  #8c9aa0  */
+--about_me_backround: var(--color-1);  /*  #8c9aa0  */
 
-/* carousel pages */
---illustration-backround: var(--testing);  /*  #8c9aa0  */
---logos-backround: var(--testing);  /*  #8c9aa0  */
---product-backround: var(--testing);  /*  #8c9aa0  */
+/* ========== carousel pages ========== */
+--illustration-backround: var(--color-1);  /*  #8c9aa0  */
+--logos-backround: var(--color-1);  /*  #8c9aa0  */
+--product-backround: var(--color-1);  /*  #8c9aa0  */
 
 /* resume */
---resume-backround: var(--testing);  /*  #8c9aa0  */
+--resume_backround: var(--black-0);  /*  #8c9aa0  */
 
 /* contact form  */
-/* --contact_text_color: var(--black-1);  /*  #8c9aa0  */
---contact_background_color: var(--testing);
-     
-  --form_h1_color: var(--black-1);
-  --form_text_color: var(--testing_2);
-  --form_label_color: var(--testing_3);
+--contact_section_background_color: var(--color-1);
+/*  inner form color, should be transparent lighter shade  */
+--contact_form_background_color: var(--color-1); 
+
+
+  --form_h1_color: var(--color-3);
+  --form_text_color: var(--color-2);
+  --form_label_color: var(--color-3);
     
-    --form_input_select_background_color: var(--testing_3);
-    --form_input_select_background_hover_color: var(--black-0); 
-    --form_input_select_background_focus_color: var(--testing_3); 
-    --form_input_select_text_color: var(--testing_2);
-    --form_input_select_text_hover_color: var(--testing);  
-    --form_input_select_text_focus_color: var(--nav-text-hover);  
+    --form_input_select_text_color: var(--color-1);
+    --form_input_select_background_color: var(--black-0);
+                    --form_input_select_background_hover_color: var(--black-0); 
+    --form_input_select_background_focus_color: var(--color-3); 
+    --form_input_select_text_hover_color: var(--color-1);  
+                    --form_input_select_text_focus_color: var(--nav-text-hover);  
     
-      --form_input_text_color: var(--testing);
-      --form_button_background_color: var(--testing_2);
-      --form_button_background_color_hover: var(--testing_3);
-      --form_button_text_color: var(--testing);
-      --form_button_text_color_hover: var(--testing_2);
+      /* --form_input_text_color: var(--color-1); */
+      --form_button_background_color: var(--color-3);
+      --form_button_background_color_hover: var(--color-1);
+      --form_button_text_color: var(--color-1);
+      --form_button_text_color_hover: var(--color-2);
 
 
 /* super serious drop shadows */
@@ -113,27 +116,87 @@
       1.7px 3.4px 4.6px -1.3px hsl(var(--shadow-color) / 0.06),
       3.9px 7.9px 10.6px -1.9px hsl(var(--shadow-color) / 0.07);
     --shadow-elevation-high:
-      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.04),
-      1.1px 2.2px 3px -0.3px hsl(var(--shadow-color) / 0.05),
-      1.9px 3.8px 5.1px -0.6px hsl(var(--shadow-color) / 0.05),
-      2.9px 5.8px 7.8px -0.8px hsl(var(--shadow-color) / 0.05),
-      4.4px 8.9px 12px -1.1px hsl(var(--shadow-color) / 0.06),
-      6.7px 13.3px 18px -1.4px hsl(var(--shadow-color) / 0.06),
-      9.9px 19.7px 26.6px -1.7px hsl(var(--shadow-color) / 0.06),
-      14.3px 28.5px 38.5px -1.9px hsl(var(--shadow-color) / 0.07);
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.06),
+      1.1px 2.2px 3px -0.3px hsl(var(--shadow-color) / 0.07),
+      1.9px 3.8px 5.1px -0.6px hsl(var(--shadow-color) / 0.07),
+      2.9px 5.8px 7.8px -0.8px hsl(var(--shadow-color) / 0.07),
+      4.4px 8.9px 12px -1.1px hsl(var(--shadow-color) / 0.08),
+      6.7px 13.3px 18px -1.4px hsl(var(--shadow-color) / 0.08),
+      9.9px 19.7px 26.6px -1.7px hsl(var(--shadow-color) / 0.08),
+      14.3px 28.5px 38.5px -1.9px hsl(var(--shadow-color) / 0.09);
 
  }
+
+
+ /* html:not[dark] { */
+html[dark=false] {   
+  --color-1: rgb(50, 50, 50); /* pretty darn dark but not quite black  */
+  --color-2: rgb(200, 200, 200); /* fairly light; */
+  --color-3: rgb(20, 20, 20); /* almost black */
+  --color-4: rgb(100, 100, 100); /* medium gray; */
+
+  --logo_hilights: var(--black-2);
+  --needle: var(--black-20);
+  --logo_red:  var(--black-20);
+  --logo_banner_shadows: var(--black-20); 
+  --logo_banner_border: var(--black-4); 
+  --lightening_bolt: var(--needle); 
+
+  --landing_backround: var(--color-4);
+  --landing_text_color: var(--black-2);
+  --about_me_backround: var(--color-1);  
+  --about_me_text_color: var(--color-2);  
+  --work_text_color: var(--color-2);
+  --work_backround: var(--color-1); 
+  --work_h1_color: var(--color-2);
+  --contact_backround: var(--color-1);  
+  --contact_text_color: var(--color-2);  
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 html, body, * {margin:0; padding:0;  }  
 html, body {overflow-x: hidden; }  
 /* gives padding and border from inside */
 *, *::before, *::after { box-sizing: border-box; }
-/* what is this magic?!?!?! */
-/* your overlapping header/div height */
-/* html { scroll-padding-top: 100px; } */
 
 body { 
-  color: var(--lightening_blue_dark);
+  color: var(--color-1);
   background-color: var(--black-0);
   display:flex;
   flex-direction: column;
@@ -141,7 +204,8 @@ body {
   /* font-family: 'Azeret Mono', monospace; */
   /* font-family: 'Playfair Display', serif; */
   /* font-family: 'Cormorant Infant', serif; */
-  font-family: 'Bitter', serif;
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Bitter', serif; */
   font-weight: 200;
   width: 100vw; /*  calc(100vw - (100vw - 100%));  */
   cursor: var(--cursor_show);
@@ -244,8 +308,6 @@ body {
 .icon-vscode:before {
   content: "\e977";
 }
-
-
 /* @GROUP for custom svg icon fonts */
 
 
@@ -267,14 +329,15 @@ box-shadow: var(--shadow-elevation-medium);
 .in-your-face-shadow {
 box-shadow: var(--shadow-elevation-high);
 }
+.hard_black_shadow {
+  /* -webkit-box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.79); 
+  box-shadow: 5px 5px 20px 2px rgba(0,0,0,0.79); */
+  -webkit-box-shadow: 8px 8px 15px  rgba(0,0,0,0.79); 
+  box-shadow: 8px 8px 15px  rgba(0,0,0,0.79);
+}
 
 
 
-
-
-/* either body or .pin-spacer should match the background
-  color of whatever section is on top, or above 50vh */
-/* .pin-spacer { background-color: cyan} */
 
 
 
@@ -367,14 +430,23 @@ opacity: 0.8;
   z-index: 99999;
   transform: scale(50%);
 }
-
-.cursor_arrow_over {
+ 
+#arrow_over {
   fill: #44ffee;
-  position: absolute;
   opacity: 0.5;
-  z-index: 99999;
-  /* transform: scale(50%); */
-}
+  /* z-index: 99999; */
+} 
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* pretty cool effect, but a little too much for my taste. 
@@ -415,11 +487,23 @@ Perhaps contextually useful */
 .cursor_caret{
   position: absolute;
   font-family: 'Bitter', serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 30px;
   line-height: 30px; /* this centers it  */
-  color: lime;
+  color: #44ffee;
   z-index: 99999;
+  animation: pulsate_2 0.5s infinite alternate;
+}
+/* play with this... opacity should be different */
+@keyframes pulsate_2 {
+  from {
+      transform: scale(1.5);
+      transform: opacity(0.2)
+  }
+  to {
+      transform: scale(.8);
+      transform: opacity(1)
+  }
 }
 
 img {
@@ -427,7 +511,6 @@ img {
 }
 
 .highlight {
-
   animation: pulsate 1s infinite alternate;
 }
 
@@ -445,6 +528,7 @@ img {
   animation: pulsate 1s infinite alternate;
 }
 
+
 /* play with this... opacity should be different */
 @keyframes pulsate {
   from {
@@ -458,19 +542,6 @@ img {
 }
 
 
-
-
-
-
-
-/* #lion_logo_svg{
-  max-width: 60vw;
-  }
-  
-
-#home_button{
-max-width: 40vw;
-} */
 
 
 
@@ -550,14 +621,6 @@ p {
 
 
 
-.subtle-box {
-  box-shadow: var(--shadow-elevation-low);
-}
-.in-your-face-box {
-  box-shadow: var(--shadow-elevation-high);
-}
-
-
 
 
 
@@ -621,9 +684,7 @@ ul#nav li .sub_nav li:hover a{
 
 
 
-/* ul#nav span#nav_left, ul#nav span#nav_center, ul#nav span#nav_right{
 
-} */
 
 #nav_center {
   text-align: center;
@@ -864,12 +925,20 @@ ul#nav li  ul li:nth-child(5)  {
 }
 
 
-.st2{fill: #627C91;}  /* needle  #627C91 */
-.st0{fill:#637D91;}   /* lightening #637D91 */
-.st1{fill:#FFFFFF;}   /* white lettering & element hilights */
-.st3{fill:none;stroke:#FFFFFF;stroke-width:36;stroke-miterlimit:10;}
-.st4{fill: #790000;}  /* red banners #790000 */
-.st5{opacity:0.4;fill:#6D6E71;} /* shadows on red banners #6D6E71 */
+
+
+
+
+
+
+.st2{fill: var(--needle)}  /* needle  #627C91 */
+.st0{fill: var(--lightening_bolt)}   /* lightening #637D91 */
+.st1{fill: var(--logo_hilights)}   /* white lettering & element hilights */
+.st3{fill:none; stroke:var(--logo_banner_border); stroke-width:36; stroke-miterlimit:10;}
+.st4{fill: var(--logo_red);}  /* red banners #790000 */
+.st5{opacity:0.4; fill: var(--logo_banner_shadows)} /* shadows on red banners #6D6E71 */
+
+
 
 .glint {
   fill: #ffffff;  
@@ -913,17 +982,16 @@ ul#nav li  ul li:nth-child(5)  {
 
 
 
-h1 {
+/* h1 {
   transition: all 0.5s ease;
 }
 h1:hover  {
-  /* transform: rotate(10deg) scale(.8) opacity(0.2) translateY(-30px); */
   transform: rotate(10deg) scale(1.8) translateY(-30px) ;
   opacity: 0.2;
 }
 #products, #logos, #illustration{
   display:none;
-}
+} */
 
 
 
@@ -949,59 +1017,55 @@ h1:hover  {
 
 /* the main LANDING section */
 #landing.scroll_panel {
-  /* background: rgb(72, 214, 53); */
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
-  background-color: (var(--black-1));
+  height: 100vh;
+  width: 100vw;
+  /* opacity: 0.3; */
+  /* background-color: var(--landing_backround);  */
+  /* background-color: var(--black-18);  */
+  background-color: var(--landing_backround); 
 }
 
-
-/* content wrapper INSIDE */
-/* the main LANDING section */
-#landing.scroll_panel .landing_wrapperX {  /*  .column_centered  */
-  /* background: rgb(69, 88, 109); */
-  /* border: 1px solid purple;  */
-  height: 70vh;
+/* this should not be needed */
+#landing.scroll_panel .landing_content {  
   display: flex;
   flex-direction: column;
   align-items: center; 
-  /* align-content: center; */
   justify-content: flex-end; 
-
+  height: 100vh;
 }
 
 div#intro.role {
-  color: var(--landing_text_color);
+  color: var(--landing_text_color); 
   text-align: center;
-  /* border: 1px solid cyan; */
-  /* background-color: #fff; */
-  /* opacity: 0.5; */
+  align-self: flex-end;
+  padding-bottom: 10vh;
 }
 
 
 /* =========     B I G  A S S      ============ */
 /* =========  B A C K G R O U N D  ============ */
 /* =========     ( image )      ============ */
-#landing::before {    
-  content: "";
-  background-image: url("../images/IMG_8833.JPG");
-  background-position: center;
-  background-size: inherit;
-  background-size: cover;
+
+.photo {  
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  background-image: url("../images/IMG_8833.JPG");
+  background-position: center;
+  background-size: inherit;
+  background-size: cover;
+  opacity: 0.1;  
+  /* filter: invert(50%); */
   filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  opacity: 0.1;
+  -webkit-filter: grayscale(100%); 
+  mix-blend-mode: hard-light;
 }
-
-
 
 
 
@@ -1011,23 +1075,25 @@ div#intro.role {
 
  #work {
   position: relative;
-  background: #fff0f5;  /*  ghostwhite   LavenderBlush  */
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e0ffff+0,ffffff+20,ffffff+77,e0ffff+100 */
-background: rgb(224,255,255); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(224,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(224,255,255,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  var(--work_background_gradiant_end) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,var(--work_background_gradiant_end) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', endColorstr='#e0ffff',GradientType=0 ); /* IE6-9 */
-/* opacity: 0.2; */
-/* background: var(--work-backround); */
-
- }
+  /* Old browsers */
+  /* background: rgb(224,255,255); */
+  /* FF3.6-15 */
+  /* background: -moz-linear-gradient(top,  rgba(224,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(224,255,255,1) 100%);  */
+  /* Chrome10-25,Safari5.1-6 */
+  /* background: -webkit-linear-gradient(top,  rgba(224,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,rgba(224,255,255,1) 100%);  */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* background: linear-gradient(to bottom,  var(--work_background_gradiant_end) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 77%,var(--work_background_gradiant_end) 100%);  */
+  /* IE6-9 */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffff', endColorstr='#e0ffff',GradientType=0 );  */
+}
 
 #work {
-  color: var(--work_text_color)
+  color: var(--work_text_color);
+  background-color: var(--work_backround);
 }
 #work h1 {
-  color: var(--work_h1_color)
+  color: var(--work_h1_color);
 }
 
 
@@ -1038,22 +1104,17 @@ ul.deck {
   font-weight: 400; 
   line-height: 22px;
   list-style-type: none;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 100px;
-
-  color: var(--testing_3);
 }
+
 ul.deck li.card {
   display: flex;
   flex-direction: column;
-  /* align-content: center; I don't believe this is needed */
   align-items: flex-start;
-
-  margin-bottom: 80px;
   min-width: 200px;
   max-width: 30%;
   border-radius: 5px;
@@ -1088,7 +1149,7 @@ a.card_project_link {
 }
 /* SVG text on path */
 tspan {
-  fill: var(--text-color);
+  fill: var(--color-1);
   font-family: 'Teko', sans-serif;
   /* letter-spacing: 1px; */
   font-size:62.871px; 
@@ -1103,7 +1164,7 @@ tspan {
 
 li.card .title{
   font-size: 18px;
-  color: var(--testing_3);
+  color: var(--color-1_1);
   text-decoration: none;  
   width: 100%;
   border-radius: 5px;
@@ -1116,11 +1177,8 @@ li.card .title{
   margin-top: 115px;
   padding: 160px 20px 50px 20px; /* top right bottom left */
   border-radius: 30px;
-  background-color: var(--testing);
-
-  /* -webkit-box-shadow:  5px 5px 15px -5px rgba(0, 0, 0, 0.4);
-  box-shadow:  5px 5px 15px -5px rgba(0, 0, 0, 0.4); */
-
+  /* should be NONE, no shape is used here anymore */
+  /* background-color: var(--work_backround); */
 transform: skew(0deg, -7deg);
 -ms-transform: skew(0deg, -7deg);
 -webkit-transform: skew(0deg, -7deg);
@@ -1228,6 +1286,11 @@ section#work, section#about_me, section#contact, section#resume {
   padding-top: 135px;
   padding-bottom: 135px;
 } 
+section#contact {
+  padding-top: 135px;
+  padding-bottom: 135px;
+} 
+
 section .carousel_wrapper {
   display: flex;
   flex-direction: column;
@@ -1478,54 +1541,27 @@ font-size: 42px;
 
 
 
-
-/* .close_carousel:hover .icon-crossbones:before {
-  content: "\e900";
-  color: #aa1f23;
-} */
-
-/* path {
-  transform: rotate(180deg);
-  transform-origin: 50% 50%;
-} */
-
-
-
-
-
-
-
-
-
-.svg_arrow, .svg_arrow.left{
+.svg_arrow{
   height: 200px;
   width: 60px;
 }
-.svg_arrow.left{
-  transform: rotate(180deg);
-}
 
-
-
-/* .svg_arrow:hover, .svg_arrow.left:hover {
+/* .svg_arrow:hover{
   animation: arrow_slide 0.5s 1 ease-in-out forwards;
   border: 1px solid red;
-} */
+}
+
 
 @keyframes arrow_slide {
   0% { 
-    /* transform: scale(0.5);  */
     transform: translateX(0px);
   }
   50% { 
-    /* transform: scale(3);  */
   }
   100% {
-      /* transform: scale(0.5); */
-      /* opacity: 0.5; */
       transform: translateX(10px);
   }
-}
+} */
 
 
 
@@ -1587,7 +1623,8 @@ font-size: 42px;
 
 
 
-
+/* --contact_section_background_color: var(--color-1);
+--contact_form_background_color: var(--color-4); */
 
 
 
@@ -1598,10 +1635,14 @@ section#contact * {
   cursor: var(--cursor_show);
 }
 section#contact {
-  font-family: 'Courier Prime', monospace;
-  font-size: 14px;
+  /* font-family: 'Courier Prime', monospace; */
+  font-family: 'Space Grotesk', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
+  /* font-family: 'Inter', sans-serif; */
+  font-size: 14px;  
   display:flex;
   justify-content: center;
+  background-color: var(--contact_section_background_color);
 }
 section#contact h1{
   color: var(--form_h1_color);
@@ -1610,9 +1651,15 @@ section#contact h1{
 .container {
   margin-bottom: 150px;
 }
-.container.form {
+
+
+form.contact {
+  padding: 25px 30px 50px 30px;
+  border-radius: 20px;
   max-width: 500px;
+  background-color: var(--contact_form_background_color);
 }
+
 
 
 /* =========      generic starter form       ============ */
@@ -1621,39 +1668,41 @@ section#contact h1{
 /* =========      generic starter form       ============ */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
   font-family: 'Courier Prime', monospace;
   font-weight: 400;
   width: 100%; /* Full width */
-  border: 1px solid transparent; /* Gray border */
-  border-radius: 0px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
+  padding: 7px 10px 5px 10px;
+  margin-top: 10px; /* Add a top margin */
   margin-bottom: 30px; /* Bottom margin */
+  border: 0px solid transparent; /* Gray border */
+  border-radius: 5px; /* Rounded borders */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
   /* cursor: none; */
 }
 
 textarea {
   height: 150px;
+  padding:15px;
 }
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
+  font-weight: 600;
+  letter-spacing: 1px;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   display:block;
   width: 50%;
 }
 
 .container.form label{
-  font-size: 12px;
+  font-size: 16px;
 }
 
-form.contact {
-  padding-top:10px;
-}
+
 
 /* =========      form COLORS ONLY       ============ */
 /* =========      form COLORS ONLY       ============ */
@@ -1672,12 +1721,12 @@ form.contact {
   color: var(--form_label_color);
   cursor: var(--cursor_show);
 }
-.container.form label::before{
+/* .container.form label::before{
   content: "{"
 }
 .container.form label::after{
   content: "}"
-}
+} */
 
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
@@ -1709,12 +1758,15 @@ input[type=text]:hover, select:hover, textarea:hover {
 input[type=submit] {
 background-color: var(--form_button_background_color);
 color: var( --form_button_text_color);
+border: 3px solid transparent;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
 background-color: var(--form_button_background_color_hover);
-color: var(--form_button_text_color_hover);
+/* --form_button_text_color_hover */
+color: var(--black-0);
+border: 3px solid var(--black-0);
 }
 
 
@@ -1735,9 +1787,18 @@ color: var(--form_button_text_color_hover);
 
 
 
-/* =========     C A R O  S E L      ============ */
-/* =========     C A R O  S E L      ============ */
-/* =========     C A R O  S E L      ============ */
+
+
+
+
+
+
+
+
+
+/* =========     C A R O S E L      ============ */
+/* =========     C A R O S E L      ============ */
+/* =========     C A R O S E L      ============ */
 
 .fade_in {
   animation: fade_in .5s forwards;
@@ -1941,7 +2002,7 @@ div#page_wrapper {
 
 
 span.caret {
-  color:var(--testing); 
+  color:var(--color-1); 
   margin-left: 0;
   opacity: 0;
 }
@@ -2037,3 +2098,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
  
  
  
+
+
+.night { filter: invert(100%); }
+

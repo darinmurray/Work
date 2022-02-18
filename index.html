@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dark="">
 
 <head>
   <meta charset="utf-8">
@@ -8,6 +8,8 @@
   <meta name="description" content="Web Development work of Darin Murray">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <meta name="color-scheme" content="dark light">
+
   <!-- Styles -->
   <link href="css/index.css" rel="stylesheet">
   <!-- <link href="css/tubes.css" rel="stylesheet"> -->
@@ -47,7 +49,7 @@
 
 <!-- find a way to do this without having to add "class="anchor"" to every a tag...  subtle-box -->
 <div id="nav_floater" class="nav_floater  ">
-  <div id="nav_wrapper" class="nav_wrapper in-your-face-box" data-cursor="cursor_braces">  
+  <div id="nav_wrapper" class="nav_wrapper hard_black_shadow" data-cursor="cursor_braces">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">       
         <li class="work"> <a href="#work" class="anchor">Work</a>
@@ -66,11 +68,12 @@
 
       <span id="nav_right" class="nav_right">
         <li id="contact_li" class="contact"><a href="#contact" class="anchor">Contact</a></li>
-        <li id="resume_li" class="resume"><a href="#resume" class="anchor">Resume</a></li>
+        <li id="resume_li" class="resume"><a href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </span>
     </ul>
   </div>
 </div>
+
 
 
 <!-- <div id="floating_logo"> -->
@@ -94,12 +97,14 @@
 
 
 <section id="landing" class="scroll_panel">
-  <div class="landing_wrapperX column_centeredX">  
+  <div class="landing_content ">  
+
     <div id="intro" class="role">
-      <h1 class="intro_text">Front End Developer<span class="asterisk">**</span></h1>
-        <p class="intro_text">Striving for pixel perfect rendering and a smooth, engaging user experience</p>
-    </div>
+      <h1 class="intro_text">Front End & Shopify Developer<span class="asterisk">**</span></h1>
+        <!-- <p class="intro_text">Striving for pixel perfect rendering and a smooth, engaging user experience</p> -->
+    </div>  
   </div>
+  <div class="photo"></div>
 </section>
 
 
@@ -140,8 +145,7 @@
           </div>
           <p class="centered" >
           **fueled by coffee and a <em>slight</em> obsession with learning new technologies. 
-          <br>:-\ socially akward...
-          drools over vintage industrial sewing machines.
+          <br>:-\ socially akward... drools over vintage industrial sewing machines.
           </p>          
 
   <ul class="row_of_icons_small"> 
@@ -433,21 +437,11 @@
 
 
 
-<!-- This is the gradient for the SVG arrows in the following 3 sections -->
-<!-- position and z-index are set to remove it from document flow -->
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; z-index: -100" >
-  <defs>
-    <linearGradient id="linear-gradient_5" x1="0.14" y1="15.5" x2="16.14" y2="15.5" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fff"/>
-      <stop offset="0.08" stop-color="#f6f6f6"/>
-      <stop offset="0.22" stop-color="#dedede"/>
-      <stop offset="0.39" stop-color="#b8b8b8"/>
-      <stop offset="0.59" stop-color="#828282"/>
-      <stop offset="0.82" stop-color="#3e3e3e"/>
-      <stop offset="1"/>
-    </linearGradient>
-  </defs>
-</svg>
+
+
+
+
+
 
 
 <section id="illustration" class="carousel_panel ">
@@ -473,12 +467,9 @@
 
       <div class="carousel_container" data-name="illustration">
         <div class="carousel | js-carousel">
-          <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous" data-cursor="cursor_arrow_over">
+          <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous" data-cursor="cursor_arrow_previous_over">
             <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
-
-            <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-              <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-            </svg>
+            <img id="left_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
 
           </div>   
             <div class="carousel__slider">
@@ -498,20 +489,24 @@
                 <img src="images/illustrations/Speodmeter.jpg" alt="Coors Light Speedometer Logo">
               </span>
             </div>
-          <div id="js-carousel-next" class="js-carousel-button" data-direction="next" data-cursor="cursor_arrow_over">
+          <div id="js-carousel-next" class="js-carousel-button" data-direction="next"  data-cursor="cursor_arrow_next_over">
 
-
-            <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-              <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-            </svg>
-
-
-            <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
+            <img id="right_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
+ 
           </div>
         </div>  
       </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -539,13 +534,9 @@
     </div>
     <div class="carousel_container" data-name="logos">
       <div class="carousel | js-carousel">
-        <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
-          <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
-          
-          <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-          </svg>
-          
+        <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous"  data-cursor="cursor_arrow_previous_over">
+  
+          <img id="left_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
           
         </div>   
             <div class="carousel__slider">
@@ -562,19 +553,22 @@
                 <img src="images/logos/DTM-About-Work-Logo-Portenzo.png" alt="Portenzo Logo">
               </span>
             </div>
-        <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
-          <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
+        <div id="js-carousel-next" class="js-carousel-button" data-direction="next"  data-cursor="cursor_arrow_next_over">
 
-          <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-          </svg>
-
+          <img id="right_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
 
         </div>
       </div>  
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
 
 
 
@@ -611,12 +605,9 @@
 
     <div class="carousel_container" data-name="products">
       <div class="carousel | js-carousel">
-        <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous">
-          <!-- <img class="directional_arrow previous" src="images/directional-arrow.png" alt="previous_slide"> -->
+        <div id="js-carousel-prev" class="js-carousel-button" data-direction="previous"  data-cursor="cursor_arrow_previous_over">
 
-          <svg class="svg_arrow left" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-          </svg>
+          <img id="left_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
 
           
         </div>   
@@ -640,19 +631,21 @@
               <img src="images/products/pennant_whiskey_1.jpg" alt="Whiskey Pennant">
             </span>
           </div>
-        <div id="js-carousel-next" class="js-carousel-button" data-direction="next">
-          <!-- <img class="directional_arrow" src="images/directional-arrow.png" alt="next_slide"> -->
+        <div id="js-carousel-next" class="js-carousel-button" data-direction="next" data-cursor="cursor_arrow_next_over">
 
-          <svg class="svg_arrow right" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
-            <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
-          </svg>
-
+          <img id="right_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
 
         </div>
       </div>  
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 
 
@@ -668,11 +661,13 @@
 
 
 <section id="contact" class="scroll_panel"> 
-  <div class="container container column_centered form">
-    <h1>Lets talk :-)</h1>  
+  <div class="container column_centered form">
+    <h1>Lets talk :-)</h1> 
+
   <!-- <span class="caret"></span>Here's a blinking caret for you: -->
     <form class="contact">
-      <label for="fname">You are...?</label>
+
+       <label for="fname">You are...?</label>
       <input type="text" id="fname" name="firstname" placeholder="And you are?" data-cursor="cursor_caret" >
   
       <label for="email">Your email:</label>
@@ -684,9 +679,9 @@
       <textarea id="subject" name="subject" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
   
       <input id="submit" type="submit" value="Submit" >
-  
-    </form>
-  </div> 
+     </form>
+
+</div> 
 </section>
 
 
@@ -700,46 +695,33 @@
 
 
 
-<style>
-/* .master_container {
-}
-
-.test_wrapper {
-width: 28vw;
-}
-
-
-tspan {
-  fill: var(--text-color);
-  font-family: 'Teko', sans-serif;
-  font-size:62.871px; 
-  font-weight:300;
-} */
-
-</style>
 
 
 
 
-    <!-- <div class="overlay right_stripes"><div class="overlay left_stripes"></div> </div> -->
-    <h1>Resume</h1>
-    <!-- This did NOT force 'download'.  -->
-    <a href="Darin_Murray_Resume.pdf" target="_blank" >Download my resume here.</a>
-    <!-- <p>or... click this button for $100.</p> -->
-
-<section id="resume" class="scroll_panel">
+<!-- <section id="resume" class="scroll_panel">
 
   <div class="container_wrapper container column_centered ">
 
+      <a href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf "> Resume </a>
 
 
+Professional History
+ - entreprenuriel stuff?/
 
+ I led "cross functional teams" to produce.. popular phrase right now?
+
+"Passionate about technology and learning new things"
+
+"highly motivated front end developer specializing in (?) shopify "
+
+make resume links actualy work in the PDF resume
 
 <div class="master_container center_every_fucking_thing">
 
 
-
-</div><!-- MASTER CONTAINER -->
+</div> -->
+<!-- MASTER CONTAINER -->
 
 
 
@@ -879,9 +861,9 @@ tspan {
 <div class="custom_cursor cursor_skull">
   <defs>
     <style>
-      .cls-1xxxXXX {
+      /* .cls-1xxxXXX {
         fill: none;
-      }
+      } */
     </style>
   </defs>
   <svg id="skull" data-name="Layer_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -904,18 +886,44 @@ tspan {
 
 
 
-<div class="custom_cursor cursor_arrow_over">
+
+
+<div class="custom_cursor cursor_arrow_next_over">
   <svg id="arrow_over" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <defs>
       <style>
-        .arrow_over_path {
-          fill: #3fa9f5;
-        }
+        <!-- .arrow_over_path {
+          fill: #44ffee;
+        } -->
       </style>
     </defs>
     <path class="arrow_over_path" d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"/>
   </svg>
 </div>
+
+
+
+
+
+
+<div class="custom_cursor cursor_arrow_previous_over">
+  <svg id="arrow_over" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <defs>
+      <style>
+        <!-- .arrow_over_path {
+          fill: #44ffee;
+        } -->
+      </style>
+    </defs>
+    <g transform="rotate(180 15 16) " >
+      <path class="arrow_over_path" d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"/>
+    </g>  </svg>
+</div>
+
+
+
+
+
 
 
 
@@ -982,13 +990,14 @@ tspan {
 <svg id="lion_logo_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 233.8 236.8" style="enable-background:new 0 0 233.8 236.8;" xml:space="preserve">
 <style type="text/css">
-	<!-- .st2{fill:#627C91;} -->
-	<!-- .st2{fill:Pink;}
-	.st0{fill:#637D91;}
-	.st1{fill:#FFFFFF;}
-	.st3{fill:none;stroke:#FFFFFF;stroke-width:36;stroke-miterlimit:10;}
-	.st4{fill:#790000;}
-	.st5{opacity:0.4;fill:#6D6E71;} -->
+	<!-- 
+    .st2{fill: #627C91;}  /* needle  #627C91 */
+.st0{fill:#637D91;}   /* lightening #637D91 */
+.st1{fill:#FFFFFF;}   /* white lettering & element hilights */
+.st3{fill:none;stroke:#FFFFFF;stroke-width:36;stroke-miterlimit:10;}
+.st4{fill: #790000;}  /* red banners #790000 */
+.st5{opacity:0.4;fill:#6D6E71;} /* shadows on red banners #6D6E71 */
+  -->
 </style>
 <g id="lightening_bolt_layer">
 	<polygon id="lightening_bolt" class="st0" points="60.5,154.6 76.8,157.1 30.3,194.1 48.8,193.9 4.2,231.8 74.3,187.3 
@@ -2111,6 +2120,29 @@ tspan {
 
 
 
+<!-- Tesing a clip path on contact form. Probably not going to be used :-( -->
+<!-- <style>
+section#contact { 
+  width: 50vw;
+  height: 50vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  clip-path: url(#clip);
+}
+#clip{
+margin:0 auto;
+  transform: scale(90%, 50%); 
+}
+</style>
+<svg viewBox="0 0 0.665 1" class="shield" height="0" width="0">
+  <defs>
+      <clipPath id="clip" clipPathUnits="objectBoundingBox" >
+        <circle class="cls-1" cx="0.5" cy="0.5" r="0.5"/> 
+      </clipPath>
+  </defs>
+    <circle class="actual_circle" cx="0.5" cy="0.5" r="0.5"/> 
+</svg>  -->
 
 
 
@@ -2126,6 +2158,18 @@ tspan {
 
 
 
+
+
+<!-- <svg id="carousel_right_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+  <path class="Pointy_Arrow" fill="url(#linear-gradient_5)" d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+</svg>
+
+
+<svg id="carousel_left_arrow" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 30.67">
+  <g transform="rotate(180 8 15) " >
+    <path class="Pointy_Arrow" fill="url(#linear-gradient_5)"  d="M4,.17Q2,2.32.14,4V27c1.14,1.06,2.41,2.3,3.89,3.8C7.36,24.62,9.18,18.7,16.14,15.48,9.23,12.24,7.39,6.33,4,.17Z" transform="translate(-0.14 -0.17)"/>
+  </g>
+</svg> -->
 
 
 

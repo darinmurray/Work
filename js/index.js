@@ -1,6 +1,8 @@
 
 window.onload = function() { 
 
+// for layout purposes only, hiddeen by default in the css
+// $("#centerlines").show()
 
   // ==========   C U R S O R S   ================ // 
 const cursor = document.querySelector('.cursor_container');
@@ -14,65 +16,69 @@ const x_offset = 40 // 15  half the height
 $(cursors).hide()
 
 
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
-//   MOVE ALL VARIABLES, HIDE/SHOWS TO THE TOP
+// does user have dark mode enabled?
+let darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+// set initial theme accordingly
+changeTheme(darkmode)
 
 
-// text_banner_darin
-let text_banner_darin = $("#lion_logo_svg") /*
-#text_banner_darin add class effect_1
-#text_banner_murray add class effect_2
-#lightening_bolt_layer add class effect_3
-#needle_layer add class effect_4
- transition: all 0.5s ease;
-*/
+
+// ============== D A R K  M O D E ================ //
+// ============== D A R K  M O D E ================ //
+// ============== D A R K  M O D E ================ //
+$("#landing").click(function(e){
+darkmode = !darkmode
+changeTheme(darkmode)
+console.log("dark mode clicked and changed to ",darkmode) // Result: True or False
+});
+
+function changeTheme(darkmode) {
+  console.log(`%c=> changeTheme darkmode inside function is: `, "color:cyan", darkmode);
+  // $("html").attr("dark", "true" )
+    if ( darkmode != true) {
+      $("html").attr("dark", "true" )
+      $("#nav_wrapper").removeClass("hard_black_shadow" ) 
+      $("#nav_wrapper").addClass("in-your-face-shadow") 
+    } else {
+      $("html").attr("dark", "false" )
+      $("#nav_wrapper").addClass("hard_black_shadow" ) 
+      $("#nav_wrapper").removeClass("in-your-face-shadow")
+    }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+// ============ initial logo animation ============== //
+// ============ initial logo animation ============== //
+// ============ initial logo animation ============== //
+
+// Unwind some logo elements out of position
 $("#text_banner_darin").css({"transform": "rotate(-30deg)", "transition": "0.1s" })
 $("#text_banner_murray").css({"transform": "rotate(-40deg)", "transition": "0.1s" })
 $("#lightening_bolt_layer, #needle_layer").css({"transform": "rotate(0deg)", "transition": "0.1s", "transform": "scale(0.7)" })
 
-
-
+// Now, animate them into position after a slight delay
 setTimeout(() => {
   $("#text_banner_darin").css({"transform": "rotate(0deg)", "transition": "1.1s" })  
   $("#text_banner_murray").css({"transform": "rotate(0deg)", "transition": "2.1s" }) 
   $("#lightening_bolt_layer, #needle_layer").css({ "transform": "rotate(90deg)", 
     "transform": "scale(0.9)", 
-    "transition": "3.5s", 
-    "opacity": "0.6"
+    "transition": "4.5s", 
+    "opacity": "1.0" // was 0.4
   }) 
   $(".glint").css({"animation-name": "spin" })
 
-}, 100);
+}, 200);
 
-
-
-  
-
-// $(this).hover(function(sub_event){
-//   let factor = 2
-//   let this_width = $(this).width()*factor
-//   let this_height = $(this).height()*factor
-//   let avg = Math.min( this_width, this_height )
-//   $(".cursor_main").stop().animate({width: avg+"px", height: avg+"px", "border-width": "1px"})
-// }, function(){
-//   $(".cursor_main").stop().animate({width: default_cursor_size+"px", height: default_cursor_size+"px", "border-width": default_cursor_border+"px"})
-// });
-
-
-
-
-
-// for layout purposes only, hiddeen by default in the css
-// $("#centerlines").show()
-
-// this opacity is now starting at 0, no need to hide them.
-// $(".carousel_panel").hide()
 
 
 
@@ -123,7 +129,7 @@ let nav_offest = Math.floor(Math.abs(nav_left_width - nav_right_width) )  ;  // 
 $("#nav_wrapper").css('margin-left', (nav_offest)+"px");
 $("#nav_center").css('width', floating_logo_width+"px");
 // make this happen AFTER logo is covering it
-$("#nav_center li a ").css('color', "black");
+// $("#nav_center li a ").css('color', "black");
 
 
 // ===============   M A I N   ================ // 
@@ -133,12 +139,6 @@ $("#nav_center li a ").css('color', "black");
   // var isHidden = document.getElementById("yourID").style.display == "none"; 
 hiddenElements = $(':hidden');
 visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
-
-let logo_hero = document.getElementById('logo_hero');
-// why are these here?? ---------------------------------------------
-let toggledElement = document.getElementsByClassName("nav_wrapper") 
-
-
 
 
 
@@ -161,37 +161,21 @@ $("li.work").hover(function(e){
 
 
 
-
-
-
-
-
 // ==========   C A R O U S E L   ============= //
 // ==========      open/close     ============= //
 // ==========      (buttons)      ============= //
-const carousel_panels = $(".carousel_panel")
+// const carousel_panels = $(".carousel_panel")
 $(document).on("click", ".show_carousel" , function(e) {   
   e.preventDefault()
   let show_this = e.currentTarget.attributes.href.value
-  //$(".carousel_panel").hide();
   $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
-  // $(show_this).show();
   $(show_this).removeClass("fade_out").addClass("fade_in");
 });
 
 $(document).on("click", ".close_carousel" , function(e) {   
-  // $(".carousel_panel").hide();
   $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
   $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -221,36 +205,19 @@ document.addEventListener('click', () => {
 
 // ==== Change determined by data-cursor attribute, if asigned
 // make it observe everything? Global? If assigned, if not: ignore
-// if (typeof $('#dataTable').data('timer') !== 'undefined') ...
 
 // took out 'a' from below list
 $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
     cursor_choice = $(this).attr("data-cursor")
         console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
-        // console.log(`%c=> cursors: `, "color:limeGreen", cursors);
     $(cursors).hide()
     $("."+cursor_choice).show();
   }, function(){
-        // console.log(`%c=> main nav li not being hovered anymore... `, "color:orange");
     $("."+cursor_choice).hide()
     $(".cursor_main").show();
   });
 });
-
-/* for badges! */
-    // change cursor for badges and carousel close button
-    // var images = $('.card_wrapper svg, .close_carousel');
-    // images.hover(function(elt) { 
-    //   if (images.index(document.activeElement) === -1) {
-    //     $(cursor).toggleClass('highlight');
-    //     console.log(`%c=> this: `, "color:cyan", this); 
-    //   }
-    // })
-
-
-
-
 
 
 // ==========   C U R S O R - circle   ================ // 
@@ -273,11 +240,12 @@ $(".icon").each(function(main_event){
 });
 
 // =======   C U R S O R - (color for 'about me' page) =========== //
-$("#about_me").hover(function(e){
-    $(".cursor_main").css("border-color" , "#ffffff");
-  }, function(){
-    $(".cursor_main").css("border-color" , "#44ffee");
-  });
+// nice to see the change, but really not needed
+// $("#about_me").hover(function(e){
+//     $(".cursor_main").css("border-color" , "#ffffff");
+//   }, function(){
+//     $(".cursor_main").css("border-color" , "#44ffee");
+//   });
 
 // ==========   C U R S O R - D Y N A M I C S    ================ // 
 // ==========   C U R S O R - D Y N A M I C S    ================ // 
