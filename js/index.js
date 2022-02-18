@@ -13,7 +13,7 @@ const y_offset = 40 // 35  half thw width
 const x_offset = 40 // 15  half the height
 // initially hide all custom cursors
 // do this in CSS before deployment
-$(cursors).hide()
+//$(cursors).hide()
 
 
 // does user have dark mode enabled?
@@ -212,6 +212,7 @@ $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *"
     cursor_choice = $(this).attr("data-cursor")
         console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
     $(cursors).hide()
+    // $(".cursor_skull").show();
     $("."+cursor_choice).show();
   }, function(){
     $("."+cursor_choice).hide()

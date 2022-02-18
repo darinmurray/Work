@@ -155,9 +155,9 @@ html[dark=false] {
 
 
 
-
-
-
+/* da fuck is this? */
+ :not(path) { revert: all }
+ :not(svg *) { revert: all }
 
 
 
@@ -211,8 +211,15 @@ body {
   cursor: var(--cursor_show);
 }
 
+/* for testing cursor change in CHROME **ONLY** */
+/* body, img, image, svg {
+  cursor: var(--cursor_show);
+  cursor: crosshair;
+  } */
+
+
 /* for testing out click-to-scroll */
-body {
+body{
 /* number of 100vh panels you are using */
 /* min-height: 1000vh;  */
   overflow: auto;
