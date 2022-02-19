@@ -4,7 +4,7 @@ window.onload = function() {
 // for layout purposes only, hiddeen by default in the css
 // $("#centerlines").show()
 
-  // ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
 const cursor = document.querySelector('.cursor_container');
 const main_cursor = document.querySelector('.cursor_main');
 const cursors = document.getElementsByClassName('custom_cursor');
@@ -13,43 +13,72 @@ const y_offset = 40 // 35  half thw width
 const x_offset = 40 // 15  half the height
 // initially hide all custom cursors
 // do this in CSS before deployment
-//$(cursors).hide()
+$(cursors).hide()
 
 
-// does user have dark mode enabled?
-let darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+// ==>      does user have dark mode enabled?   <==
+//let darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+//console.log(`%c=> darkmode value on window load: `, "color:cyan", darkmode);
 // set initial theme accordingly
-changeTheme(darkmode)
+//changeTheme(darkmode)
 
 
-
-// ============== D A R K  M O D E ================ //
-// ============== D A R K  M O D E ================ //
-// ============== D A R K  M O D E ================ //
-$("#landing").click(function(e){
-darkmode = !darkmode
-changeTheme(darkmode)
-console.log("dark mode clicked and changed to ",darkmode) // Result: True or False
+// ==========      M O D E      ================ // 
+// ==========    S W I T C H    ================ // 
+// ==========     (spotlight)   ================ // 
+$(".color_mode").click(function(e){
+  chosen_mode = e.target.dataset.color_mode
+  console.log(`%c=> Clicked color mode: `, "color:lime", chosen_mode); 
+  // this injeciton changes the theme 
+  $("html").attr("theme", chosen_mode )
+  // changeTheme(chosen_mode)
+  goNinja(chosen_mode)
 });
 
-function changeTheme(darkmode) {
-  console.log(`%c=> changeTheme darkmode inside function is: `, "color:cyan", darkmode);
+// ============== D A R K  M O D E ================ //
+// ============== D A R K  M O D E ================ //
+// ============== D A R K  M O D E ================ //
+// $("#landing").click(function(e){
+//   darkmode = !darkmode
+//   changeTheme(darkmode)
+//   console.log("dark mode clicked and changed to ", darkmode) // Result: True or False
+// });
+
+function changeTheme(theme) {
+  // let browser_dark_mode = $("html").attr("dark")
+  // console.log(`%c=> browser_dark_mode: `, "color:cyan", browser_dark_mode);
+  console.log(`%c=> theme Supplied: `, "color:cyan", theme);
+  // console.log(`%c=> changeTheme darkmode inside function is: `, "color:cyan", darkmode);
   // $("html").attr("dark", "true" )
-    if ( darkmode != true) {
+if  (theme == 'dark'){
       $("html").attr("dark", "true" )
-      $("#nav_wrapper").removeClass("hard_black_shadow" ) 
-      $("#nav_wrapper").addClass("in-your-face-shadow") 
-    } else {
-      $("html").attr("dark", "false" )
-      $("#nav_wrapper").addClass("hard_black_shadow" ) 
-      $("#nav_wrapper").removeClass("in-your-face-shadow")
-    }
+}
+
 }
 
 
 
+// ==========    N I N J A    ================ // 
+// ==========     M O D E     ================ // 
+// ==========   (spotlight)   ================ // 
+const spotlight = document.querySelector('.spotlight');
+let spotlightSize = 'transparent 180px, rgba(0, 0, 0, 0.9) 200px)';
+// let ninja = false
 
+$(spotlight).hide()
 
+function goNinja(chosen_mode) {
+if (chosen_mode == "ninja") {
+  $(spotlight).show()
+  window.addEventListener('mousemove', e => updateSpotlight(e));
+    function updateSpotlight(e) {
+    let top_offset = window.pageYOffset     
+      spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX}px ${e.pageY-top_offset}px, ${spotlightSize}`;
+  }
+}  else {
+  $(spotlight).hide() 
+}
+}; // end function
 
 
 
@@ -145,15 +174,15 @@ visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 // ===============    S U B    ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
-let work_menu = $(".sub_nav"); 
-$(work_menu).hide();
+let sub_nav = $(".sub_nav"); 
+$(sub_nav).hide();
 
-$("li.work").hover(function(e){
+$("li.mode").hover(function(e){
     console.log(`%c=> showing the sub-menu `, "color:gray");
-    $(work_menu).fadeIn();
+    $(sub_nav).fadeIn();
 }, function(){
     console.log(`%c=> hiding the sub-menu `, "color:gray");
-    $(work_menu).fadeOut();
+    $(sub_nav).fadeOut();
     // why does this need to be here? t should be in the .each.hover function below...
     // at least make it address 'any' cursor which is active
     $(".cursor_braces").css( "transform", "rotate(90deg)" );
@@ -180,6 +209,7 @@ $(document).on("click", ".close_carousel" , function(e) {
 
 
 
+
 // ==========   C U R S O R S   ================ // 
 // ==========   C U R S O R S   ================ // 
 // ==========   C U R S O R S   ================ // 
@@ -191,8 +221,8 @@ document.addEventListener('mousemove', (e)=> {
 $(".cursor_main").show();
 document.addEventListener('click', () => {
   main_cursor.classList.add("expand");
-  console.log(`%c=> cursor: `, "color:cyan", main_cursor);
-  console.log(`%c=> cursor: `, "color:cyan", main_cursor.classList);
+  // console.log(`%c=> cursor: `, "color:cyan", main_cursor);
+  // console.log(`%c=> cursor: `, "color:cyan", main_cursor.classList);
   setTimeout(() => {
     main_cursor.classList.remove("expand");
   }, 500)
@@ -255,7 +285,7 @@ $(".icon").each(function(main_event){
 // change the ROTATION on the cursor in the SUB-MENU
 // This could be over ONLY "#sub_nav li", NOT "#nav li" as there are no angles in #nav
 // $(".sub_nav li").each(function(big_e){
-$(work_menu).children('li').each(function(big_e){
+$(sub_nav).children('li').each(function(big_e){
   $(this).hover(function(calc_angle){
     let current_target = calc_angle.currentTarget
     var target_width = calc_angle.currentTarget.offsetWidth
@@ -296,7 +326,7 @@ $(work_menu).children('li').each(function(big_e){
         // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
         var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
         // works!
-        console.log(`%c=> cursor angle: `, "color:red",  + angle + 'deg');
+        // console.log(`%c=> cursor angle: `, "color:red",  + angle + 'deg');
         return angle //= null ?? 0;
       }
       return 0
@@ -652,6 +682,22 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
+
+
 } // end window load
 
-  
+
+
+
+
+
+
+
+//   window.addEventListener("DOMContentLoaded", () => {
+//     const spotlight = document.querySelector('.spotlight');
+//     let spotlightSize = 'transparent 160px, rgba(0, 0, 0, 0.85) 200px)';
+//     window.addEventListener('mousemove', e => updateSpotlight(e));
+//     function updateSpotlight(e) {
+//         spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
+//     }
+// });  

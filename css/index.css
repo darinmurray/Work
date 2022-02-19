@@ -129,7 +129,8 @@
 
 
  /* html:not[dark] { */
-html[dark=false] {   
+/* html[dark=false] {    */
+html[theme=dark] {   
   --color-1: rgb(50, 50, 50); /* pretty darn dark but not quite black  */
   --color-2: rgb(200, 200, 200); /* fairly light; */
   --color-3: rgb(20, 20, 20); /* almost black */
@@ -151,13 +152,48 @@ html[dark=false] {
   --work_h1_color: var(--color-2);
   --contact_backround: var(--color-1);  
   --contact_text_color: var(--color-2);  
+
+   /* add stronger shadows here so I don't have to remove them in justify-content: ; */
+   --shadow-elevation-high:
+   8px 8px 15px  rgba(0,0,0,0.79);
+  
  }
 
 
 
+ html[theme=rainbow] {   
+  --color-1: rgb(6, 189, 21); /* pretty darn dark but not quite black  */
+  --color-2: rgb(201, 198, 17); /* fairly light; */
+  --color-3: rgb(19, 0, 105); /* almost black */
+  --color-4: rgb(126, 39, 126); /* medium gray; */
+
+  --logo_hilights: var(--black-2);
+  --needle: var(--black-20);
+  --logo_red:  var(--black-20);
+  --logo_banner_shadows: var(--black-20); 
+  --logo_banner_border: var(--black-4); 
+  --lightening_bolt: var(--needle); 
+
+  --landing_backround: var(--color-4);
+  --landing_text_color: var(--black-2);
+  --about_me_backround: var(--color-1);  
+  --about_me_text_color: var(--color-2);  
+  --work_text_color: var(--color-2);
+  --work_backround: var(--color-1); 
+  --work_h1_color: var(--color-2);
+  --contact_backround: var(--color-1);  
+  --contact_text_color: var(--color-2);  
+
+   /* add stronger shadows here so I don't have to remove them in justify-content: ; */
+   --shadow-elevation-high:
+   8px 8px 15px  rgba(0,0,0,0.79);
+  
+ }
+
+
 /* da fuck is this? */
- :not(path) { revert: all }
- :not(svg *) { revert: all }
+ /* :not(path) { revert: all }
+ :not(svg *) { revert: all } */
 
 
 
@@ -346,6 +382,25 @@ box-shadow: var(--shadow-elevation-high);
 
 
 
+
+
+
+.spotlight {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(
+      circle,
+      transparent 180px,
+      rgba(0, 0, 0, 0.95) 200px
+  );
+  z-index: 99999;
+  pointer-events: none;
+}
 
 
 
@@ -1145,12 +1200,9 @@ a.card_project_link {
   display: flex;
   justify-content: center;
 }
-/* .category_badge img {
-  -webkit-filter: drop-shadow( 10px 10px 10px #00000077);
-  filter: drop-shadow( 10px 10px 10px #00000077);
-} */
 
 .svg_badge {
+  border: none;
   width: 200px;
   z-index: 2;
 }
@@ -1158,7 +1210,7 @@ a.card_project_link {
 tspan {
   fill: var(--color-1);
   font-family: 'Teko', sans-serif;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
   font-size:62.871px; 
   font-weight:300;
   text-transform: uppercase;
@@ -1213,6 +1265,7 @@ transform: skew(0deg, 7deg);
 
 
 .badge_category_image {
+  /* border: none; */
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   transform-origin: center center;
@@ -1220,12 +1273,11 @@ transform: skew(0deg, 7deg);
 }
 
 .badge_zoom{
-  border:2px solid green;
-  transform: rotate(5deg);
-  transform: scale(1.6);
+  /* border: none; */
+  transform: scale(1.5);
   filter: none;
   -webkit-filter: grayscale(0);
-  transition: all 6s ease-out;
+  transition: all 3s ease-out;
 }
 
 
@@ -1512,7 +1564,7 @@ ul.row_of_icons_small li a:visited {
   fill: var(--black-3);
 }
 #close_bones_SVG:hover { 
-  /* fill: #ab1f23; */
+  fill: #44ffee;
 }
 #left_bone, #right_bone {
 }
@@ -2108,4 +2160,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 
 .night { filter: invert(100%); }
+
+
 
