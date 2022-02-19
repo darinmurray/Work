@@ -161,15 +161,18 @@ html[theme=dark] {
 
 
 
- html[theme=rainbow] {   
+ html[theme=rainbow] {  
+
+  --rainbowShift_8: rainbowShift 16s ease-in-out infinite alternate;
+
   --color-1: rgb(6, 189, 21); /* pretty darn dark but not quite black  */
   --color-2: rgb(201, 198, 17); /* fairly light; */
   --color-3: rgb(19, 0, 105); /* almost black */
   --color-4: rgb(126, 39, 126); /* medium gray; */
 
   --logo_hilights: var(--black-2);
-  --needle: var(--black-20);
-  --logo_red:  var(--black-20);
+  --needle: var(--color-1);
+  --logo_red:  var(--color-3);
   --logo_banner_shadows: var(--black-20); 
   --logo_banner_border: var(--black-4); 
   --lightening_bolt: var(--needle); 
@@ -188,6 +191,7 @@ html[theme=dark] {
    --shadow-elevation-high:
    8px 8px 15px  rgba(0,0,0,0.79);
   
+   
  }
 
 
@@ -1089,7 +1093,31 @@ h1:hover  {
   /* background-color: var(--landing_backround);  */
   /* background-color: var(--black-18);  */
   background-color: var(--landing_backround); 
+  animation: var(--rainbowShift_8);
+  /* animation-direction: alternate; */
 }
+
+@keyframes rainbowShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  
+  50% {
+    filter: hue-rotate(360deg);
+  }
+  
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+/* @keyframes mymove {
+  from {background-color: hsl(350, 100%, 50%);} 
+  to {background-color: hsl(397, 100%, 50%);}
+} */
+
+
+
+
 
 /* this should not be needed */
 #landing.scroll_panel .landing_content {  
@@ -1153,6 +1181,7 @@ div#intro.role {
 #work {
   color: var(--work_text_color);
   background-color: var(--work_backround);
+  animation: var(--rainbowShift_8);
 }
 #work h1 {
   color: var(--work_h1_color);
@@ -1450,6 +1479,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1c1c', end
 
 background: var(--about_me_backround); 
 color: var(--about_me_text_color);
+animation: var(--rainbowShift_8);
 }
   
 
