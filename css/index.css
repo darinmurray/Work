@@ -659,7 +659,7 @@ h1 {
 p {
   font-family: 'Bitter', serif;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 400;
   float:none;
   /* background: pink; */
   margin-bottom: 15px;
@@ -1197,7 +1197,7 @@ ul.deck {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 100px;
 }
@@ -1209,8 +1209,15 @@ ul.deck li.card {
   min-width: 200px;
   max-width: 30%;
   border-radius: 5px;
-  
+  flex-grow: 1;
 }
+@media only screen and (max-width: 400px)  {
+  ul.deck li.card {
+    max-width: 100%;
+}
+
+
+
 .card_wrapper{
   position: relative;
 }
@@ -1487,7 +1494,7 @@ animation: var(--rainbowShift_8);
 ul.skills {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  
   flex-wrap: wrap;
 }
 ul.skills li{
@@ -1499,12 +1506,16 @@ ul.skills li{
 
 /* SPECIFIC TO THE ABOUT ME SECITON */
 ul.skills.about_me {
+  text-align: center;
   font-size: 80px;
   margin-bottom: 60px;
   margin-top: 60px;
+  justify-content: space-between; /* space-between / space-around / space-evenly */
+  align-items: center;
 }
 ul.skills.about_me li{
   font-size: 80px;
+  flex-grow:1;
 }
 
 ul.skills.about_me li div{
@@ -1547,10 +1558,10 @@ ul.row_of_icons_small {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
-  margin-top: 20px
+  margin-top: 20px;
 }
 ul.row_of_icons_small li {
-  margin: 0px 20px;
+
 }
  
 /* ul.row_of_icons_small li a, ul.row_of_icons_small li a:visited {
