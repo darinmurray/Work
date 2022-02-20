@@ -597,6 +597,30 @@
 
 
 
+<!-- https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/viewform?usp=pp_url&entry.2005620554=MYNAMEIS&entry.1045781291=MYEMAILIS@GMAIL.COM&entry.839337160=MYANSERIS%0A -->
+
+
+<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+  <label> First name:</label><br>
+  <input type="text" name="entry.2005620554" id="entry.2005620554"><br>
+  <label>email:</label><br>
+  <input type="text" name="entry.1045781291" id="entry.1045781291">
+  <label>Message:</label><br>
+  <textarea name="entry.839337160" id="entry.839337160" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
+
+  <input type="submit" value="Submit">
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+<!-- <script src="assets/js/jquery.min.js"></script> -->
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+  });
+</script>
 
 
 <section id="contact" class="scroll_panel"> 
@@ -604,8 +628,7 @@
     <h1>Lets talk :-)</h1> 
 
   <!-- <span class="caret"></span>Here's a blinking caret for you: -->
-    <form class="contact">
-
+    <!-- <form class="contact">
        <label for="fname">You are...?</label>
       <input type="text" id="fname" name="firstname" placeholder="And you are?" data-cursor="cursor_caret" >
   
@@ -618,9 +641,12 @@
       <textarea id="subject" name="subject" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
   
       <input id="submit" type="submit" value="Submit" >
-     </form>
+     </form> -->
 
 </div> 
+
+
+
 </section>
 
 

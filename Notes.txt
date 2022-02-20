@@ -7,3 +7,15 @@ update log and separate layers for animation
 
 
 
+netlify ( front end only)
+
+custom github domian ( front end only)
+
+
+google cloud free tier includes one "F1 micro instance"
+Ae2 now , but super slow... phone has more power. 
+
+
+firebase
+
+
