@@ -600,17 +600,7 @@
 <!-- https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/viewform?usp=pp_url&entry.2005620554=TOMHANKS&entry.1055881764=TOY@STORY.COM&entry.839337160=TOINFINITYANDBEYOND -->
 
 
-<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
-  <label> First name:</label><br>
-  <input type="text" name="entry.2005620554" id="entry.2005620554"><br>
-  <label>email:</label><br>
-  <input type="text" name="entry.1055881764" id="entry.1055881764">
-  <label>Message:</label><br>
-  <textarea name="entry.839337160" id="entry.839337160" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
-  <input type="submit" value="Submit">
-</form>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 
 <!-- <script src="assets/js/jquery.min.js"></script> -->
 <script type="text/javascript">var submitted=false;</script>
@@ -621,10 +611,29 @@ $('#gform').on('submit', function(e) {
   });
 </script>
 
+<div class="dymo">Darinmurray gmail.com</div>
 
 <section id="contact" class="scroll_panel"> 
   <div class="container column_centered form">
     <h1>Lets talk :-)</h1> 
+
+
+    <!-- https://github.com/toperkin/staticFormEmails -->
+    <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
+      <label> First name:</label><br>
+      <input type="text" name="entry.2005620554" id="entry.2005620554"><br>
+      <label>email:</label><br>
+      <input type="text" name="entry.1055881764" id="entry.1055881764">
+      <label>Message:</label><br>
+      <textarea name="entry.839337160" id="entry.839337160" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+    
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+
+
+
 
   <!-- <span class="caret"></span>Here's a blinking caret for you: -->
     <!-- <form class="contact">

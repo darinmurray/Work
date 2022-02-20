@@ -85,12 +85,13 @@
   --form_text_color: var(--color-2);
   --form_label_color: var(--color-3);
     
-    --form_input_select_text_color: var(--color-1);
-    --form_input_select_background_color: var(--black-0);
-                    --form_input_select_background_hover_color: var(--black-0); 
-    --form_input_select_background_focus_color: var(--color-3); 
-    --form_input_select_text_hover_color: var(--color-1);  
-                    --form_input_select_text_focus_color: var(--nav-text-hover);  
+    --form_input_select_text_color: var(--color-3); /* red */
+    --form_input_select_background_color: var(--color-1);
+    --form_input_select_background_hover_color: var(--color-1);  /* make a 1.5 to be half opacity */
+
+    --form_input_select_background_focus_color: var(--color-1); 
+    --form_input_select_text_hover_color: var(--color-3);  
+    --form_input_select_text_focus_color: var(--color-3);  
     
       /* --form_input_text_color: var(--color-1); */
       --form_button_background_color: var(--color-3);
@@ -263,6 +264,17 @@ body{
 /* number of 100vh panels you are using */
 /* min-height: 1000vh;  */
   overflow: auto;
+}
+
+
+
+@font-face {
+  font-family: 'Dymo';
+  src:  url('/fonts/icomoon.eot?sugi87');
+  src: url('/fonts/Dymo.ttf?sugi87') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 
@@ -1739,7 +1751,7 @@ section#contact {
   font-family: 'Space Grotesk', sans-serif;
   /* font-family: 'Exo 2', sans-serif; */
   /* font-family: 'Inter', sans-serif; */
-  font-size: 14px;  
+  /* font-size: 10px;   */
   display:flex;
   justify-content: center;
   background-color: var(--contact_section_background_color);
@@ -1769,8 +1781,17 @@ form.contact {
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  font-family: 'Courier Prime', monospace;
-  font-weight: 400;
+
+     font-family: 'Courier Prime', monospace;
+     font-weight: 400;
+     font-size: 18px;
+
+  /* optional dymo font */
+  /* font-family: 'Dymo', sans-serif;
+  letter-spacing: 0px;
+  font-size: 50px;
+  line-height:60%; */
+
   width: 100%; /* Full width */
   padding: 7px 10px 5px 10px;
   margin-top: 10px; /* Add a top margin */
@@ -1780,6 +1801,8 @@ input[type=text], select, textarea {
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
   /* cursor: none; */
 }
+
+
 
 textarea {
   height: 150px;
@@ -1799,7 +1822,7 @@ input[type=submit] {
 }
 
 .container.form label{
-  font-size: 16px;
+  font-size: 12px;
 }
 
 
@@ -1831,20 +1854,23 @@ input[type=submit] {
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 input[type=text], select, textarea {
-border: 0px solid transparent; 
 background-color: var(--form_input_select_background_color);
 color: var( --form_input_select_text_color);
 }
 
+
+
+
+
 input[type=text]:hover, select:hover, textarea:hover {
-  border: 0px solid transparent; /* Gray border */
+  border: none; /* Gray border */
   background-color: var(--form_input_select_background_hover_color); 
   color: var( --form_input_select_text_hover_color);
   }
 
 
         input[type=text]:focus, select:focus, textarea:focus {
-          border: 1px solid transparent; 
+          border: none; 
           color: var(--form_input_select_text_focus_color);
           background: var(--form_input_select_background_focus_color);
           }

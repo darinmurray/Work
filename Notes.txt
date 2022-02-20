@@ -18,4 +18,5 @@ Ae2 now , but super slow... phone has more power.
 
 firebase
 
-
+Ok, make form input look like raised letter type from when you were a kid. 
+THat punch lettering stuff. 
