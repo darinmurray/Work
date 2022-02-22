@@ -600,38 +600,117 @@
 <!-- https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/viewform?usp=pp_url&entry.2005620554=TOMHANKS&entry.1055881764=TOY@STORY.COM&entry.839337160=TOINFINITYANDBEYOND -->
 
 
-
-
-<!-- <script src="assets/js/jquery.min.js"></script> -->
+<!-- for the contact form -->
+<!-- for the contact form -->
+<!-- for the contact form -->
 <script type="text/javascript">var submitted=false;</script>
-<script type="text/javascript">
-$('#gform').on('submit', function(e) {
-  $('#gform *').fadeOut(2000);
-  $('#gform').prepend('Your submission has been processed...');
-  });
-</script>
-
-<div class="dymo">Darinmurray gmail.com</div>
 
 <section id="contact" class="scroll_panel"> 
   <div class="container column_centered form">
     <h1>Lets talk :-)</h1> 
-
-
     <!-- https://github.com/toperkin/staticFormEmails -->
-    <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
-      <label> First name:</label><br>
-      <input type="text" name="entry.2005620554" id="entry.2005620554"><br>
-      <label>email:</label><br>
-      <input type="text" name="entry.1055881764" id="entry.1055881764">
-      <label>Message:</label><br>
-      <textarea name="entry.839337160" id="entry.839337160" placeholder="Write something.." data-cursor="cursor_caret"></textarea>
-      <input type="submit" value="Submit">
+ 
+      <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
+ 
+      <div class="input_active_area">
+        
+        <div class="input_wrapper spam_block_wrapper"> 
+          <span class="icon-check_mark_fat"></span><label class="spam_block_label">The sum of 2+2 is:</label>
+          <span class="caret ">|</span><input type="text" name="entry.1735736871" id="entry.1735736871" placeholder="?" class="contact spam_block_input" data-cursor="cursor_c aret"> 
+        </div>
+      </div>  <br><br><br>
+
+        <div class="input_active_area">
+          <label class="screen-readers-only"> First Name:</label><br>
+        <div class="input_wrapper"> 
+          <span class="icon-check_mark_fat"></span>
+          <span class="caret">|</span>
+          <input type="text" name="entry.2005620554" id="entry.2005620554" placeholder="Your Name" class="contact" > 
+        </div> 
+      </div>
+      
+      <div class="input_active_area">
+        <label class="screen-readers-only">Email:</label><br>
+        <div class="input_wrapper"> 
+          <span class="icon-check_mark_fat"></span>
+          <span class="caret ">|</span><input type="text" name="entry.1055881764" id="entry.1055881764" placeholder="Your Email" class="contact" > 
+        </div>
+      </div> 
+
+      <div class="input_active_area ">
+        <label class="screen-readers-only">Message:</label><br>
+        <div class="input_wrapper text_area"> 
+          <span class="icon-check_mark_fat"></span>
+          <span class="caret">|</span><textarea name="entry.839337160" id="entry.839337160" placeholder="Your Message..." class="contact" > 
+          </textarea>
+        </div> 
+      </div> 
+
+     <input type="submit" value="Submit" >
     </form>
     
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 
 
+
+   <!-- <script src="assets/js/jquery.min.js"></script> -->
+<!-- <script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  console.log(`%c=> submitted, function called: `, "color:red", theme);
+  $('#gform *').fadeOut(2000);
+  $('#contact *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+  });
+</script> -->
+
+
+ <!-- =========  S P A M  C H E C K E R  =========== -->
+    <!-- =========  S P A M  C H E C K E R  =========== -->
+    <!-- =========  S P A M  C H E C K E R  =========== -->
+
+    <!-- HIDDEN 'TILL I PUT IT UDNER THE SUBMIT BUTTON ACTION -->
+    <!-- HIDDEN 'TILL I PUT IT UDNER THE SUBMIT BUTTON ACTION -->
+    <!-- HIDDEN 'TILL I PUT IT UDNER THE SUBMIT BUTTON ACTION -->
+    <!-- <div id="prompt-background">
+      <div id="pulse_check_prompt" class="modal-prompt">
+        <h1>Help me avoid spam</h1>
+        <p>Could you let me know the date, just to help with spam?</p>
+        <div>
+          <select name="bmonth" id="bmonth">   
+            <option value="z">- Month -</option>     
+            <option value="a">Whisky</option>
+            <option value="b">water(?)</option>
+            <option id="current-month" class="hint" value="x">June</option>
+            <option value="d">Ice</option>
+            <option value="e">Tumbler</option>
+     
+          </select> 
+          <select name="bday" id="bday">        
+            <option value="1">- Day -</option>
+            <option value="1">Nope</option>
+            <option value="2">Uh uh...</option>
+            <option id="current-day" class="hint" value="3">3</option>
+            <option value="4">Not this one</option>
+            <option value="5">This neither...</option>
+      
+          </select>
+          <select name="byear" id="byear">        
+            <option value="2017">- Year -</option>
+            <option value="2010">Angry</option>
+            <option value="2010">Purple</option>
+            <option id="current-year" class="hint" value=" ">XXXX</option>
+            <option value="2020">Spoon</option>      
+          </select>
+          <div style="clear:both; margin-bottom:15px"></div>
+        </div>
+        <button id="submit_pulse_check" class="button-enter btn styled-submit" style="display:inline-block">Enter</button> 
+        <span style="padding: 0 4px">or</span>
+        <a href="http://google.com/" id="button-exit" name="button-exit">Give Up</a>
+      </div>
+    </div> -->
+    
+   
 
 
 

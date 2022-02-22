@@ -15,6 +15,100 @@ const x_offset = 40 // 15  half the height
 // do this in CSS before deployment
 $(cursors).hide()
 
+// for contact form
+// var submitted=false;
+
+
+
+// hide or fade initially in the css 
+// $("#contact_submit").css("opacity", "0.1")
+let first_num = Math.floor(Math.random() * 10)
+let second_num = Math.floor(Math.random() * 10)
+let first_plus_second = first_num + second_num
+$(".spam_block_label").html(first_num+" + "+second_num+" =")  
+
+let spam_input = document.getElementById("entry.1735736871")
+let name_input = document.getElementById("entry.2005620554")
+let email_input = document.getElementById("entry.1055881764")
+let email_confirm_input = document.getElementById("email_confirmation_input")
+let message_input = document.getElementById("entry.839337160")
+let human = false
+let has_name = false
+let has_email = false
+let has_message = false
+// listen to spam_block_imput and enact submit when filled in
+document.querySelectorAll(".contact").forEach(input => {
+	input.addEventListener("input", function(e) {
+		// e.preventDefault();
+    // input_id = e.target.id
+    // input_value = e.target.value
+if ( spam_input.value == first_plus_second ) { // spam checker
+  human = true
+  spam_input.previousElementSibling.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+  // console.log(`%c=> human: `, "color:green", human);
+} else { 
+  human = false; 
+  // console.log(`%c=> NOT human: `, "color:red");
+}
+
+if (name_input.value !="") { // name
+  has_name = true
+  name_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+  // console.log(`%c=> has_name: `, "color:green", has_name, name_input.value);
+} else { 
+  has_name = false; 
+  name_input.previousElementSibling.previousElementSibling.style.color = "red"
+  // console.log(`%c=> NO NAME: `, "color:red");
+}
+
+if (email_input.value !="" && email_input.value.match(/^\S+@\S+\.\S+$/) ) { // name
+  has_email = true
+  email_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+  // console.log(`%c=> has_email: `, "color:green", has_email, email_input.value);
+} else { 
+  has_email = false; 
+  email_input.previousElementSibling.previousElementSibling.style.color = "red"
+  // console.log(`%c=> NO email: `, "color:red");
+}
+
+if (message_input.value !="") { // name
+  has_message = true
+  message_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+  // console.log(`%c=> has_message: `, "color:green", has_message, message_input.value);
+} else { 
+  has_message = false; 
+  message_input.previousElementSibling.previousElementSibling.style.color = "red"
+  // console.log(`%c=> Nothing to say: `, "color:red");
+}
+
+
+// if (human && has_name && has_email && has_message) {
+  // id has been stripped refer differently
+//   $("#contact_submit").show().css("opacity", "1").attr('disabled', false);
+// } else {
+// $("#contact_submit").css("opacity", "0.3").attr('disabled', true);
+// }
+
+
+
+	});
+});
+
+
+
+
+
+
+$('#gform').on('submit', function(e) {
+  console.log(`%c=> submitted, function called: `, "color:red", );
+  $('#gform *').fadeOut(2000);
+  $('#contact *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+  console.log(`%c=> all done: `, "color:red", );
+  });
+
+
+
 
 // ==>      does user have dark mode enabled?   <==
 //let darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -240,7 +334,7 @@ document.addEventListener('click', () => {
 $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
     cursor_choice = $(this).attr("data-cursor")
-        console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
+        // console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
     $(cursors).hide()
     // $(".cursor_skull").show();
     $("."+cursor_choice).show();
@@ -636,39 +730,108 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
+// =========  S P A M  C H E C K E R  =========== //
+// =========  S P A M  C H E C K E R  =========== //
+// =========  S P A M  C H E C K E R  =========== //
+var today = new Date();
+var currentYear = today.getFullYear();   
+var currentMonth = (today.getMonth() + 1);
+var currentDay = today.getDate(); 
+var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
+
+    function pulseCheck() {
+        let year =   parseInt(document.getElementById('byear').value);
+        let month =  parseInt(document.getElementById('bmonth').value);
+        let day =    parseInt(document.getElementById('bday').value); 
+        let entered = month + day + year
+        let reality = currentMonth + currentDay + currentYear     
+            if(entered == reality ){ 
+              $("#prompt-background").hide(); 
+              // trigger funciton that allows mail send, otherwise invalid without it. 
+            }  else {
+              console.log("Nope.")
+              // window.location = 'http://google.com';
+              // now I should redirect you to think it was successful and make you go away. 
+            }      
+    }; // end of Check  
+
+    // ==> Inject form values based on todays date   
+    // set the value of the #currentYear option to the actual current year
+    $("#current-year").html( currentYear );
+    $("#current-year").attr("value", currentYear ); 
+    // set the value of the #current-month option to the actual current month
+    $("#current-month").html( monthNames[currentMonth-1] );
+    $("#current-month").attr("value", currentMonth ); 
+    // set the value of the #current-day option to the actual current month
+    $("#current-day").html( currentDay );
+    $("#current-day").attr("value", currentDay ); 
+
+// =========  submit smap check form  =========== //
+$(document).on("click", "#submit_pulse_check" , function(e) { 
+  pulseCheck()
+console.log("pulse check clicked");  
+});
 
 
 
 
-  // ===============  U T I L I T Y  ================ // 
-  // ===============   (functionS)   ================ // 
-  // ===============   ==========    ================ //  
+
+
+
+
+// ==> Activete inviting cursor when hovering near inputs
+$(".input_active_area").hover(function(e){
+// console.log(this);
+  $(this).find("span.caret").addClass("blink")
+  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,0.3)");
+}, function() {
+  $(this).find("span.caret").removeClass("blink")
+  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,1)")
+});
+
+// ==> Hide inviting cursor on focus
+function onMouseUp(e) {
+  const activeTextarea = document.activeElement;
+  $("span.caret").removeClass("blink")
+  // console.log(`%c=> activeTextarea: `, "color:pink", activeTextarea.previousSibling);
+}
+// ==> mouse up event listener
+document.addEventListener('mouseup', onMouseUp, false);
+
+
+
+
+
+
+// ===============  U T I L I T Y  ================ // 
+// ===============   (functionS)   ================ // 
+// ===============   ==========    ================ //  
+
+// ==========   Generate a Random Alpha Character   ============= //
+function startCycle() {
+  // do something here  
+  clockTO = setTimeout(startCycle, 1000) 
+  // call to initialize the looping
+  startCycle()
+  }; // end startTimefunction
+
+// ==========   Generate a Random Alpha Character   ============= //
+randoAlpha = String.fromCharCode(65+Math.floor(Math.random() * 26)); 
+
+  // =======   Generate a Random Int between min & max   ========== //
+// getRandomInt(1, 10)*100   for increments less than one second
+function getRandomInt(min, max) { 
+  return Math.round((min - 0.5) + Math.random() * (max - min + 1));
+}
+
   
-  // ==========   Generate a Random Alpha Character   ============= //
-  function startCycle() {
-    // do something here  
-    clockTO = setTimeout(startCycle, 1000) 
-    // call to initialize the looping
-    startCycle()
-   }; // end startTimefunction
-  
-  // ==========   Generate a Random Alpha Character   ============= //
-  randoAlpha = String.fromCharCode(65+Math.floor(Math.random() * 26)); 
-  
-    // =======   Generate a Random Int between min & max   ========== //
-  // getRandomInt(1, 10)*100   for increments less than one second
-  function getRandomInt(min, max) { 
-    return Math.round((min - 0.5) + Math.random() * (max - min + 1));
-  }
- 
-   
-  // ====== get % of # between min & max of a given range ========= //
-  // E.G. from 35 to 356, what percentage (of the range) is 121? 
-  function getPercentOfRange(min, current, max) {  
-    // change *1 to *100 for whole numbers
-    // currently returning opacity 0.1 - 1.0
-    return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
-  } 
+// ====== get % of # between min & max of a given range ========= //
+// E.G. from 35 to 356, what percentage (of the range) is 121? 
+function getPercentOfRange(min, current, max) {  
+  // change *1 to *100 for whole numbers
+  // currently returning opacity 0.1 - 1.0
+  return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
+} 
 
 
 
@@ -691,13 +854,3 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
-
-
-//   window.addEventListener("DOMContentLoaded", () => {
-//     const spotlight = document.querySelector('.spotlight');
-//     let spotlightSize = 'transparent 160px, rgba(0, 0, 0, 0.85) 200px)';
-//     window.addEventListener('mousemove', e => updateSpotlight(e));
-//     function updateSpotlight(e) {
-//         spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
-//     }
-// });  

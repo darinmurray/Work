@@ -26,6 +26,7 @@
 --black-0: #ffffff; 
 --hilight_yellow: rgba(255, 238, 0, 0.829);
 
+--cursor-cyan: #44ffee;
 /* ========= logo colors ======== */
 --logo_hilights: var(--black-0);   /* includes TEXT */
 --needle: #627C91; /*  658196  */
@@ -127,6 +128,12 @@
       14.3px 28.5px 38.5px -1.9px hsl(var(--shadow-color) / 0.09);
 
  }
+
+
+ *:focus {
+  outline: none;
+}
+
 
 
  /* html:not[dark] { */
@@ -1748,10 +1755,12 @@ section#contact * {
 }
 section#contact {
   /* font-family: 'Courier Prime', monospace; */
-  font-family: 'Space Grotesk', sans-serif;
+  /* font-family: 'Space Grotesk', sans-serif; */
   /* font-family: 'Exo 2', sans-serif; */
   /* font-family: 'Inter', sans-serif; */
+  font-family: 'Bitter', serif;
   /* font-size: 10px;   */
+  font-weight: 400;
   display:flex;
   justify-content: center;
   background-color: var(--contact_section_background_color);
@@ -1765,26 +1774,97 @@ section#contact h1{
 }
 
 
+
+
+    /* =========  S P A M  C H E C K E R  =========== */
+    /* =========  S P A M  C H E C K E R  =========== */
+    /* =========  S P A M  C H E C K E R  =========== */
+    .modal-prompt {
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+      width: 430px;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px 35px 30px 35px;
+      position: relative;
+      top: 25%;
+      z-index: 1000000;
+    }
+    .modal-prompt p, .modal-prompt h1 {
+      color: #555555;
+    }
+    #p rompt-background {
+      background-color: gray;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9999999;
+    }
+      
+    .modal-prompt select { float: left; margin-right: 10px; }
+
+option.hint {
+  color: red;
+}
+
+
+
 form.contact {
   padding: 25px 30px 50px 30px;
   border-radius: 20px;
   max-width: 500px;
   background-color: var(--contact_form_background_color);
 }
+.input_active_area {
+  padding: 0px 100px;
+  /* border: 1px dotted gray; */
+}
+.input_wrapper {
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(245,245,245,1);
+}
+.input_wrapper {
+display: flex;
+align-content: flex-start;
+}
+.input_active_area .icon-check_mark_fat {
+  /* vertical-align: sub; */
+  margin-top:10px;
+  margin-right:5px;
+  font-size: 16px;
+  opacity: 0.9;
+  color: red;
+  /* color: var( --form_input_select_text_color); */
+}
+.input_wrapper .caret{
+margin-top:10px;
+}
 
-
-
+label.spam_block_label{
+  float:left;
+  padding-top:15px;
+  padding-right: 5px;
+}
+input.contact.spam_block_input{
+  
+  width:50px;
+}
+.input_wrapper.spam_block_wrapper {
+float:left;
+}
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-
-     font-family: 'Courier Prime', monospace;
-     font-weight: 400;
-     font-size: 18px;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    font-family: 'Courier Prime', monospace;
+    font-weight: 400;
+    font-size: 20px;
 
   /* optional dymo font */
   /* font-family: 'Dymo', sans-serif;
@@ -1793,20 +1873,15 @@ input[type=text], select, textarea {
   line-height:60%; */
 
   width: 100%; /* Full width */
-  padding: 7px 10px 5px 10px;
   margin-top: 10px; /* Add a top margin */
-  margin-bottom: 30px; /* Bottom margin */
   border: 0px solid transparent; /* Gray border */
   border-radius: 5px; /* Rounded borders */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
   /* cursor: none; */
 }
 
-
-
 textarea {
   height: 150px;
-  padding:15px;
 }
 
 /* Style the submit button with a specific background color etc */
@@ -1818,19 +1893,40 @@ input[type=submit] {
   border-radius: 5px;
   cursor: pointer;
   display:block;
-  width: 50%;
+  width: calc(100% - 200px);
+  margin:0 auto;
 }
 
 .container.form label{
   font-size: 12px;
 }
 
+input.contact, textarea.contact {
+  display:inline-block;
+  width: 100%;
+}
+span.caret {
+  display:inline-block;
+  font-size: 20px;
+  font-weight:800;
+  color:var(--cursor-cyan); 
+  margin-left: 0;
+  opacity: 0;
+  /* animation: blink 1s infinite ease-in-out; */
+}
 
+.blink {
+  animation: blink 1s infinite ease-in-out;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* =========      form COLORS ONLY       ============ */
 /* =========      form COLORS ONLY       ============ */
 /* =========      form COLORS ONLY       ============ */
- 
 #contact {
   background-color: var(--contact_background_color);
 }
@@ -1844,13 +1940,8 @@ input[type=submit] {
   color: var(--form_label_color);
   cursor: var(--cursor_show);
 }
-/* .container.form label::before{
-  content: "{"
-}
-.container.form label::after{
-  content: "}"
-} */
 
+/* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 /* =========      generic starter form       ============ */
 input[type=text], select, textarea {
@@ -1858,27 +1949,21 @@ background-color: var(--form_input_select_background_color);
 color: var( --form_input_select_text_color);
 }
 
-
-
-
-
 input[type=text]:hover, select:hover, textarea:hover {
   border: none; /* Gray border */
   background-color: var(--form_input_select_background_hover_color); 
   color: var( --form_input_select_text_hover_color);
   }
 
-
-        input[type=text]:focus, select:focus, textarea:focus {
-          border: none; 
-          color: var(--form_input_select_text_focus_color);
-          background: var(--form_input_select_background_focus_color);
-          }
-        /* input[type=text]:active, select:active, textarea:active {
-          border: 1px solid transparent; 
-          background: var(--black-10);
-          } */
-
+input[type=text]:focus, select:focus, textarea:focus {
+  border: none; 
+  color: var(--form_input_select_text_focus_color);
+  background: var(--form_input_select_background_focus_color);
+  }
+/* input[type=text]:active, select:active, textarea:active {
+  border: 1px solid transparent; 
+  background: var(--black-10);
+  } */
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
@@ -2127,19 +2212,15 @@ div#page_wrapper {
 
 
 
-span.caret {
-  color:var(--color-1); 
-  margin-left: 0;
-  opacity: 0;
+
+.screen-readers-only {
+  position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
 }
-
-@keyframes blink {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-
 
 
 
