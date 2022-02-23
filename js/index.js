@@ -783,11 +783,12 @@ console.log("pulse check clicked");
 $(".input_active_area").hover(function(e){
 // console.log(this);
   $(this).find("span.caret").addClass("blink")
-  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,0.3)");
+  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,0.9)");
 }, function() {
   $(this).find("span.caret").removeClass("blink")
   $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,1)")
 });
+
 
 // ==> Hide inviting cursor on focus
 function onMouseUp(e) {

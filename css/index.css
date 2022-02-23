@@ -158,8 +158,23 @@ html[theme=dark] {
   --work_text_color: var(--color-2);
   --work_backround: var(--color-1); 
   --work_h1_color: var(--color-2);
+
+  --form_input_select_text_color: var(--color-2);
+  --form_input_select_text_hover_color: var(--color-2);  
+  --form_input_select_text_focus_color: var(--color-2); 
+
+  --form_label_color: var(--color-2);
+  /* color: var( --form_input_select_text_color); */
+  --form_h1_color: var(--color-2);
   --contact_backround: var(--color-1);  
   --contact_text_color: var(--color-2);  
+
+
+  --form_button_background_color: var(--color-3);
+  --form_button_text_color: var(--color-2);
+  --form_button_background_color_hover: var(--color-3);
+  --form_button_text_color_hover: var(--color-2);
+
 
    /* add stronger shadows here so I don't have to remove them in justify-content: ; */
    --shadow-elevation-high:
@@ -1255,7 +1270,8 @@ a.card_project_link {
   margin: 0px auto;
   width: 200px; 
   /* display: flex;
-  justify-content: center; */
+  justify-content: center; 
+  this totally confuses Safari */
 }
 
 .svg_badge {
@@ -1810,6 +1826,7 @@ section#contact h1{
       
     .modal-prompt select { float: left; margin-right: 10px; }
 
+
 option.hint {
   color: red;
 }
@@ -1828,7 +1845,7 @@ form.contact {
 }
 .input_wrapper {
   margin-bottom: 30px;
-  border-bottom: 2px solid rgba(245,245,245,1);
+  border-bottom: 2px solid rgba(245,245,245,0.3);
 }
 .input_wrapper {
 display: flex;
@@ -1853,7 +1870,6 @@ label.spam_block_label{
   padding-right: 5px;
 }
 input.contact.spam_block_input{
-  
   width:50px;
 }
 .input_wrapper.spam_block_wrapper {
