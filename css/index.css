@@ -1252,15 +1252,18 @@ a.card_project_link {
 }
 
 .category_badge{
-  display: flex;
-  justify-content: center;
+  margin: 0px auto;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .svg_badge {
   border: none;
-  width: 200px;
+  width: 200px;  
   z-index: 2;
 }
+
+
 /* SVG text on path */
 tspan {
   fill: var(--color-1);
