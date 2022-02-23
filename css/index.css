@@ -1253,6 +1253,7 @@ a.card_project_link {
 
 .category_badge{
   margin: 0px auto;
+  width: 200px; 
   /* display: flex;
   justify-content: center; */
 }
