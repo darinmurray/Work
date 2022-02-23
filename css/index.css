@@ -1260,7 +1260,7 @@ a.card_project_link {
 
 .svg_badge {
   border: none;
-  width: 200px;  
+  /* width: 200px;   */
   z-index: 2;
 }
 
