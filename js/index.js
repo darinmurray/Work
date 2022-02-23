@@ -97,17 +97,20 @@ if (message_input.value !="") { // name
 
 
 
-
-
+// ==========    C O N T A C T    ================ // 
+// ==========       F O R M       ================ // 
+// ==========     (submitted)     ================ // 
+// make effect that 'drops' all characters into the submit button and then 
+// rutns into an envelope or something. 
 $('#gform').on('submit', function(e) {
   console.log(`%c=> submitted, function called: `, "color:red", );
   $('#gform *').fadeOut(2000);
   $('#contact *').fadeOut(2000);
-  $('#gform').prepend('Your submission has been processed...');
+  $('#gform').append('Thank you!');
   console.log(`%c=> all done: `, "color:red", );
   });
 
-
+g   
 
 
 // ==>      does user have dark mode enabled?   <==
