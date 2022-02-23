@@ -223,7 +223,7 @@ $('.card').each(function(index) {
   clone.attr("id", newId); //.removeAttr("style");
     // INSIDE the clone, insert the appropriate image 
     clone.find("tspan").text( card_name );
-    clone.find(".badge_category_image").attr( "xlink:href", "/images/cards/" + image_name + ".JPG" );  
+    clone.find(".badge_category_image").attr( "xlink:href", "/images/cards/" + image_name + ".jpg" );  
   // $("#display_board_X").append(clone) // add to the DOM
   $(this).find(".category_badge").html( clone );
 });  
