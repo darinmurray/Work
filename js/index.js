@@ -1,9 +1,6 @@
 
 window.onload = function() { 
 
-// for layout purposes only, hiddeen by default in the css
-// $("#centerlines").show()
-
 // ==========   C U R S O R S   ================ // 
 const cursor = document.querySelector('.cursor_container');
 const main_cursor = document.querySelector('.cursor_main');
@@ -11,17 +8,19 @@ const cursors = document.getElementsByClassName('custom_cursor');
 // get actual computed width and devide instead of this, it's hacky 
 const y_offset = 40 // 35  half thw width
 const x_offset = 40 // 15  half the height
-// initially hide all custom cursors
-// do this in CSS before deployment
-$(cursors).hide()
+
+// initially hide all custom cursors  // $(cursors).hide()  // do this in CSS before deployment
+
+// start by scrolling to home if reloaded
+//smoothScroll('landing')
 
 // for contact form
 // var submitted=false;
 
+// for layout purposes only, hiddeen by default in the css
+// $("#centerlines").show()
 
-
-// hide or fade initially in the css 
-// $("#contact_submit").css("opacity", "0.1")
+// ==========  contact form  ========== //
 let first_num = Math.floor(Math.random() * 10)
 let second_num = Math.floor(Math.random() * 10)
 let first_plus_second = first_num + second_num
@@ -36,157 +35,14 @@ let human = false
 let has_name = false
 let has_email = false
 let has_message = false
-// listen to spam_block_imput and enact submit when filled in
-document.querySelectorAll(".contact").forEach(input => {
-	input.addEventListener("input", function(e) {
-		// e.preventDefault();
-    // input_id = e.target.id
-    // input_value = e.target.value
-if ( spam_input.value == first_plus_second ) { // spam checker
-  human = true
-  spam_input.previousElementSibling.previousElementSibling.previousElementSibling.style.color = "limeGreen"
-  // console.log(`%c=> human: `, "color:green", human);
-} else { 
-  human = false; 
-  // console.log(`%c=> NOT human: `, "color:red");
-}
-
-if (name_input.value !="") { // name
-  has_name = true
-  name_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
-  // console.log(`%c=> has_name: `, "color:green", has_name, name_input.value);
-} else { 
-  has_name = false; 
-  name_input.previousElementSibling.previousElementSibling.style.color = "red"
-  // console.log(`%c=> NO NAME: `, "color:red");
-}
-
-if (email_input.value !="" && email_input.value.match(/^\S+@\S+\.\S+$/) ) { // name
-  has_email = true
-  email_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
-  // console.log(`%c=> has_email: `, "color:green", has_email, email_input.value);
-} else { 
-  has_email = false; 
-  email_input.previousElementSibling.previousElementSibling.style.color = "red"
-  // console.log(`%c=> NO email: `, "color:red");
-}
-
-if (message_input.value !="") { // name
-  has_message = true
-  message_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
-  // console.log(`%c=> has_message: `, "color:green", has_message, message_input.value);
-} else { 
-  has_message = false; 
-  message_input.previousElementSibling.previousElementSibling.style.color = "red"
-  // console.log(`%c=> Nothing to say: `, "color:red");
-}
-
-
-// if (human && has_name && has_email && has_message) {
-  // id has been stripped refer differently
-//   $("#contact_submit").show().css("opacity", "1").attr('disabled', false);
-// } else {
-// $("#contact_submit").css("opacity", "0.3").attr('disabled', true);
-// }
-
-
-
-	});
-});
-
-
-
-
-// ==========    C O N T A C T    ================ // 
-// ==========       F O R M       ================ // 
-// ==========     (submitted)     ================ // 
-// make effect that 'drops' all characters into the submit button and then 
-// rutns into an envelope or something. 
-$('#gform').on('submit', function(e) {
-  console.log(`%c=> submitted, function called: `, "color:red", );
-  $('#gform *').fadeOut(2000);
-  $('#contact *').fadeOut(2000);
-  $('#gform').append('Thank you!');
-  console.log(`%c=> all done: `, "color:red", );
-  });
-
-g   
-
-
-// ==>      does user have dark mode enabled?   <==
-//let darkmode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-//console.log(`%c=> darkmode value on window load: `, "color:cyan", darkmode);
-// set initial theme accordingly
-//changeTheme(darkmode)
-
-
-// ==========      M O D E      ================ // 
-// ==========    S W I T C H    ================ // 
-// ==========     (spotlight)   ================ // 
-$(".color_mode").click(function(e){
-  chosen_mode = e.target.dataset.color_mode
-  console.log(`%c=> Clicked color mode: `, "color:lime", chosen_mode); 
-  // this injeciton changes the theme 
-  $("html").attr("theme", chosen_mode )
-  // changeTheme(chosen_mode)
-  goNinja(chosen_mode)
-});
-
-// ============== D A R K  M O D E ================ //
-// ============== D A R K  M O D E ================ //
-// ============== D A R K  M O D E ================ //
-// $("#landing").click(function(e){
-//   darkmode = !darkmode
-//   changeTheme(darkmode)
-//   console.log("dark mode clicked and changed to ", darkmode) // Result: True or False
-// });
-
-function changeTheme(theme) {
-  // let browser_dark_mode = $("html").attr("dark")
-  // console.log(`%c=> browser_dark_mode: `, "color:cyan", browser_dark_mode);
-  console.log(`%c=> theme Supplied: `, "color:cyan", theme);
-  // console.log(`%c=> changeTheme darkmode inside function is: `, "color:cyan", darkmode);
-  // $("html").attr("dark", "true" )
-if  (theme == 'dark'){
-      $("html").attr("dark", "true" )
-}
-
-}
-
-
-
-// ==========    N I N J A    ================ // 
-// ==========     M O D E     ================ // 
-// ==========   (spotlight)   ================ // 
-const spotlight = document.querySelector('.spotlight');
-let spotlightSize = 'transparent 180px, rgba(0, 0, 0, 0.9) 200px)';
-// let ninja = false
-
-$(spotlight).hide()
-
-function goNinja(chosen_mode) {
-if (chosen_mode == "ninja") {
-  $(spotlight).show()
-  window.addEventListener('mousemove', e => updateSpotlight(e));
-    function updateSpotlight(e) {
-    let top_offset = window.pageYOffset     
-      spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX}px ${e.pageY-top_offset}px, ${spotlightSize}`;
-  }
-}  else {
-  $(spotlight).hide() 
-}
-}; // end function
-
-
-
-
-
+const email_submit = document.getElementById("contact_submit")
+email_submit.disabled = true
 
 
 // ============ initial logo animation ============== //
 // ============ initial logo animation ============== //
 // ============ initial logo animation ============== //
-
+// this SUCKS in Safari, investigate and fix
 // Unwind some logo elements out of position
 $("#text_banner_darin").css({"transform": "rotate(-30deg)", "transition": "0.1s" })
 $("#text_banner_murray").css({"transform": "rotate(-40deg)", "transition": "0.1s" })
@@ -206,11 +62,6 @@ setTimeout(() => {
 }, 200);
 
 
-
-
-
-
-
 // ======== Clone & Insert Badges ========= //
 // ========    ( work samples)    ========= //
 // ======== ===================== ========= //
@@ -224,21 +75,27 @@ $('.card').each(function(index) {
   var newId = clone.attr("id")+(card_name);
   // apply the new ID to the clone
   clone.attr("id", newId); //.removeAttr("style");
-    // INSIDE the clone, insert the appropriate image 
-    clone.find("tspan").text( card_name );
-    clone.find(".badge_category_image").attr( "xlink:href", "/images/cards/" + image_name + ".jpg" );  
+  // INSIDE the clone, insert the appropriate image 
+  clone.find("tspan").text( card_name );
+  clone.find(".badge_category_image").attr( "xlink:href", "/images/cards/" + image_name + ".jpg" );  
   // $("#display_board_X").append(clone) // add to the DOM
   $(this).find(".category_badge").html( clone );
 });  
-
-
-
-
-
-
-
-
-
+// ========       B A D G E  (svg)      ========= //
+// ========   ( image zoom on hover )   ========= //
+// ========   B A D G E  (svg)  hover   ========= //
+$("li svg").each(function(index, main_event ){
+  // get the LI this SVG is representing
+  let this_card = this.parentElement.offsetParent.offsetParent.parentElement
+  // assign it a unique ID as it does not have one
+  $(this_card).attr("id", "card_"+index);
+  let badge_image = this.querySelector('.badge_category_image') 
+      $(this).hover(function(sub_event){
+        $(badge_image).addClass("badge_zoom")
+      }, function(){
+        $(badge_image).removeClass("badge_zoom")
+      });
+});
 
 
 // ===============   M A I N   ================ // 
@@ -246,7 +103,6 @@ $('.card').each(function(index) {
 // ===============   (ofset)  ================ // 
 // can this be done with CSS calc?
 let nav_width = $("#nav_floater").outerWidth();
-// let screen_width = $("body").outerWidth();
 let floating_logo_width = $("#floating_logo").outerWidth();
 let nav_left_width = $("#nav_left").outerWidth();
 let nav_right_width = $("#nav_right").outerWidth();
@@ -254,31 +110,26 @@ let nav_offest = Math.floor(Math.abs(nav_left_width - nav_right_width) )  ;  // 
 
 $("#nav_wrapper").css('margin-left', (nav_offest)+"px");
 $("#nav_center").css('width', floating_logo_width+"px");
-// make this happen AFTER logo is covering it
-// $("#nav_center li a ").css('color', "black");
 
 
 // ===============   M A I N   ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
-  // var isVisible = document.getElementById("yourID").style.display == "block";
-  // var isHidden = document.getElementById("yourID").style.display == "none"; 
+// var isVisible = document.getElementById("yourID").style.display == "block";
+// var isHidden = document.getElementById("yourID").style.display == "none"; 
 hiddenElements = $(':hidden');
 visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
-
 
 
 // ===============    S U B    ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
 let sub_nav = $(".sub_nav"); 
-$(sub_nav).hide();
+// $(sub_nav).hide(); //hidden in the css to avoid flash
 
 $("li.mode").hover(function(e){
-    console.log(`%c=> showing the sub-menu `, "color:gray");
     $(sub_nav).fadeIn();
 }, function(){
-    console.log(`%c=> hiding the sub-menu `, "color:gray");
     $(sub_nav).fadeOut();
     // why does this need to be here? t should be in the .each.hover function below...
     // at least make it address 'any' cursor which is active
@@ -287,39 +138,126 @@ $("li.mode").hover(function(e){
 
 
 
-// ==========   C A R O U S E L   ============= //
-// ==========      open/close     ============= //
-// ==========      (buttons)      ============= //
-// const carousel_panels = $(".carousel_panel")
-$(document).on("click", ".show_carousel" , function(e) {   
-  e.preventDefault()
-  let show_this = e.currentTarget.attributes.href.value
-  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
-  $(show_this).removeClass("fade_out").addClass("fade_in");
+// ==========    C O N T A C T    ================ // 
+// ==========       F O R M       ================ // 
+// ==========     (submitted)     ================ // 
+
+// ==> Activete inviting cursor when hovering near inputs
+$(".input_active_area").hover(function(e){
+  $(this).find("span.caret").addClass("blink")
+  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,0.9)");
+}, function() {
+  $(this).find("span.caret").removeClass("blink")
+  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,1)")
 });
 
-$(document).on("click", ".close_carousel" , function(e) {   
-  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
-  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
+// ==> Hide inviting cursor on focus
+function onMouseUp(e) {
+  const activeTextarea = document.activeElement;
+  $("span.caret").removeClass("blink")
+}
+// ==> mouse up event listener
+document.addEventListener('mouseup', onMouseUp, false);
+
+// ******* Change this to a better effect  ******* //
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#contact *').fadeOut(2000);
+  $('#gform').append('Thank you!');
+  });
+
+// listen to spam_block_imput and enact submit when filled in
+document.querySelectorAll(".contact").forEach(input => {
+	input.addEventListener("input", function(e) {
+    if ( spam_input.value == first_plus_second ) { // spam checker
+      human = true
+      spam_input.previousElementSibling.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+    } else { 
+      human = false; 
+    }
+
+    if (name_input.value !="") { // name
+      has_name = true
+      name_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+    } else { 
+      has_name = false; 
+      name_input.previousElementSibling.previousElementSibling.style.color = "red"
+    }
+
+    if (email_input.value !="" && email_input.value.match(/^\S+@\S+\.\S+$/) ) { // email
+      has_email = true
+      email_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+    } else { 
+      has_email = false; 
+      email_input.previousElementSibling.previousElementSibling.style.color = "red"
+    }
+
+    if (message_input.value !="") { // message
+      has_message = true
+      message_input.previousElementSibling.previousElementSibling.style.color = "limeGreen"
+    } else { 
+      has_message = false; 
+      message_input.previousElementSibling.previousElementSibling.style.color = "red"
+    }
+
+    if (human && has_name && has_email && has_message) {
+      email_submit.style.opacity = "1";
+      email_submit.disabled = false
+    } else {
+      email_submit.style.opacity = "0.2";
+      email_submit.disabled = true
+    }
+	});
 });
 
 
 
 
 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
-// ==========   C U R S O R S   ================ // 
+// ==========      M O D E      ================ // 
+// ==========    S W I T C H    ================ // 
+// ==========    (spotlight)    ================ // 
+$(".color_mode").click(function(e){
+  chosen_mode = e.target.dataset.color_mode
+  $("html").attr("theme", chosen_mode )
+  goNinja(chosen_mode)
+});
 
+// ==========    N I N J A    ================ // 
+// ==========     M O D E     ================ // 
+// ==========   (spotlight)   ================ // 
+const spotlight = document.querySelector('.spotlight');
+let spotlightSize = 'transparent 180px, rgba(0, 0, 0, 0.9) 200px)';
+// $(spotlight).hide() // now initially hidden in the css
+
+function goNinja(chosen_mode) {
+if (chosen_mode == "ninja") {
+  $(spotlight).show()
+  window.addEventListener('mousemove', e => updateSpotlight(e));
+    function updateSpotlight(e) {
+    let top_offset = window.pageYOffset     
+      spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX}px ${e.pageY-top_offset}px, ${spotlightSize}`;
+  }
+}  else {
+  $(spotlight).hide() 
+}
+}; // end function
+
+
+
+
+
+
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+// ==========   C U R S O R S   ================ // 
+// $(".cursor_main").show(); // do in css to avoid initial flash
 document.addEventListener('mousemove', (e)=> {
-    cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
+  cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
 })
 
-$(".cursor_main").show();
 document.addEventListener('click', () => {
   main_cursor.classList.add("expand");
-  // console.log(`%c=> cursor: `, "color:cyan", main_cursor);
-  // console.log(`%c=> cursor: `, "color:cyan", main_cursor.classList);
   setTimeout(() => {
     main_cursor.classList.remove("expand");
   }, 500)
@@ -333,13 +271,10 @@ document.addEventListener('click', () => {
 // ==== Change determined by data-cursor attribute, if asigned
 // make it observe everything? Global? If assigned, if not: ignore
 
-// took out 'a' from below list
 $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
     cursor_choice = $(this).attr("data-cursor")
-        // console.log(`%c=> cursor_choice: `, "color:cyan", cursor_choice);
     $(cursors).hide()
-    // $(".cursor_skull").show();
     $("."+cursor_choice).show();
   }, function(){
     $("."+cursor_choice).hide()
@@ -367,13 +302,6 @@ $(".icon").each(function(main_event){
   });
 });
 
-// =======   C U R S O R - (color for 'about me' page) =========== //
-// nice to see the change, but really not needed
-// $("#about_me").hover(function(e){
-//     $(".cursor_main").css("border-color" , "#ffffff");
-//   }, function(){
-//     $(".cursor_main").css("border-color" , "#44ffee");
-//   });
 
 // ==========   C U R S O R - D Y N A M I C S    ================ // 
 // ==========   C U R S O R - D Y N A M I C S    ================ // 
@@ -422,62 +350,17 @@ $(sub_nav).children('li').each(function(big_e){
         var sin = b/scale;
         // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
         var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
-        // works!
-        // console.log(`%c=> cursor angle: `, "color:red",  + angle + 'deg');
         return angle //= null ?? 0;
       }
       return 0
     }
 
-    // get the supplied elements height and width 
-    function getHeightAndWidth(element) {
-      var style = window.getComputedStyle(element, null);
-          var h = style.height;
-          var w = style.width;
-          var c = style.blockSize;
-          return {height:h, width:w}
-      }
-
-      
 
 
 
-
-
-
-
-// ==========       B A D G E  (svg)      ================
-// ==========   ( image zoom on hover )   ================
-// ==========   B A D G E  (svg)  hover   ================
-$("li svg").each(function(index, main_event ){
-  // get the LI this SVG is representing
-  let this_card = this.parentElement.offsetParent.offsetParent.parentElement
-  // assign it a unique ID as it does not have one
-  $(this_card).attr("id", "card_"+index);
-  let badge_image = this.querySelector('.badge_category_image') 
-
-      $(this).hover(function(sub_event){
-        $(badge_image).addClass("badge_zoom")
-        // dim all otehr elements on the page:
-        // $('li.card, #nav_floater, h1, #lion_logo_svg').not('#'+this_card.id+"*").addClass("dim_all")
-      }, function(){
-        $(badge_image).removeClass("badge_zoom")
-        // un-dim all elements
-        //$("body *").removeClass("dim_all")
-      });
-});
 
 
  
-
-
-
-
-
-
-
-
-
 
 
 
@@ -489,14 +372,13 @@ $("li svg").each(function(index, main_event ){
 // this is the working FROM version
 // gsap.fromTo("#floating_logo", { y: "0px", scale: 0}, {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
 // gsap.from("#floating_logo", {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
-// find the proportion of the screen. 
-// screen_width screen_height
 
 // hwich is smaller, height or width. 
 // if width, proportion to width
-// if height, proportion to height     starting size is 100 pixels
+// if height, proportion to height
+// starting size is 100 pixels
 
-// width range is 375 to 1200. 
+// width range is 375px to 1200px. 
 // 375 = 2.5 - - - 1200 = 7 
 let viewPortHeight = window.innerHeight
 let viewPortWidth = window.innerWidth
@@ -549,15 +431,6 @@ gsap.from("#lion_logo_svg",  {
 // var tl = gsap.timeline( { defaults:{ duration: 1.0, ease: Back.easeOut.config(2), opacity: 0 }})
 var tl = gsap.timeline( { defaults:{ duration: 0.5, opacity: 0 }})
 tl.from(".intro_text", {delay:1, scale: .2, transformOrigin: 'bottom', stagger: .2 }  ) //, "=.2"
-
-
-
-
-
-
-
-
-
 
 
 
@@ -626,51 +499,6 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 
 
 
-// WORKING, BUT NOT NEEDED??????
-
-// $("#scroll_up_arrow ").on('click', function(e) {
-// // I should just have this go to nex/previous anchor...
-//   $('html, body').stop(true).animate({
-//     // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
-//     scrollTop: '-=' + $(window).height() + 'px'
-//   });
-// });
-
-
-// $("#scroll_down_arrow ").on('click', function(e) {
-// // I should just have this go to nex/previous anchor...
-//   $('html, body').stop(true).animate({
-//     // scrollTop: (e.originalEvent.deltaY > 0 ? '+=' : '-=') + $(window).height() + 'px'
-//     scrollTop: '+=' + $(window).height() + 'px'
-//   });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// start by scrolling to home if reloaded
-//smoothScroll('landing')
-
-
-
-
-
-
-
-
-
 
 
 
@@ -678,22 +506,36 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 // ===========  C A R O U S E L  =========== //
 // ===========      simple       =========== //
 // ===========  fading carousel  =========== //
-// const slide_buttons = $(".js-carousel-button ")
-// collect all carousels
+    // const slide_buttons = $(".js-carousel-button ")
+    // collect all carousels
 var carousels = $('.carousel_container');
 // uniquefy each carousel 
 carousels.each(function(index, container) {
   // uniquefy each carousel
   container.id = $(container).attr('data-name') + "_carousel"
-            // collect the slidese per each carousel
-            // this is repeated in the switchSlides function below, dry it?
-            let mySlides = $(container).find(".carousel__item ")
+  // collect the slides per each carousel
+  // this is repeated in the switchSlides function below, dry it?
+  let mySlides = $(container).find(".carousel__item ")
   // uniquefy each slide
   $(mySlides).each(function(index) { 
     this.id = "slide_"+ index
   });  
-
 });
+
+// =========     C A R O U S E L     ============ //
+// =========   open/close (buttons)  ============ //
+$(document).on("click", ".show_carousel" , function(e) {   
+  e.preventDefault()
+  let show_this = e.currentTarget.attributes.href.value
+  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
+  $(show_this).removeClass("fade_out").addClass("fade_in");
+});
+
+$(document).on("click", ".close_carousel" , function(e) {   
+  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
+  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
+});
+
 
 function switchSlides(selected_carousel){
   // collect the slidese per each carousel
@@ -704,20 +546,17 @@ function switchSlides(selected_carousel){
   return [current_slide, prev_slide, next_slide];
 }
 
-// ==========  C A R O U S E L   B U T T O N S  ================
-// jQuery because it's simpler and shorter
+// ===========  C A R O U S E L  =========== //
+// ===========   L/R (buttons)   =========== //
+// jQuery because it's shorter and far more simple
 $(document).on("click", ".js-carousel-button " , function(e) { 
-  // let this_button = e.target.parentElement.id
   let this_butons_direction = e.target.parentElement.dataset.direction
   let this_butons_carousel = e.target.parentElement.parentElement.parentElement  
   let [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
-  
     if ( this_butons_direction == 'previous' ) {
-      console.log(`%c<== Show Previous Slide: `, "color:LightCyan");
       $(current_slide).removeClass("showing"); 
       $(prev_slide).addClass("showing"); 
     } else {
-      console.log(`%cShow Next Slide ==> `, "color:LightCyan");
       $(current_slide).removeClass("showing"); 
       $(next_slide).addClass("showing"); 
     }
@@ -733,102 +572,20 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
-// =========  S P A M  C H E C K E R  =========== //
-// =========  S P A M  C H E C K E R  =========== //
-// =========  S P A M  C H E C K E R  =========== //
-var today = new Date();
-var currentYear = today.getFullYear();   
-var currentMonth = (today.getMonth() + 1);
-var currentDay = today.getDate(); 
-var monthNames = ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"];
-
-    function pulseCheck() {
-        let year =   parseInt(document.getElementById('byear').value);
-        let month =  parseInt(document.getElementById('bmonth').value);
-        let day =    parseInt(document.getElementById('bday').value); 
-        let entered = month + day + year
-        let reality = currentMonth + currentDay + currentYear     
-            if(entered == reality ){ 
-              $("#prompt-background").hide(); 
-              // trigger funciton that allows mail send, otherwise invalid without it. 
-            }  else {
-              console.log("Nope.")
-              // window.location = 'http://google.com';
-              // now I should redirect you to think it was successful and make you go away. 
-            }      
-    }; // end of Check  
-
-    // ==> Inject form values based on todays date   
-    // set the value of the #currentYear option to the actual current year
-    $("#current-year").html( currentYear );
-    $("#current-year").attr("value", currentYear ); 
-    // set the value of the #current-month option to the actual current month
-    $("#current-month").html( monthNames[currentMonth-1] );
-    $("#current-month").attr("value", currentMonth ); 
-    // set the value of the #current-day option to the actual current month
-    $("#current-day").html( currentDay );
-    $("#current-day").attr("value", currentDay ); 
-
-// =========  submit smap check form  =========== //
-$(document).on("click", "#submit_pulse_check" , function(e) { 
-  pulseCheck()
-console.log("pulse check clicked");  
-});
-
-
-
-
-
-
-
-
-// ==> Activete inviting cursor when hovering near inputs
-$(".input_active_area").hover(function(e){
-// console.log(this);
-  $(this).find("span.caret").addClass("blink")
-  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,0.9)");
-}, function() {
-  $(this).find("span.caret").removeClass("blink")
-  $(this).find(".input_wrapper").css("border-bottom", "2px solid rgba(245,245,245,1)")
-});
-
-
-// ==> Hide inviting cursor on focus
-function onMouseUp(e) {
-  const activeTextarea = document.activeElement;
-  $("span.caret").removeClass("blink")
-  // console.log(`%c=> activeTextarea: `, "color:pink", activeTextarea.previousSibling);
-}
-// ==> mouse up event listener
-document.addEventListener('mouseup', onMouseUp, false);
-
-
-
-
-
 
 // ===============  U T I L I T Y  ================ // 
 // ===============   (functionS)   ================ // 
 // ===============   ==========    ================ //  
 
 // ==========   Generate a Random Alpha Character   ============= //
-function startCycle() {
-  // do something here  
-  clockTO = setTimeout(startCycle, 1000) 
-  // call to initialize the looping
-  startCycle()
-  }; // end startTimefunction
-
-// ==========   Generate a Random Alpha Character   ============= //
 randoAlpha = String.fromCharCode(65+Math.floor(Math.random() * 26)); 
 
-  // =======   Generate a Random Int between min & max   ========== //
+// =======   Generate a Random Int between min & max   ========== //
 // getRandomInt(1, 10)*100   for increments less than one second
 function getRandomInt(min, max) { 
   return Math.round((min - 0.5) + Math.random() * (max - min + 1));
 }
 
-  
 // ====== get % of # between min & max of a given range ========= //
 // E.G. from 35 to 356, what percentage (of the range) is 121? 
 function getPercentOfRange(min, current, max) {  
@@ -837,7 +594,14 @@ function getPercentOfRange(min, current, max) {
   return percentage = (((current - min) * 1) / (max - min)) //.toFixed(1);  
 } 
 
-
+// get the supplied elements height and width 
+function getHeightAndWidth(element) {
+  var style = window.getComputedStyle(element, null);
+      var h = style.height;
+      var w = style.width;
+      var c = style.blockSize;
+      return {height:h, width:w}
+  }
 
 
 
