@@ -314,6 +314,7 @@ $(".sub_nav li").each(function(e){
 $(".nav li:not(.color_mode)").each(function(e){
   $(this).hover(function(event){
     let target_width = event.currentTarget.offsetWidth*1.5
+    console.log(`%c=> target_width: `, "color:cyan", target_width);
     $(".cursor_main").css( "width", target_width+"px" );  
   }, function(){
     $(".cursor_main").css( "width", default_cursor_size+"px" );
