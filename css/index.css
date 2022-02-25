@@ -26,7 +26,7 @@ color-scheme: light dark; /* both supported */
 --black-0: #ffffff; 
 --hilight_yellow: rgba(255, 238, 0, 0.829);
 --cursor-cyan: #44ffee;
-
+--cursor-color: var(--cursor-cyan);
 /* ========= logo colors ======== */
 --logo_hilights: var(--black-0);   
 --needle: #627C91;
@@ -410,35 +410,78 @@ body{
   width: 48px;
   height: 48px;
   border: 8px solid; 
-  border-color: #44ffee; 
+  border-color: var(--cursor-color); 
   border-radius: 50%;
   border-radius: 50%;
   opacity: 0.5;
   z-index: 99999;
   display:block;
 }
+
+/* ============   R E T I C L E   ============== */
+/* ============      (cursor)     ============== */
+/* ============                   ============== */
+/* .cursor_main_reticle {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 8px solid; 
+  border-color: var(--cursor-color); 
+  border-radius: 50%;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 99999;
+  display:block;
+}
+  #reticle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    align-content: center; 
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 10000; 
+    pointer-events: none;
+  }
+    #reticle .horizontal {
+      z-index: 10000;  
+      height: 3px;
+      width: 100px;
+      background-color: var(--cursor-color);
+    }
+    #reticle .vertical {
+      position:absolute;
+      z-index: 10000; 
+      width: 3px;
+      height: 100px;
+      background-color: var(--cursor-color);
+    } */
+
+
+
 .cursor_new_window {
-  fill: #44ffee;
+  fill: var(--cursor-color);
   position: absolute;
   opacity: 0.5;
   z-index: 99999;
 }
 .cursor_slide_show {
   /* border: 1px solid red; */
-  fill: #44ffee;
+  fill: var(--cursor-color);
   position: absolute;
   opacity: 0.5;
   z-index: 99999;
 }
 .cursor_skull {
-  fill: #44ffee;
+  fill: var(--cursor-color);
   position: absolute;
   opacity: 0.5;
   z-index: 99999;
   transform: scale(50%);
 }
 #arrow_over {
-  fill: #44ffee;
+  fill: var(--cursor-color)e;
   opacity: 0.5;
 } 
 .expand {
@@ -459,7 +502,7 @@ body{
   font-weight: 400;
   font-size: 30px;
   line-height: 30px; /* this centers it  */
-  color: #44ffee;
+  color: var(--cursor-color);
   z-index: 99999;
   animation: pulsate_2 0.5s infinite alternate;
 }
@@ -483,7 +526,7 @@ body{
   width: 60px;
   height: 60px;
   border: 8px solid; 
-  border-color: #44ffef9d; 
+  border-color: var(--cursor-color); 
   border-radius: 50%;
   top: 10px;
   left: 10px;
@@ -523,7 +566,17 @@ body{
     display: none;
   }
   
+
   
+
+
+
+
+
+
+
+
+
 /* ======  G E N E R A L  ====== */
 /* ======  G E N E R A L  ====== */
 /* ======  G E N E R A L  ====== */

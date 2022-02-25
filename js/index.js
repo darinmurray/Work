@@ -9,8 +9,6 @@ const cursors = document.getElementsByClassName('custom_cursor');
 const y_offset = 40 // 35  half thw width
 const x_offset = 40 // 15  half the height
 
-// initially hide all custom cursors  // $(cursors).hide()  // do this in CSS before deployment
-
 // start by scrolling to home if reloaded
 //smoothScroll('landing')
 
@@ -124,6 +122,7 @@ visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 // ===============    S U B    ================ // 
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
+let nav = $(".nav"); 
 let sub_nav = $(".sub_nav"); 
 
 $("li.mode").hover(function(e){
@@ -132,7 +131,8 @@ $("li.mode").hover(function(e){
     $(sub_nav).fadeOut();
     // why does this need to be here? t should be in the .each.hover function below...
     // at least make it address 'any' cursor which is active
-    $(".cursor_braces").css( "transform", "rotate(90deg)" );
+    $(".cursor_main").css( "transform", "rotate(0deg)" );
+    $(".cursor_main").css( "width", default_cursor_size+"px" );
 });
 
 
@@ -264,10 +264,9 @@ document.addEventListener('click', () => {
 // ==========   C U R S O R  C H A N G E S    ================ // 
 // ==========   C U R S O R  C H A N G E S    ================ // 
 // ==========   C U R S O R  C H A N G E S    ================ // 
-
-// ==== Change determined by data-cursor attribute, if asigned
-
-$(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
+// ==== Change determined by data_cursor attribute, if asigned
+// $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
+$(".close_carousel, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
     cursor_choice = $(this).attr("data-cursor")
     $(cursors).hide()
@@ -279,10 +278,8 @@ $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *"
 });
 
 
-// ==========   C U R S O R - circle   ================ // 
-// ==========   C U R S O R -  over    ================ // 
-// ==========   C U R S O R - icons    ================ // 
-
+// ==========       C U R S O R        ================ // 
+// ==========   (circle over icons)    ================ // 
 let default_cursor_size = 48
 let default_cursor_border = 8
 
@@ -299,24 +296,41 @@ $(".icon").each(function(main_event){
 });
 
 
-// ==========   C U R S O R - D Y N A M I C S    ================ // 
-// ==========   C U R S O R - D Y N A M I C S    ================ // 
-// ==========   C U R S O R - D Y N A M I C S    ================ // 
-
+// ==========   C U R S O R - R O T A T I O N    ================ // 
+// ==========   C U R S O R - R O T A T I O N    ================ // 
 // change the ROTATION on the cursor in the SUB-MENU
 // This could be over ONLY "#sub_nav li", NOT "#nav li" as there are no angles in #nav
-// $(".sub_nav li").each(function(big_e){
-$(sub_nav).children('li').each(function(big_e){
+// $(sub_nav).children('li').each(function(big_e){
+$(".sub_nav li").each(function(e){
   $(this).hover(function(calc_angle){
     let current_target = calc_angle.currentTarget
-    var target_width = calc_angle.currentTarget.offsetWidth
-    // get the angle
+    let target_width = calc_angle.currentTarget.offsetWidth
     new_angle = getRotation(current_target)
-    //set angle if existing
-    $(".cursor_braces").css( "transform", "rotate("+(90+new_angle)+"deg)"    );
-    $(".cursor_braces").css( "font-size", target_width+"px" );  
+    $(".cursor_main").css( "transform", "rotate("+(new_angle)+"deg)" );
+    $(".cursor_main").css( "width", target_width+"px" );  
   })
 });
+
+$(".nav li:not(.color_mode)").each(function(e){
+  $(this).hover(function(event){
+    let target_width = event.currentTarget.offsetWidth*1.5
+    $(".cursor_main").css( "width", target_width+"px" );  
+  }, function(){
+    $(".cursor_main").css( "width", default_cursor_size+"px" );
+  })
+});
+
+
+
+
+
+
+
+
+
+
+
+
   
     function getRotation(element) {
     // calcualtes the current rotation of a provided element (HTML object) and returns the angle (angle or 0)
@@ -346,6 +360,7 @@ $(sub_nav).children('li').each(function(big_e){
         var sin = b/scale;
         // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
         var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        console.log(`%c=> angle: `, "color:cyan", angle);
         return angle //= null ?? 0;
       }
       return 0
