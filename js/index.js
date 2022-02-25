@@ -125,7 +125,6 @@ visibleElements = $(':visible'); //if(!$('#yourID').is(':visible')) { }
 // ===============    N A V    ================ // 
 // ===============   (toggle)  ================ //  
 let sub_nav = $(".sub_nav"); 
-// $(sub_nav).hide(); //hidden in the css to avoid flash
 
 $("li.mode").hover(function(e){
     $(sub_nav).fadeIn();
@@ -228,7 +227,6 @@ $(".color_mode").click(function(e){
 // ==========   (spotlight)   ================ // 
 const spotlight = document.querySelector('.spotlight');
 let spotlightSize = 'transparent 180px, rgba(0, 0, 0, 0.9) 200px)';
-// $(spotlight).hide() // now initially hidden in the css
 
 function goNinja(chosen_mode) {
 if (chosen_mode == "ninja") {
@@ -238,7 +236,7 @@ if (chosen_mode == "ninja") {
     let top_offset = window.pageYOffset     
       spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX}px ${e.pageY-top_offset}px, ${spotlightSize}`;
   }
-}  else {
+} else {
   $(spotlight).hide() 
 }
 }; // end function
@@ -251,7 +249,6 @@ if (chosen_mode == "ninja") {
 // ==========   C U R S O R S   ================ // 
 // ==========   C U R S O R S   ================ // 
 // ==========   C U R S O R S   ================ // 
-// $(".cursor_main").show(); // do in css to avoid initial flash
 document.addEventListener('mousemove', (e)=> {
   cursor.setAttribute("style", "top: "+(e.pageY-y_offset)+"px; left: "+(e.pageX-x_offset)+"px")
 })
@@ -269,7 +266,6 @@ document.addEventListener('click', () => {
 // ==========   C U R S O R  C H A N G E S    ================ // 
 
 // ==== Change determined by data-cursor attribute, if asigned
-// make it observe everything? Global? If assigned, if not: ignore
 
 $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
   $(this).hover(function(sub_event){
@@ -361,6 +357,58 @@ $(sub_nav).children('li').each(function(big_e){
 
 
  
+
+// ===========  C A R O U S E L  =========== //
+// ===========      simple       =========== //
+// ===========  fading carousel  =========== //
+
+// collect all carousels, give each a unique ID
+// same for each slide
+$('.carousel_container').each(function(index, container) {
+  container.id = $(container).attr('data-name') + "_carousel"
+  let mySlides = $(container).find(".carousel__item ")
+    $(mySlides).each(function(index) { 
+      this.id = "slide_"+ index
+    });  
+});
+function switchSlides(selected_carousel){
+  let theseSlides = $(selected_carousel).find(".carousel__item ")
+  let current_slide = $(selected_carousel).find(".showing")[0] 
+  let next_slide = current_slide.nextElementSibling ?? theseSlides[0]
+  let prev_slide = current_slide.previousElementSibling ?? theseSlides[theseSlides.length-1]
+  return [current_slide, prev_slide, next_slide];
+}
+// =========     C A R O U S E L     ============ //
+// =========   open/close (buttons)  ============ //
+$(document).on("click", ".show_carousel" , function(e) {   
+  e.preventDefault()
+  let show_this = e.currentTarget.attributes.href.value
+  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
+  $(show_this).removeClass("fade_out").addClass("fade_in");
+});
+
+$(document).on("click", ".close_carousel" , function(e) {   
+  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); 
+  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
+});
+// ===========  C A R O U S E L  =========== //
+// ===========   L/R (buttons)   =========== //
+// jQuery because it's shorter and far more simple
+$(document).on("click", ".js-carousel-button " , function(e) { 
+  let this_butons_direction = e.target.parentElement.dataset.direction
+  let this_butons_carousel = e.target.parentElement.parentElement.parentElement  
+  let [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
+ 
+  $(current_slide).removeClass("showing"); 
+  if ( this_butons_direction == 'previous' ) {
+      $(prev_slide).addClass("showing"); 
+    } else {
+      $(next_slide).addClass("showing"); 
+    }
+});
+
+
+
 
 
 
@@ -499,71 +547,6 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 
 
 
-
-
-
-
-// ===========  C A R O U S E L  =========== //
-// ===========      simple       =========== //
-// ===========  fading carousel  =========== //
-    // const slide_buttons = $(".js-carousel-button ")
-    // collect all carousels
-var carousels = $('.carousel_container');
-// uniquefy each carousel 
-carousels.each(function(index, container) {
-  // uniquefy each carousel
-  container.id = $(container).attr('data-name') + "_carousel"
-  // collect the slides per each carousel
-  // this is repeated in the switchSlides function below, dry it?
-  let mySlides = $(container).find(".carousel__item ")
-  // uniquefy each slide
-  $(mySlides).each(function(index) { 
-    this.id = "slide_"+ index
-  });  
-});
-
-// =========     C A R O U S E L     ============ //
-// =========   open/close (buttons)  ============ //
-$(document).on("click", ".show_carousel" , function(e) {   
-  e.preventDefault()
-  let show_this = e.currentTarget.attributes.href.value
-  $("#nav_floater, #home_button").css({"opacity":"0.2", "pointer-events":"none" });
-  $(show_this).removeClass("fade_out").addClass("fade_in");
-});
-
-$(document).on("click", ".close_carousel" , function(e) {   
-  $(".carousel_panel").removeClass("fade_in").addClass("fade_out"); //.hide()
-  $("#nav_floater, #home_button").css({"opacity":"1", "pointer-events":"auto" });
-});
-
-
-function switchSlides(selected_carousel){
-  // collect the slidese per each carousel
-  let theseSlides = $(selected_carousel).find(".carousel__item ")
-  let current_slide = $(selected_carousel).find(".showing")[0] 
-  let next_slide = current_slide.nextElementSibling ?? theseSlides[0]
-  let prev_slide = current_slide.previousElementSibling ?? theseSlides[theseSlides.length-1]
-  return [current_slide, prev_slide, next_slide];
-}
-
-// ===========  C A R O U S E L  =========== //
-// ===========   L/R (buttons)   =========== //
-// jQuery because it's shorter and far more simple
-$(document).on("click", ".js-carousel-button " , function(e) { 
-  let this_butons_direction = e.target.parentElement.dataset.direction
-  let this_butons_carousel = e.target.parentElement.parentElement.parentElement  
-  let [current_slide, prev_slide, next_slide] = switchSlides(this_butons_carousel);
-    if ( this_butons_direction == 'previous' ) {
-      $(current_slide).removeClass("showing"); 
-      $(prev_slide).addClass("showing"); 
-    } else {
-      $(current_slide).removeClass("showing"); 
-      $(next_slide).addClass("showing"); 
-    }
-    // current_slide = null
-    // prev_slide = null
-    // next_slide = null
-});
 
 
 
