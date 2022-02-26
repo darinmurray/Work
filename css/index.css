@@ -250,6 +250,10 @@
     cursor: var(--cursor_show);
   }
   
+  image {
+/* this is *supposed* to help, but doesn't */
+    image-rendering: -webkit-optimize-contrast;
+  }
   
   /* REMOVE BEFORE DEPLOY IF NOT BEING USED ============================= */
   /* for testing out click-to-scroll */
@@ -941,16 +945,17 @@
     /* animation-play-state: paused;  */
   }
   
+
   #lion_logo_svg {
     position: fixed;
-    top: 16px;
+    top:15vh;
     left: 50% ;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     z-index: 975; 
-    height: 100px;
-    width: 100px;
+    height: 60vh;
+    w idth: 100px;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;

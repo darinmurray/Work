@@ -314,7 +314,6 @@ $(".sub_nav li").each(function(e){
 $(".nav li:not(.color_mode)").each(function(e){
   $(this).hover(function(event){
     let target_width = event.currentTarget.offsetWidth*1.5
-    console.log(`%c=> target_width: `, "color:cyan", target_width);
     $(".cursor_main").css( "width", target_width+"px" );  
   }, function(){
     $(".cursor_main").css( "width", default_cursor_size+"px" );
@@ -429,83 +428,18 @@ $(document).on("click", ".js-carousel-button " , function(e) {
 
 
 
-// ==========   S H R I N K I N G  L O G O    ================ // 
-// ==========   S H R I N K I N G  L O G O    ================ // 
-// ==========   S H R I N K I N G  L O G O    ================ // 
-
-// this is the working FROM version
-// gsap.fromTo("#floating_logo", { y: "0px", scale: 0}, {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
-// gsap.from("#floating_logo", {duration: 1 , delay: 2, y: "50vh", ease: "power1.in", scale: 5} )
-
-// hwich is smaller, height or width. 
-// if width, proportion to width
-// if height, proportion to height
-// starting size is 100 pixels
-
-// width range is 375px to 1200px. 
-// 375 = 2.5 - - - 1200 = 7 
-let viewPortHeight = window.innerHeight
-let viewPortWidth = window.innerWidth
-let dictator = Math.min(viewPortWidth, viewPortHeight )
-if (dictator = viewPortHeight) { dictator *=0.6 }
-responsive_factor = dictator/150
-
-
-let scale_calc = responsive_factor//  // min 2, max 7
-// gsap.from("#floating_logo",  {    lion_logo_svg
-gsap.from("#lion_logo_svg",  {
-  scrollTrigger: {
-    trigger: "#landing", // content
-    start: "top top",
-    toggleActions: "restart pause reverse pause",
-    // markers:true,
-    scrub: true, //1, 2, 3 numbers are slower
-    end: "bottom 10%"  // ,  // +=200px
-    //end: "+=200px" //"bottom 80%"  // ,  // +=200px
-    // pin: "#floating_logo_large"  // true
-  }, 
-  // duration: 1 , // no effect when scrubbed above
-  // delay: 2, 
-  y: "40vh", 
-  ease: "power5.in", 
-  scale: scale_calc
-  // scale: scale_calc
-} );
-
-// gsap.to("#intro", {duration: 1 , delay: 1, y: "0vh", ease: "power1.in", opacity: 0.2} )
-
-// gsap.to("#intro",  {
-//   scrollTrigger: {
-//     trigger: "#landing", // content
-//     start: "20% bottom-200", // play with this for timing ! ! ! ! ! ! !! 
-//     toggleActions: "restart pause reverse pause",
-//     // markers:true,
-//     scrub: true //, //1, 2, 3 numbers are slower
-//     // end: "bottom top"  // ,  // +=200px
-//     // pin: "#floating_logo_large"  // true
-//   }, 
-//   // duration: 1 , // no effect when scrubbed above
-//   // delay: 2, 
-//   //y: "40vh", 
-//   // ease: "power5.in", 
-//   opacity: 0
-// } );
-
-
-// var tl = gsap.timeline( { defaults:{ duration: 1.0, ease: Back.easeOut.config(2), opacity: 0 }})
-var tl = gsap.timeline( { defaults:{ duration: 0.5, opacity: 0 }})
-tl.from(".intro_text", {delay:1, scale: .2, transformOrigin: 'bottom', stagger: .2 }  ) //, "=.2"
 
 
 
+// ==========   S M O O T H  S C R O L L I N G   ================ // 
+// ==========          ( for nav links )         ================ // 
+// ==========                                    ================ // 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 document.querySelectorAll(".anchor").forEach(anchor => {
 	anchor.addEventListener("click", function(e) {
 		e.preventDefault();
 		let targetElem = document.querySelector(e.target.getAttribute("href")),
 			y = targetElem;
-      console.log(`%c=> y: `, "color:cyan", y);
-
 		// if (targetElem && panelsContainer.isSameNode(targetElem.parentElement)) {
 		// 	let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start,
 		// 		totalMovement = (panels.length - 1) * targetElem.offsetWidth;
@@ -520,6 +454,59 @@ document.querySelectorAll(".anchor").forEach(anchor => {
 		});
 	});
 });
+
+
+
+
+
+// ==========   S H R I N K I N G  L O G O   ================ // 
+// ==========    (shrink and park - on )     ================ // 
+// ==========     (nav bar - on scroll)      ================ // 
+let scale_dictator = Math.min(window.innerWidth, window.innerHeight )
+if (scale_dictator = window.innerHeight) { scale_dictator *=0.7 }
+//let scale_calc = scale_dictator//  // min 2, max 7
+TweenMax.set('#lion_logo_svg', {transformOrigin:"50% 0%"}); 
+gsap.registerPlugin(ScrollTrigger);
+var tl = gsap.timeline({ paused: true });
+// ==> find the appropriate scale factor to always shrink dynamic logo to 100px
+const bigLogo = document.querySelector('#lion_logo_svg');
+const rendered_height = bigLogo.clientHeight
+const target_height = 100 //px, ideal pixel width of final logo
+let scale_target = target_height/rendered_height
+
+tl
+  .to(bigLogo, { 
+  scale: scale_target, 
+  top: 16,
+  // duration: 5.0, // scroll triggered
+  force3D: false,
+  ease: "linear" 
+} );
+// tl.reverse(1.0);
+var timeout = gsap.delayedCall(0, function() { 
+  ScrollTrigger.create({
+      trigger: "#landing",
+      toggleActions: "play none reverse none",
+      // markers: true,
+      start: "top top",
+      // start: "0 0%", // was "0 15%", caused initial shrink?
+      // end: " 100% 0%",
+      end: "bottom 10%",
+      scrub: true, //1,
+      strictUnits:true,
+      animation: tl,
+  });
+});
+
+
+
+// ==========   H E A D L I N E  T E X T    ================ // 
+// ==========     ( expand on entry )       ================ // 
+// ==========                               ================ // 
+// var tl = gsap.timeline( { defaults:{ duration: 1.0, ease: Back.easeOut.config(2), opacity: 0 }})
+var tl_2 = gsap.timeline( { defaults:{ duration: 0.5, opacity: 0 }})
+tl_2.from(".intro_text", {delay:1, scale: .2, transformOrigin: 'bottom', stagger: .2 }  ) //, "=.2"
+
 
 
 
