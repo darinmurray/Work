@@ -245,6 +245,7 @@
     font-weight: 200;
     width: 100vw; /*  calc(100vw - (100vw - 100%));  */
     cursor: var(--cursor_show);
+    -webkit-font-smoothing: antialiased;
   }
   img {
     cursor: var(--cursor_show);
@@ -764,6 +765,7 @@
     font-size: 12px;
     letter-spacing: 3px;
     font-family: 'Bitter', serif;
+    font-weight: 400;
     padding: 4px 10px;   /* actual visual size of LI */
   }
   ul#nav li a, ul#nav li a:visited {
@@ -1194,20 +1196,20 @@
     margin-top: 0px;
   } 
   .card_description  {
-    margin-top: 115px;
-    padding: 160px 20px 50px 20px; /* top right bottom left */
+    margin-top: 285px;
+    padding: 0px 20px 50px 20px; /* top right bottom left */
     border-radius: 30px;
     /* should be NONE, no shape is used here anymore */
     /* background-color: var(--work_backround); */
-    transform: skew(0deg, -7deg);
+    /* transform: skew(0deg, -7deg);
     -ms-transform: skew(0deg, -7deg);
-    -webkit-transform: skew(0deg, -7deg);
+    -webkit-transform: skew(0deg, -7deg); */
   }
-  .card_description div:first-child {
+  /* .card_description div:first-child {
     transform: skew(0deg, 7deg);
     -ms-transform: skew(0deg, 7deg);
     -webkit-transform: skew(0deg, 7deg);
-  }
+  } */
   .card_description ul:not(.skills) {
     list-style-type: none;
     margin-left: 20px;

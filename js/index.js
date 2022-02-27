@@ -323,8 +323,17 @@ $(".nav li:not(.color_mode)").each(function(e){
 
 
 
-
-
+// slow fade/up of discipline icons
+const icons = gsap.utils.toArray('li:not(.card, .main_nav)'); 
+icons.forEach((icon, i) => {
+  const anim = gsap.fromTo(icon, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+  ScrollTrigger.create({
+    trigger: icon,
+    animation: anim,
+    toggleActions: 'play none none none',
+    once: true,
+  });
+});
 
 
 
