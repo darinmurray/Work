@@ -1433,12 +1433,12 @@
   /* *************** SVG  I C O N S ***************** */
   /* *************** SVG  I C O N S ***************** */
   /* *************** SVG  I C O N S ***************** */
-  #close_bones_SVG {
+  .close_bones_SVG {
     width: 40px;
     height: 40px;   
     fill: var(--black-3);
   }
-  #close_bones_SVG:hover { 
+  .close_bones_SVG:hover { 
     fill: #44ffee;
   }
   #left_bone, #right_bone {
