@@ -220,6 +220,9 @@
     100% { -webkit-filter: hue-rotate(0deg); filter: hue-rotate(0deg); }
   }
   
+  /* use this to prevent page jumping? */
+  img { max-width: 100%; height: auto }
+
   html, body, * {margin:0; padding:0;  }  
   html, body {overflow-x: hidden; }  
   *, *::before, *::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -2079,16 +2082,16 @@
   /* background: -webkit-linear-gradient(#eee, #333); */
   
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,ffffff+100&1+0,0+64,0+100 */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear,  left top, right top,  from(rgba(0,0,0,1)),color-stop(74%, rgba(163,163,163,0)),to(rgba(255,255,255,0)));
-  background: -o-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(163,163,163,0) 74%,rgba(255,255,255,0) 100%);
-  background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(163,163,163,0) 74%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+  /* background: -webkit-gradient(linear,  left top, right top,  from(rgba(0,0,0,1)),color-stop(74%, rgba(163,163,163,0)),to(rgba(255,255,255,0))); */
+  /* background: -o-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(163,163,163,0) 74%,rgba(255,255,255,0) 100%); */
+  /* background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(163,163,163,0) 74%,rgba(255,255,255,0) 100%);  */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=1 );  */
   
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   }
   
-  .night { -webkit-filter: invert(100%); filter: invert(100%); }
+  /* .night { -webkit-filter: invert(100%); filter: invert(100%); } */
   
   
   

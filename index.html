@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme="">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -45,7 +45,7 @@
   <div id="nav_wrapper" class="nav_wrapper in-your-face-shadow" data-cursor="cursor_main">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">       
-        <li class="mode main_nav"> <a href="/" class="anchor">TT</a>
+        <li class="mode main_nav"> <a href="/" class="anchor" aria-label="Color Mode">TT</a>
           <ul class="sub_nav">
             <li class="color_mode" data-color_mode="original">Bright Mode</li>
             <li class="color_mode" data-color_mode="dark">Dark Mode</li>
@@ -54,15 +54,15 @@
             <li class="color_mode" data-color_mode="random">Random</li>
           </ul>  
         </li>
-        <li class="work main_nav"> <a href="#work" class="anchor">Work</a>
-        <li id="about_me_li" class="about_me  main_nav" ><a href="#about_me" class="anchor">About</a></li>
+        <li class="work main_nav"> <a href="#work" class="anchor" aria-label="Work Samples">Work</a>
+        <li id="about_me_li" class="about_me  main_nav" ><a href="#about_me" class="anchor" aria-label="About Me">About</a></li>
       </span>
 
-      <span id="nav_center"><li class="home main_nav"><a href="#landing" class="anchor">Home</a></li></span>
+      <span id="nav_center"><li class="home main_nav"><a href="#landing" class="anchor" aria-label="Home Page">Home</a></li></span>
 
       <span id="nav_right" class="nav_right">
-        <li id="contact_li" class="contact main_nav"><a href="#contact" class="anchor">Contact</a></li>
-        <li id="resume_li" class="resume main_nav"><a href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li id="contact_li" class="contact main_nav"><a href="#contact" class="anchor" aria-label="Contact Form">Contact</a></li>
+        <li id="resume_li" class="resume main_nav" aria-label="Download My Resume"><a href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </span>
     </ul>
   </div>
@@ -70,7 +70,7 @@
 </header>
 
 
-<main id="content" class="site-content" role="main">
+<main id="content" class="site-content" >
 
 
 
@@ -91,7 +91,7 @@
 
 <section title="About Me" id="about_me" class="scroll_panel" >
   <div class="about_me_wrapper container column_centered">
-    <h1 class="screen-readers-only">About Me</h1>
+
           <div class="centered width_80">
           <h2>Front End Design/Build + </h2>
               <ul class="skills about_me"> 
@@ -110,7 +110,7 @@
                 <li><span class="icon-check_mark_fat"></span>Digital Illustration <span class="lighter">(web/print)</span></li>
                 <li><span class="icon-check_mark_fat"></span>Photo Retouching <span class="lighter">(web/print)</span></li>
                 <li><span class="icon-check_mark_fat"></span>All aspects of 
-                <a href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3">e-commerce</a>
+                <a href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3" aria-label="How the world spells ecommerce.">e-commerce</a>
                 </li>
                 <li><span class="icon-check_mark_fat"></span>Video Production</li>
                 <li><span class="icon-check_mark_fat"></span>Sound Production</li>
@@ -122,9 +122,9 @@
           </p>          
 
   <ul class="row_of_icons_small"> 
-    <li><a href="https://codepen.io/darinmurray" target="_blank"> <span class="icon icon-code_pen" ></span> </a></li>
+    <li><a href="https://codepen.io/darinmurray" target="_blank" aria-label="My Codepen"> <span class="icon icon-code_pen" ></span> </a></li>
     <li><span class="icon icon-instagram" ></span></li>
-    <li><a href="https://github.com/darinmurray" target="_blank"> <span class="icon icon-github" ></span> </a></li>
+    <li><a href="https://github.com/darinmurray" target="_blank" aria-label="My GitHub"> <span class="icon icon-github" ></span> </a></li>
   </ul>
 
 </div>
@@ -135,12 +135,12 @@
 
 <section id="Work Samples" class="scroll_panel">
   <div class="work_wrapper container column_centered ">
-    <h1 class="screen-readers-only">Work Samples</h1>
+
   <h2>Web Development</h2>
   <ul class="deck">
     <li class="card" data-name="nixie tubes"  data-image="nixie_tubes_card_xl">
       <div class="card_wrapper"  data-cursor="cursor_braces"> 
-      <a href="tubes/index.html" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window">
+      <a href="tubes/index.html" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window" aria-label="Nixie Tubes Website. Opens in a new window.">
         <div class="category_badge"> 
           <img src="images/cards/tubes_shield.png" class="g ray_scale" alt="Nixie Tube Image"> 
         </div>
@@ -176,7 +176,7 @@
 
     <li class="card" data-name="words"  data-image="flip_text_card_xl">
       <div class="card_wrapper" data-cursor="cursor_caret">
-      <a href="words/index.html" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window">
+      <a href="words/index.html" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window" aria-label="Piperwords website. Opens in a new window.">
             <div class="category_badge"> 
               <img src="images/cards/words_shield.png" class="g ray_scale" alt="Words App Preveiw Image"> 
             </div>
@@ -218,7 +218,7 @@
 
     <li class="card" data-name="shopify"  data-image="shopify_card_xl">
       <div class="card_wrapper">
-      <a href="#shopify.html" class="card_project_link" data-cursor="cursor_new_window">
+      <a href="#shopify.html" class="card_project_link" data-cursor="cursor_new_window" aria-label="Shopify Samples">
           <div class="category_badge"> <img src="images/cards/shopify_shield.png" class="g ray_scale" alt="Shopify Work Image" > </div>
         </a> 
         <div class="card_description">
@@ -261,7 +261,7 @@
   <ul class="deck">
     <li class="card" data-name="illustration"  data-image="illustration_card_xl">
       <div class="card_wrapper clickable">
-      <a href="#illustration" class="show_carousel card_project_link" data-cursor="cursor_slide_show">
+      <a href="#illustration" class="show_carousel card_project_link" data-cursor="cursor_slide_show" aria-label="Illustration Samples">
         <div class="category_badge">
           <img src="images/cards/illustrations_shield.png" class="g ray_scale" alt="Shopify Work Image">
         </div>
@@ -294,7 +294,7 @@
 
     <li class="card"  data-name="logos"  data-image="logo_card_xl">
       <div class="card_wrapper clickable">
-        <a href="#logos" class="show_carousel  card_project_link" data-cursor="cursor_slide_show">
+        <a href="#logos" class="show_carousel  card_project_link" data-cursor="cursor_slide_show" aria-label="Logo Samples">
           <div class="category_badge"> <img src="images/cards/logos_shield.png" class="g ray_scale" alt="Shopify Work Image"> </div>
         </a> 
         <div class="card_description">
@@ -504,7 +504,7 @@
 
 <section title="Contact Me" id="contact" class="scroll_panel"> 
   <div class="container column_centered form">
-    <h1 class="screen-readers-only">Contact Me</h1>
+
     <h2>Lets talk :-)</h2> 
     <!-- https://github.com/toperkin/staticFormEmails -->
       <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
@@ -541,7 +541,7 @@
         </div> 
       </div> 
 
-     <input type="submit" value="Submit" id="contact_submit" tabindex="0">
+     <input type="submit" value="Submit" id="contact_submit" tabindex="0" aria-label="Submit Contact Form">
     </form>
     
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
@@ -731,7 +731,7 @@ make resume links actualy work in the PDF resume
 
 
 
-<a href="#landing" id="home_button">
+<a href="#landing" id="home_button" aria-label="Main Logo With Link To Home">
 <svg id="lion_logo_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 233.8 236.8" style="enable-background:new 0 0 233.8 236.8;" xml:space="preserve">
 <g id="lightening_bolt_layer">
