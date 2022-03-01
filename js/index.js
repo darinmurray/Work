@@ -488,8 +488,8 @@ tl
   scale: scale_target, 
   top: 16,
   // duration: 5.0, // scroll triggered
-  force3D: false,
-  ease: "linear" 
+  ease: "linear", //circ.in",
+  force3D: false
 } );
 // tl.reverse(1.0);
 var timeout = gsap.delayedCall(0, function() { 
@@ -501,7 +501,7 @@ var timeout = gsap.delayedCall(0, function() {
       // start: "0 0%", // was "0 15%", caused initial shrink?
       // end: " 100% 0%",
       end: "bottom 10%",
-      scrub: true, //1,
+      scrub: true, //true, //1,
       strictUnits:true,
       animation: tl,
   });

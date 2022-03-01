@@ -691,6 +691,15 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
+    color: lime;
+  }
+  h2 { 
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
   }
   .title { 
     font-family: 'Space Grotesk', sans-serif;
@@ -957,10 +966,11 @@
             transform: translateX(-50%);
     z-index: 975; 
     height: 60vh;
-    w idth: 100px;
+
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    pointer-events: none;
   }
   
   .st2{fill: var(--needle)}  /* needle  #627C91 */
@@ -1127,7 +1137,7 @@
     -webkit-animation: var(--rainbowShift_8);
             animation: var(--rainbowShift_8);
   }
-  #work h1 {
+  #work h2 {
     color: var(--work_h1_color);
   }
   ul.deck {
@@ -1493,7 +1503,7 @@
             justify-content: center;
     background-color: var(--contact_section_background_color);
   }
-  section#contact h1{
+  section#contact h2{
     color: var(--form_h1_color);
   }
   /* Really, IS HTIS NECESSARY?? MOVE TO WHERE EVER IT'S NEEDED */
@@ -1619,7 +1629,7 @@
   .container.form {
     color: var(--form_text_color);
   }
-  .container.form h1{
+  .container.form h2{
     color: var(--form_h1_color);
   }
   .container.form label{
