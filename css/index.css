@@ -445,7 +445,7 @@ opacity: 0.8;
   content: "}";
   left:5px;
   color: red; 
-}
+} */
 .cursor_main {
   position: absolute;
   width: 48px;
@@ -456,7 +456,7 @@ opacity: 0.8;
   opacity: 0.5;
   z-index: 99999;
   display:block;
-} */
+}
 
 
 
@@ -1385,8 +1385,8 @@ opacity: 0.8;
   .close_bones_SVG:hover { 
     fill: #44ffee;
   }
-  #left_bone, #right_bone {
-  }
+  /* #left_bone, #right_bone {
+  } */
   
   /* #close_bones_SVG:hover #right_bone { 
   transform: rotate(-10deg);
