@@ -13,11 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  
-  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  -->
   <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  -->
   
   <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
@@ -32,20 +32,18 @@
 
 
 <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
-<div id="page_wrapper" class=" "> 
+<div id="page_wrapper" class="page_wrapper"> 
 
 
 
 
 
 <header>
-<!-- navigation -->
-<!-- find a way to do this without having to add "class="anchor"" to every a tag...  subtle-box -->
-<nav id="nav_floater" class="nav_floater  ">
+<nav id="nav_floater" class="nav_floater">
   <div id="nav_wrapper" class="nav_wrapper in-your-face-shadow" data-cursor="cursor_main">  
     <ul id="nav" class="nav">
       <span id="nav_left" class="nav_left">       
-        <li class="mode main_nav"> <a href="/" class="anchor" aria-label="TT Color Mode">TT</a>
+        <li class="mode main_nav"> <a href="#" class="anchor" aria-label="TT Color Mode">TT</a>
           <ul class="sub_nav">
             <li class="color_mode" data-color_mode="original">Bright Mode</li>
             <li class="color_mode" data-color_mode="dark">Dark Mode</li>
@@ -75,7 +73,7 @@
 
 
 
-<section title="Introduction to Darin Murray, web developer." id="landing" class="scroll_panel">
+<section id="landing" class="scroll_panel_landing landing_panel" aria-label="Introduction to Darin Murray, web developer.">
   <div class="landing_content ">  
     <h1 class="screen-readers-only">Introduction to Darin Murray, web developer.</h1>
     <div id="intro" class="role">
@@ -87,9 +85,7 @@
 
 
 
-
-
-<section title="About Me" id="about_me" class="scroll_panel" >
+<section id="about_me" class="scroll_panel about_me_panel"  aria-label="About Me">
   <div class="about_me_wrapper container column_centered">
 
           <div class="centered width_80">
@@ -133,7 +129,7 @@
 
 
 
-<section id="work" aria-label="Work Samples" class="scroll_panel">
+<section id="work" class="scroll_panel work_panel" aria-label="Work Samples">
   <div class="work_wrapper container column_centered ">
 
   <h2>Web Development</h2>
@@ -354,7 +350,7 @@
 
 
 
-<section id="illustration" class="carousel_panel " aria-label="Illustration Samples" >
+<section id="illustration" class="carousel_panel illustration_panel" aria-label="Illustration Samples" >
   <h2 class="screen-readers-only">Illustration Samples</h2>
   <div class="carousel_wrapper">
     <div class="close_carousel" data-cursor="cursor_skull">
@@ -403,7 +399,7 @@
 
 
 
-<section id="logos" class="carousel_panel " aria-label="Logo Design Samples" >
+<section id="logos" class="carousel_panel logos_panel" aria-label="Logo Design Samples" >
   <h2 class="screen-readers-only">Logo Design Samples</h2>
   <div class="carousel_wrapper">
     <div class="close_carousel"  data-cursor="cursor_skull">
@@ -448,7 +444,7 @@
 
 
 
-<section id="products" class="carousel_panel " aria-label="Product Design Samples" >
+<section id="products" class="carousel_panel products_panel" aria-label="Product Design Samples" >
   <h2 class="screen-readers-only">Product Design Samples</h2>
   <div class="carousel_wrapper">
     <div class="close_carousel"  data-cursor="cursor_skull"> 
@@ -501,18 +497,14 @@
 
 
 
-
-
-
-
-<section title="Contact Me" id="contact" class="scroll_panel" aria-label="Contact Me" >
+<section id="contact" class="scroll_panel contact_panel" aria-label="Contact Me" >
 <script type="text/javascript">var submitted=false;</script>  
 <h2 class="screen-readers-only">Contact Me</h2> 
   <div class="container column_centered form">
 
     <h2>Lets talk :-)</h2> 
     <!-- https://github.com/toperkin/staticFormEmails -->
-      <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
+      <form name="gform" id="gform" class="contact_form" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
       <div class="input_active_area">
         <div class="input_wrapper spam_block_wrapper"> 
           <span class="icon-check_mark_fat"></span><label class="spam_block_label">The sum of 2+2 is:</label>
@@ -563,26 +555,17 @@
 Professional History
  - entreprenuriel stuff?/
 
- I led "cross functional teams" to produce.. popular phrase right now?
+ I led "cross functional teams" to produce.. 
 
 "Passionate about technology and learning new things"
 
-"highly motivated front end developer specializing in (?) shopify "
+"highly motivated front end developer "
 
 make resume links actualy work in the PDF resume
 
 </section> -->
 
 
-<!-- KEEP for later
-<div id="scroll_arrow_wrapper">
-  <div id="scroll_up_arrow"  class="scroll_arrow ">
-    <span class="material-icons up_arrow">keyboard_arrow_up</span> 
-  </div>
-  <div id="scroll_down_arrow"  class="scroll_arrow ">
-    <span class="material-icons down_arrow">keyboard_arrow_down</span> 
-  </div>
-</div> -->
 
 
 
