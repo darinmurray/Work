@@ -1,758 +1,1321 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Darin Murray: Web Dev</title>
+    <meta name="author" content="" />
+    <meta name="description" content="Web Development work of Darin Murray" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <!-- Styles -->
+    <link href="css/index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<head>
-  <meta charset="utf-8">
-  <title>Darin Murray: Web Dev</title>
-  <meta name="author" content="">
-  <meta name="description" content="Web Development work of Darin Murray">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <!-- Styles -->
-  <link href="css/index.css" rel="stylesheet"> 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  -->
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  -->
-  
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">  -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">  -->
-
-  <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-  <script src="js/index.js" defer></script>
-</head>
-<body>
-
-
-<!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
-<div id="page_wrapper" class="page_wrapper"> 
-
-
-
-
-
-<header>
-<nav id="nav_floater" class="nav_floater">
-  <div id="nav_wrapper" class="nav_wrapper in-your-face-shadow" data-cursor="cursor_main">  
-    <ul id="nav" class="nav">
-      <span id="nav_left" class="nav_left">       
-        <li class="mode main_nav"> <a href="#" class="anchor" aria-label="TT Color Mode">TT</a>
-          <ul class="sub_nav">
-            <li class="color_mode" data-color_mode="original">Bright Mode</li>
-            <li class="color_mode" data-color_mode="dark">Dark Mode</li>
-            <li class="color_mode" data-color_mode="rainbow">Rainbow</li>
-            <li class="color_mode" data-color_mode="ninja">Ninja Mode</li>
-            <li class="color_mode" data-color_mode="random">Random</li>
-          </ul>  
-        </li>
-        <li class="work main_nav"> <a href="#work" class="anchor" aria-label="Work Samples">Work</a>
-        <li id="about_me_li" class="about_me  main_nav" ><a href="#about_me" class="anchor" aria-label="About Me">About</a></li>
-      </span>
-
-      <span id="nav_center" class="nav_center"><li class="home main_nav"><a href="#landing" class="anchor" aria-label="Home Page">Home</a></li></span>
-
-      <span id="nav_right" class="nav_right">
-        <li id="contact_li" class="contact main_nav"><a href="#contact" class="anchor" aria-label="Contact Form">Contact</a></li>
-        <li id="resume_li" class="resume main_nav" aria-label="Download My Resume"><a href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-      </span>
-    </ul>
-  </div>
-</nav>
-</header>
-
-
-<main id="content" class="site-content" >
-
-
-
-
-<section id="landing" class="scroll_panel_landing landing_panel" aria-label="Introduction to Darin Murray, web developer.">
-  <div class="landing_content ">  
-    <h1 class="screen-readers-only">Introduction to Darin Murray, web developer.</h1>
-    <div id="intro" class="role">
-      <h2 class="intro_text">Front End & Shopify Developer<span class="asterisk">**</span></h2>
-    </div>  
-  </div>
-  <div class="photo"></div>
-</section>
-
-
-
-<section id="about_me" class="scroll_panel about_me_panel"  aria-label="About Me">
-  <div class="about_me_wrapper container column_centered">
-
-          <div class="centered width_80">
-          <h2>Front End Design/Build + </h2>
-              <ul class="skills about_me"> 
-                <li><span class="icon icon-html" ></span> <div>HTML</div> </li>
-                <li><span class="icon icon-css"></span> <div>CSS</div></li>
-                <li><span class="icon icon-javascript"></span><div>Js</div></li>
-                <li><span class="icon icon-jquery"></span><div>Jquery</div></li>
-                <li><span class="icon icon-shopify"></span><div>Liquid</div></li>
-              </ul>
-        </div>
-
-          <div class=" centered  width_60" >
-            <h2>Very comfortable in: </h2>
-              <ul class="comfort_list"> 
-                <li><span class="icon-check_mark_fat"></span>Product Photography <span class="lighter">(web/print)</span> </li>
-                <li><span class="icon-check_mark_fat"></span>Digital Illustration <span class="lighter">(web/print)</span></li>
-                <li><span class="icon-check_mark_fat"></span>Photo Retouching <span class="lighter">(web/print)</span></li>
-                <li><span class="icon-check_mark_fat"></span>All aspects of 
-                <a href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3" aria-label="How the world spells ecommerce.">e-commerce</a>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  -->
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <!-- wraps all content so it can be bumped down the height of the fixed nav bar -->
+    <div id="page_wrapper" class="page_wrapper">
+      <header>
+        <nav id="nav_floater" class="nav_floater">
+          <div
+            id="nav_wrapper"
+            class="nav_wrapper in-your-face-shadow"
+            data-cursor="cursor_main"
+          >
+            <ul id="nav" class="nav">
+              <span id="nav_left" class="nav_left">
+                <li class="mode main_nav">
+                  <a href="#" class="anchor" aria-label="TT Color Mode">TT</a>
+                  <ul class="sub_nav">
+                    <li class="color_mode" data-color_mode="original">
+                      Bright Mode
+                    </li>
+                    <li class="color_mode" data-color_mode="dark">Dark Mode</li>
+                    <li class="color_mode" data-color_mode="rainbow">
+                      Rainbow
+                    </li>
+                    <li class="color_mode" data-color_mode="ninja">Stealth</li>
+                    <li class="color_mode" data-color_mode="random">Random</li>
+                  </ul>
                 </li>
-                <li><span class="icon-check_mark_fat"></span>Video Production</li>
-                <li><span class="icon-check_mark_fat"></span>Sound Production</li>
+                <li class="work main_nav">
+                  <a href="#work" class="anchor" aria-label="Work Samples"
+                    >Work</a
+                  >
+                </li>
+                <li id="about_me_li" class="about_me main_nav">
+                  <a href="#about_me" class="anchor" aria-label="About Me"
+                    >About</a
+                  >
+                </li>
+              </span>
+
+              <span id="nav_center" class="nav_center"
+                ><li class="home main_nav">
+                  <a href="#landing" class="anchor" aria-label="Home Page"
+                    >Home</a
+                  >
+                </li></span
+              >
+
+              <span id="nav_right" class="nav_right">
+                <li id="contact_li" class="contact main_nav">
+                  <a href="#contact" class="anchor" aria-label="Contact Form"
+                    >Contact</a
+                  >
+                </li>
+                <li
+                  id="resume_li"
+                  class="resume main_nav"
+                  aria-label="Download My Resume"
+                >
+                  <a
+                    href="https://docs.google.com/document/d/10_GwqiaZASxdIWtKQ9ZUoU3JipUFvEcTDz4XR6o539k/export?format=pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Resume</a
+                  >
+                </li>
+              </span>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main id="content" class="site-content">
+        <section
+          id="landing"
+          class="scroll_panel_landing landing_panel"
+          aria-label="Introduction to Darin Murray, web developer."
+        >
+          <div class="landing_content">
+            <h1 class="screen-readers-only">
+              Introduction to Darin Murray, web developer.
+            </h1>
+            <div id="intro" class="role">
+              <h2 class="intro_text">
+                Front End & Shopify Developer<span class="asterisk">**</span>
+              </h2>
+            </div>
+          </div>
+          <div class="photo"></div>
+        </section>
+
+        <section
+          id="about_me"
+          class="scroll_panel about_me_panel"
+          aria-label="About Me"
+        >
+          <div class="about_me_wrapper container column_centered">
+            <div class="centered width_80">
+              <h2>Front End Design/Build +</h2>
+              <ul class="skills about_me">
+                <li>
+                  <span class="icon icon-html"></span>
+                  <div>HTML</div>
+                </li>
+                <li>
+                  <span class="icon icon-css"></span>
+                  <div>CSS</div>
+                </li>
+                <li>
+                  <span class="icon icon-javascript"></span>
+                  <div>Js</div>
+                </li>
+                <li>
+                  <span class="icon icon-jquery"></span>
+                  <div>Jquery</div>
+                </li>
+                <li>
+                  <span class="icon icon-shopify"></span>
+                  <div>Liquid</div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="centered width_60">
+              <h2>Very comfortable in:</h2>
+              <ul class="comfort_list">
+                <li>
+                  <span class="icon-check_mark_fat"></span>Product Photography
+                  <span class="lighter">(web/print)</span>
+                </li>
+                <li>
+                  <span class="icon-check_mark_fat"></span>Digital Illustration
+                  <span class="lighter">(web/print)</span>
+                </li>
+                <li>
+                  <span class="icon-check_mark_fat"></span>Photo Retouching
+                  <span class="lighter">(web/print)</span>
+                </li>
+                <li>
+                  <span class="icon-check_mark_fat"></span>All aspects of
+                  <a
+                    href="https://books.google.com/ngrams/graph?content=e-Commerce%2CeCommerce%2CEcommerce%2CE-commerce&year_start=1990&year_end=2019&corpus=26&smoothing=3"
+                    aria-label="How the world spells ecommerce."
+                    >e-commerce</a
+                  >
+                </li>
+                <li>
+                  <span class="icon-check_mark_fat"></span>Video Production
+                </li>
+                <li>
+                  <span class="icon-check_mark_fat"></span>Sound Production
+                </li>
                 <li><span class="icon-check_mark_fat"></span>Product Design</li>
               </ul>
-          </div>
-          <p class="centered" >
-          **fueled by coffee and a <em>slight</em> obsession with learning new technologies. 
-          </p>          
-
-  <ul class="row_of_icons_small"> 
-    <li><a href="https://codepen.io/darinmurray" target="_blank" aria-label="My Codepen"> <span class="icon icon-code_pen" ></span> </a></li>
-    <li><span class="icon icon-instagram" ></span></li>
-    <li><a href="https://github.com/darinmurray" target="_blank" aria-label="My GitHub"> <span class="icon icon-github" ></span> </a></li>
-  </ul>
-
-</div>
-</section>
-      
-
-
-
-<section id="work" class="scroll_panel work_panel" aria-label="Work Samples">
-  <div class="work_wrapper container column_centered ">
-
-  <h2>Web Development</h2>
-  <ul class="deck">
-    <li class="card" data-name="nixie tubes"  data-image="nixie_tubes_card_xl">
-      <div class="card_wrapper"  data-cursor="cursor_braces"> 
-      <a href="https://www.nixietricks.com/" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window" aria-label="Nixie Tubes Website. Opens in a new window.">
-        <div class="category_badge"> 
-          <img src="images/cards/tubes_shield.png" class="g ray_scale" alt="Nixie Tube Image"> 
-        </div>
-      </a>
-      <div class="card_description">
-        <div>
-            <ul class="skills project_stack"> 
-              <li><span class="icon icon-html"></span> <div>HTML</div> </li>
-              <li><span class="icon icon-css"></span> <div>CSS</div></li>
-              <li><span class="icon icon-javascript"></span><div>Js</div></li>
-              <li><span class="icon icon-jquery"></span><div>Jquery</div></li>
-            </ul>
-
-          <p>Stunning Nixie tubes with pure CSS, Javascript and Jquery. No jpg/png/tif.</p>
-          <ul>
-            <li>Pure CSS/Js</li>
-            <li>No Pixel Images</li>
-            <li>Environmental Reflections</li>
-            <li>Realistic Warm Up</li>
-            <li>Realistic Flicker</li>
-            <li>*The hexagon grid is an SVG</li>
-            <li>Animation</li>
-            <li>Sound Effects</li>
-            <li>Mayhem Mode</li>
-            <li>Smoke</li>
-            <li>Screen Distortion</li>
-          </ul>
-        </div><!-- end inner blank descripton div -->
-      </div>
-      </div>   
-    </li>
-
-
-    <li class="card" data-name="words"  data-image="flip_text_card_xl">
-      <div class="card_wrapper" data-cursor="cursor_caret">
-      <a href="https://piperwords.com/" class="card_project_link" target="_blank" rel="noopener noreferrer" data-cursor="cursor_new_window" aria-label="Piperwords website. Opens in a new window.">
-            <div class="category_badge"> 
-              <img src="images/cards/words_shield.png" class="g ray_scale" alt="Words App Preveiw Image"> 
             </div>
-          </a>  
-          <div class="card_description">
-            <div>
-            <ul class="skills project_stack"> 
-              <li><span class="icon icon-html"></span> <div>HTML</div> </li>
-              <li><span class="icon icon-css"></span> <div>CSS</div></li>
-              <li><span class="icon icon-javascript"></span><div>Js</div></li>
-              <li><span class="icon icon-jquery"></span><div>Jquery</div></li>
+            <p class="centered">
+              **fueled by coffee and a <em>slight</em> obsession with learning
+              new technologies.
+            </p>
+
+            <ul class="row_of_icons_small">
+              <li>
+                <a
+                  href="https://codepen.io/darinmurray"
+                  target="_blank"
+                  aria-label="My Codepen"
+                >
+                  <span class="icon icon-code_pen"></span>
+                </a>
+              </li>
+              <li><span class="icon icon-instagram"></span></li>
+              <li>
+                <a
+                  href="https://github.com/darinmurray"
+                  target="_blank"
+                  aria-label="My GitHub"
+                >
+                  <span class="icon icon-github"></span>
+                </a>
+              </li>
             </ul>
-          <p>A clean, distraction free app for kids learning to read.</p>
-          <ul>
-            <li>Merriam Webster API</li>
-            <li>Material Icons Component Lib</li>
-            <li>Rendered with CSS/JS</li>
-            <li>Text to Speech</li>
-            <li>User Speach Controls</li>
-            <ul>
-              <li>Voice Persona/Pitch/Speed</li>
-              <li>Speak The Word/Definition</li>
-              <li>Speak Positive Feedback</li>
+          </div>
+        </section>
+
+        <section
+          id="work"
+          class="scroll_panel work_panel"
+          aria-label="Work Samples"
+        >
+          <div class="work_wrapper container column_centered">
+            <h2>Web Development</h2>
+            <ul class="deck">
+              <li
+                class="card"
+                data-name="nixie tubes"
+                data-image="nixie_tubes_card_xl"
+              >
+                <div class="card_wrapper" data-cursor="cursor_braces">
+                  <a
+                    href="https://www.nixietricks.com/"
+                    class="card_project_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor="cursor_new_window"
+                    aria-label="Nixie Tubes Website. Opens in a new window."
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/tubes_shield.png"
+                        class="g ray_scale"
+                        alt="Nixie Tube Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <ul class="skills project_stack">
+                        <li>
+                          <span class="icon icon-html"></span>
+                          <div>HTML</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-css"></span>
+                          <div>CSS</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-javascript"></span>
+                          <div>Js</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-jquery"></span>
+                          <div>Jquery</div>
+                        </li>
+                      </ul>
+
+                      <p>
+                        Stunning Nixie tubes with pure CSS, Javascript and
+                        Jquery. No jpg/png/tif.
+                      </p>
+                      <ul>
+                        <li>Pure CSS/Js</li>
+                        <li>No Pixel Images</li>
+                        <li>Environmental Reflections</li>
+                        <li>Realistic Warm Up</li>
+                        <li>Realistic Flicker</li>
+                        <li>*The hexagon grid is an SVG</li>
+                        <li>Animation</li>
+                        <li>Sound Effects</li>
+                        <li>Mayhem Mode</li>
+                        <li>Smoke</li>
+                        <li>Screen Distortion</li>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
+
+              <li class="card" data-name="words" data-image="flip_text_card_xl">
+                <div class="card_wrapper" data-cursor="cursor_caret">
+                  <a
+                    href="https://piperwords.com/"
+                    class="card_project_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor="cursor_new_window"
+                    aria-label="Piperwords website. Opens in a new window."
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/words_shield.png"
+                        class="g ray_scale"
+                        alt="Words App Preveiw Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <ul class="skills project_stack">
+                        <li>
+                          <span class="icon icon-html"></span>
+                          <div>HTML</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-css"></span>
+                          <div>CSS</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-javascript"></span>
+                          <div>Js</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-jquery"></span>
+                          <div>Jquery</div>
+                        </li>
+                      </ul>
+                      <p>
+                        A clean, distraction free app for kids learning to read.
+                      </p>
+                      <ul>
+                        <li>Merriam Webster API</li>
+                        <li>Material Icons Component Lib</li>
+                        <li>Rendered with CSS/JS</li>
+                        <li>Text to Speech</li>
+                        <li>User Speach Controls</li>
+                        <ul>
+                          <li>Voice Persona/Pitch/Speed</li>
+                          <li>Speak The Word/Definition</li>
+                          <li>Speak Positive Feedback</li>
+                        </ul>
+                        <li>User Visual Controls</li>
+                        <ul>
+                          <li>Flip/Word Speed</li>
+                          <li>Capitalization</li>
+                          <li>Word Length</li>
+                          <li>Word Category</li>
+                        </ul>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
+
+              <li class="card" data-name="shopify" data-image="shopify_card_xl">
+                <div class="card_wrapper">
+                  <a
+                    href="#shopify"
+                    class="card_project_link"
+                    data-cursor="cursor_new_window"
+                    aria-label="Shopify Samples"
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/shopify_shield.png"
+                        class="g ray_scale"
+                        alt="Shopify Work Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <ul class="skills project_stack">
+                        <li>
+                          <span class="icon icon-html"></span>
+                          <div>HTML</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-css"></span>
+                          <div>CSS</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-javascript"></span>
+                          <div>Js</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-jquery"></span>
+                          <div>Jquery</div>
+                        </li>
+                        <li>
+                          <span class="icon icon-shopify"></span>
+                          <div>Liquid</div>
+                        </li>
+                      </ul>
+                      <p>
+                        In depth modification of Shopify templates/liquid,
+                        custom widgets, account structures, sale banners, etc.
+                      </p>
+                      <ul>
+                        <li>Liquid</li>
+                        <li>Template Modification</li>
+                        <li>Admin Modification</li>
+                        <li>CSS Modifications</li>
+                        <li>Javascript widgets</li>
+                        <li>Tag Triggered Modifications</li>
+                        <li>Product Customization</li>
+                        <li>Product Photos</li>
+                        <li>Modify product on Option Select</li>
+                        <li>Custom Email/Invoice/Packing Slips</li>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
             </ul>
-            <li>User Visual Controls</li>
-            <ul>
-              <li>Flip/Word Speed</li>
-              <li>Capitalization</li>
-              <li>Word Length</li>
-              <li>Word Category</li>
+
+            <h2>Design/create</h2>
+            <ul class="deck">
+              <li
+                class="card"
+                data-name="illustration"
+                data-image="illustration_card_xl"
+              >
+                <div class="card_wrapper clickable">
+                  <a
+                    href="#illustration"
+                    class="show_carousel card_project_link"
+                    data-cursor="cursor_slide_show"
+                    aria-label="Illustration Samples"
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/illustrations_shield.png"
+                        class="g ray_scale"
+                        alt="Shopify Work Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <ul class="skills project_stack">
+                        <li>
+                          <span class="icon card_icon icon-illustrator"></span>
+                          <div>Illustrator</div>
+                        </li>
+                        <li>
+                          <span class="icon card_icon icon-photoshop"></span>
+                          <div>Photoshop</div>
+                        </li>
+                      </ul>
+                      <p>
+                        Extensive Experience in Adobe<span class="copyright"
+                          >©</span
+                        >
+                        Illustrator & Photoshop as a commercial digital
+                        illustrator working for corporations and agencies.
+                      </p>
+                      <ul>
+                        <li>Product Illustrations</li>
+                        <li>Technical Drawings</li>
+                        <li>Backgrounds & Textures</li>
+                        <li>Web Visuals</li>
+                        <li>Manufacturing Templates</li>
+                        <li>Logo Treatments</li>
+                        <li>Photo Constructon</li>
+                        <li>Photo Retouching</li>
+                        <li>Large Format Work</li>
+                        <li>Catalog Color Correction</li>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
+              <!-- </li> -->
+
+              <li class="card" data-name="logos" data-image="logo_card_xl">
+                <div class="card_wrapper clickable">
+                  <a
+                    href="#logos"
+                    class="show_carousel card_project_link"
+                    data-cursor="cursor_slide_show"
+                    aria-label="Logo Samples"
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/logos_shield.png"
+                        class="g ray_scale"
+                        alt="Shopify Work Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <ul class="skills project_stack">
+                        <li>
+                          <span class="icon card_icon icon-illustrator"></span>
+                          <div>Illustrator</div>
+                        </li>
+                        <li>
+                          <span class="icon card_icon icon-photoshop"></span>
+                          <div>Photoshop</div>
+                        </li>
+                      </ul>
+                      <p>
+                        These logos were desiged with readability and
+                        producibilty in mind.
+                      </p>
+                      <p>
+                        Each had to be easily embossed into hard or soft goods
+                        (wood/leather).
+                      </p>
+                      <ul>
+                        <li>Adobe Illustrator</li>
+                        <li>Converted Hand Drawings</li>
+                        <li>T-shirts/Patches/Collatoral</li>
+                        <li>Leather Goods</li>
+                        <li>Signage</li>
+                        <li>Web & Print</li>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="card"
+                data-name="products"
+                data-image="product_design_card_xl"
+              >
+                <div class="card_wrapper clickable">
+                  <a
+                    href="#products"
+                    class="show_carousel card_project_link"
+                    data-cursor="cursor_slide_show"
+                  >
+                    <div class="category_badge">
+                      <img
+                        src="images/cards/products_shield.png"
+                        class="g ray_scale"
+                        alt="Shopify Work Image"
+                      />
+                    </div>
+                  </a>
+                  <div class="card_description">
+                    <div>
+                      <p>
+                        I have created hundreds of products, from concept to
+                        fulfillment
+                      </p>
+                      <ul>
+                        <li>Design</li>
+                        <li>Prototyping</li>
+                        <li>Materials Sourcing</li>
+                        <li>Process Design</li>
+                        <li>Master Die Files</li>
+                        <li>S.O.Ps</li>
+                        <li>Product Photography</li>
+                        <li>Retouching</li>
+                        <li>Uniformity/Standards</li>
+                        <li>Retail Packaging</li>
+                        <li>Shipping Packaging</li>
+                      </ul>
+                    </div>
+                    <!-- end inner blank descripton div -->
+                  </div>
+                </div>
+              </li>
             </ul>
-          </ul>
-        </div><!-- end inner blank descripton div -->
-        </div> 
-      </div>
-    </li>
+          </div>
+        </section>
 
+        <section
+          id="illustration"
+          class="carousel_panel illustration_panel"
+          aria-label="Illustration Samples"
+        >
+          <h2 class="screen-readers-only">Illustration Samples</h2>
+          <div class="carousel_wrapper">
+            <div class="close_carousel" data-cursor="cursor_skull">
+              <svg
+                class="close_bones_SVG"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50.28 36.18"
+              >
+                <g class="close_bones_layer" data-name="close_bones_layer">
+                  <g class="close_bones">
+                    <g>
+                      <path
+                        class="left_bone"
+                        d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"
+                      />
+                      <path
+                        class="right_bone"
+                        d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="carousel_container" data-name="illustration">
+              <div class="carousel | js-carousel">
+                <div
+                  id="js-carousel-prev_x"
+                  class="js-carousel-button"
+                  data-direction="previous"
+                  data-cursor="cursor_arrow_previous_over"
+                >
+                  <img
+                    id="left_arrow_x"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_left"
+                    src="images/carousel_left_arrow.svg"
+                    alt="previous_slide"
+                  />
+                </div>
+                <div class="carousel__slider">
+                  <span class="carousel__item showing">
+                    <img
+                      src="images/illustrations/WhataPlate.jpg"
+                      alt="illustated license plate"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/illustrations/Ice-Tin.jpg"
+                      alt="Icehouse Logo on Metal"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/illustrations/ESPNlogos.jpg"
+                      alt="Embroidered ESPN logo"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/illustrations/ParkingSpot.jpg"
+                      alt="Parking Spot Bus Illustration"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/illustrations/Speodmeter.jpg"
+                      alt="Coors Light Speedometer Logo"
+                    />
+                  </span>
+                </div>
+                <div
+                  id="js-carousel-next_x"
+                  class="js-carousel-button"
+                  data-direction="next"
+                  data-cursor="cursor_arrow_next_over"
+                >
+                  <img
+                    id="right_arrow_x"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_right"
+                    src="images/carousel_right_arrow.svg"
+                    alt="next_slide"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <section
+          id="logos"
+          class="carousel_panel logos_panel"
+          aria-label="Logo Design Samples"
+        >
+          <h2 class="screen-readers-only">Logo Design Samples</h2>
+          <div class="carousel_wrapper">
+            <div class="close_carousel" data-cursor="cursor_skull">
+              <svg
+                class="close_bones_SVG"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50.28 36.18"
+              >
+                <g class="close_bones_layer" data-name="close_bones_layer">
+                  <g class="close_bones">
+                    <g>
+                      <path
+                        class="left_bone"
+                        d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"
+                      />
+                      <path
+                        class="right_bone"
+                        d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="carousel_container" data-name="logos">
+              <div class="carousel | js-carousel">
+                <div
+                  id="js-carousel-prev_y"
+                  class="js-carousel-button"
+                  data-direction="previous"
+                  data-cursor="cursor_arrow_previous_over"
+                >
+                  <img
+                    id="left_arrow_y"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_left"
+                    src="images/carousel_left_arrow.svg"
+                    alt="previous_slide"
+                  />
+                </div>
+                <div class="carousel__slider">
+                  <span class="carousel__item">
+                    <img
+                      src="images/logos/DTM-About-Work-Logo-Black-Crow.png"
+                      alt="Black Crow Logo"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/logos/DTM-About-Work-Logo-Lumberjack.png"
+                      alt="Lumberjack Leather Logo"
+                    />
+                  </span>
+                  <span class="carousel__item showing showing">
+                    <img
+                      src="images/logos/DTM-About-Work-Logo-Rugged-Dandy.png"
+                      alt="Rugged Dandy Logo"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/logos/DTM-About-Work-Logo-Portenzo.png"
+                      alt="Portenzo Logo"
+                    />
+                  </span>
+                </div>
+                <div
+                  id="js-carousel-next_y"
+                  class="js-carousel-button"
+                  data-direction="next"
+                  data-cursor="cursor_arrow_next_over"
+                >
+                  <img
+                    id="right_arrow_y"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_right"
+                    src="images/carousel_right_arrow.svg"
+                    alt="next_slide"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <li class="card" data-name="shopify"  data-image="shopify_card_xl">
-      <div class="card_wrapper">
-      <a href="#shopify.html" class="card_project_link" data-cursor="cursor_new_window" aria-label="Shopify Samples">
-          <div class="category_badge"> <img src="images/cards/shopify_shield.png" class="g ray_scale" alt="Shopify Work Image" > </div>
-        </a> 
-        <div class="card_description">
-          <div>
-        <ul class="skills project_stack"> 
-          <li><span class="icon icon-html"></span> <div>HTML</div> </li>
-          <li><span class="icon icon-css"></span> <div>CSS</div></li>
-          <li><span class="icon icon-javascript"></span><div>Js</div></li>
-          <li><span class="icon icon-jquery"></span><div>Jquery</div></li>
-          <li><span class="icon icon-shopify"></span><div>Liquid</div></li>
-        </ul>
-        <p>In depth modification of Shopify templates, custom widgets, pricing structures, sale banners, etc.</p>
-        <ul>
-          <li>Liquid</li>
-          <li>Template Modification</li>
-          <li>Admin Modification</li>
-          <li>CSS Modifications</li>
-          <li>Javascript widgets</li>
-          <li>Tag Triggered Modifications</li>
-          <li>Product Customization</li>
-          <li>Product Photos</li>
-          <li>Modify product on Option Select</li>
-          <li>Custom Email/Invoice/Packing Slips</li>
-        </ul>
-      </div><!-- end inner blank descripton div -->
-      </div>
-     </div> 
-    </li>
+        <section
+          id="products"
+          class="carousel_panel products_panel"
+          aria-label="Product Design Samples"
+        >
+          <h2 class="screen-readers-only">Product Design Samples</h2>
+          <div class="carousel_wrapper">
+            <div class="close_carousel" data-cursor="cursor_skull">
+              <svg
+                class="close_bones_SVG"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50.28 36.18"
+              >
+                <g class="close_bones_layer" data-name="close_bones_layer">
+                  <g class="close_bones">
+                    <g>
+                      <path
+                        class="left_bone"
+                        d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"
+                      />
+                      <path
+                        class="right_bone"
+                        d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="carousel_container" data-name="products">
+              <div class="carousel | js-carousel">
+                <div
+                  id="js-carousel-prev_z"
+                  class="js-carousel-button"
+                  data-direction="previous"
+                  data-cursor="cursor_arrow_previous_over"
+                >
+                  <img
+                    id="left_arrow_z"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_left"
+                    src="images/carousel_left_arrow.svg"
+                    alt="previous_slide"
+                  />
+                </div>
+                <div class="carousel__slider">
+                  <span class="carousel__item showing">
+                    <img
+                      src="images/products/DTM_bag_front.jpg"
+                      alt="Bank Bag Hero"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/products/vintage_leather_bank_bag_front.jpg"
+                      alt="Bank Bag Hero"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/products/vintage_leather_bank_bag_inside.jpg"
+                      alt="Bank Bag Inside"
+                    />
+                  </span>
+                  <span class="carousel__item showing">
+                    <img
+                      src="images/products/vintage_leather_bank_bag_with_goodies.jpg"
+                      alt="Bank Bag Loaded"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/products/pennant_full_hero.jpg"
+                      alt="Whisky Pennant Rolled Up"
+                    />
+                  </span>
+                  <span class="carousel__item">
+                    <img
+                      src="images/products/pennant_whiskey_1.jpg"
+                      alt="Whiskey Pennant"
+                    />
+                  </span>
+                </div>
+                <div
+                  id="js-carousel-next_z"
+                  class="js-carousel-button"
+                  data-direction="next"
+                  data-cursor="cursor_arrow_next_over"
+                >
+                  <img
+                    id="right_arrow_z"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_right"
+                    src="images/carousel_right_arrow.svg"
+                    alt="next_slide"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-  </ul>
+        <section
+          id="shopify"
+          class="carousel_panel shopify_panel"
+          aria-label="Shopify Samples"
+        >
+          <h2 class="screen-readers-only">Shopify Samples</h2>
+          <div class="carousel_wrapper">
+            <div class="close_carousel" data-cursor="cursor_skull">
+              <svg
+                class="close_bones_SVG"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50.28 36.18"
+              >
+                <g class="close_bones_layer" data-name="close_bones_layer">
+                  <g class="close_bones">
+                    <g>
+                      <path
+                        class="left_bone"
+                        d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"
+                      />
+                      <path
+                        class="right_bone"
+                        d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="carousel_container" data-name="products">
+              <div class="carousel | js-carousel">
+                <div
+                  id="js-carousel-prev_z"
+                  class="js-carousel-button"
+                  data-direction="previous"
+                  data-cursor="cursor_arrow_previous_over"
+                >
+                  <img
+                    id="left_arrow_z"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_left"
+                    src="images/carousel_left_arrow.svg"
+                    alt="previous_slide"
+                  />
+                </div>
+                <div class="carousel__slider">
+                  <span class="carousel__item showing">
+                    <img
+                      src="images/products/DTM_bag_front.jpg"
+                      alt="Bank Bag Hero"
+                    />
+                  </span>
 
+                  <span class="carousel__item">
+                    <img
+                      src="images/products/vintage_leather_bank_bag_front.jpg"
+                      alt="Bank Bag Hero"
+                    />
+                  </span>
+                </div>
+                <div
+                  id="js-carousel-next_z"
+                  class="js-carousel-button"
+                  data-direction="next"
+                  data-cursor="cursor_arrow_next_over"
+                >
+                  <img
+                    id="right_arrow_z"
+                    class="svg_arrow"
+                    data-cursor="cursor_pointy_arrow_right"
+                    src="images/carousel_right_arrow.svg"
+                    alt="next_slide"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <section
+          id="contact"
+          class="scroll_panel contact_panel"
+          aria-label="Contact Me"
+        >
+          <script type="text/javascript">
+            var submitted = false;
+          </script>
+          <h2 class="screen-readers-only">Contact Me</h2>
+          <div class="container column_centered form">
+            <h2>Lets talk :-)</h2>
+            <!-- https://github.com/toperkin/staticFormEmails -->
+            <form
+              name="gform"
+              id="gform"
+              class="contact_form"
+              enctype="text/plain"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url"
+              target="hidden_iframe"
+              onsubmit="submitted=true;"
+            >
+              <div class="input_active_area">
+                <div class="input_wrapper spam_block_wrapper">
+                  <span class="icon-check_mark_fat"></span
+                  ><label class="spam_block_label">The sum of 2+2 is:</label>
+                  <span class="caret">|</span
+                  ><input
+                    type="text"
+                    name="entry.1735736871"
+                    id="entry.1735736871"
+                    placeholder="?"
+                    class="contact spam_block_input"
+                    data-cursor=""
+                    aria-label="Spam Check"
+                  />
+                </div>
+              </div>
+              <br /><br /><br />
 
+              <div class="input_active_area">
+                <label class="screen-readers-only" aria-labelle="First Name">
+                  First Name:</label
+                ><br />
+                <div class="input_wrapper">
+                  <span class="icon-check_mark_fat"></span>
+                  <span class="caret"><strong>|</strong></span>
+                  <input
+                    type="text"
+                    name="entry.2005620554"
+                    id="entry.2005620554"
+                    placeholder="Your Name"
+                    class="contact"
+                    aria-label="Enter Your name Here"
+                  />
+                </div>
+              </div>
 
+              <div class="input_active_area">
+                <label class="screen-readers-only" aria-labelle="Email"
+                  >Email:</label
+                ><br />
+                <div class="input_wrapper">
+                  <span class="icon-check_mark_fat"></span>
+                  <span class="caret"><strong>|</strong></span
+                  ><input
+                    type="text"
+                    name="entry.1055881764"
+                    id="entry.1055881764"
+                    placeholder="Your Email"
+                    class="contact"
+                    aria-label="Enter Your email Here"
+                  />
+                </div>
+              </div>
 
+              <div class="input_active_area">
+                <label class="screen-readers-only" aria-labelle="Your Message"
+                  >Message:</label
+                ><br />
+                <div class="input_wrapper text_area">
+                  <span class="icon-check_mark_fat"></span>
+                  <span class="caret"><strong>|</strong></span
+                  ><textarea
+                    name="entry.839337160"
+                    id="entry.839337160"
+                    placeholder="Your Message..."
+                    class="contact"
+                    aria-label="Enter Your Message Here"
+                  >
+                  </textarea>
+                </div>
+              </div>
 
+              <input
+                type="submit"
+                value="Submit"
+                id="contact_submit"
+                tabindex="0"
+                aria-label="Submit Contact Form"
+              />
+            </form>
 
-
-  <h2>Design/create</h2>
-  <ul class="deck">
-    <li class="card" data-name="illustration"  data-image="illustration_card_xl">
-      <div class="card_wrapper clickable">
-      <a href="#illustration" class="show_carousel card_project_link" data-cursor="cursor_slide_show" aria-label="Illustration Samples">
-        <div class="category_badge">
-          <img src="images/cards/illustrations_shield.png" class="g ray_scale" alt="Shopify Work Image">
-        </div>
-      </a>  
-      <div class="card_description">
-        <div>
-          <ul class="skills project_stack"> 
-            <li><span class="icon card_icon icon-illustrator"></span> <div>Illustrator</div> </li>
-            <li><span class="icon card_icon icon-photoshop"></span> <div>Photoshop</div></li>
-          </ul>
-          <p >Extensive Experience in Adobe<span class="copyright">©</span> Illustrator & Photoshop as a commercial digital illustrator working for corporations and agencies.</p>
-          <ul>
-            <li>Product Illustrations</li>
-            <li>Technical Drawings</li>
-            <li>Backgrounds & Textures</li>
-            <li>Web Visuals</li>
-            <li>Manufacturing Templates</li>
-            <li>Logo Treatments</li>
-            <li>Photo Constructon</li>
-            <li>Photo Retouching</li>
-            <li>Large Format Work</li>
-            <li>Catalog Color Correction</li>
-          </ul>
-        </div><!-- end inner blank descripton div -->
-      </div>
-      </div> 
-    </li>
-    <!-- </li> -->
-
-
-    <li class="card"  data-name="logos"  data-image="logo_card_xl">
-      <div class="card_wrapper clickable">
-        <a href="#logos" class="show_carousel  card_project_link" data-cursor="cursor_slide_show" aria-label="Logo Samples">
-          <div class="category_badge"> <img src="images/cards/logos_shield.png" class="g ray_scale" alt="Shopify Work Image"> </div>
-        </a> 
-        <div class="card_description">
-          <div>
-            <ul class="skills project_stack"> 
-              <li><span class="icon card_icon icon-illustrator"></span> <div>Illustrator</div> </li>
-              <li><span class="icon card_icon icon-photoshop"></span> <div>Photoshop</div></li>
-            </ul>
-            <p>These logos were desiged with readability and producibilty in mind. </p>
-            <p>Each had to be easily embossed into hard or soft goods (wood/leather).  </p>
-              <ul>
-                <li>Adobe Illustrator</li>
-                <li>Converted Hand Drawings</li>
-                <li>T-shirts/Patches/Collatoral</li>
-                <li>Leather Goods</li>
-                <li>Signage</li>
-                <li>Web & Print</li>
-              </ul>
-          </div><!-- end inner blank descripton div -->
-        </div>
-    </div>  
-    </li>
-
-
-    
-    <li class="card" data-name="products"  data-image="product_design_card_xl">
-      <div class="card_wrapper clickable">
-      <a href="#products" class="show_carousel  card_project_link" data-cursor="cursor_slide_show">
-        <div class="category_badge"> <img src="images/cards/products_shield.png" class="g ray_scale" alt="Shopify Work Image"> </div>
-      </a> 
-        <div class="card_description">
-          <div>
-            <p>I have created hundreds of products, from concept to fulfillment</p>
-            <ul>
-              <li>Design</li>
-              <li>Prototyping</li>
-              <li>Materials Sourcing</li>
-              <li>Process Design</li>
-              <li>Master Die Files</li>
-              <li>S.O.Ps</li>
-              <li>Product Photography</li>
-              <li>Retouching</li>
-              <li>Uniformity/Standards</li>
-              <li>Retail Packaging</li>
-              <li>Shipping Packaging</li>
-            </ul>
-          </div><!-- end inner blank descripton div -->
-      </div>
-      </div>  
-    </li>
-  </ul>
-
-
-  </div>
-</section>
-
-
-
-
-<section id="illustration" class="carousel_panel illustration_panel" aria-label="Illustration Samples" >
-  <h2 class="screen-readers-only">Illustration Samples</h2>
-  <div class="carousel_wrapper">
-    <div class="close_carousel" data-cursor="cursor_skull">
-     <svg class="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
-      <g class="close_bones_layer" data-name="close_bones_layer">
-        <g class="close_bones">
-          <g>
-            <path class="left_bone" d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
-            <path class="right_bone" d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
-          </g>
-        </g>
-      </g>
-    </svg>
-
+            <iframe
+              name="hidden_iframe"
+              id="hidden_iframe"
+              style="display: none"
+              onload="if(submitted) {}"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+      <!-- content panels -->
     </div>
-      <div class="carousel_container" data-name="illustration">
-        <div class="carousel | js-carousel">
-          <div id="js-carousel-prev_x" class="js-carousel-button" data-direction="previous" data-cursor="cursor_arrow_previous_over">
-            <img id="left_arrow_x" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
-          </div>   
-            <div class="carousel__slider">
-              <span class="carousel__item  showing ">
-                <img src="images/illustrations/WhataPlate.jpg" alt="illustated license plate">
-              </span>
-              <span class="carousel__item">
-                <img src="images/illustrations/Ice-Tin.jpg" alt="Icehouse Logo on Metal">
-              </span>
-              <span class="carousel__item">
-                <img src="images/illustrations/ESPNlogos.jpg" alt="Embroidered ESPN logo">
-              </span>
-              <span class="carousel__item">
-                <img src="images/illustrations/ParkingSpot.jpg" alt="Parking Spot Bus Illustration">
-              </span>
-              <span class="carousel__item">
-                <img src="images/illustrations/Speodmeter.jpg" alt="Coors Light Speedometer Logo">
-              </span>
-            </div>
-          <div id="js-carousel-next_x" class="js-carousel-button" data-direction="next"  data-cursor="cursor_arrow_next_over">
-          <img id="right_arrow_x" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
-          </div>
-        </div>  
-      </div>
-  </div>
-</section>
+    <!-- content_wrapper -->
 
+    <div class="spotlight"></div>
 
-
-
-<section id="logos" class="carousel_panel logos_panel" aria-label="Logo Design Samples" >
-  <h2 class="screen-readers-only">Logo Design Samples</h2>
-  <div class="carousel_wrapper">
-    <div class="close_carousel"  data-cursor="cursor_skull">
-      <svg class="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
-        <g class="close_bones_layer" data-name="close_bones_layer">
-          <g class="close_bones">
-            <g>
-              <path class="left_bone" d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
-              <path class="right_bone" d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
+    <div class="cursor_container">
+      <div class="custom_cursor cursor_braces"></div>
+      <div class="custom_cursor cursor_main"></div>
+      <div class="custom_cursor cursor_caret">|</div>
+      <div class="custom_cursor cursor_bones_over">
+        <!-- WIDTH MUST BE DEFINED FOR CHROME!! -->
+        <svg
+          id="close_bones_hover_SVG"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 54.28 40.27"
+          width="100%"
+          height="100%"
+        >
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="Layer_4" data-name="Layer 4">
+              <g id="close_bones_hover">
+                <path
+                  class="close_bones_path"
+                  d="M49,2l.4,0a2,2,0,0,1,1.67,2.68,4.46,4.46,0,0,0,.37,2.68,2.25,2.25,0,0,1,.27,3.24s-.4.81-1.92.81a5.48,5.48,0,0,1-.85-.07,1.81,1.81,0,0,0-.86-.16,7.55,7.55,0,0,0-3.58,1.18S38.38,15.52,29.57,21c6,3.86,11.25,7.18,12.46,7.73a8.2,8.2,0,0,0,3.21.82,3.32,3.32,0,0,0,1.49-.31l1.71-.83A3.34,3.34,0,0,1,50,28a1.45,1.45,0,0,1,1,.32s2,1,.82,4a5.09,5.09,0,0,0-.41,2.48s1.06,2.74-1.09,3.18c0,0-3-.25-3.86-2.32a6.37,6.37,0,0,0-2.67-2.18l-17-10.64C25,23.88,23.28,25,21.46,26.25c0,0-9.34,5.65-10.08,6A5.66,5.66,0,0,0,9.9,34.11s-1.85,3.8-4,4.07a15.11,15.11,0,0,0-1.48-.92h0l.29.1s-1.94-.83-1.48-2.59A2.41,2.41,0,0,0,2,32.54S1.86,31,2.32,30.6c0,0-.28-1.76,2.77-1.94l2.5-.19,2.22.1a9.51,9.51,0,0,1,3.24-1.3s7.64-4.51,10.46-6.47L11.78,13.46a4.36,4.36,0,0,0-2.85-1.14,3.3,3.3,0,0,0-1.36.27A4.46,4.46,0,0,1,5.73,13,6.23,6.23,0,0,1,4,12.69c-2.14-1.6-1.21-3.31-1.21-3.31,1.56-1.67-.08-3.89-.08-3.89C1.42,2.65,4.12,2.23,4.12,2.23a4.61,4.61,0,0,1,.93-.1A2.67,2.67,0,0,1,7.65,3.8,16.75,16.75,0,0,0,9.77,7.52c.73.86,8.7,6.25,16.56,11.39,2.31-1.53,5.45-3.59,6.13-3.93l9.06-6.11s3.24-2.22,4.35-4.16c0,0,1-2.71,3.11-2.71m0-2h0c-2.66,0-4.3,2.32-4.92,3.83a15.79,15.79,0,0,1-3.67,3.39l-8.95,6c-.34.19-1.31.75-5.11,3.26C17.57,10.78,12.13,7,11.3,6.22A14.39,14.39,0,0,1,9.54,3.14a4.65,4.65,0,0,0-4.49-3,6.62,6.62,0,0,0-1.3.14,4.29,4.29,0,0,0-3,2,4.36,4.36,0,0,0,0,4l.09.21.13.18h0s.62.91.22,1.34l-.17.19L1,8.44c-.6,1.11-1,3.78,1.79,5.85l.25.19.3.1A8,8,0,0,0,5.73,15a6.48,6.48,0,0,0,2.64-.52l.06,0a1.48,1.48,0,0,1,.5-.08,2.44,2.44,0,0,1,1.56.67l.11.09.12.08,9.07,5.67c-2.76,1.74-6.31,3.86-7.42,4.52a11.1,11.1,0,0,0-3.06,1.19l-1.64-.06H7.44L5,26.67a5.09,5.09,0,0,0-3.87,1.67A3.45,3.45,0,0,0,.36,30a5.33,5.33,0,0,0-.3,2.81l.11.91.76.52a3.18,3.18,0,0,1,.33.26,4.21,4.21,0,0,0,2.53,4.65v0l-.13,0c.15.08.68.42,1.14.74l.63.44.76-.1c3-.4,5.13-4.39,5.52-5.18l.09-.19,0-.09a5.87,5.87,0,0,1,.73-.8c1.53-.86,7.91-4.71,10-5.94l0,0,0,0c1.36-.91,2.75-1.83,4.17-2.74l15.93,10,.23.14.25.07a4.33,4.33,0,0,1,1.51,1.28c1.35,2.89,5,3.27,5.44,3.31l.28,0,.28-.06a3.54,3.54,0,0,0,2.49-1.77,5.15,5.15,0,0,0,.15-3.86,3.82,3.82,0,0,1,.29-1.2v0l0,0c1.37-3.51-.33-5.67-1.57-6.42A3.47,3.47,0,0,0,50,26a5.34,5.34,0,0,0-2.49.7l-1.64.81a1.43,1.43,0,0,1-.61.1,6,6,0,0,1-2.3-.61h0l0,0c-.72-.32-3.91-2.25-9.54-5.86,7.17-4.36,12-6.86,12.08-6.88l0,0,0,0a5.72,5.72,0,0,1,2.6-.92h.06l.12.06.35.06a7,7,0,0,0,1.18.1,4,4,0,0,0,3.54-1.63A4.18,4.18,0,0,0,53,6.17a3.83,3.83,0,0,1,0-1,3.85,3.85,0,0,0-.37-3.19,4.41,4.41,0,0,0-3-1.89A5.65,5.65,0,0,0,49,0Z"
+                />
+              </g>
             </g>
           </g>
-        </g>
-      </svg>
-    </div>
-    <div class="carousel_container" data-name="logos">
-      <div class="carousel | js-carousel">
-        <div id="js-carousel-prev_y" class="js-carousel-button" data-direction="previous"  data-cursor="cursor_arrow_previous_over">
-          <img id="left_arrow_y" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
-        </div>   
-            <div class="carousel__slider">
-              <span class="carousel__item ">
-                <img src="images/logos/DTM-About-Work-Logo-Black-Crow.png" alt="Black Crow Logo">
-              </span>
-              <span class="carousel__item">
-                <img src="images/logos/DTM-About-Work-Logo-Lumberjack.png" alt="Lumberjack Leather Logo">
-              </span>
-              <span class="carousel__item showing  showing ">
-                <img src="images/logos/DTM-About-Work-Logo-Rugged-Dandy.png" alt="Rugged Dandy Logo">
-              </span>
-              <span class="carousel__item">
-                <img src="images/logos/DTM-About-Work-Logo-Portenzo.png" alt="Portenzo Logo">
-              </span>
-            </div>
-        <div id="js-carousel-next_y" class="js-carousel-button" data-direction="next"  data-cursor="cursor_arrow_next_over">
-          <img id="right_arrow_y" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
-        </div>
-      </div>  
-    </div>
-  </div>
-</section>
+        </svg>
+      </div>
 
+      <div class="custom_cursor cursor_new_window">
+        <svg
+          id="new_window"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          width="100%"
+          height="100%"
+        >
+          <defs>
+            <style>
+              .small_circles {
+                fill: #fff;
+              }
 
-
-
-<section id="products" class="carousel_panel products_panel" aria-label="Product Design Samples" >
-  <h2 class="screen-readers-only">Product Design Samples</h2>
-  <div class="carousel_wrapper">
-    <div class="close_carousel"  data-cursor="cursor_skull"> 
-    <svg class="close_bones_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.28 36.18" >
-      <g class="close_bones_layer" data-name="close_bones_layer">
-        <g class="close_bones">
+              .white_line {
+                fill: none;
+                stroke: #fff;
+                stroke-miterlimit: 10;
+                stroke-width: 0.4px;
+              }
+            </style>
+          </defs>
+          <path
+            d="M22.6,26.26H5.83V10.7H18.3l3.58-3.61H4.65c-1.32,0-1.21,1.08-1.21,2.4V26.26a2.38,2.38,0,0,0,2.39,2.39H22.6A2.4,2.4,0,0,0,25,26.26V10.33L22.6,12.7Z"
+          />
+          <polygon
+            points="20.38 3.33 20.38 5.72 24.68 5.72 12.9 17.5 14.59 19.19 26.36 7.41 26.36 11.71 28.76 11.71 28.76 3.33 20.38 3.33"
+          />
           <g>
-            <path class="left_bone" d="M49.41,5.39A4.46,4.46,0,0,1,49,2.71,2,2,0,0,0,47.38,0C45-.34,43.86,2.71,43.86,2.71c-1.11,1.94-4.34,4.16-4.34,4.16L30.46,13c-1.11.55-8.7,5.64-8.7,5.64C19.18,20.46,11,25.27,11,25.27a9.51,9.51,0,0,0-3.24,1.3l-2.22-.1-2.49.19C0,26.84.31,28.6.31,28.6-.15,29,0,30.54,0,30.54a2.43,2.43,0,0,1,1.2,2.22c-.46,1.76,1.48,2.59,1.48,2.59l-.3-.1h0a14,14,0,0,1,1.48.92c2.13-.27,4-4.07,4-4.07.18-.74,1.47-1.84,1.47-1.84.74-.38,10.08-6,10.08-6a255.34,255.34,0,0,1,23-13.86c3.15-1.76,4.44-1,4.44-1,2.22.37,2.78-.74,2.78-.74A2.25,2.25,0,0,0,49.41,5.39ZM2.63,32.21s-.47-.56-.37-3.89C2.26,28.32,3.73,31.37,2.63,32.21Zm4.25-1.39L4.94,32.76l-1.3,1.11,2.41-3.6a28.47,28.47,0,0,0,4.71-3.06A9.48,9.48,0,0,1,6.88,30.82ZM46.82,4.47s.56.37-.46,1.2l-.83.93A6.06,6.06,0,0,1,46,4.84S45.8,3.82,46.82,4.47Zm-2.59,4A54.81,54.81,0,0,0,38,11.87a3.43,3.43,0,0,1,.26-.3,16.09,16.09,0,0,1,4.82-3.49s1-.47,1.57,0c0,0,2-.19,2.22-1.21C46.91,6.87,48,9.18,44.23,8.44Z"/>
-            <path class="right_bone" d="M41.73,31.45a6.31,6.31,0,0,1,2.66,2.18C45.21,35.7,48.25,36,48.25,36c2.16-.44,1.09-3.18,1.09-3.18a5.09,5.09,0,0,1,.41-2.48c1.17-3-.81-4-.81-4-1-.79-2.51.15-2.51.15l-1.71.83c-1.9.93-4.69-.51-4.69-.51C37,25.38,9.16,7.17,7.77,5.52A16.33,16.33,0,0,1,5.65,1.8S4.92-.36,2.12.23c0,0-2.71.42-1.47,3.26,0,0,1.65,2.22.08,3.89,0,0-.92,1.71,1.22,3.31a5.57,5.57,0,0,0,3.61-.1,4,4,0,0,1,4.22.87ZM3.59,9.29S1.45,9.64,2.3,7.46c0,0,.5,1.14,1.92.47,0,0,2.92.71,3.88,1.87C8.1,9.8,4.91,8.8,3.59,9.29ZM46.33,33.73s-1.82-.56-1.95-1.68c0,0-3.5-2.12-4-3.07l3.8,1.77a1.75,1.75,0,0,1,1.12,1.72s1.81.74,1.94-.09C47.23,32.38,48.66,33.48,46.33,33.73Z"/>
+            <circle class="small_circles" cx="6.5" cy="8.29" r="0.64" />
+            <circle class="small_circles" cx="8.25" cy="8.29" r="0.64" />
+            <circle class="small_circles" cx="9.99" cy="8.29" r="0.64" />
           </g>
-        </g>
-      </g>
-    </svg>
+          <line class="white_line" x1="3.49" y1="9.76" x2="19.55" y2="9.76" />
+        </svg>
+      </div>
+
+      <div class="custom_cursor cursor_slide_show">
+        <svg
+          id="slide_show"
+          data-name="Layer 2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          width="100%"
+          height="100%"
+        >
+          <defs>
+            <style>
+              .cls-1xxx {
+                fill: none;
+              }
+            </style>
+          </defs>
+          <path
+            id="Pointy_Arrow"
+            data-name="Pointy Arrow"
+            d="M28.65,11.54v7.71c.84-1.56,1.3-3.05,3.05-3.86C30,14.58,29.51,13.09,28.65,11.54Z"
+          />
+          <path
+            id="Pointy_Arrow-2"
+            data-name="Pointy Arrow"
+            d="M3.25,19.25V11.54C2.4,13.1,1.94,14.59.19,15.4,1.93,16.21,2.39,17.7,3.25,19.25Z"
+          />
+          <path class="cls-1xxx" d="M6.2,4.47H36.36V34.63H6.2Z" />
+          <path
+            d="M24.58,7.43H7A2.52,2.52,0,0,0,4.48,10V22.51A2.52,2.52,0,0,0,7,25H24.58a2.52,2.52,0,0,0,2.51-2.51V10A2.52,2.52,0,0,0,24.58,7.43Zm0,15.08H7V10H24.58Z"
+          />
+        </svg>
+      </div>
+
+      <div class="custom_cursor cursor_skull">
+        <svg
+          id="skull"
+          data-name="Layer_3"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          width="100%"
+          height="100%"
+        >
+          <path
+            d="M26.79,14.18s.87-.78,1.12-3.5a12.1,12.1,0,0,0-1.75-6.8S23.44.47,17,.13A7.13,7.13,0,0,0,14.4.52a35.52,35.52,0,0,1-3.84.78s-6.46.87-6.37,8.84a13.6,13.6,0,0,0,1,4.52s.2,1,.68.39c0,0,.44,0,.2-1.8,0,0-.2-2.77.58-4,0,0,.58-.63.44.63a14.36,14.36,0,0,0-.05,4.62,1,1,0,0,1-.29.92,4.88,4.88,0,0,1-1.6,1.36,1.33,1.33,0,0,0-.64,1.46s1.22,2,4.72,1.94a1.64,1.64,0,0,0,.87-.34,1.08,1.08,0,0,1,1.51.88l.14.92s-.19,1.22,1.8,1.6a21.83,21.83,0,0,0,5.93.1,2.7,2.7,0,0,0,1.8-1.26s.29-1.46-.44-.63c0,0-.48.63-.34-.83,0,0-.19-.87,1.22-.92,0,0,3.88.29,5.39-1.41,0,0,1.31-1.95-.58-2.09,0,0-1.36,0-1.41-1.12,0,0,.53-2.77,0-4.18s.39-2.33.63-.82A7,7,0,0,1,26,13.21S25.91,14.71,26.79,14.18ZM10.17,18s-1.51-.1-1.31-2.29c0,0-.29-1.89,2.53-2.86,0,0,2-.54,3,.14,0,0,1,.73.05,2.67A4.22,4.22,0,0,1,10.17,18Zm7.39,3.59s-.54.2-.54-.44c0,0-.24-.87-1.21.2a.65.65,0,0,1-1-.24,3.47,3.47,0,0,1,.58-2.43A5.41,5.41,0,0,0,16,16.8s.1-.82.49-.63c0,0,.68-.34.78,1.31a6.17,6.17,0,0,0,.53,1.75S18.67,21.52,17.56,21.61Zm5.88-6.46s-.34,2.62-2,2.77a3.23,3.23,0,0,1-3.21-3.31s-.39-1.89,1.84-1.89C20.08,12.72,23.87,12.77,23.44,15.15Z"
+          />
+          <path
+            d="M9.49,22s-1.12-.05-.78,3.11a3.26,3.26,0,0,1-.29,1.12s-.63.73.54,1.41c0,0,1.45,1.46,2.33,2.57a4.87,4.87,0,0,0,3.93,1.51,5.21,5.21,0,0,1,1.8.15,4.24,4.24,0,0,0,3.6-1.12l2.28-1.94a1.94,1.94,0,0,0,.93-2.34A4.38,4.38,0,0,1,24,23.75s.83-1.26-.34-1.17c0,0-1.12-.14-1.22,1.22l-.24,1.31s-.43,2.38-3.64,3.26a11.61,11.61,0,0,1-4.72-.15,21.26,21.26,0,0,1-2.57-1.41,2.44,2.44,0,0,1-.88-1.6A2.66,2.66,0,0,0,10,23.85S10.27,21.81,9.49,22Z"
+          />
+          <path
+            d="M16.1,24.58s.39-.25.34.92c0,0-.39.87-.63,0C15.81,25.5,15.47,24.72,16.1,24.58Z"
+          />
+          <path
+            d="M19.16,24.24a.74.74,0,0,1,.39.87s-.05.39-.78.39C18.77,25.5,18.53,23.9,19.16,24.24Z"
+          />
+          <path
+            d="M20.42,23.7s.64-.19.49.92c0,0-.87.78-.68-.09C20.23,24.53,20,23.85,20.42,23.7Z"
+          />
+          <path
+            d="M14.69,24.28s.53,0,.29,1.17c0,0-.29.44-.63-.24C14.35,25.21,14.4,24.28,14.69,24.28Z"
+          />
+          <path
+            d="M13.28,24.09s.44.19.34,1.07c0,0-.44.39-.78.1C12.84,25.26,13,24.19,13.28,24.09Z"
+          />
+          <path
+            d="M12.11,23.46s.44.63.05,1c0,0-.68-.05-.53-.44A.48.48,0,0,1,12.11,23.46Z"
+          />
+          <path
+            d="M16.63,26.76s.49-.29.34.54c0,0-.34,1.21-.58-.15C16.39,27.15,16.29,26.76,16.63,26.76Z"
+          />
+          <path
+            d="M18.63,26.57s.77-.1.14.87C18.77,27.44,17.75,26.81,18.63,26.57Z"
+          />
+          <path
+            d="M20.23,25.84s.73.24-.1,1C20.13,26.81,19.35,26,20.23,25.84Z"
+          />
+          <path
+            d="M14.93,26.67s.34,0,.29.58c0,0-.82,1-.58-.15C14.64,27.1,14.4,26.62,14.93,26.67Z"
+          />
+          <path
+            d="M12.89,26s.58.19.63.53c0,0-.19.78-.73.44C12.79,27,12.45,26.13,12.89,26Z"
+          />
+        </svg>
+      </div>
+
+      <div class="custom_cursor cursor_arrow_next_over">
+        <svg
+          id="arrow_over_next"
+          class="arrow_over"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          width="100%"
+          height="100%"
+        >
+          <path
+            class="arrow_over_path"
+            d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"
+          />
+        </svg>
+      </div>
+
+      <div class="custom_cursor cursor_arrow_previous_over">
+        <svg
+          id="arrow_over_previous"
+          class="arrow_over"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          width="100%"
+          height="100%"
+        >
+          <g transform="rotate(180 15 16) ">
+            <path
+              class="arrow_over_path"
+              d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"
+            />
+          </g>
+        </svg>
+      </div>
     </div>
-    <div class="carousel_container" data-name="products">
-      <div class="carousel | js-carousel">
-        <div id="js-carousel-prev_z" class="js-carousel-button" data-direction="previous"  data-cursor="cursor_arrow_previous_over">
-          <img id="left_arrow_z" class="svg_arrow" data-cursor="cursor_pointy_arrow_left" src="images/carousel_left_arrow.svg" alt="previous_slide">
-        </div>   
-           <div class="carousel__slider">
-            <span class="carousel__item  showing ">
-              <img src="images/products/DTM_bag_front.jpg" alt="Bank Bag Hero">
-            </span>
-            <span class="carousel__item ">
-              <img src="images/products/vintage_leather_bank_bag_front.jpg" alt="Bank Bag Hero">
-            </span>
-            <span class="carousel__item">
-              <img src="images/products/vintage_leather_bank_bag_inside.jpg" alt="Bank Bag Inside">
-            </span>
-            <span class="carousel__item showing ">
-              <img src="images/products/vintage_leather_bank_bag_with_goodies.jpg" alt="Bank Bag Loaded">
-            </span>
-            <span class="carousel__item">
-              <img src="images/products/pennant_full_hero.jpg" alt="Whisky Pennant Rolled Up">
-            </span>
-            <span class="carousel__item">
-              <img src="images/products/pennant_whiskey_1.jpg" alt="Whiskey Pennant">
-            </span>
-          </div>
-        <div id="js-carousel-next_z" class="js-carousel-button" data-direction="next" data-cursor="cursor_arrow_next_over">
 
-          <img id="right_arrow_z" class="svg_arrow" data-cursor="cursor_pointy_arrow_right" src="images/carousel_right_arrow.svg" alt="next_slide">
-
-        </div>
-      </div>  
+    <div id="centerlines">
+      <div class="horizontal_center"></div>
+      <div class="vertical_center"></div>
     </div>
-  </div>
-</section>
 
-
-
-
-<section id="contact" class="scroll_panel contact_panel" aria-label="Contact Me" >
-<script type="text/javascript">var submitted=false;</script>  
-<h2 class="screen-readers-only">Contact Me</h2> 
-  <div class="container column_centered form">
-
-    <h2>Lets talk :-)</h2> 
-    <!-- https://github.com/toperkin/staticFormEmails -->
-      <form name="gform" id="gform" class="contact_form" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSd17GtNwsZnyNWZ77x22vMBnqiZ7WK2fDKuATRZWYT4GjbiUQ/formResponse?usp=pp_url" target="hidden_iframe" onsubmit="submitted=true;">
-      <div class="input_active_area">
-        <div class="input_wrapper spam_block_wrapper"> 
-          <span class="icon-check_mark_fat"></span><label class="spam_block_label">The sum of 2+2 is:</label>
-          <span class="caret ">|</span><input type="text" name="entry.1735736871" id="entry.1735736871" placeholder="?" class="contact spam_block_input" data-cursor="" aria-label="Spam Check"> 
-        </div>
-      </div><br><br><br>
-
-        <div class="input_active_area">
-          <label class="screen-readers-only" aria-labelle="First Name"> First Name:</label><br>
-          <div class="input_wrapper"> 
-            <span class="icon-check_mark_fat"></span>
-            <span class="caret"><strong>|</strong></span>
-            <input type="text" name="entry.2005620554" id="entry.2005620554" placeholder="Your Name" class="contact" aria-label="Enter Your name Here"> 
-          </div> 
-        </div>
-      
-      <div class="input_active_area">
-        <label class="screen-readers-only" aria-labelle="Email">Email:</label><br>
-        <div class="input_wrapper"> 
-          <span class="icon-check_mark_fat"></span>
-          <span class="caret"><strong>|</strong></span><input type="text" name="entry.1055881764" id="entry.1055881764" placeholder="Your Email" class="contact" aria-label="Enter Your email Here"> 
-        </div>
-      </div> 
-
-      <div class="input_active_area ">
-        <label class="screen-readers-only" aria-labelle="Your Message">Message:</label><br>
-        <div class="input_wrapper text_area"> 
-          <span class="icon-check_mark_fat"></span>
-          <span class="caret"><strong>|</strong></span><textarea name="entry.839337160" id="entry.839337160" placeholder="Your Message..." class="contact" aria-label="Enter Your Message Here"> 
-          </textarea>
-        </div> 
-      </div> 
-
-     <input type="submit" value="Submit" id="contact_submit" tabindex="0" aria-label="Submit Contact Form">
-    </form>
-    
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
-</div> 
-
-
-
-</section>
-
-
-
-<!-- <section id="resume" class="scroll_panel">
-
-Professional History
- - entreprenuriel stuff?/
-
- I led "cross functional teams" to produce.. 
-
-"Passionate about technology and learning new things"
-
-"highly motivated front end developer "
-
-make resume links actualy work in the PDF resume
-
-</section> -->
-
-
-
-
-
-
-</main><!-- content panels -->
-</div><!-- content_wrapper -->
-
-
-
-
-
-<div class="spotlight"></div>
-
-<div class="cursor_container">
-  <div class="custom_cursor cursor_braces"></div>
-  <div class="custom_cursor cursor_main"></div>
-  <!-- <div class="custom_cursor cursor_main_reticle">
-    <div id="reticle">
-      <div class="horizontal"></div>
-      <div class="vertical"></div>
-  </div>
-  </div> -->
-  <div class="custom_cursor cursor_caret">|</div>
-  <!-- <div class="custom_cursor cursor_border"></div> -->
-
-  <div class="custom_cursor cursor_bones_over">
-    <!-- WIDTH MUST BE DEFINED FOR CHROME!! -->
-  <svg id="close_bones_hover_SVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.28 40.27" width="100%" height="100%">
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_4" data-name="Layer 4">
-        <g id="close_bones_hover">
-          <path class="close_bones_path" d="M49,2l.4,0a2,2,0,0,1,1.67,2.68,4.46,4.46,0,0,0,.37,2.68,2.25,2.25,0,0,1,.27,3.24s-.4.81-1.92.81a5.48,5.48,0,0,1-.85-.07,1.81,1.81,0,0,0-.86-.16,7.55,7.55,0,0,0-3.58,1.18S38.38,15.52,29.57,21c6,3.86,11.25,7.18,12.46,7.73a8.2,8.2,0,0,0,3.21.82,3.32,3.32,0,0,0,1.49-.31l1.71-.83A3.34,3.34,0,0,1,50,28a1.45,1.45,0,0,1,1,.32s2,1,.82,4a5.09,5.09,0,0,0-.41,2.48s1.06,2.74-1.09,3.18c0,0-3-.25-3.86-2.32a6.37,6.37,0,0,0-2.67-2.18l-17-10.64C25,23.88,23.28,25,21.46,26.25c0,0-9.34,5.65-10.08,6A5.66,5.66,0,0,0,9.9,34.11s-1.85,3.8-4,4.07a15.11,15.11,0,0,0-1.48-.92h0l.29.1s-1.94-.83-1.48-2.59A2.41,2.41,0,0,0,2,32.54S1.86,31,2.32,30.6c0,0-.28-1.76,2.77-1.94l2.5-.19,2.22.1a9.51,9.51,0,0,1,3.24-1.3s7.64-4.51,10.46-6.47L11.78,13.46a4.36,4.36,0,0,0-2.85-1.14,3.3,3.3,0,0,0-1.36.27A4.46,4.46,0,0,1,5.73,13,6.23,6.23,0,0,1,4,12.69c-2.14-1.6-1.21-3.31-1.21-3.31,1.56-1.67-.08-3.89-.08-3.89C1.42,2.65,4.12,2.23,4.12,2.23a4.61,4.61,0,0,1,.93-.1A2.67,2.67,0,0,1,7.65,3.8,16.75,16.75,0,0,0,9.77,7.52c.73.86,8.7,6.25,16.56,11.39,2.31-1.53,5.45-3.59,6.13-3.93l9.06-6.11s3.24-2.22,4.35-4.16c0,0,1-2.71,3.11-2.71m0-2h0c-2.66,0-4.3,2.32-4.92,3.83a15.79,15.79,0,0,1-3.67,3.39l-8.95,6c-.34.19-1.31.75-5.11,3.26C17.57,10.78,12.13,7,11.3,6.22A14.39,14.39,0,0,1,9.54,3.14a4.65,4.65,0,0,0-4.49-3,6.62,6.62,0,0,0-1.3.14,4.29,4.29,0,0,0-3,2,4.36,4.36,0,0,0,0,4l.09.21.13.18h0s.62.91.22,1.34l-.17.19L1,8.44c-.6,1.11-1,3.78,1.79,5.85l.25.19.3.1A8,8,0,0,0,5.73,15a6.48,6.48,0,0,0,2.64-.52l.06,0a1.48,1.48,0,0,1,.5-.08,2.44,2.44,0,0,1,1.56.67l.11.09.12.08,9.07,5.67c-2.76,1.74-6.31,3.86-7.42,4.52a11.1,11.1,0,0,0-3.06,1.19l-1.64-.06H7.44L5,26.67a5.09,5.09,0,0,0-3.87,1.67A3.45,3.45,0,0,0,.36,30a5.33,5.33,0,0,0-.3,2.81l.11.91.76.52a3.18,3.18,0,0,1,.33.26,4.21,4.21,0,0,0,2.53,4.65v0l-.13,0c.15.08.68.42,1.14.74l.63.44.76-.1c3-.4,5.13-4.39,5.52-5.18l.09-.19,0-.09a5.87,5.87,0,0,1,.73-.8c1.53-.86,7.91-4.71,10-5.94l0,0,0,0c1.36-.91,2.75-1.83,4.17-2.74l15.93,10,.23.14.25.07a4.33,4.33,0,0,1,1.51,1.28c1.35,2.89,5,3.27,5.44,3.31l.28,0,.28-.06a3.54,3.54,0,0,0,2.49-1.77,5.15,5.15,0,0,0,.15-3.86,3.82,3.82,0,0,1,.29-1.2v0l0,0c1.37-3.51-.33-5.67-1.57-6.42A3.47,3.47,0,0,0,50,26a5.34,5.34,0,0,0-2.49.7l-1.64.81a1.43,1.43,0,0,1-.61.1,6,6,0,0,1-2.3-.61h0l0,0c-.72-.32-3.91-2.25-9.54-5.86,7.17-4.36,12-6.86,12.08-6.88l0,0,0,0a5.72,5.72,0,0,1,2.6-.92h.06l.12.06.35.06a7,7,0,0,0,1.18.1,4,4,0,0,0,3.54-1.63A4.18,4.18,0,0,0,53,6.17a3.83,3.83,0,0,1,0-1,3.85,3.85,0,0,0-.37-3.19,4.41,4.41,0,0,0-3-1.89A5.65,5.65,0,0,0,49,0Z"/>
-        </g>
-      </g>
-    </g>
-  </svg>
-  </div>
-
-
-
-
-<div class="custom_cursor cursor_new_window">
-    <svg id="new_window" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
-      <defs>
-        <style>
-          .small_circles {
-            fill: #fff;
-          }
-
-          .white_line {
-            fill: none;
-            stroke: #fff;
-            stroke-miterlimit: 10;
-            stroke-width: 0.4px;
-          }
-        </style>
-      </defs>
-      <path d="M22.6,26.26H5.83V10.7H18.3l3.58-3.61H4.65c-1.32,0-1.21,1.08-1.21,2.4V26.26a2.38,2.38,0,0,0,2.39,2.39H22.6A2.4,2.4,0,0,0,25,26.26V10.33L22.6,12.7Z"/>
-      <polygon points="20.38 3.33 20.38 5.72 24.68 5.72 12.9 17.5 14.59 19.19 26.36 7.41 26.36 11.71 28.76 11.71 28.76 3.33 20.38 3.33"/>
-      <g>
-        <circle class="small_circles" cx="6.5" cy="8.29" r="0.64"/>
-        <circle class="small_circles" cx="8.25" cy="8.29" r="0.64"/>
-        <circle class="small_circles" cx="9.99" cy="8.29" r="0.64"/>
-      </g>
-      <line class="white_line" x1="3.49" y1="9.76" x2="19.55" y2="9.76"/>
-    </svg>
-</div>
-
-
-
-<div class="custom_cursor cursor_slide_show">
-  <svg id="slide_show" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
-    <defs>
-      <style>
-        .cls-1xxx {
-          fill: none;
-        }
-      </style>
-    </defs>
-    <path id="Pointy_Arrow" data-name="Pointy Arrow" d="M28.65,11.54v7.71c.84-1.56,1.3-3.05,3.05-3.86C30,14.58,29.51,13.09,28.65,11.54Z"/>
-    <path id="Pointy_Arrow-2" data-name="Pointy Arrow" d="M3.25,19.25V11.54C2.4,13.1,1.94,14.59.19,15.4,1.93,16.21,2.39,17.7,3.25,19.25Z"/>
-    <path class="cls-1xxx" d="M6.2,4.47H36.36V34.63H6.2Z"/>
-    <path d="M24.58,7.43H7A2.52,2.52,0,0,0,4.48,10V22.51A2.52,2.52,0,0,0,7,25H24.58a2.52,2.52,0,0,0,2.51-2.51V10A2.52,2.52,0,0,0,24.58,7.43Zm0,15.08H7V10H24.58Z"/>
-  </svg>
-</div>
-
-
-
-
-<div class="custom_cursor cursor_skull">
-  <svg id="skull" data-name="Layer_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
-    <path d="M26.79,14.18s.87-.78,1.12-3.5a12.1,12.1,0,0,0-1.75-6.8S23.44.47,17,.13A7.13,7.13,0,0,0,14.4.52a35.52,35.52,0,0,1-3.84.78s-6.46.87-6.37,8.84a13.6,13.6,0,0,0,1,4.52s.2,1,.68.39c0,0,.44,0,.2-1.8,0,0-.2-2.77.58-4,0,0,.58-.63.44.63a14.36,14.36,0,0,0-.05,4.62,1,1,0,0,1-.29.92,4.88,4.88,0,0,1-1.6,1.36,1.33,1.33,0,0,0-.64,1.46s1.22,2,4.72,1.94a1.64,1.64,0,0,0,.87-.34,1.08,1.08,0,0,1,1.51.88l.14.92s-.19,1.22,1.8,1.6a21.83,21.83,0,0,0,5.93.1,2.7,2.7,0,0,0,1.8-1.26s.29-1.46-.44-.63c0,0-.48.63-.34-.83,0,0-.19-.87,1.22-.92,0,0,3.88.29,5.39-1.41,0,0,1.31-1.95-.58-2.09,0,0-1.36,0-1.41-1.12,0,0,.53-2.77,0-4.18s.39-2.33.63-.82A7,7,0,0,1,26,13.21S25.91,14.71,26.79,14.18ZM10.17,18s-1.51-.1-1.31-2.29c0,0-.29-1.89,2.53-2.86,0,0,2-.54,3,.14,0,0,1,.73.05,2.67A4.22,4.22,0,0,1,10.17,18Zm7.39,3.59s-.54.2-.54-.44c0,0-.24-.87-1.21.2a.65.65,0,0,1-1-.24,3.47,3.47,0,0,1,.58-2.43A5.41,5.41,0,0,0,16,16.8s.1-.82.49-.63c0,0,.68-.34.78,1.31a6.17,6.17,0,0,0,.53,1.75S18.67,21.52,17.56,21.61Zm5.88-6.46s-.34,2.62-2,2.77a3.23,3.23,0,0,1-3.21-3.31s-.39-1.89,1.84-1.89C20.08,12.72,23.87,12.77,23.44,15.15Z"/>
-    <path d="M9.49,22s-1.12-.05-.78,3.11a3.26,3.26,0,0,1-.29,1.12s-.63.73.54,1.41c0,0,1.45,1.46,2.33,2.57a4.87,4.87,0,0,0,3.93,1.51,5.21,5.21,0,0,1,1.8.15,4.24,4.24,0,0,0,3.6-1.12l2.28-1.94a1.94,1.94,0,0,0,.93-2.34A4.38,4.38,0,0,1,24,23.75s.83-1.26-.34-1.17c0,0-1.12-.14-1.22,1.22l-.24,1.31s-.43,2.38-3.64,3.26a11.61,11.61,0,0,1-4.72-.15,21.26,21.26,0,0,1-2.57-1.41,2.44,2.44,0,0,1-.88-1.6A2.66,2.66,0,0,0,10,23.85S10.27,21.81,9.49,22Z"/>
-    <path d="M16.1,24.58s.39-.25.34.92c0,0-.39.87-.63,0C15.81,25.5,15.47,24.72,16.1,24.58Z"/>
-    <path d="M19.16,24.24a.74.74,0,0,1,.39.87s-.05.39-.78.39C18.77,25.5,18.53,23.9,19.16,24.24Z"/>
-    <path d="M20.42,23.7s.64-.19.49.92c0,0-.87.78-.68-.09C20.23,24.53,20,23.85,20.42,23.7Z"/>
-    <path d="M14.69,24.28s.53,0,.29,1.17c0,0-.29.44-.63-.24C14.35,25.21,14.4,24.28,14.69,24.28Z"/>
-    <path d="M13.28,24.09s.44.19.34,1.07c0,0-.44.39-.78.1C12.84,25.26,13,24.19,13.28,24.09Z"/>
-    <path d="M12.11,23.46s.44.63.05,1c0,0-.68-.05-.53-.44A.48.48,0,0,1,12.11,23.46Z"/>
-    <path d="M16.63,26.76s.49-.29.34.54c0,0-.34,1.21-.58-.15C16.39,27.15,16.29,26.76,16.63,26.76Z"/>
-    <path d="M18.63,26.57s.77-.1.14.87C18.77,27.44,17.75,26.81,18.63,26.57Z"/>
-    <path d="M20.23,25.84s.73.24-.1,1C20.13,26.81,19.35,26,20.23,25.84Z"/>
-    <path d="M14.93,26.67s.34,0,.29.58c0,0-.82,1-.58-.15C14.64,27.1,14.4,26.62,14.93,26.67Z"/>
-    <path d="M12.89,26s.58.19.63.53c0,0-.19.78-.73.44C12.79,27,12.45,26.13,12.89,26Z"/>
-  </svg>
-</div>
-
-
-
-<div class="custom_cursor cursor_arrow_next_over">
-  <svg id="arrow_over_next" class="arrow_over" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
-    <path class="arrow_over_path" d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"/>
-  </svg>
-</div>
-
-
-<div class="custom_cursor cursor_arrow_previous_over">
-  <svg id="arrow_over_previous" class="arrow_over" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
-    <g transform="rotate(180 15 16) " >
-      <path class="arrow_over_path" d="M1.9,0C1.29.69.68,1.31.09,1.9,2.69,7.63,4.6,13,10.26,16,4.55,19.05,2.65,24.39.1,30.17L2,32c3.48-6.48,5.38-12.66,12.64-16C7.38,12.63,5.47,6.46,1.9,0Z"/>
-    </g>  </svg>
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="centerlines">
-  <div class="horizontal_center"></div>
-  <div class="vertical_center"></div>
-</div>
-
-
-
-
-
-
-
-<a href="#landing" id="home_button" aria-label="Main Logo With Link To Home">
-<svg id="lion_logo_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 233.8 236.8" style="enable-background:new 0 0 233.8 236.8;" xml:space="preserve">
-<g id="lightening_bolt_layer">
-	<polygon id="lightening_bolt" class="st0" points="60.5,154.6 76.8,157.1 30.3,194.1 48.8,193.9 4.2,231.8 74.3,187.3 
+    <a
+      href="#landing"
+      id="home_button"
+      aria-label="Main Logo With Link To Home"
+    >
+      <svg
+        id="lion_logo_svg"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 233.8 236.8"
+        style="enable-background: new 0 0 233.8 236.8"
+        xml:space="preserve"
+      >
+        <g id="lightening_bolt_layer">
+          <polygon
+            id="lightening_bolt"
+            class="st0"
+            points="60.5,154.6 76.8,157.1 30.3,194.1 48.8,193.9 4.2,231.8 74.3,187.3 
 		54.4,185.2 102.3,153.6 85.9,151.7 178.6,84 153.8,82.7 217.4,42.4 192,42.6 225.9,16.5 162.3,49.5 187.8,49.9 126.9,88.6 
-		149.3,90.9 	"/>
-	<polygon id="lightening_bolt_hilight" class="st1" points="71.2,153.5 88.4,155.5 37,192.2 56.1,191.2 20.9,219.5 
+		149.3,90.9 	"
+          />
+          <polygon
+            id="lightening_bolt_hilight"
+            class="st1"
+            points="71.2,153.5 88.4,155.5 37,192.2 56.1,191.2 20.9,219.5 
 		52.7,192.4 34.5,192.6 80.3,156.2 65,153.8 153.9,89.9 131.2,87.6 191,48.9 168,48.1 212.4,25.1 170.7,47.6 194.9,46.8 142.8,85.3 
-		164.2,86.1 	"/>
-</g>
-<g id="needle_layer">
-	<path id="needle_x5F_body" class="st2" d="M226.9,230.4c-0.1-0.2-14-16.7-31.1-32.8c-10.7-10.1-65.6-62.1-106.9-101.2
+		164.2,86.1 	"
+          />
+        </g>
+        <g id="needle_layer">
+          <path
+            id="needle_x5F_body"
+            class="st2"
+            d="M226.9,230.4c-0.1-0.2-14-16.7-31.1-32.8c-10.7-10.1-65.6-62.1-106.9-101.2
 		C63.8,72.6,43.7,53.6,41.8,51.7c-2.8-2.6-7.1-7.9-10.8-12.5c-3.3-4-5.4-6.8-8.2-9.5c-3.4-3.3-7.3-5.6-10.3-6.2
 		c-1.9-0.4-3.4-0.1-4.3,0.8C7,25.6,7,27.8,8.3,30.6c1.2,2.6,3.4,5.5,6.1,8.1c1.9,1.8,6.1,4.8,10.6,7.9c5,3.5,7.6,4.9,12.8,9.7
 		c3.6,3.3,69.7,65.9,114.6,108.4l39.3,37.2c17.4,16.4,34.3,29.1,34.5,29.2l3.7,2.7L226.9,230.4z M25.8,41.1
 		c-0.3,1.3-2.3-0.2-4.3-1.6c-4.2-3.1-6.7-7.1-6.7-7.2c-1.4-2.2,0.4-1.7,0.7-1.7c1.1,0.2,3.4,1.9,6.1,4.5
-		C25.1,38.4,26,40.4,25.8,41.1z"/>
-	<g id="needle_x5F_group">
-		<path id="needle_x5F_hilight" class="st1" d="M195.1,198.3c-10.7-10.1-65.6-62.1-106.9-101.2C63,73.4,43,54.4,41,52.5
+		C25.1,38.4,26,40.4,25.8,41.1z"
+          />
+          <g id="needle_x5F_group">
+            <path
+              id="needle_x5F_hilight"
+              class="st1"
+              d="M195.1,198.3c-10.7-10.1-65.6-62.1-106.9-101.2C63,73.4,43,54.4,41,52.5
 			c-2.8-2.7-7.6-7.5-10.9-12.7c-2.8-4.3-5.2-6.9-7.7-9.3c-3.2-3.1-4.6-3.8-7.4-4.4c-1.1-0.2,2.1,0.7,1.3,1.6
 			c-0.4,0.5-3.8,0.5-3.4,2.3c0.5,2.3,2.1,4.7,4.7,7.2c1.8,1.7,4.9,5.1,10.1,5.8c6.1,0.8,4,3,8,6.7c0.8,0.7,7.9,6.3,13.4,11.6
 			c20.5,19.7,69.2,66.6,105.8,101.2l40.2,37.1c12.2,11.5,18.6,19.4,24.7,24.1C214.5,217.8,207.1,209.7,195.1,198.3z M27.3,41.6
 			c-0.2,0.2-1,0.7-1.8,0.5c-1.5-0.3-4.2-2.1-6.7-4.5c-1.6-1.5-3-3.2-3.9-4.5c-1.1-1.6-1.3-2.8-0.8-3.4c0.2-0.2,2.1-1.2,2.8-1
-			c1.5,0.3,4.1,1.5,6.7,3.9C26.7,35.6,29.1,39.8,27.3,41.6z"/>
-	</g>
-</g>
-<g id="lion_x5F_layer">
-	
-		<image style="overflow:visible;" width="843" height="1000" id="lion_x5F_pic" xlink:href="images/logo_embeds/lion.png"  transform="matrix(0.2125 0 0 0.2125 35.8735 -0.7495)">
-	</image>
-	<g id="lion_x5F_paw_x5F_group">
-		<defs>
-			<path id="lion_x5F_paw_x5F_clipping_x5F_path" d="M49.2,91.1c-1.1-0.5-3.1,0.1-4.2,0.4c-1.5,0.3-3,0.7-4.4,1.2
+			c1.5,0.3,4.1,1.5,6.7,3.9C26.7,35.6,29.1,39.8,27.3,41.6z"
+            />
+          </g>
+        </g>
+        <g id="lion_x5F_layer">
+          <image
+            style="overflow: visible"
+            width="843"
+            height="1000"
+            id="lion_x5F_pic"
+            xlink:href="images/logo_embeds/lion.png"
+            transform="matrix(0.2125 0 0 0.2125 35.8735 -0.7495)"
+          ></image>
+          <g id="lion_x5F_paw_x5F_group">
+            <defs>
+              <path
+                id="lion_x5F_paw_x5F_clipping_x5F_path"
+                d="M49.2,91.1c-1.1-0.5-3.1,0.1-4.2,0.4c-1.5,0.3-3,0.7-4.4,1.2
 				c-2.5,0.7-5.6,2.2-7.9,0c-0.6-0.6-1.6-2-1.9-2.9c-0.4-1.1-0.4-2.3-0.7-3.5c-0.4-1.1-1.1-2.1-2-2.8c-0.5-0.4-1.1-0.8-1.6-1.2
 				c-0.5-0.4-1-0.9-1.6-1.1c-1.3-0.5-2.3,0.2-3.5,0.6c-1.2,0.5-2.3-0.2-3.5-0.1c-2.7,0.2-4.7,2.8-3.6,5.4c0.1,0.2,0.2,0.4,0.3,0.5
 				c0.3-0.7,1.8-1.5,2.6-1.7c0,1.1-0.6,2.3,0.9,2.9c-0.9,1-0.4,1.8-0.2,3.1c-2.3,0.6-4.2,3.5-3.1,5.7c1.1,2.2,1.4-0.4,2.2-1
@@ -763,27 +1326,53 @@ make resume links actualy work in the PDF resume
 				c0.3-0.2,0.5-0.5,0.6-0.8c0.9,0.3,1.1,1.5,1.3,2.3c0.6-0.3,1.2-1.7,1.2-2.3c0.4-0.1,0.4-0.5,0.3-0.9c0,0,0,0,0,0
 				c0.1,0.1,0.2,0.2,0.3,0.3c0,0,0.1-0.2,0.1-0.2c1.1,1.1,2.3,1.4,3.7,2c1.1,0.5,3.3,1.2,3.2,2.7c1.4,0.7,1.7-2.1,1.6-2.9
 				c-0.1-0.6-0.6-1.3-0.5-1.9c0.2-0.9,1.2-0.5,1.8-0.3c1.1,0.2,3,1,4.1,0.9c1.6-0.2,4.6,2.2,2.9,4.9c4.3,5,9.7-2.8,2.8-9.1
-				c-1.4-1.2-9.2-6.8-10.6-8c-4.8-4-9.5-7-15.8-7.6c-0.8-0.1-7.8-0.3-7.7,1.6"/>
-		</defs>
-		<clipPath id="lion_x5F_paw_x5F_clipping_x5F_path_00000075133033693316832250000016016483019909425561_">
-			<use xlink:href="#lion_x5F_paw_x5F_clipping_x5F_path"  style="overflow:visible;"/>
-		</clipPath>
-		
-			<g transform="matrix(1 -2.980232e-08 2.980232e-08 1 -1.907349e-06 0)" style="clip-path:url(#lion_x5F_paw_x5F_clipping_x5F_path_00000075133033693316832250000016016483019909425561_);">
-			
-				<image style="overflow:visible;" width="359" height="208" id="lion_x5F_paw_x5F_pic" xlink:href="images/logo_embeds/lion_arm.png"  transform="matrix(0.1931 8.882286e-02 -8.882286e-02 0.1931 26.4531 56.0535)">
-			</image>
-		</g>
-	</g>
-</g>
-<g id="text_banner_murray">
-	<path id="white_x5F_bottom_x5F_path" class="st3" d="M34.8,138.2c37.5,24.5,94.5,26,136.8-13.5"/>
-	<g id="red_x5F_bottom_x5F_group">
-		<path id="red_x5F_bottom_x5F_path" class="st4" d="M93.4,170.3c-22.3,0-44.4-5.8-63.1-17.7l15.6-24.4
-			c15.9,10.2,36.2,14.7,57.1,12.7c21.4-2,41.5-10.7,56.5-24.6l19.6,21.3C155.8,159.1,124.4,170.3,93.4,170.3z"/>
-	</g>
-	<g id="murray">
-		<path class="st1" d="M66.5,144.5l0,0.1l-0.3,0.9l0,0.2l-0.3,0.3l-0.1,0.5l-0.1,0.2l-0.4,1.1l-0.3,0.5l-0.4,1.1l-0.5,0.9l0,0.3
+				c-1.4-1.2-9.2-6.8-10.6-8c-4.8-4-9.5-7-15.8-7.6c-0.8-0.1-7.8-0.3-7.7,1.6"
+              />
+            </defs>
+            <clipPath
+              id="lion_x5F_paw_x5F_clipping_x5F_path_00000075133033693316832250000016016483019909425561_"
+            >
+              <use
+                xlink:href="#lion_x5F_paw_x5F_clipping_x5F_path"
+                style="overflow: visible"
+              />
+            </clipPath>
+
+            <g
+              transform="matrix(1 -2.980232e-08 2.980232e-08 1 -1.907349e-06 0)"
+              style="
+                clip-path: url(#lion_x5F_paw_x5F_clipping_x5F_path_00000075133033693316832250000016016483019909425561_);
+              "
+            >
+              <image
+                style="overflow: visible"
+                width="359"
+                height="208"
+                id="lion_x5F_paw_x5F_pic"
+                xlink:href="images/logo_embeds/lion_arm.png"
+                transform="matrix(0.1931 8.882286e-02 -8.882286e-02 0.1931 26.4531 56.0535)"
+              ></image>
+            </g>
+          </g>
+        </g>
+        <g id="text_banner_murray">
+          <path
+            id="white_x5F_bottom_x5F_path"
+            class="st3"
+            d="M34.8,138.2c37.5,24.5,94.5,26,136.8-13.5"
+          />
+          <g id="red_x5F_bottom_x5F_group">
+            <path
+              id="red_x5F_bottom_x5F_path"
+              class="st4"
+              d="M93.4,170.3c-22.3,0-44.4-5.8-63.1-17.7l15.6-24.4
+			c15.9,10.2,36.2,14.7,57.1,12.7c21.4-2,41.5-10.7,56.5-24.6l19.6,21.3C155.8,159.1,124.4,170.3,93.4,170.3z"
+            />
+          </g>
+          <g id="murray">
+            <path
+              class="st1"
+              d="M66.5,144.5l0,0.1l-0.3,0.9l0,0.2l-0.3,0.3l-0.1,0.5l-0.1,0.2l-0.4,1.1l-0.3,0.5l-0.4,1.1l-0.5,0.9l0,0.3
 			l-0.5,1l-0.8,2l-0.8,2.1l-1.8,4.4l-0.7,1.5l-1.1-0.3l-3.2-1.3l-0.1-0.3l0-0.2l0.6-1.4l0-0.4l0.3-0.4l0.3-0.9l0-0.1l0.3-0.5
 			l0.9-2.1l0.3-0.5l0.3,0.1l0-0.2l-0.1-0.1l-0.2-0.1l0.2-0.3l0-0.2l0-0.1l-0.1-0.1l-0.5,0.4l-0.2-0.1l-0.1,0l-0.1,0.2l0.1,0.2
 			l-3.4,3.1l-1.7,1.5l-0.2,0.2l-1.1-0.4l-0.8-0.3l-1-0.5l-0.1-1.1l0-0.6l0-0.9l-0.2-1.1l-0.1-2.3l-0.1-0.6l0.1-0.1l-0.2-0.7l0.1-0.4
@@ -929,8 +1518,11 @@ make resume links actualy work in the PDF resume
 			 M62.8,150.2l0.2,0.3l0.1-0.1l-0.2-0.2L62.8,150.2z M62.9,146.5l0.1,0l0-0.1L62.9,146.5L62.9,146.5z M63.1,149l0.1-0.1l-0.1-0.3
 			l-0.1,0.1l0,0.2L63.1,149z M63.1,147.1L63.1,147.1l0.1-0.1l-0.1,0L63.1,147.1z M63.3,145.5l0,0.2l-0.1,0.2l0.2,0l0.1-0.1l0.1-0.2
 			l-0.1-0.1L63.3,145.5z M63.2,150.9l0.1,0.1l0-0.1L63.2,150.9L63.2,150.9z M63.2,147.8l0.2,0l0.1,0l0.1-0.1l-0.1-0.1l-0.2,0
-			L63.2,147.8z M63.5,146.2l0,0.2l0.1,0.1l0.1-0.1l-0.1-0.1l-0.1,0L63.5,146.2z M63.8,147l0.1,0.1l0-0.1l-0.1-0.1L63.8,147z"/>
-		<path class="st1" d="M74.6,146.3l0.1,0.2l0,0.2l-0.2,0.9l0,0.5l0,0.3l-0.2,0.4l0,0.4l-0.1,0.3l-0.1,1.1l0,0.8l0.1,0.2l-0.1,0.2
+			L63.2,147.8z M63.5,146.2l0,0.2l0.1,0.1l0.1-0.1l-0.1-0.1l-0.1,0L63.5,146.2z M63.8,147l0.1,0.1l0-0.1l-0.1-0.1L63.8,147z"
+            />
+            <path
+              class="st1"
+              d="M74.6,146.3l0.1,0.2l0,0.2l-0.2,0.9l0,0.5l0,0.3l-0.2,0.4l0,0.4l-0.1,0.3l-0.1,1.1l0,0.8l0.1,0.2l-0.1,0.2
 			l-0.1,0.4l0,0.6l0,0.1l-0.2,0.6l0,0.6l-0.1,0.1l-0.1,0.3l0,0.5l-0.1,0.2l-0.2,2.3l0.1,0.3l0.1,0.1l-0.1,0.3l0,0.3l0.5,1.2l0.2,0.2
 			l0.2,0.3l0.2,0l0.1,0l0.3,0.4l0.6,0.2L76,161l0.3,0l1.2,0.1L78,161l0.6,0l0.5-0.2l0.2-0.1l0-0.1l0.1-0.1l0.1,0l0.1,0.1l0.6-0.6
 			l0.5-0.7l0.2-0.6l0-0.5l0.2-0.3l0.2-1.6l0.1-0.3l0.1-1.5l0.1-0.3l0.1-0.2l0-0.5l0.3-2.3l0-0.6l0.1-0.5l0.2-1.7l0.1-0.7l0.1-0.3
@@ -977,8 +1569,11 @@ make resume links actualy work in the PDF resume
 			L83.8,153.6z M83.9,156.2l0.1,0l0-0.1l-0.1,0L83.9,156.2z M83.9,152.8l0.1,0.1l0.2,0l-0.1-0.2l0-0.1l-0.1-0.1l-0.2,0.2L83.9,152.8
 			z M84,155.2l0.3,0.1l-0.1-0.1L84,155.2L84,155.2z M84.5,152.5l0.1-0.1l0-0.1l-0.1-0.1L84.5,152.5L84.5,152.5z M84.5,155.6l0.1,0.1
 			L84.5,155.6L84.5,155.6z M84.5,151.3l0.1,0l0-0.1l-0.1,0L84.5,151.3z M84.8,157.4l0.1-0.1l0-0.2l-0.1-0.1l-0.1,0.1l0,0.2
-			L84.8,157.4z M84.8,153l0.1,0l0.1-0.1l-0.2,0L84.8,153z M85.5,151.4l0.1,0l0-0.1l-0.1,0L85.5,151.4z"/>
-		<path class="st1" d="M105.1,160.4l0.1,0.2l0.4,0.4l0.2,0.2l0.3,0.5l0.8,0.8l0.7,0.9l0.2,0.2l1.2,1.4l0.1,0.3l-0.4,0.1l-2.2,0.2
+			L84.8,157.4z M84.8,153l0.1,0l0.1-0.1l-0.2,0L84.8,153z M85.5,151.4l0.1,0l0-0.1l-0.1,0L85.5,151.4z"
+            />
+            <path
+              class="st1"
+              d="M105.1,160.4l0.1,0.2l0.4,0.4l0.2,0.2l0.3,0.5l0.8,0.8l0.7,0.9l0.2,0.2l1.2,1.4l0.1,0.3l-0.4,0.1l-2.2,0.2
 			l-0.3,0.1l-0.4-0.1l-0.4,0.1l-0.3-0.1l-0.3,0.1l-0.5,0l-0.5,0.1l-0.1,0l-1.5-1.7l-0.6-0.6l0-0.2l-0.9-1.1l-0.3-0.2l0.1-0.1
 			l-0.7-0.7l-0.1,0.1l-0.6,0l-0.9,0.2l-0.5,0.3l-0.2,0l0.1,1l0,0.1l-0.2,0.1l0.1,0.1l0.2,0l0,0.8l0.2,1.2l0,0.9l0,0.3l-1,0.2
 			l-2.3,0.2l-1.1,0.1l-0.2-0.2l-0.1-0.3l0-0.6l-0.3-2.2l-0.1-1.1l-0.1-1.2l-0.1-0.6l-0.2-0.5l0.1-0.1l0-0.3l-0.2-0.9l0.1-0.6
@@ -1061,8 +1656,11 @@ make resume links actualy work in the PDF resume
 			l-0.1,0.1l0.1,0.1L105.4,154.9z M105.3,161l0.1,0L105.3,161L105.3,161z M105.3,156.6l0.1,0l0.1-0.1L105.3,156.6L105.3,156.6z
 			 M105.3,155.7l0.2,0l-0.1-0.1l-0.1,0L105.3,155.7z M105.3,152.3l0.1,0.1l0.2,0l0.1-0.1l-0.2,0L105.3,152.3z M105.6,153.5l0-0.1
 			l-0.1-0.1l0,0.1L105.6,153.5z M105.7,154.4l0-0.3l-0.1-0.1l-0.1,0.2l0,0.2L105.7,154.4z M105.7,158.6l0-0.2l-0.1-0.1l0,0.1
-			L105.7,158.6z"/>
-		<path class="st1" d="M127.1,155.7l0.2,0.2l0.5,0.3l0.3,0.1l0.4,0.5l0.9,0.7l0.9,0.8l0.2,0.2l1.4,1.1l0.2,0.3l-0.3,0.2l-2.1,0.6
+			L105.7,158.6z"
+            />
+            <path
+              class="st1"
+              d="M127.1,155.7l0.2,0.2l0.5,0.3l0.3,0.1l0.4,0.5l0.9,0.7l0.9,0.8l0.2,0.2l1.4,1.1l0.2,0.3l-0.3,0.2l-2.1,0.6
 			l-0.2,0.2l-0.4,0l-0.4,0.2l-0.3,0l-0.3,0.2l-0.5,0.1l-0.5,0.2l-0.2,0l-1.8-1.4l-0.7-0.4l-0.1-0.2l-1.1-0.9l-0.4-0.2l0.1-0.1
 			l-0.9-0.5l-0.1,0.1l-0.6,0.1l-0.8,0.3l-0.4,0.4l-0.2,0.1l0.3,0.9l0,0.1l-0.2,0.2l0.1,0.1h0.2l0.1,0.8l0.4,1.2l0.2,0.9l0,0.3
 			l-1,0.4l-2.2,0.6l-1.1,0.3l-0.2-0.2l-0.1-0.3l-0.1-0.6l-0.7-2.1l-0.4-1.1l-0.3-1.2l-0.2-0.5l-0.3-0.4l0-0.1l0-0.3l-0.3-0.8l0-0.6
@@ -1146,8 +1744,11 @@ make resume links actualy work in the PDF resume
 			L126.4,155.1z M126.5,153.6l0.1-0.1l-0.1-0.1L126.5,153.6z M126.5,151.9l0.2,0l0-0.2L126.5,151.9L126.5,151.9z M126.9,159.2l0-0.1
 			l-0.2-0.1l-0.1,0l0,0.1l0.1,0.1L126.9,159.2z M126.9,157.4l-0.3,0.1l0.3,0.1L126.9,157.4z M127,156.9l0.1,0l0-0.1l-0.1,0
 			L127,156.9z M127.2,155.4l0-0.2l-0.1-0.1l0,0.2L127.2,155.4z M127.3,153.8l-0.1-0.2l-0.1,0l0,0.1L127.3,153.8z M127.4,156.2l0.2,0
-			l-0.1-0.1L127.4,156.2z M127.7,158.9l0-0.1l-0.1-0.1l0,0.1L127.7,158.9z"/>
-		<path class="st1" d="M139.6,136.1l0.9,0.7l1.5,1.3l0.7,0.5l0.1,0.1l0.2,0.2l0.1,0.1l0.3,0l0.3,0.5l1.1,0.9l0.3,0.3l0.2,0.1
+			l-0.1-0.1L127.4,156.2z M127.7,158.9l0-0.1l-0.1-0.1l0,0.1L127.7,158.9z"
+            />
+            <path
+              class="st1"
+              d="M139.6,136.1l0.9,0.7l1.5,1.3l0.7,0.5l0.1,0.1l0.2,0.2l0.1,0.1l0.3,0l0.3,0.5l1.1,0.9l0.3,0.3l0.2,0.1
 			l0.7,0.6l0.2,0.1l0,0.2l0.6,0.4l0.2,0.3l0.2,0.2l0.4,0.1l0.2,0.3l0.2,0.2l0.1,0l0.4,0.5l0.8,0.7l0.4,0.4l0.3,0.1l0.2,0.3l0.2,0.2
 			l0.4,0.2l0.4,0.5l0.2,0.2l0.5,0.2l0.2,0.3l0.3,0.1l0.8,0.8l0.9,0.7l0.8,0.8l0,0.1l-0.2,0.2l-0.5,0.3l-0.7,0.5l-0.5,0.2l-0.8,0.4
 			l-0.9,0.5l-0.8,0.3l-0.3,0l-0.5-0.5l-0.4-0.2l-0.1-0.2l-0.2-0.2l-0.3-0.2l-0.2-0.3l-0.5-0.1l-0.1-0.1l-0.1,0.1l-0.1,0.1l-0.4,0.1
@@ -1253,8 +1854,11 @@ make resume links actualy work in the PDF resume
 			L149,149.1z M149,146.2l0.1,0l0-0.1l-0.1,0.1L149,146.2z M149.2,148.4l0.1,0l0-0.1l-0.1,0L149.2,148.4z M149.3,147.8l0.2,0l0-0.1
 			l-0.1,0L149.3,147.8z M149.5,147.2L149.5,147.2l0.2,0l-0.1-0.1l-0.1,0L149.5,147.2z M150.5,147.5l-0.2-0.2l-0.1,0l0.1,0.2l0.1,0
 			L150.5,147.5z M151,147.8l0.1-0.1l-0.1-0.1l-0.1,0L151,147.8z M151.4,149.2l-0.1-0.1l-0.1,0.1l0.1,0.1L151.4,149.2z M151.5,147.9
-			L151.5,147.9l0-0.2l-0.1,0L151.5,147.9z M152,148.6l0.2,0l-0.2-0.1L152,148.6z"/>
-		<path class="st1" d="M156.5,133.5L156.5,133.5l-0.2-0.3l0.2-0.7l-0.2-2.3l-0.2-2.3l-0.1-0.6l0.1-0.4l-0.1-0.3l-0.1-0.2l0.1-0.1
+			L151.5,147.9l0-0.2l-0.1,0L151.5,147.9z M152,148.6l0.2,0l-0.2-0.1L152,148.6z"
+            />
+            <path
+              class="st1"
+              d="M156.5,133.5L156.5,133.5l-0.2-0.3l0.2-0.7l-0.2-2.3l-0.2-2.3l-0.1-0.6l0.1-0.4l-0.1-0.3l-0.1-0.2l0.1-0.1
 			l0-0.3l0-0.1l0.9-0.7l2.2-1.6l0.3,0l0.1-0.2l0.2-0.2l0.4-0.2l0.4-0.2l0.1,0.2l0.1,0.5l0,0.3l0,0.3l0.1,0.2l0,0.6l0.1,1.5l0.2,0.2
 			l-0.1,0.5l0.1,1.2l0,0.6l0.2,0.5l-0.2,0.3l0.1,0.3l0,1.1l0.1,0.6l0.1,0.2l-0.1,0.3l0.1,1.1l-0.1,0.5l0.2,0.9l-0.1,0.5l0.1,0.6
 			l0,0.4l0.1,0.2l0.1,0.3l0,0.3l1.3,1.8l0.9,1.1l0.2,0.5l1.2,1.6l0.1,0.3l0,0.2l-1.2,0.8l-0.9,0.7l-0.7,0.4l-0.7,0.5l-0.3,0.1
@@ -1307,17 +1911,28 @@ make resume links actualy work in the PDF resume
 			 M160.7,139.8l0.1,0l0-0.3l-0.1,0l0,0.1L160.7,139.8z M160.9,139l0.2-0.1l-0.1-0.1L160.9,139z M161,141.9l0.1,0l0-0.1l-0.1,0
 			L161,141.9z M161.3,140.5l0.1,0l0-0.1l-0.1,0L161.3,140.5z M161.5,139.3l0.1-0.1l0-0.1l-0.1,0.1L161.5,139.3z M161.9,141.3
 			L161.9,141.3l0-0.2l-0.1,0.1L161.9,141.3z M162.2,140l-0.1-0.2l-0.2-0.1l0.1,0.2L162.2,140z M162.4,142.1l0.1,0l0-0.1l-0.1,0
-			L162.4,142.1z"/>
-	</g>
-</g>
-<g id="text_banner_darin">
-	<path id="white_x5F_top_x5F_path" class="st3" d="M41.8,114.2c35.6-18,82.5-24.5,121.2-19"/>
-	<g id="red_x5F_top_x5F_group">
-		<path id="red_x5F_top_x5F_path" class="st4" d="M51,127.5L36.5,98.9c37.3-18.8,83.3-26.1,126.3-20l-4.5,31.7
-			C121.6,105.3,82.5,111.5,51,127.5z"/>
-	</g>
-	<g id="darin">
-		<path class="st1" d="M55.5,117.2l-0.1-0.1l0.2-0.3l-0.3-0.3l-1.6-4.4l-0.7-2.2l-0.4-1l-0.1-0.1l-0.3-0.6l0.1-0.3l-0.8-2.1
+			L162.4,142.1z"
+            />
+          </g>
+        </g>
+        <g id="text_banner_darin">
+          <path
+            id="white_x5F_top_x5F_path"
+            class="st3"
+            d="M41.8,114.2c35.6-18,82.5-24.5,121.2-19"
+          />
+          <g id="red_x5F_top_x5F_group">
+            <path
+              id="red_x5F_top_x5F_path"
+              class="st4"
+              d="M51,127.5L36.5,98.9c37.3-18.8,83.3-26.1,126.3-20l-4.5,31.7
+			C121.6,105.3,82.5,111.5,51,127.5z"
+            />
+          </g>
+          <g id="darin">
+            <path
+              class="st1"
+              d="M55.5,117.2l-0.1-0.1l0.2-0.3l-0.3-0.3l-1.6-4.4l-0.7-2.2l-0.4-1l-0.1-0.1l-0.3-0.6l0.1-0.3l-0.8-2.1
 			l-0.5-1.7l-0.2-0.5l-0.2-0.3l-0.1-0.5l-0.8-2.2l-0.1-0.5l-0.1-0.5l0.4-0.2l0.9-0.3l0.2-0.1l0.1-0.1l1.1-0.3l2.2-0.7l2.2-0.8
 			l2.1-0.8l0.2-0.1l0.4,0.1l0.6-0.1l1.1,0l1.1,0l0.6,0.2l1.2,0.3l0.5,0.2l0.5,0.3l0.3,0.1l0.2,0l0.2,0.2l0.7,0.5l0.4,0.4l1.3,1.6
 			l0.5,1l0.8,2.1l0.2,0.6l0.1,0.6l0,0.4l0.1,0.6l0.1,1.2l-0.1,1.1l-0.1,0.9l-0.2,0l0.1,0.2l-0.2,0.5l0,0.3l-0.5,0.9l-0.6,0.9
@@ -1392,8 +2007,11 @@ make resume links actualy work in the PDF resume
 			 M67.1,107l-0.1-0.1l-0.3,0l0.1,0.1l0.2,0L67.1,107z M67,108.7l-0.1-0.2l0-0.1l-0.1-0.1l-0.1,0.1l0,0.2l0.1,0.1L67,108.7z M67,104
 			l0-0.1l-0.1-0.2l-0.1,0l0.1,0.3L67,104z M67,107.9l0.2,0l0.1-0.1l-0.2,0L67,107.9z M67.6,105.7l-0.3,0l0.1,0.1l0.2,0L67.6,105.7z
 			 M67.3,104.3l0.1,0l0-0.1l-0.1,0L67.3,104.3z M67.9,103.5l-0.2,0.1l0.1,0.1L67.9,103.5z M67.9,105.2l0-0.1l-0.1-0.1l0,0.1
-			L67.9,105.2z M68.3,105.5L68.3,105.5l0.1-0.1l-0.2,0L68.3,105.5z"/>
-		<path class="st1" d="M82.7,89.3l0.7,0.9l1.1,1.7l0.6,0.6l0,0.2l0.1,0.2l0,0.2l0.3,0.1l0.2,0.6l0.9,1.2l0.2,0.4l0.2,0.1l0.5,0.7
+			L67.9,105.2z M68.3,105.5L68.3,105.5l0.1-0.1l-0.2,0L68.3,105.5z"
+            />
+            <path
+              class="st1"
+              d="M82.7,89.3l0.7,0.9l1.1,1.7l0.6,0.6l0,0.2l0.1,0.2l0,0.2l0.3,0.1l0.2,0.6l0.9,1.2l0.2,0.4l0.2,0.1l0.5,0.7
 			l0.2,0.1l0,0.2l0.5,0.5l0.1,0.3l0.1,0.2l0.3,0.2l0.1,0.3l0.2,0.2l0.1,0.1l0.2,0.5l0.6,0.9l0.3,0.5l0.2,0.2l0.1,0.3l0.2,0.2
 			l0.3,0.3l0.3,0.6l0.2,0.2l0.4,0.3l0.1,0.4l0.2,0.2l0.6,1l0.7,0.9l0.6,1l-0.1,0.1l-0.2,0.1l-0.5,0.1l-0.8,0.3l-0.6,0l-0.8,0.2
 			l-1,0.3l-0.8,0.1l-0.3-0.1l-0.4-0.6l-0.3-0.2l0-0.2l-0.2-0.2l-0.2-0.2l-0.1-0.4l-0.4-0.2l-0.1-0.1l-0.1,0.1l-0.1,0l-0.4,0
@@ -1491,8 +2109,11 @@ make resume links actualy work in the PDF resume
 			L89.1,103z M89.3,100.6L89.3,100.6l-0.1-0.2L89.3,100.6z M89.3,101.5l0.1,0l0-0.1l-0.1,0L89.3,101.5z M89.5,100.1l0.2,0l-0.1-0.1
 			L89.5,100.1L89.5,100.1z M89.5,102.5L89.5,102.5l0.2,0.1l-0.1-0.1l-0.1,0L89.5,102.5z M90.4,103l-0.1-0.2l-0.2,0l0,0.2l0.1,0.1
 			L90.4,103z M90.8,104.9l0-0.2l-0.2,0l0.1,0.1L90.8,104.9z M90.8,103.4l0.1,0l0-0.2l-0.1,0L90.8,103.4z M91.3,103.7L91.3,103.7
-			l0.1-0.1l-0.1,0L91.3,103.7z M91.6,104.5l0.2,0l-0.1-0.1L91.6,104.5z"/>
-		<path class="st1" d="M111.3,97.9l0.1,0.2l0.4,0.4l0.2,0.2l0.3,0.5l0.8,0.8l0.8,0.9l0.2,0.2l1.2,1.4l0.1,0.3l-0.3,0.1l-2.2,0.3
+			l0.1-0.1l-0.1,0L91.3,103.7z M91.6,104.5l0.2,0l-0.1-0.1L91.6,104.5z"
+            />
+            <path
+              class="st1"
+              d="M111.3,97.9l0.1,0.2l0.4,0.4l0.2,0.2l0.3,0.5l0.8,0.8l0.8,0.9l0.2,0.2l1.2,1.4l0.1,0.3l-0.3,0.1l-2.2,0.3
 			l-0.3,0.1l-0.4,0l-0.4,0.1l-0.3-0.1l-0.3,0.1l-0.5,0l-0.5,0.1l-0.1,0l-1.6-1.7l-0.6-0.6l0-0.2l-0.9-1.1l-0.3-0.2l0.1-0.1l-0.8-0.6
 			l-0.1,0.1l-0.6,0l-0.9,0.2l-0.5,0.3l-0.2,0l0.1,1l0,0.1l-0.2,0.1l0.1,0.1l0.2,0l0,0.8l0.2,1.2l0.1,0.9l0,0.3l-1,0.2l-2.3,0.2
 			l-1.1,0.1l-0.2-0.2l-0.1-0.3l0-0.6l-0.3-2.2l-0.2-1.1l-0.1-1.2l-0.1-0.6L98.4,98l0.1-0.1l0-0.3l-0.2-0.9l0.1-0.6l-0.2-0.6l0.1-0.5
@@ -1572,8 +2193,11 @@ make resume links actualy work in the PDF resume
 			 M111.4,101.2l0-0.1l-0.1-0.1l0,0.1L111.4,101.2z M111.5,92.3l0-0.2l-0.2-0.1l-0.1,0.1l0.1,0.1L111.5,92.3z M111.3,89.7l0.1,0.1
 			l0.2,0l0.1-0.1l-0.2,0L111.3,89.7z M111.4,93.2l0.2,0l-0.1-0.1l-0.1,0L111.4,93.2z M111.4,94.1l0.1,0l0.1-0.2L111.4,94.1
 			L111.4,94.1z M111.5,97.6l0.1-0.2l-0.1-0.1l0,0.1L111.5,97.6z M111.6,90.9l0-0.1l-0.1-0.1l0,0.1L111.6,90.9z M111.5,98.5l0.1,0
-			l-0.1-0.1L111.5,98.5z M111.8,91.9l0-0.3l-0.1-0.1l-0.1,0.2l0,0.2L111.8,91.9z M111.9,96.1l0-0.2l-0.1-0.1l0,0.1L111.9,96.1z"/>
-		<path class="st1" d="M125.1,83.5l0.2,0.2l0.1,0.3l0.3,6.8l0.1,2.3l0.2,4.6l0,1.2l0,1.6l0.1,0.2l0.1,0.6l-0.1,0.9l-1,0.1l-3.3,0.1
+			l-0.1-0.1L111.5,98.5z M111.8,91.9l0-0.3l-0.1-0.1l-0.1,0.2l0,0.2L111.8,91.9z M111.9,96.1l0-0.2l-0.1-0.1l0,0.1L111.9,96.1z"
+            />
+            <path
+              class="st1"
+              d="M125.1,83.5l0.2,0.2l0.1,0.3l0.3,6.8l0.1,2.3l0.2,4.6l0,1.2l0,1.6l0.1,0.2l0.1,0.6l-0.1,0.9l-1,0.1l-3.3,0.1
 			l-0.1-0.2l-0.2,0.1l-0.1-0.1l-0.1-0.3l0-0.6l-0.1-0.5l0-0.6l-0.2-4.6l0-0.8l-0.1-0.6l0.1-0.5l-0.1-2.3l-0.1-2.3l-0.2-2.3l0.1-0.2
 			l-0.2-1.1l0.1-0.2l0-0.3l-0.1-0.6l0.1-0.4l0.5-0.1l1.1-0.1l2.4-0.1l0.4,0L125.1,83.5z M121.8,96.8L121.8,96.8l0.1-0.1l-0.1-0.1
 			L121.8,96.8z M122.1,88.6L122.1,88.6l-0.1-0.2l-0.1,0l0,0.1l0.1,0.1l0.1,0L122.1,88.6z M122.3,96.6l0.1-0.1l-0.1-0.2L122.3,96.6
@@ -1590,8 +2214,11 @@ make resume links actualy work in the PDF resume
 			l0.1-0.1L123.7,87.5L123.7,87.5z M124.1,91.6l0-0.2l-0.1-0.1l-0.1-0.1l0,0.1l0,0.1l0.1,0.1L124.1,91.6z M124,88.6l0-0.1l-0.1-0.1
 			L124,88.6L124,88.6z M124,90.5L124,90.5l0.2-0.2l-0.1,0L124,90.5z M124.1,95.5l0.3-0.1l0-0.1L124.1,95.5L124.1,95.5z M124.4,90.9
 			l0.2-0.2l-0.1,0l-0.1,0.1L124.4,90.9z M124.5,92.9l0.1,0l0-0.1l-0.1,0L124.5,92.9z M124.7,97.9l0.1,0l0-0.1L124.7,97.9L124.7,97.9
-			z"/>
-		<path class="st1" d="M133.1,101.5l-0.1-0.1l-0.2,0.2l-0.1-0.6l0.1-1.2l-0.1-0.9l0.2-1.8l0-0.6l0-0.6l-0.1-0.7l0.1-0.5l0-1l0.1-0.2
+			z"
+            />
+            <path
+              class="st1"
+              d="M133.1,101.5l-0.1-0.1l-0.2,0.2l-0.1-0.6l0.1-1.2l-0.1-0.9l0.2-1.8l0-0.6l0-0.6l-0.1-0.7l0.1-0.5l0-1l0.1-0.2
 			l0-0.1l-0.1-0.1l0.2-0.6l0-0.3l0-0.8l0.2-2.3l0-0.8l-0.1-0.6l0-0.7l0.1-0.3l0-2.3l0.1-1.4l0.1-0.1L134,83l2.4,0.1l0.7,0l0.4,0.2
 			l0.4,0.5l0.2,0.2l0,0.1l0.8,0.9l1.3,1.9l0.8,0.9l0.2,0.2l0,0.3l1,1.3l0.2,0.2l0,0.2l1.3,1.8l0.6,0.8l-0.1,0.3l0.3,0.1l0.2,0.2
 			l-0.1,0.2l0.1,0.1l0.1,0l0.1,0.1l0.2-0.2l0.1-0.5l0.1,0.1l0.1,0l0-0.1l-0.2,0l0-0.2l-0.2-0.4l0.2-0.2l0.1,0l0.1,0l-0.2-0.3
@@ -1699,12 +2326,16 @@ make resume links actualy work in the PDF resume
 			 M148.5,90.2l0.1,0l0-0.1l-0.1,0L148.5,90.2z M148.6,96.4l0.2,0l0.1-0.1l-0.1-0.1l-0.1,0.1L148.6,96.4z M148.6,95.3l0.2,0.2
 			l0.1-0.1l0-0.1l-0.1,0L148.6,95.3z M148.6,93.4L148.6,93.4l0.2,0L148.6,93.4L148.6,93.4z M148.7,92.6l0.2,0l0.1-0.1l0-0.1l0-0.1
 			l-0.1,0l-0.1,0.1l0,0.1L148.7,92.6z M149.2,88.5L149.2,88.5l-0.1,0L149.2,88.5z M149.1,98L149.1,98l0.1,0L149.1,98L149.1,98z
-			 M149.3,90.9L149.3,90.9l0.1-0.1l-0.1-0.1L149.3,90.9z M149.4,92.1L149.4,92.1l0.1-0.2l-0.1,0L149.4,92.1z"/>
-	</g>
-</g>
-<g id="banner_x5F_shadows_x5F_layer">
-	<g id="banner_x5F_shadows_x5F_group">
-		<path id="banner_x5F_shadows_x5F_paw" class="st5" d="M84.1,127.4c-1.2,0-2.7,1.4-3.7,2.1c-1.2,0.9-2.4,1.9-3.5,2.9
+			 M149.3,90.9L149.3,90.9l0.1-0.1l-0.1-0.1L149.3,90.9z M149.4,92.1L149.4,92.1l0.1-0.2l-0.1,0L149.4,92.1z"
+            />
+          </g>
+        </g>
+        <g id="banner_x5F_shadows_x5F_layer">
+          <g id="banner_x5F_shadows_x5F_group">
+            <path
+              id="banner_x5F_shadows_x5F_paw"
+              class="st5"
+              d="M84.1,127.4c-1.2,0-2.7,1.4-3.7,2.1c-1.2,0.9-2.4,1.9-3.5,2.9
 			c-2,1.7-4.2,4.4-7.1,3.3c-0.8-0.3-2.3-1.2-2.9-1.9c-0.8-0.9-1.3-2-2.1-2.8c-0.8-0.9-1.9-1.4-3-1.7c-0.6-0.2-1.3-0.2-2-0.4
 			c-0.6-0.2-1.2-0.4-1.9-0.3c-1.4,0.1-2,1.1-2.9,2c-0.9,1-1.5-0.8-2.5-0.2c-2.3,1.3-3,1-0.9,2.9c0.2,0.1,0.8,0.8,1,0.9
 			c0-0.8-0.3,2.5,0.4,2c0.5,1,0.5,2.4,2,2.3c-0.4,1.3,0.4,1.8,1.1,2.9c-1.9,1.5-2.3,4.9-0.4,6.5c1.9,1.5,1.1-1,1.6-1.8
@@ -1714,20 +2345,29 @@ make resume links actualy work in the PDF resume
 			c1.3-0.1,1.7,0.4,3.1,0.4c0.3,0.8,1.4,0.2,2.1,0.4c0.6,0.1,2.1,0.1,2.4,0.2c0.2-0.3,0.2-0.6,0.2-1c0.9-0.1,1.8,0.5,2.3,1.1
 			c0.5-0.5,0.9-3.8,0.9-3.8c1.5,0.5,2.7,1.1,4.3,1c1.2-0.1,3-0.8,3.5,0.7c1.6,0.1,1.3-2.9,0.8-3.5c-0.3-0.5-1.4-1.3-1.5-1.8
 			c-0.2-0.9,2-1.2,2.7-1.3c1.1-0.3,3,2,4,1.4c1.4-0.8,2.5-1.8,2,1.3c5.9,2.7,10.2-4.7,1.3-7.5c-1.8-0.6-11.2-2.3-13-2.9
-			c-6-1.7-11.6-2.4-17.5-0.3c-0.7,0.3-7.2,3-6.3,4.6"/>
-		<path id="banner_x5F_shadows_x5F_jaw" class="st5" d="M94.2,73.2c0.5,1.3,1,3,0.4,4.4c-0.5,1.4-1,2.6-0.8,4.2c0.2,0,0.4,0.1,0.6,0
+			c-6-1.7-11.6-2.4-17.5-0.3c-0.7,0.3-7.2,3-6.3,4.6"
+            />
+            <path
+              id="banner_x5F_shadows_x5F_jaw"
+              class="st5"
+              d="M94.2,73.2c0.5,1.3,1,3,0.4,4.4c-0.5,1.4-1,2.6-0.8,4.2c0.2,0,0.4,0.1,0.6,0
 			c-0.1,0.5-0.8,1.1-1.1,1.7c0.5,0.4-1.1,0.2-1.2,0.7c-0.1,0.7,0.1,1.5,0.4,2.1c0,0,0-0.1,0.1-0.1c0.1,0.6,0.1,1.3,0.1,1.9
 			c0-0.1-0.1-0.2-0.1-0.3c0.1,0.7,2,3.5,0.8,3.6c-0.4,1.3,2.5,1.7,2.5-0.1c0.1,0.8,0.7,1,1.3,1.2c0.2,1,1.6,1.4,2.5,1.4
 			c1.1,0.1,1.8-0.3,2.8,0.5c-0.3-0.7,0.1-1.4-0.6-2c0.5,0.1,1-0.1,1.5-0.2c0-0.1,0-0.2-0.1-0.3c0.4,0.1,1,0,1.3-0.3
 			c-0.1-0.1-0.2-0.1-0.3-0.2c1.2-0.1,2.5-0.2,3.3-1.4c0.4-0.7,1.7-0.7,1.9-1.5c0.1-0.6,0.6-1.4,0.3-2c0.3-0.4,0.8-0.8,1-1.2
 			c0.4-0.5,0.3-0.4,0.7-1c0.4-0.6,1-0.6,1.1-1.4c0.2-0.7,1.2-1.6,1.1-2.2c0-0.8,0.9-1.6,1.8-1.9c1.8-0.5,1.7-1.1,2.1-1.4
-			c1.1-0.8,0.1-1.7,0.1-1.7l-7.9,0.6l-7-6l-8.3,1.9"/>
-	</g>
-</g>
-<g id="lion_x5F_paw_x5F_layer">
-	<g id="lion_x5F_paw_x5F_group_00000135666321727100361450000014173555976459415450_">
-		<defs>
-			<path id="lion_x5F_paw_x5F_clipping_x5F_path_00000044165081666284601860000007876376576399668917_" d="M81.8,125.1
+			c1.1-0.8,0.1-1.7,0.1-1.7l-7.9,0.6l-7-6l-8.3,1.9"
+            />
+          </g>
+        </g>
+        <g id="lion_x5F_paw_x5F_layer">
+          <g
+            id="lion_x5F_paw_x5F_group_00000135666321727100361450000014173555976459415450_"
+          >
+            <defs>
+              <path
+                id="lion_x5F_paw_x5F_clipping_x5F_path_00000044165081666284601860000007876376576399668917_"
+                d="M81.8,125.1
 				c-1.2,0-2.7,1.4-3.7,2.1c-1.2,0.9-2.4,1.9-3.5,2.9c-2,1.7-4.2,4.4-7.1,3.3c-0.8-0.3-2.3-1.2-2.9-1.9c-0.8-0.9-1.3-2-2.1-2.8
 				c-0.8-0.9-1.9-1.4-3-1.7c-0.6-0.2-1.3-0.2-2-0.4c-0.6-0.2-1.2-0.4-1.9-0.3c-1.4,0.1-2,1.1-2.9,2c-0.9,1-2.2,0.8-3.3,1.4
 				c-2.3,1.3-3.1,4.5-1,6.4c0.2,0.1,0.3,0.3,0.5,0.4c0-0.8,1-2.2,1.6-2.6c0.5,1,0.5,2.4,2,2.3c-0.4,1.3,0.4,1.8,1.1,2.9
@@ -1738,23 +2378,39 @@ make resume links actualy work in the PDF resume
 				c0.6,0.1,2.7,1.7,2-0.1c0.3,0.2,0.5,0.3,0.8,0.5c0.2-0.3,0.2-0.6,0.2-1c0.9-0.1,1.6,1,2.1,1.6c0.5-0.5,0.4-2.1,0.1-2.6
 				c0.3-0.3,0.1-0.7-0.1-0.9c0,0,0,0,0,0c0.1,0,0.3,0.1,0.3,0.1c0,0,0-0.2,0-0.2c1.5,0.5,2.6,0.3,4.2,0.2c1.2-0.1,3.5-0.3,4,1.2
 				c1.6,0.1,0.7-2.7,0.2-3.3c-0.3-0.5-1.1-1-1.3-1.5c-0.2-0.9,0.9-0.9,1.5-1.1c1.1-0.3,3.1-0.3,4.1-0.9c1.4-0.8,5.1,0.1,4.6,3.2
-				c5.9,2.7,7.6-6.6-1.3-9.4c-1.8-0.6-11.2-2.3-13-2.9c-6-1.7-11.6-2.4-17.5-0.3c-0.7,0.3-7.2,3-6.3,4.6"/>
-		</defs>
-		<clipPath id="lion_x5F_paw_x5F_clipping_x5F_path_00000116943824599858133910000016816501863049617084_">
-			
-				<use xlink:href="#lion_x5F_paw_x5F_clipping_x5F_path_00000044165081666284601860000007876376576399668917_"  style="overflow:visible;"/>
-		</clipPath>
-		<g style="clip-path:url(#lion_x5F_paw_x5F_clipping_x5F_path_00000116943824599858133910000016816501863049617084_);">
-			
-				<image style="overflow:visible;" width="359" height="208" id="lion_x5F_paw_x5F_pic_00000042726792938657812340000015460868697049974691_" xlink:href="images/logo_embeds/lion_arm.png"  transform="matrix(0.2125 0 0 0.2125 46.4327 102.7164)">
-			</image>
-		</g>
-	</g>
-</g>
-<g id="lion_x5F_jaw">
-	<g id="lion_x5F_jaw_x5F_group">
-		<defs>
-			<path id="lion_x5F_jaw_x5F_clipping_x5F_path" d="M91.7,70.9c0.5,1.3,1,3,0.4,4.4c-0.5,1.4-1,2.6-0.8,4.2c0.2,0,0.4,0.1,0.6,0
+				c5.9,2.7,7.6-6.6-1.3-9.4c-1.8-0.6-11.2-2.3-13-2.9c-6-1.7-11.6-2.4-17.5-0.3c-0.7,0.3-7.2,3-6.3,4.6"
+              />
+            </defs>
+            <clipPath
+              id="lion_x5F_paw_x5F_clipping_x5F_path_00000116943824599858133910000016816501863049617084_"
+            >
+              <use
+                xlink:href="#lion_x5F_paw_x5F_clipping_x5F_path_00000044165081666284601860000007876376576399668917_"
+                style="overflow: visible"
+              />
+            </clipPath>
+            <g
+              style="
+                clip-path: url(#lion_x5F_paw_x5F_clipping_x5F_path_00000116943824599858133910000016816501863049617084_);
+              "
+            >
+              <image
+                style="overflow: visible"
+                width="359"
+                height="208"
+                id="lion_x5F_paw_x5F_pic_00000042726792938657812340000015460868697049974691_"
+                xlink:href="images/logo_embeds/lion_arm.png"
+                transform="matrix(0.2125 0 0 0.2125 46.4327 102.7164)"
+              ></image>
+            </g>
+          </g>
+        </g>
+        <g id="lion_x5F_jaw">
+          <g id="lion_x5F_jaw_x5F_group">
+            <defs>
+              <path
+                id="lion_x5F_jaw_x5F_clipping_x5F_path"
+                d="M91.7,70.9c0.5,1.3,1,3,0.4,4.4c-0.5,1.4-1,2.6-0.8,4.2c0.2,0,0.4,0.1,0.6,0
 				c-0.1,0.5-0.8,1.1-1.1,1.7c0.5,0.4-0.1,1.3-0.2,1.8c-0.1,0.7,0.1,1.5,0.4,2.1c0,0,0-0.1,0.1-0.1c0.1,0.6,0.1,1.3,0.1,1.9
 				c0-0.1-0.1-0.2-0.1-0.3c0.1,0.7,2.8,3.8,1,3.6c-0.2,1,2.1,0.5,2.1-1.2c0.1,0.8,0.9,1.3,1.6,1.4c0.2,0.9,1.3,1.8,2.2,1.8
 				c1.1,0.1,1.9-0.5,2.8,0.7c-0.3-0.7,0.2-1.2-0.5-1.8c0.5,0.1,1-0.1,1.5-0.2c0-0.1,0-0.2-0.1-0.3c0.4,0.1,1,0,1.3-0.3
@@ -1762,92 +2418,126 @@ make resume links actualy work in the PDF resume
 				c0.4-0.5,0.4-1.1,0.8-1.6c0.4-0.6,0.9-0.9,1-1.6c0.2-0.7,0.1-1.5,0.1-2.2c0-0.8-0.4-1,0.2-1.6c0.4-0.3,0.9-0.6,1.3-0.8
 				c1.1-0.8,1.8-1.9,2.9-2.7c0.6-0.4,1-0.8,1.2-1.5c1.4-0.4,2.3-1.2,3.3-2.2c0.6-0.7,1.4-1.2,2-2c1-1.3,1.6-2.3,2.1-4
 				c0.8-2.9-2.3-5.5-4.3-7c-3.5-2.5-7.5-5.4-11.8-6.2c-4.1-0.8-9.2-0.3-13.1,1.3c-2,0.8-3.6,2.4-4.6,4.2c-1.8,3.1-3.1,7.3-1.4,10.7
-				c0.9,1.7,2.2,3.3,3.5,4.6"/>
-		</defs>
-		<clipPath id="lion_x5F_jaw_x5F_clipping_x5F_path_00000076569674165717325140000003431995751645711538_">
-			<use xlink:href="#lion_x5F_jaw_x5F_clipping_x5F_path"  style="overflow:visible;"/>
-		</clipPath>
-		<g style="clip-path:url(#lion_x5F_jaw_x5F_clipping_x5F_path_00000076569674165717325140000003431995751645711538_);">
-			
-				<image style="overflow:visible;" width="138" height="122" id="lion_x5F_jaw_x5F_pic" xlink:href="images/logo_embeds/lion_jaw.png"  transform="matrix(0.2125 0 0 0.2125 87.7112 69.3148)">
-			</image>
-		</g>
-	</g>
-</g>
+				c0.9,1.7,2.2,3.3,3.5,4.6"
+              />
+            </defs>
+            <clipPath
+              id="lion_x5F_jaw_x5F_clipping_x5F_path_00000076569674165717325140000003431995751645711538_"
+            >
+              <use
+                xlink:href="#lion_x5F_jaw_x5F_clipping_x5F_path"
+                style="overflow: visible"
+              />
+            </clipPath>
+            <g
+              style="
+                clip-path: url(#lion_x5F_jaw_x5F_clipping_x5F_path_00000076569674165717325140000003431995751645711538_);
+              "
+            >
+              <image
+                style="overflow: visible"
+                width="138"
+                height="122"
+                id="lion_x5F_jaw_x5F_pic"
+                xlink:href="images/logo_embeds/lion_jaw.png"
+                transform="matrix(0.2125 0 0 0.2125 87.7112 69.3148)"
+              ></image>
+            </g>
+          </g>
+        </g>
 
-<polygon class="glint" points="98.5,35.1 99.3,46.1 110.4,46.9 99.3,47.7 98.5,58.8 97.7,47.7 86.6,46.9 97.7,46.1 "/>
+        <polygon
+          class="glint"
+          points="98.5,35.1 99.3,46.1 110.4,46.9 99.3,47.7 98.5,58.8 97.7,47.7 86.6,46.9 97.7,46.1 "
+        />
+      </svg>
+    </a>
 
-
-</svg>
-</a>
-
-
-
-
-
-
-
-
-<div  style="display:none">
-  <svg id="svg_badge_master" class="svg_badge"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 476 648" style="enable-background:new 0 0 476 648;" xml:space="preserve">
-  <style type="text/css">
-    .st0_badge{display:none;fill:#FFFFFF;}
-    .st1_badge{fill:none;}
-  </style>
-  <g id="image">
-    <g>
-      <defs>
-        <path id="SVGID_1_" d="M236.4,616.8C351.1,489.4,417,326,417,159.1c-9.4-8.8-24.1-21.2-39.7-25.7c4.9-51.3-18.9-63.6-34.1-63.6
+    <div style="display: none">
+      <svg
+        id="svg_badge_master"
+        class="svg_badge"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 476 648"
+        style="enable-background: new 0 0 476 648"
+        xml:space="preserve"
+      >
+        <style type="text/css">
+          .st0_badge {
+            display: none;
+            fill: #ffffff;
+          }
+          .st1_badge {
+            fill: none;
+          }
+        </style>
+        <g id="image">
+          <g>
+            <defs>
+              <path
+                id="SVGID_1_"
+                d="M236.4,616.8C351.1,489.4,417,326,417,159.1c-9.4-8.8-24.1-21.2-39.7-25.7c4.9-51.3-18.9-63.6-34.1-63.6
           c-42.8,0-18.5-57.5-106.9-57.5H235c-88.4,0-64.1,57.5-106.9,57.5c-15.1,0-38.9,12.3-34.1,63.6c-15.6,4.5-30.3,16.9-39.7,25.7
-          c0,166.9,66,330.3,180.6,457.7H236.4z"/>
-      </defs>
-      <clipPath id="SVGID_badge_clip_path">
-        <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-      </clipPath>
-      <g style="clip-path:url(#SVGID_badge_clip_path);">
-          <image class="badge_category_image" style="overflow:visible;" width="500" height="610" xlink:href="/images/cards/shopify_card_xl.jpg"  >
-        </image>
-      </g>
-    </g>
-    <path class="st0_badge" d="M236.4,616.8C351.1,489.4,417,326,417,159.1c-9.4-8.8-24.1-21.2-39.7-25.7c4.9-51.3-18.9-63.6-34.1-63.6
+          c0,166.9,66,330.3,180.6,457.7H236.4z"
+              />
+            </defs>
+            <clipPath id="SVGID_badge_clip_path">
+              <use xlink:href="#SVGID_1_" style="overflow: visible" />
+            </clipPath>
+            <g style="clip-path: url(#SVGID_badge_clip_path)">
+              <image
+                class="badge_category_image"
+                style="overflow: visible"
+                width="500"
+                height="610"
+                xlink:href="/images/cards/shopify_card_xl.jpg"
+              ></image>
+            </g>
+          </g>
+          <path
+            class="st0_badge"
+            d="M236.4,616.8C351.1,489.4,417,326,417,159.1c-9.4-8.8-24.1-21.2-39.7-25.7c4.9-51.3-18.9-63.6-34.1-63.6
       c-42.8,0-18.5-57.5-106.9-57.5H235c-88.4,0-64.1,57.5-106.9,57.5c-15.1,0-38.9,12.3-34.1,63.6c-15.6,4.5-30.3,16.9-39.7,25.7
-      c0,166.9,66,330.3,180.6,457.7H236.4z"/>
-  </g>
-  <g id="Shiled_x5F_PNG_x5F_image">
-     <image class="badge_background_image" style="overflow:visible;" width="476" height="648" xlink:href="/images/cards/badge_hero_hollow.png"  > </image><!-- transform="matrix(1 0 0 1 -0.128 -0.3296)" --> 
-  </g>
-  <g id="Text">
-   <path id="Illustration_x5F" class="st1_badge" d="M65.6,448.5c21.1,17.2,327.6-79.3,352.1-60.1"/>
-   <text id="Illustration_x5F_texter">	
-      <!-- DO *NOT* use a return and put <tspan> on it's own line with ANY tabs or spacing. It counts in the text block!! -->
-      <!-- <tspan> element is part of the text node and any spaces or tabs before or after it are counted and throw off the offset -->
-       <textPath  xlink:href="#Illustration_x5F" text-anchor="middle" startOffset="50%"><tspan>xXABCDEFGHIJKLXx</tspan></textPath>
-   </text>
-  </g>
-  </svg>
-</div><!-- end hidden div wrapper -->
+      c0,166.9,66,330.3,180.6,457.7H236.4z"
+          />
+        </g>
+        <g id="Shiled_x5F_PNG_x5F_image">
+          <image
+            class="badge_background_image"
+            style="overflow: visible"
+            width="476"
+            height="648"
+            xlink:href="/images/cards/badge_hero_hollow.png"
+          ></image>
+          <!-- transform="matrix(1 0 0 1 -0.128 -0.3296)" -->
+        </g>
+        <g id="Text">
+          <path
+            id="Illustration_x5F"
+            class="st1_badge"
+            d="M65.6,448.5c21.1,17.2,327.6-79.3,352.1-60.1"
+          />
+          <text id="Illustration_x5F_texter">
+            <!-- DO *NOT* use a return and put <tspan> on it's own line with ANY tabs or spacing. It counts in the text block!! -->
+            <!-- <tspan> element is part of the text node and any spaces or tabs before or after it are counted and throw off the offset -->
+            <textPath
+              xlink:href="#Illustration_x5F"
+              text-anchor="middle"
+              startOffset="50%"
+            >
+              <tspan>xXABCDEFGHIJKLXx</tspan>
+            </textPath>
+          </text>
+        </g>
+      </svg>
+    </div>
+    <!-- end hidden div wrapper -->
 
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script> 
-<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
-
-
-
-
-
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
