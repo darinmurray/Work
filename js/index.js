@@ -250,9 +250,9 @@ window.onload = function () {
     goNinja(chosen_mode);
   });
 
-  // ==========    N I N J A    ================ //
-  // ==========     M O D E     ================ //
-  // ==========   (spotlight)   ================ //
+  // ==========   S T E A L T H   ================ //
+  // ==========     M O D E       ================ //
+  // ==========    (spotlight)    ================ //
   const spotlight = document.querySelector(".spotlight");
   let spotlightSize = "transparent 180px, rgba(0, 0, 0, 0.9) 200px)";
 

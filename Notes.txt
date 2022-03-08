@@ -20,3 +20,50 @@ firebase
 
 Ok, make form input look like raised letter type from when you were a kid. 
 THat punch lettering stuff. 
+
+
+
+Solution: customize packing slip for easy and quick visual reference of product to be made. Pictures and swatches instead of wordy descriptions. 
+Include custom “double checked by” signature areas to critical production steps
+Include ‘proofing area’ for custom name stamping so it can be checked and signed off by team-mate BEFORE being used on the actual product. 
+
+
+
+Problem: 
+- Hundreds of customers want to know when their product will ship.
+Conditions: 
+- Each order is custom made by 5-8 different ‘stations/teams’ in the production environment
+- Hundreds of orders are in any given state at any given time in the production environment
+- Some steps are faster than others, constantly changing throughput of each station.
+
+Solution:
+Allow customers to see where their order is, in the production pipeline. 
+Create understanding and buy-in of the production process.
+Make it very easy for them to check in and see where their product is in the process and give an estimation on completion.
+ 
+Existing Process:
+Highly customized packing slips are printed for each order and submitted to production team for fulfillment. 
+
+Implementation:
+Add barcodes of the order number to each Shopify packing slip/job ticket.
+
+Add barcode readers and PC terminals to each assembly station.
+
+Develop simple Ruby on Rails application that links to the Shopify store
+
+When a team member gets a packing slip/work ticket, they scan the barcode (order number) on the ticket, then they scan the barcode of the process they are about to perform (printed/laminated at each workstation.
+
+The team member does not have to interact with the PC terminal at all. They app knows what to do next, depending on the barcode scanned and keeps the team member on track. 
+
+The app the order with the production step it is currently on.
+
+For the customer:
+Caveats: 
+1 - Don’t make the customer do anything more than the absolute fewest steps possible to access the current status on their order.
+2 - Don’t force info on the customer (such as a status update email) so as not to effect/involve customers who don’t care when they receive their order. Don’t let a solution for the vocal minority create more interactivity with the curiously provoked. 
+
+When a “where’s my order?” request is received, cusomers are pointed to the tracker app and instructd to enter their order number and their zipcode. These two pieces of info are enough to create unique verification. No information is displayed about the customer, so security is not an issue. 
+
+The customer then sees a graphical representation of where their order is in the process of fabrication, and given an estimation of shipment based on current conditions.
+
+This reduced customer service emails by 80% upon implementation.

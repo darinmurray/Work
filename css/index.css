@@ -1297,7 +1297,8 @@ tspan {
 /* #illustration, #logos, #products { */
 .illustration_panel,
 .logos_panel,
-.products_panel {
+.products_panel,
+.shopify_panel {
   position: fixed;
   top: 0;
   left: 0;
@@ -1307,8 +1308,14 @@ tspan {
 
 .illustration_panel,
 .logos_panel,
-.products_panel {
+.products_panel,
+.shopify_panel {
   background-color: #ffffff;
+}
+.shopify_preview {
+  width: 200px;
+  height: 180px;
+  background-color: gray;
 }
 
 /* =========      A B O U T   M E      ============ */
