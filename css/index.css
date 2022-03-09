@@ -1162,7 +1162,7 @@ ul.deck {
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 ul.deck li.card {
   display: -webkit-box;
@@ -1316,6 +1316,90 @@ tspan {
   width: 200px;
   height: 180px;
   background-color: gray;
+}
+
+/* =========      S H O P I F Y      ============ */
+/* =========      S H O P I F Y      ============ */
+/* =========      S H O P I F Y      ============ */
+.shopify {
+  /* width: 100%; */
+  min-height: 300px;
+  margin-bottom: 100px;
+  /* border: 1px dotted rgba(136, 7, 7, 0.63); */
+}
+
+/* the shopify logo links */
+.shopify_sites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.shopify_sites li {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: center;
+}
+.shopify_sites li a img {
+  width: 160px;
+}
+.shopify_sites li a.shopify_store_icon {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.shopify_sites li a.case_study {
+  font-family: "Bitter", serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 4px 17px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--black-1);
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background: var(--color-1);
+  margin-top: 20px;
+}
+.shopify_sites li a.case_study:hover {
+  color: var(--color-1);
+  border: 3px solid var(--color-1);
+  background: var(--black-1);
+}
+
+.shopify_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shopify_paragraph {
+  width: 58%;
+  min-width: 340px;
+}
+.shopify_list {
+  width: 38%;
+  min-width: 340px;
+  list-style-type: none;
+}
+.shopify_list li {
+  list-style-type: none;
+}
+.shopify_list li::before {
+  content: "• ";
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 820px) {
+  .shopify_paragraph {
+    width: 100%;
+  }
+  .shopify_list {
+    margin: 0 auto;
+  }
 }
 
 /* =========      A B O U T   M E      ============ */

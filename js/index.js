@@ -297,21 +297,21 @@ window.onload = function () {
   // ==========   C U R S O R  C H A N G E S    ================ //
   // ==== Change determined by data_cursor attribute, if asigned
   // $(".close_carousel, #nav_wrapper, .card_wrapper a, .js-carousel-button,  form *").each(function(main_event){
-  $(".close_carousel, .card_wrapper a, .js-carousel-button,  form *").each(
-    function (main_event) {
-      $(this).hover(
-        function (sub_event) {
-          cursor_choice = $(this).attr("data-cursor");
-          $(cursors).hide();
-          $("." + cursor_choice).show();
-        },
-        function () {
-          $("." + cursor_choice).hide();
-          $(".cursor_main").show();
-        }
-      );
-    }
-  );
+  $(
+    ".close_carousel, .card_wrapper a, .js-carousel-button,  .shopify_sites a, form *"
+  ).each(function (main_event) {
+    $(this).hover(
+      function (sub_event) {
+        cursor_choice = $(this).attr("data-cursor");
+        $(cursors).hide();
+        $("." + cursor_choice).show();
+      },
+      function () {
+        $("." + cursor_choice).hide();
+        $(".cursor_main").show();
+      }
+    );
+  });
 
   // ==========       C U R S O R        ================ //
   // ==========   (circle over icons)    ================ //
