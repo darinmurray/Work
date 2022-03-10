@@ -410,6 +410,93 @@ body {
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 79%);
 }
 
+/* ======  W A R N I N G  ====== */
+/* ======  W A R N I N G  ====== */
+/* ======  W A R N I N G  ====== */
+
+.warning_wrapper {
+  display: none;
+}
+.warning_blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.85;
+  z-index: 998;
+}
+.warning {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50vh;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  max-width: 90%;
+  width: 300px;
+  border: 3px solid red;
+  background: var(--black-15);
+  padding: 0 20px 10px 20px;
+  -webkit-box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.42);
+  box-shadow: 4px 5px 13px 0px rgba(0, 0, 0, 0.42);
+  z-index: 999;
+}
+.warning div {
+  font-size: 28px;
+  text-align: center;
+  color: red;
+  width: 100%;
+  padding: 15px 0px 15px 0px;
+  opacity: 0.4;
+  animation: myAnim 4s ease 0s infinite normal forwards;
+}
+.warning p {
+  color: var(--black-1);
+}
+.warning p.go {
+  display: block;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-align: center;
+  color: var(--black-18);
+  padding: 12px 20px;
+  margin: 40px auto;
+  border: none;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  background-color: #fff;
+  cursor: pointer;
+}
+.warning p.go:hover {
+  color: var(--black-1);
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background-color: #000;
+}
+.warning p.cancel {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--black-5);
+}
+
+@keyframes myAnim {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+}
+
 /* =========     C U R S O R      ============ */
 /* =========     C U R S O R      ============ */
 /* =========     C U R S O R      ============ */

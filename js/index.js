@@ -69,7 +69,7 @@ window.onload = function () {
 
   // ======== Clone & Insert Badges ========= //
   // ========    ( work samples)    ========= //
-  // ======== ===================== ========= //
+  // ======================================== //
   // replace HTML image with SVG/image/text
   $(".card").each(function (index) {
     let card_name = $(this).attr("data-name");
@@ -148,10 +148,26 @@ window.onload = function () {
     }
   );
 
+  // ==========    W A R N I N G    ================ //
+  $("a.ems_warning").click(function (e) {
+    e.preventDefault();
+    // open a modal
+    $(".warning_wrapper").show();
+    //go to link on modal close
+    var url = $(this).attr("href");
+    $(".go").click(function () {
+      window.open(url);
+      $(".warning_wrapper").hide();
+    });
+    $(".cancel").click(function () {
+      e.preventDefault();
+      $(".warning_wrapper").hide();
+    });
+  });
+
   // ==========    C O N T A C T    ================ //
   // ==========       F O R M       ================ //
   // ==========     (submitted)     ================ //
-
   // ==> Activete inviting cursor when hovering near inputs
   $(".input_active_area").hover(
     function (e) {
@@ -417,7 +433,7 @@ window.onload = function () {
       var sin = b / scale;
       // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
       var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
-      console.log(`%c=> angle: `, "color:cyan", angle);
+      // console.log(`%c=> angle: `, "color:cyan", angle);
       return angle; //= null ?? 0;
     }
     return 0;
