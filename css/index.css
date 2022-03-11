@@ -338,8 +338,8 @@ body {
 }
 .icon-crossbones:before {
   content: "\e903";
-  color: #aa1f23;
 }
+
 .icon-css:before {
   content: "\e901";
 }
@@ -366,6 +366,8 @@ body {
 }
 .icon-left_arrow_pointy:before {
   content: "\e90f";
+  color: #44ffee;
+  fill: #44ffee;
 }
 .icon-mysql:before {
   content: "\e910";
@@ -378,6 +380,8 @@ body {
 }
 .icon-right_arrow_pointy:before {
   content: "\e928";
+  color: #44ffee;
+  fill: #44ffee;
 }
 .icon-shopify:before {
   content: "\e929";
@@ -581,7 +585,7 @@ opacity: 0.8;
 .cursor_skull {
   fill: var(--cursor-color);
   position: absolute;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 99999;
   -webkit-transform: scale(50%);
   -ms-transform: scale(50%);
@@ -1618,6 +1622,10 @@ a:visited,
   width: 60px;
 }
 
+.arrow_over_path {
+  fill: #44ffee;
+}
+
 [data-cursor="cursor_pointy_arrow_left"]:hover {
   animation: arrow_slide_left 1s 1 ease-in-out forwards;
 }
@@ -1880,8 +1888,12 @@ input[type="submit"]:hover {
   top: 5vh;
   left: 6vh;
 }
-.close_carousel .icon-crossbones {
+.close_carousel .icon-crossbones:before {
   font-size: 42px;
+  color: var(--black-3);
+}
+.icon-crossbones:hover::before {
+  color: #44ffef8f;
 }
 
 .fade_in {
