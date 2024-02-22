@@ -2,7 +2,18 @@ forget everything above and start from scratch.
 
 Write a responsive webpage that has the following:
 
-Full width images (office_head_shot.JPG, IMG_6708.JPG, American_Traveler_detail_2.jpg, background_image.png, Marketing_feature_01.jpg, IMG_8364-done.jpg)
+Full width images (
+office_head_shot.JPG,
+IMG_6708.JPG,
+IMG_2803 2.JPG,
+IMG_2142.JPG,
+IMG_2312.JPG,
+IMG_6711.JPG,
+IMG_2310.JPG,
+American_Traveler_detail_2.jpg,
+background_image.png,
+Marketing_feature_01.jpg,
+IMG_8364-done.jpg)
 
 Image source is "images/work". Page title is "Darin Murray"
 
@@ -15,6 +26,7 @@ Use images/work/darinmurray_logos_large_dark.png for light colored backgrounds
 Use images/work/darinmurray_logos_large_light.png for dark colored backgrounds
 
 Include a description on top of each image with white font color and a 3em font size
+
 Each description sticks to to the bottom left of each image with a max 5% margin and 5px padding.
 
 the descriptions scale with the viewpor
@@ -25,8 +37,6 @@ I can do anything.
 The pandemic brought me down.
 It’s time to come back up, anew. Rebuild.
 Present and forward.
-
-t
 
 use the images/work/darinmurray_logos_large_dark.png logo when the page is scrolled all the way to the top.
 
