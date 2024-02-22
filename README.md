@@ -1,22 +1,9 @@
-<h1 align="center" style="border-bottom:none;"> Pure CSS Split Flap Display </h1> 
-<p align="center">
-  <img src="images/read-me-images/splitFlap.png">
-</p>
-<p align="center">
-  Developed for a fullscreen display board with controls.
-</p>
+Write a responsive webpage that has the following:
 
-<p align="center">
-  <img src="images/read-me-images/splitFlap-turning-a.png">
-</p>
+Full width images (office head shot.JPG, IMG_6708.JPG, American_Traveler_detail_2.jpg, background_image.png, Marketing_feature_01.jpg) with a max width of 1080 and a min of 100. Image source is "images/products". Page title is "Darin Murray"
 
-<p align="center">
-  <img src="images/read-me-images/splitFlap-turning-b.png">
-</p>
+Stacked top to bottom with no border or margin or padding.
 
-<p align="center">
-No images are used (except for the screenshots in this readMe). 
-</p>
-<p align="center">
-Rendered in CSS with JS controls for triggering the flip, changing the character and animating timing.
-</p>
+Include a hamburger menue on the top left corner that does not scroll and displays above all images, with links to "Home", "About".
+
+Include a logo (DTM_logo.png) at the top center with a max width of 350px. The logo displays above all images and does not scroll.
