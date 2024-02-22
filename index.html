@@ -25,7 +25,8 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
-        transition: top 0.3s ease-in-out, filter 0.3s ease-in-out;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
       }
 
       .image-container {
@@ -42,55 +43,18 @@
       .image-description {
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 5%;
         padding: 5px;
-        /* background-color: rgba(255, 255, 255, 0.8); */
         box-sizing: border-box;
         width: 90%;
         max-width: 90%;
         margin: 5%;
         font-size: 3em;
         line-height: 1.4;
-        /* white-space: pre-line; */
+        white-space: pre-line;
         color: white;
       }
     </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var logo = document.getElementById("logo");
-        var images = document.querySelectorAll(".image-container img");
-
-        function checkLogoAndBackgroundContrast() {
-          var background = getComputedStyle(images[0]).backgroundColor;
-
-          if (window.scrollY === 0) {
-            logo.src = "images/work/darinmurray_logos_large_dark.png";
-          } else {
-            logo.src = "images/work/darinmurray_logos_large_light.png";
-          }
-
-          if (isDarkBackground(background)) {
-            logo.src = "images/work/darinmurray_logos_large_dark.png";
-          } else {
-            logo.src = "images/work/darinmurray_logos_large_light.png";
-          }
-        }
-
-        function isDarkBackground(color) {
-          var rgb = color.match(/\d+/g);
-          var brightness =
-            (parseInt(rgb[0]) * 299 +
-              parseInt(rgb[1]) * 587 +
-              parseInt(rgb[2]) * 114) /
-            1000;
-          return brightness < 128;
-        }
-
-        window.addEventListener("scroll", checkLogoAndBackgroundContrast);
-        window.addEventListener("resize", checkLogoAndBackgroundContrast);
-        checkLogoAndBackgroundContrast();
-      });
-    </script>
     <title>Darin Murray</title>
   </head>
   <body>
@@ -104,118 +68,95 @@
     </header>
 
     <div class="image-container">
-      <img
-        src="images/work/office_head_shot.JPG"
-        alt="Image 1"
-        style="background-color: #f0f0f0"
-      />
+      <img src="images/work/office_head_shot.JPG" alt="Image 1" />
       <div class="image-description">
         I’m Darin Murray, and I’m glad you’re here.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_6708.JPG"
-        alt="Image 2"
-        style="background-color: #e0e0e0"
-      />
+      <img src="images/work/IMG_6708.JPG" alt="Image 2" />
       <div class="image-description">I was born to create. I’m an artist.</div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_2803 2.JPG"
-        alt="Image 3"
-        style="background-color: #d0d0d0"
-      />
+      <img src="images/work/IMG_2803 2.JPG" alt="Image 3" />
       <div class="image-description">I can do anything.</div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_2142.JPG"
-        alt="Image 4"
-        style="background-color: #c0c0c0"
-      />
+      <img src="images/work/IMG_2142.JPG" alt="Image 4" />
       <div class="image-description">The pandemic brought me down.</div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_2312.JPG"
-        alt="Image 5"
-        style="background-color: #b0b0b0"
-      />
+      <img src="images/work/IMG_2312.JPG" alt="Image 5" />
       <div class="image-description">
         It’s time to come back up, anew. Rebuild. Present and forward.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_6711.JPG"
-        alt="Image 6"
-        style="background-color: #a0a0a0"
-      />
+      <img src="images/work/IMG_6711.JPG" alt="Image 6" />
       <div class="image-description">
         Adjusting to the evolving world, one step at a time.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_2310.JPG"
-        alt="Image 7"
-        style="background-color: #909090"
-      />
+      <img src="images/work/IMG_2310.JPG" alt="Image 7" />
       <div class="image-description">
         Embracing challenges, turning them into opportunities.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/American_Traveler_detail_2.jpg"
-        alt="Image 8"
-        style="background-color: #808080"
-      />
+      <img src="images/work/American_Traveler_detail_2.jpg" alt="Image 8" />
       <div class="image-description">
         Inspiring through creativity and innovation.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/background_image.png"
-        alt="Image 9"
-        style="background-color: #707070"
-      />
+      <img src="images/work/background_image.png" alt="Image 9" />
       <div class="image-description">
         Passionately creating a brighter tomorrow.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/Marketing_feature_01.jpg"
-        alt="Image 10"
-        style="background-color: #606060"
-      />
+      <img src="images/work/Marketing_feature_01.jpg" alt="Image 10" />
       <div class="image-description">
         Sharing stories through visual expression.
       </div>
     </div>
 
     <div class="image-container">
-      <img
-        src="images/work/IMG_8364-done.jpg"
-        alt="Image 11"
-        style="background-color: #505050"
-      />
+      <img src="images/work/IMG_8364-done.jpg" alt="Image 11" />
       <div class="image-description">
         Collaborating to build a future of possibilities.
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var logo = document.getElementById("logo");
+        var images = document.querySelectorAll(".image-container img");
+
+        function checkLogoVisibility() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+          if (scrollTop === 0) {
+            logo.style.opacity = 1;
+          } else {
+            logo.style.opacity = 0;
+          }
+        }
+
+        window.addEventListener("scroll", checkLogoVisibility);
+        window.addEventListener("resize", checkLogoVisibility);
+        checkLogoVisibility();
+      });
+    </script>
   </body>
 </html>

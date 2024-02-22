@@ -19,13 +19,9 @@ Image source is "images/work". Page title is "Darin Murray"
 
 Stacked top to bottom with no border or margin or padding.
 
-Include a logo (images/work/darinmurray_logos_large_dark.png) at the top center with a max width of 500px, scaling down as the page narrows. The logo displays above all images and does not scroll.
+Include a logo (images/work/darinmurray_logos_large_dark.png) at the top center with a max width of 500px, scaling down as the page narrows. The logo displays above all images and fades out as the user scrolls down the page and fades in as the user scrolls to the top of the page.
 
-Use images/work/darinmurray_logos_large_dark.png for light colored backgrounds
-
-Use images/work/darinmurray_logos_large_light.png for dark colored backgrounds
-
-Include a description on top of each image with white font color and a 3em font size
+Include a description on top of each image with white font color and a 3em font size and no background
 
 Each description sticks to to the bottom left of each image with a max 5% margin and 5px padding.
 
@@ -37,6 +33,12 @@ I can do anything.
 The pandemic brought me down.
 It’s time to come back up, anew. Rebuild.
 Present and forward.
+
+----- nothing below this line ----
+
+Use images/work/darinmurray_logos_large_dark.png for light colored backgrounds
+
+Use images/work/darinmurray_logos_large_light.png for dark colored backgrounds
 
 use the images/work/darinmurray_logos_large_dark.png logo when the page is scrolled all the way to the top.
 
