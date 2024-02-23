@@ -4,13 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      html,
-      body {
-        height: 100%;
-        /* margin: 0; */
-        /* overflow: hidden; */
-      }
-
       body {
         margin: 0;
         padding: 0;
@@ -42,29 +35,12 @@
         overflow: hidden;
       }
 
-      .image-container img {
-        /* width: 100%; */
-        height: 100vh;
+      img {
+        width: 100%;
         display: block;
       }
 
-      /* .image-description {
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        padding: 5px;
-        box-sizing: border-box;
-        width: 90%;
-        max-width: 90%;
-        margin: 5%;
-        font-size: 3em;
-        line-height: 1.4;
-        white-space: pre-line;
-        color: white;
-      } */
-
       .image-description {
-        /* Existing styles */
         position: absolute;
         bottom: 0;
         left: 5%;
@@ -77,27 +53,6 @@
         line-height: 1.4;
         white-space: pre-line;
         color: white;
-        /* New styles for animation */
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-      .image-description .hero {
-        /* Existing styles */
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        padding: 5px;
-        box-sizing: border-box;
-        width: 90%;
-        max-width: 90%;
-        margin: 5%;
-        font-size: 3em;
-        line-height: 1.4;
-        white-space: pre-line;
-        color: white;
-        /* New styles for animation */
-        opacity: 1;
-        /* transition: opacity 1s ease-in-out; */
       }
     </style>
     <title>Darin Murray</title>
@@ -106,7 +61,7 @@
     <header>
       <div id="logo">
         <img
-          src="images/work/darinmurray_logos_extra_large_dark.png"
+          src="images/work/darinmurray_logos_large_dark.png"
           alt="Darin Murray Logo"
         />
       </div>
@@ -114,7 +69,7 @@
 
     <div class="image-container">
       <img src="images/work/office_head_shot.JPG" alt="Image 1" />
-      <div class="image-description hero">
+      <div class="image-description">
         I’m Darin Murray, and I’m glad you’re here.
       </div>
     </div>
@@ -143,13 +98,15 @@
 
     <div class="image-container">
       <img src="images/work/IMG_6711.JPG" alt="Image 6" />
-      <div class="image-description">Present and forward.</div>
+      <div class="image-description">
+        Adjusting to the evolving world, one step at a time.
+      </div>
     </div>
 
     <div class="image-container">
       <img src="images/work/IMG_2310.JPG" alt="Image 7" />
       <div class="image-description">
-        Adjusting to the evolving world, one step at a time.
+        Embracing challenges, turning them into opportunities.
       </div>
     </div>
 
@@ -163,13 +120,13 @@
     <div class="image-container">
       <img src="images/work/background_image.png" alt="Image 9" />
       <div class="image-description">
-        Embracing challenges, turning them into opportunities.
+        Passionately creating a brighter tomorrow.
       </div>
     </div>
 
     <div class="image-container">
       <img src="images/work/Marketing_feature_01.jpg" alt="Image 10" />
-      <div class="image-description fade">
+      <div class="image-description">
         Sharing stories through visual expression.
       </div>
     </div>
@@ -199,36 +156,6 @@
         window.addEventListener("scroll", checkLogoVisibility);
         window.addEventListener("resize", checkLogoVisibility);
         checkLogoVisibility();
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        var images = document.querySelectorAll(".image-container img");
-
-        function checkVisibility() {
-          images.forEach(function (image) {
-            var imageRect = image.getBoundingClientRect();
-            var description = image.nextElementSibling; // Assuming description is always the next element
-
-            // Calculate the position of the bottom of the image
-            var imageBottom = imageRect.bottom;
-
-            // Calculate opacity based on the position of the bottom of the image in the viewport
-            var opacity = Math.min(
-              1,
-              Math.max(
-                0,
-                window.innerHeight - imageBottom // / window.innerHeight
-              )
-            );
-
-            // Apply the calculated opacity
-            description.style.opacity = opacity;
-          });
-        }
-
-        window.addEventListener("scroll", checkVisibility);
-        window.addEventListener("resize", checkVisibility);
-        checkVisibility();
       });
     </script>
   </body>
