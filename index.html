@@ -39,7 +39,6 @@
       }
 
       #logo {
-        /* height: 80px; */
       }
       #logo img {
         max-width: 500px;
@@ -62,14 +61,15 @@
       }
 
       .image-container img {
-        /* width: 100%; */
         height: 100vh;
+        /* max-height: 100%; */
+        transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
         display: block;
+        background: no-repeat center center/cover;
       }
 
       .image-description {
         font-family: "merriweather-bold";
-        /* Existing styles */
         position: absolute;
         bottom: 0;
         left: 5%;
@@ -104,6 +104,7 @@
         opacity: 1;
         /* transition: opacity 1s ease-in-out; */
       }
+
       .merriweather-light {
         font-family: "Merriweather", serif;
         font-weight: 300;
