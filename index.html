@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodePen - Simple parallax sections - ScrollTrigger</title>
+
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,18 +14,24 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-      html,
-      body {
-        height: 100%;
-        /* margin: 0; */
-        /* overflow: hidden; */
+      * {
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #333;
+        color: #fff;
+        height: 100vh;
+        line-height: 1.6;
+        /* overflow: hidden; */
       }
 
       header {
@@ -54,107 +63,144 @@
         transition: opacity 1s ease-in-out;
       }
 
-      .image-container {
+      .container {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      .lead {
+        font-size: 1.5rem;
+      }
+
+      section {
         position: relative;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .image-container img {
         height: 100vh;
-        /* max-height: 100%; */
-        transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
-        display: block;
-        background: no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
-      .image-description {
-        font-family: "merriweather-bold";
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        padding: 5px;
-        box-sizing: border-box;
-        width: 90%;
-        max-width: 90%;
-        margin: 5%;
-        font-size: 3em;
-        line-height: 1.4;
-        white-space: pre-line;
-        color: white;
-        /* New styles for animation */
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
-      .image-description-hero {
-        /* Existing styles */
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        padding: 5px;
-        box-sizing: border-box;
-        width: 90%;
-        max-width: 90%;
-        margin: 5%;
-        font-size: 3em;
-        line-height: 1.4;
-        white-space: pre-line;
-        color: white;
-        /* New styles for animation */
-        opacity: 1;
-        /* transition: opacity 1s ease-in-out; */
-      }
-
-      .merriweather-light {
-        font-family: "Merriweather", serif;
-        font-weight: 300;
+      h1 {
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
         font-style: normal;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+        z-index: 1;
+        font-size: 4em;
+        /* font-weight: 400; */
+        /* align-content: flex-end; */
+        /* background-color: aqua; */
+        width: 100%;
+        padding-left: 1em;
+        padding-top: 3em;
       }
-
-      .merriweather-regular {
-        font-family: "Merriweather", serif;
+      .fjalla-one-regular {
+        font-family: "Fjalla One", sans-serif;
         font-weight: 400;
         font-style: normal;
       }
-
-      .merriweather-bold {
-        font-family: "Merriweather", serif;
-        font-weight: 700;
-        font-style: normal;
+      /* Section Images */
+      section .bg.one {
+        background: url("images/work/office_head_shot.JPG") no-repeat center
+          center/cover;
       }
 
-      .merriweather-black {
-        font-family: "Merriweather", serif;
-        font-weight: 900;
-        font-style: normal;
+      section .bg.two {
+        background: url("images/work/card-wallet.jpg") no-repeat center
+          center/cover;
       }
 
-      .merriweather-light-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 300;
-        font-style: italic;
+      section .bg.three {
+        background: url("images/work/leather-table-detail.jpg") no-repeat center
+          center/cover;
       }
 
-      .merriweather-regular-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 400;
-        font-style: italic;
+      section .bg.four {
+        background: url("images/work/Burn-Box.jpg") no-repeat center
+          center/cover;
       }
 
-      .merriweather-bold-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 700;
-        font-style: italic;
+      section .bg.five {
+        background: url("images/work/Howdy_One_flag_detail_d.jpg") no-repeat
+          center center/cover;
       }
 
-      .merriweather-black-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 900;
-        font-style: italic;
+      section .bg.six {
+        background: url("images/work/record-map-southwest.jpg") no-repeat center
+          center/cover;
       }
+
+      section .bg.seven {
+        background: url("images/work/copper-door-in-the-works.jpg") no-repeat
+          center center/cover;
+      }
+      section .bg.eight {
+        background: url("images/work/be-nice-buffalo.jpg") no-repeat center
+          center/cover;
+      }
+      section .bg.nine {
+        background: url("images/work/boot-laces.jpg") no-repeat center
+          center/cover;
+      }
+      section .bg.ten {
+        background: url("images/work/Dreamworks-Dragon-Record-Player.jpg")
+          no-repeat center center/cover;
+      }
+      section .bg.eleven {
+        background: url("images/work/painted-skull.jpg") no-repeat center
+          center/cover;
+      }
+      section .bg.twelve {
+        background: url("images/work/big-chief-notebook-cover.jpg") no-repeat
+          center center/cover;
+      }
+      section .bg.thirteen {
+        background: url("images/work/pandemic-patch.jpg") no-repeat center
+          center/cover;
+      }
+      section .bg.fourteen {
+        background: url("images/work/Attache-two-tone-detail.jpg") no-repeat
+          center center/cover;
+      }
+      /*
+card-wallet.jpg
+Burn-Box.jpg
+Crate-Detail.jpg
+Howdy_One_flag_detail_d.jpg
+record-map-southwest.jpg
+DTM-attache-materials.jpg
+Attache-two-tone-detail.jpg
+Howdy_One_flag_detail_a.jpg
+
+Dreamworks-Dragon-Record-Player.jpg
+*/
     </style>
-    <title>Darin Murray</title>
-  </head>
+    <!-- possible fonts 
+    Dosis
+  bebas neue
+  anton
+  fjalla one
+  Prompt (18styles, but boring )
+  passion one
+  khand
+
+  --></head>
   <body>
     <header>
       <div id="logo" class=" ">
@@ -164,125 +210,108 @@
         />
       </div>
     </header>
+    <!-- partial:index.partial.html -->
+    <section>
+      <div class="bg one"></div>
+      <h1>
+        I’m Darin, <br />
+        and I’m glad you’re here.
+      </h1>
+    </section>
+    <section>
+      <div class="bg two"></div>
+      <h1 class="fjalla-one-regular">
+        I was born to create.<br />I’m an artist.
+      </h1>
+    </section>
+    <section>
+      <div class="bg three"></div>
+      <h1>I can do anything.</h1>
+    </section>
+    <section>
+      <div class="bg four"></div>
+      <h1>The pandemic brought me down.</h1>
+    </section>
+    <section>
+      <div class="bg five"></div>
+      <h1>
+        It’s time to come back up, anew. <br />
+        Rebuild.
+      </h1>
+    </section>
+    <section>
+      <div class="bg six"></div>
+      <h1>Present and forward.</h1>
+    </section>
+    <section>
+      <div class="bg seven"></div>
+      <h1>This is my work.</h1>
+    </section>
+    <section>
+      <div class="bg eight"></div>
+      <h1>Ive made everything.</h1>
+    </section>
+    <section>
+      <div class="bg nine"></div>
+      <h1>From shoelaces...</h1>
+    </section>
+    <section>
+      <div class="bg ten"></div>
+      <h1>...to record players.</h1>
+    </section>
+    <section>
+      <div class="bg eleven"></div>
+      <h1></h1>
+    </section>
+    <section>
+      <div class="bg twelve"></div>
+      <h1></h1>
+    </section>
 
-    <div class="image-container">
-      <img src="images/work/office_head_shot.JPG" alt="Image 1" />
-      <div></div>
-      <div class="image-description-hero">
-        I’m Darin, and I’m glad you’re here.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/background_image.png" alt="Image 2" />
-      <div class="image-description">I was born to create. I’m an artist.</div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/card-wallet.jpg" alt="Image 3" />
-      <div class="image-description">I can do anything.</div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Burn-Box.jpg" alt="Image 4" />
-      <div class="image-description">The pandemic brought me down.</div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Crate-Detail.jpg" alt="Image 5" />
-      <div class="image-description">
-        It’s time to come back up, anew. Rebuild.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Howdy_One_flag_detail_d.jpg" alt="Image 6" />
-      <div class="image-description">Present and forward.</div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Long-Board-Attache-Detail.jpg" alt="Image 7" />
-      <div class="image-description">
-        Adjusting to the evolving world, one step at a time.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/record-map-southwest.jpg" alt="Image 8" />
-      <div class="image-description">
-        Inspiring through creativity and innovation.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/DTM-attache-materials.jpg " alt="Image 9" />
-      <div class="image-description">
-        Embracing challenges, turning them into opportunities.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Attache-two-tone-detail.jpg" alt="Image 10" />
-      <div class="image-description fade">
-        Sharing stories through visual expression.
-      </div>
-    </div>
-
-    <div class="image-container">
-      <img src="images/work/Howdy_One_flag_detail_a.jpg " alt="Image 11" />
-      <div class="image-description">
-        Collaborating to build a future of possibilities.
-      </div>
-    </div>
-
+    <!-- <header>
+   <a href="https://greensock.com/scrolltrigger">
+     <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200" height="64" />
+  </a> 
+</header> -->
+    <!-- partial -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <!-- <script src="./script.js"></script> -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var logo = document.getElementById("logo");
-        var images = document.querySelectorAll(".image-container img");
+      gsap.registerPlugin(ScrollTrigger);
 
-        function checkLogoVisibility() {
-          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      let getRatio = (el) =>
+        window.innerHeight / (window.innerHeight + el.offsetHeight);
 
-          if (scrollTop < 200) {
-            logo.style.opacity = 1;
-          } else {
-            logo.style.opacity = 0;
+      gsap.utils.toArray("section").forEach((section, i) => {
+        section.bg = section.querySelector(".bg");
+
+        // Give the backgrounds some random images
+        // section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
+
+        // the first image (i === 0) should be handled differently because it should start at the very top.
+        // use function-based values in order to keep things responsive
+        gsap.fromTo(
+          section.bg,
+          {
+            backgroundPosition: () =>
+              i
+                ? `50% ${-window.innerHeight * getRatio(section)}px`
+                : "50% 0px",
+          },
+          {
+            backgroundPosition: () =>
+              `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: () => (i ? "top bottom" : "top top"),
+              end: "bottom top",
+              scrub: true,
+              invalidateOnRefresh: true, // to make it responsive
+            },
           }
-        }
-
-        window.addEventListener("scroll", checkLogoVisibility);
-        window.addEventListener("resize", checkLogoVisibility);
-        checkLogoVisibility();
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        var images = document.querySelectorAll(".image-container img");
-
-        function checkVisibility() {
-          images.forEach(function (image) {
-            var imageRect = image.getBoundingClientRect();
-            var description = image.nextElementSibling; // Assuming description is always the next element
-
-            // Calculate the position of the bottom of the image
-            var imageBottom = imageRect.bottom;
-
-            // Calculate opacity based on the position of the bottom of the image in the viewport
-            var opacity = Math.min(
-              1,
-              Math.max(
-                0,
-                window.innerHeight - imageBottom // / window.innerHeight
-              )
-            );
-
-            // Apply the calculated opacity
-            description.style.opacity = opacity;
-          });
-        }
-
-        window.addEventListener("scroll", checkVisibility);
-        window.addEventListener("resize", checkVisibility);
-        checkVisibility();
+        );
       });
     </script>
   </body>

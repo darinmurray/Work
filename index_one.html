@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        /* margin: 0; */
+        /* overflow: hidden; */
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        text-align: center;
+        padding: 10px 0 20px 0;
+        background: linear-gradient(
+          to bottom,
+          hsla(0, 0%, 0%, 1) 0%,
+          hsla(0, 0%, 95%, 0) 100%
+        );
+      }
+
+      #logo {
+      }
+      #logo img {
+        max-width: 500px;
+        width: 80vw;
+        /* padding: 10px; */
+        box-sizing: border-box;
+        /* position: fixed; */
+        /* top: 0; */
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        /* z-index: 1; */
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .image-container {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        height: 100vh;
+        /* max-height: 100%; */
+        transition: transform 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+        display: block;
+        background: no-repeat center center/cover;
+      }
+
+      .image-description {
+        font-family: "merriweather-bold";
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        padding: 5px;
+        box-sizing: border-box;
+        width: 90%;
+        max-width: 90%;
+        margin: 5%;
+        font-size: 3em;
+        line-height: 1.4;
+        white-space: pre-line;
+        color: white;
+        /* New styles for animation */
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .image-description-hero {
+        /* Existing styles */
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        padding: 5px;
+        box-sizing: border-box;
+        width: 90%;
+        max-width: 90%;
+        margin: 5%;
+        font-size: 3em;
+        line-height: 1.4;
+        white-space: pre-line;
+        color: white;
+        /* New styles for animation */
+        opacity: 1;
+        /* transition: opacity 1s ease-in-out; */
+      }
+
+      .merriweather-light {
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .merriweather-regular {
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .merriweather-bold {
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .merriweather-black {
+        font-family: "Merriweather", serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      .merriweather-light-italic {
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .merriweather-regular-italic {
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .merriweather-bold-italic {
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .merriweather-black-italic {
+        font-family: "Merriweather", serif;
+        font-weight: 900;
+        font-style: italic;
+      }
+    </style>
+    <title>Darin Murray</title>
+  </head>
+  <body>
+    <header>
+      <div id="logo" class=" ">
+        <img
+          src="images/work/darinmurray_logos_extra_large_light.png"
+          alt="Darin Murray Logo"
+        />
+      </div>
+    </header>
+
+    <div class="image-container">
+      <img src="images/work/office_head_shot.JPG" alt="Image 1" />
+      <div></div>
+      <div class="image-description-hero">
+        I’m Darin, and I’m glad you’re here.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/background_image.png" alt="Image 2" />
+      <div class="image-description">I was born to create. I’m an artist.</div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/card-wallet.jpg" alt="Image 3" />
+      <div class="image-description">I can do anything.</div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Burn-Box.jpg" alt="Image 4" />
+      <div class="image-description">The pandemic brought me down.</div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Crate-Detail.jpg" alt="Image 5" />
+      <div class="image-description">
+        It’s time to come back up, anew. Rebuild.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Howdy_One_flag_detail_d.jpg" alt="Image 6" />
+      <div class="image-description">Present and forward.</div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Long-Board-Attache-Detail.jpg" alt="Image 7" />
+      <div class="image-description">
+        Adjusting to the evolving world, one step at a time.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/record-map-southwest.jpg" alt="Image 8" />
+      <div class="image-description">
+        Inspiring through creativity and innovation.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/DTM-attache-materials.jpg " alt="Image 9" />
+      <div class="image-description">
+        Embracing challenges, turning them into opportunities.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Attache-two-tone-detail.jpg" alt="Image 10" />
+      <div class="image-description fade">
+        Sharing stories through visual expression.
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="images/work/Howdy_One_flag_detail_a.jpg " alt="Image 11" />
+      <div class="image-description">
+        Collaborating to build a future of possibilities.
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var logo = document.getElementById("logo");
+        var images = document.querySelectorAll(".image-container img");
+
+        function checkLogoVisibility() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+          if (scrollTop < 200) {
+            logo.style.opacity = 1;
+          } else {
+            logo.style.opacity = 0;
+          }
+        }
+
+        window.addEventListener("scroll", checkLogoVisibility);
+        window.addEventListener("resize", checkLogoVisibility);
+        checkLogoVisibility();
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".image-container img");
+
+        function checkVisibility() {
+          images.forEach(function (image) {
+            var imageRect = image.getBoundingClientRect();
+            var description = image.nextElementSibling; // Assuming description is always the next element
+
+            // Calculate the position of the bottom of the image
+            var imageBottom = imageRect.bottom;
+
+            // Calculate opacity based on the position of the bottom of the image in the viewport
+            var opacity = Math.min(
+              1,
+              Math.max(
+                0,
+                window.innerHeight - imageBottom // / window.innerHeight
+              )
+            );
+
+            // Apply the calculated opacity
+            description.style.opacity = opacity;
+          });
+        }
+
+        window.addEventListener("scroll", checkVisibility);
+        window.addEventListener("resize", checkVisibility);
+        checkVisibility();
+      });
+    </script>
+  </body>
+</html>
