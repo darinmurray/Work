@@ -72,10 +72,6 @@
         scroll-snap-type: y mandatory;
       }
 
-      .lead {
-        font-size: 1.5rem;
-      }
-
       section {
         position: relative;
         height: 100vh;
@@ -102,19 +98,19 @@
         color: white;
         text-shadow: 1px 1px 3px black;
         z-index: 1;
-        /* font-size: 4em; */
         width: 100%;
         padding-left: 1em;
-        padding-top: 3em;
-        /* align-content: flex-end; */
-        /* Set maximum and minimum font sizes */
-        font-size: 4em / 1.5; /* Default font size and line height */
+        padding-top: 4em;
+        font-size: 5em;
+
       }
 
       /* Media query for mobile devices with a maximum width of 767px */
-      @media screen and (min-width: 767px) {
+      @media screen and (max-width: 767px) {
         h1 {
-          font-size: 8em !important;
+          padding-left: 25px;
+          font-size: 5em !important;
+          line-height: 1.2;
         }
       }
       /* Section Images */
