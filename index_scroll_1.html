@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Darin Murray</title>
+
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #333;
+        color: #fff;
+        height: 100vh;
+        line-height: 1.6;
+        /* overflow: hidden; */
+      }
+
+      header {
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        text-align: center;
+        padding: 10px 0 20px 0;
+        background: linear-gradient(
+          to bottom,
+          hsla(0, 0%, 0%, 1) 0%,
+          hsla(0, 0%, 95%, 0) 100%
+        );
+      }
+
+      #logo {
+      }
+      #logo img {
+        max-width: 400px;
+        width: 80vw;
+        /* padding: 10px; */
+        box-sizing: border-box;
+        /* position: fixed; */
+        /* top: 0; */
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        /* z-index: 1; */
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      /* .lead {
+        font-size: 1.5rem;
+      } */
+
+      .container {
+        width: 100%;
+        height: 100%;
+        /* CSS Smooth Scroll */
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+        z-index: 1;
+        width: 100%;
+        padding-left: 1em;
+        padding-top: 4em;
+        font-size: 5em;
+        /* Default font size and line height */
+      }
+
+      /* Media query for mobile devices with a maximum width of 767px */
+      @media screen and (max-width: 767px) {
+        h1 {
+          padding-left: 25px;
+          font-size: 5em !important;
+          line-height: 1.2;
+        }
+      }
+      /* Section Images */
+      section .bg.one {
+        background: url("images/work/office_head_shot.JPG") no-repeat center
+          center/cover;
+      }
+
+      section .bg.two {
+        background: url("images/work/card-wallet.jpg") no-repeat center
+          center/cover;
+      }
+
+      section .bg.three {
+        background: url("images/work/leather-table-detail.jpg") no-repeat center
+          center/cover;
+      }
+
+      section .bg.four {
+        background: url("images/work/Burn-Box.jpg") no-repeat center
+          center/cover;
+      }
+
+      section .bg.five {
+        background: url("images/work/Howdy_One_flag_detail_d.jpg") no-repeat
+          center center/cover;
+      }
+
+      section .bg.six {
+        background: url("images/work/record-map-southwest.jpg") no-repeat center
+          center/cover;
+      }
+    </style>
+    <!-- possible fonts 
+    Dosis
+  bebas neue
+  anton
+  fjalla one
+  Prompt (18styles, but boring )
+  passion one
+  khand
+
+  --></head>
+  <body>
+    <header>
+      <div id="logo" class=" ">
+        <img
+          src="images/work/darinmurray_logos_extra_large_light.png"
+          alt="Darin Murray Logo"
+        />
+      </div>
+    </header>
+    <!-- partial:index.partial.html -->
+    <section>
+      <div class="bg one"></div>
+      <h1>
+        I’m Darin, <br />
+        and I’m glad you’re here.
+      </h1>
+    </section>
+    <section>
+      <div class="bg two"></div>
+      <h1 class="fjalla-one-regular">
+        I was born to create.<br />I’m an artist.
+      </h1>
+    </section>
+    <section>
+      <div class="bg three"></div>
+      <h1>I can do anything.</h1>
+    </section>
+    <section>
+      <div class="bg four"></div>
+      <h1>The pandemic brought me down.</h1>
+    </section>
+    <section>
+      <div class="bg five"></div>
+      <h1>
+        It’s time to come back up, anew. <br />
+        Rebuild.
+      </h1>
+    </section>
+    <section>
+      <div class="bg six"></div>
+      <h1>Present and forward.</h1>
+    </section>
+    <section>
+      <div class="bg seven"></div>
+      <h1>This is my work.</h1>
+    </section>
+
+    <!-- <header>
+   <a href="https://greensock.com/scrolltrigger">
+     <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200" height="64" />
+  </a> 
+</header> -->
+    <!-- partial -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <!-- <script src="./script.js"></script> -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      let getRatio = (el) =>
+        window.innerHeight / (window.innerHeight + el.offsetHeight);
+
+      gsap.utils.toArray("section").forEach((section, i) => {
+        section.bg = section.querySelector(".bg");
+
+        // Give the backgrounds some random images
+        // section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
+
+        // the first image (i === 0) should be handled differently because it should start at the very top.
+        // use function-based values in order to keep things responsive
+        gsap.fromTo(
+          section.bg,
+          {
+            backgroundPosition: () =>
+              i
+                ? `50% ${-window.innerHeight * getRatio(section)}px`
+                : "50% 0px",
+          },
+          {
+            backgroundPosition: () =>
+              `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: () => (i ? "top bottom" : "top top"),
+              end: "bottom top",
+              scrub: true,
+              invalidateOnRefresh: true, // to make it responsive
+            },
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
